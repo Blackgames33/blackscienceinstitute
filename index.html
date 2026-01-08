@@ -1,81 +1,107 @@
-/* ===== Global Dark NASA Theme ===== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Science Institute</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #020817;
+            color: #E2E8F0;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0b0d10;
-    color: #e5e5e5;
-}
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.35);
+            border-bottom: 1px solid #1E293B;
+        }
 
-/* ===== Header / Hero Section ===== */
+        .logo {
+            height: 90px;
+            margin-right: 20px;
+        }
 
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: radial-gradient(circle at center, #1e2633, #0b0d10 80%);
-}
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            font-weight: 600;
+            color: #F8FAFC;
+        }
 
-.logo {
-    width: 160px;
-    height: auto;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 12px #00d4ff);
-}
+        h2 {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #94A3B8;
+        }
 
-.hero h1 {
-    font-size: 2.8rem;
-    margin: 10px 0;
-    letter-spacing: 2px;
-    color: #ffffff;
-}
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.7;
+        }
 
-.hero h2 {
-    font-size: 1.2rem;
-    color: #8ab7ff;
-    margin-top: 5px;
-    opacity: 0.8;
-}
+        footer {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+            color: #64748B;
+            border-top: 1px solid #1E293B;
+        }
+    </style>
+</head>
 
-/* ===== Content Sections ===== */
+<body>
 
-.content-section {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
+<header>
+    <img src="./assets/logo.png" class="logo" alt="Black Science Institute Logo">
+    <div>
+        <h1>Black Science Institute</h1>
+        <h2>Advanced Mechanics • Structural Plenitude Theory • Est. 2026</h2>
+    </div>
+</header>
 
-.content-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-left: 4px solid #00c8ff;
-    padding-left: 12px;
-}
+<div class="content">
+    <h1>Welcome</h1>
+    <p>
+        The Black Science Institute is dedicated to the development, refinement, and publication 
+        of the Structural Plenitude Theory (SPT), a comprehensive physical framework describing 
+        the viscoelastic substrate underlying radiative, thermal, and gravitational phenomena.
+    </p>
 
-.pub-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
+    <p>
+        All research is published openly through Zenodo and ResearchGate, ensuring full traceability 
+        and transparent scientific progression. The Institute advances empirical, phenomenological, 
+        and computational analyses focused on substrate-mediated energy dynamics, laminar–turbulent 
+        coupling states, planetary thermal asymmetry, and interstellar observational anomalies.
+    </p>
 
-.pub-item a {
-    text-decoration: none;
-    color: #79c7ff;
-    font-size: 1.1rem;
-    transition: 0.2s;
-}
+    <p>
+        Explore the latest publications, technical notes, and validation reports through the official 
+        repository links below.
+    </p>
 
-.pub-item a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 8px #00d4ff;
-}
+    <h2>Official Publications</h2>
+    <ul>
+        <li><a href="https://zenodo.org/records/18187161" target="_blank">SPT v1.3 — Part VII</a></li>
+        <li><a href="https://zenodo.org/records/18159249" target="_blank">SPT v1.3 — Part VI</a></li>
+        <li><a href="https://zenodo.org/records/18157921" target="_blank">SPT v1.3 — Part V</a></li>
+        <li><a href="https://zenodo.org/records/18157353" target="_blank">SPT v1.3 — Part II</a></li>
+        <li><a href="https://zenodo.org/records/18155719" target="_blank">SPT v1.3 — Part I</a></li>
+        <li><a href="https://zenodo.org/records/18135662" target="_blank">SPT v1.2</a></li>
+        <li><a href="https://zenodo.org/records/18120931" target="_blank">SPT v1.1</a></li>
+    </ul>
+</div>
 
-/* ===== Footer ===== */
+<footer>
+    Black Science Institute — All Rights Reserved — 2026
+</footer>
 
-footer {
-    text-align: center;
-    padding: 25px 10px;
-    margin-top: 40px;
-    color: #6c7b90;
-    font-size: 0.9rem;
-    border-top: 1px solid #1d2734;
-}
+</body>
+</html>
