@@ -6,20 +6,32 @@
     <title>Black Science Institute</title>
 
     <style>
+
+        /* Fundo estrelado suave */
         body {
             margin: 0;
             padding: 0;
-            background: #05070d;
             font-family: Arial, Helvetica, sans-serif;
             color: #dce7ff;
-            line-height: 1.6;
+            background-color: #03040a;
+            background-image: url('https://raw.githubusercontent.com/Blackgames33/blackscienceinstitute/main/assets/stars-bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Camada de escurecimento leve */
+        .overlay {
+            background: rgba(0, 0, 0, 0.40);
+            min-height: 100vh;
         }
 
         header {
             display: flex;
             align-items: center;
             padding: 20px;
-            background: #0a0f1c;
+            background: rgba(10, 15, 28, 0.8);
+            backdrop-filter: blur(4px);
             border-bottom: 1px solid #30415a;
         }
 
@@ -34,22 +46,22 @@
         }
 
         header h2 {
-            margin: 2px 0 0 0;
+            margin: 4px 0 0 0;
             font-size: 14px;
             color: #7aa2ff;
         }
 
         nav {
-            background: #0d1526;
-            padding: 10px 30px;
+            background: rgba(15, 22, 40, 0.85);
+            padding: 12px 30px;
             border-bottom: 1px solid #1e2f47;
         }
 
         nav a {
             color: #88aaff;
             text-decoration: none;
-            margin-right: 20px;
-            font-size: 16px;
+            margin-right: 25px;
+            font-size: 17px;
         }
 
         nav a:hover {
@@ -59,22 +71,37 @@
         .container {
             max-width: 1000px;
             margin: 50px auto;
-            padding: 0 20px;
+            padding: 25px;
+            background: rgba(5, 8, 20, 0.70);
+            border-radius: 6px;
+            border: 1px solid #1b2c42;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 0 15px rgba(0, 50, 110, 0.25);
         }
 
         footer {
-            margin-top: 50px;
-            padding: 20px;
             text-align: center;
-            background: #0a0f1c;
+            padding: 25px;
+            color: #8ea0c4;
+            background: rgba(10, 15, 28, 0.9);
             border-top: 1px solid #30415a;
-            color: #7f8ba0;
-            font-size: 14px;
+            margin-top: 60px;
         }
-    </style>
-</head>
 
+        h2, h3 {
+            color: #aec8ff;
+        }
+
+        a.section {
+            color: #a4c4ff;
+        }
+
+    </style>
+
+</head>
 <body>
+
+<div class="overlay">
 
 <header>
     <img src="assets/logo.png" alt="Black Science Institute Logo">
@@ -91,31 +118,38 @@
 </nav>
 
 <div class="container">
+
     <h2>Welcome</h2>
 
     <p>
-        The Black Science Institute is dedicated to the development, refinement, and publication of the Structural
-        Plenitude Theory (SPT), a comprehensive physical framework describing the viscoelastic substrate underlying
-        radiative, thermal, and gravitational phenomena.
+        The Black Science Institute is dedicated to the development, refinement, and publication of the
+        <strong>Structural Plenitude Theory (SPT)</strong>, a comprehensive physical framework describing the viscoelastic substrate underlying
+        radiative, thermal, and gravitational processes.
     </p>
 
     <p>
-        All research is openly published through Zenodo and ResearchGate, ensuring full traceability and transparent
-        scientific progression. The Institute advances empirical, phenomenological, and computational analyses focused on
-        substrate-mediated energy dynamics, laminar–turbulent coupling states, planetary thermal asymmetry, and
-        interstellar observational anomalies.
+        Research is transparently distributed through Zenodo and ResearchGate to ensure full reproducibility and
+        traceability across scientific communities.
     </p>
 
     <h3>Main Sections</h3>
     <ul>
-        <li><a href="/blackscienceinstitute/structural-plenitude-theory/">Structural Plenitude Theory (SPT)</a> — conceptual foundations and theoretical framework.</li>
-        <li><a href="/blackscienceinstitute/research.html">Research & Publications</a> — official Zenodo and ResearchGate releases.</li>
+        <li><a class="section" href="/blackscienceinstitute/structural-plenitude-theory/">
+            Structural Plenitude Theory (SPT)
+        </a> — conceptual foundations and theoretical framework.</li>
+
+        <li><a class="section" href="/blackscienceinstitute/research.html">
+            Research & Publications
+        </a> — official Zenodo and ResearchGate releases.</li>
     </ul>
+
 </div>
 
 <footer>
-    © 2026 Black Science Institute • Structural Plenitude Theory
+    © 2026 Black Science Institute — Structural Plenitude Theory
 </footer>
+
+</div>
 
 </body>
 </html>
