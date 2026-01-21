@@ -1,1 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #dce7ff;
+    background-color: #03040a;
+    background-image: url('../img/stars-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.45);
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: rgba(10, 15, 28, 0.85);
+    border-bottom: 1px solid #30415a;
+    backdrop-filter: blur(4px);
+}
+
+header img {
+    height: 65px;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header h2 {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #7aa2ff;
+}
+
+nav {
+    background: rgba(15, 22, 40, 0.85);
+    padding: 12px 30px;
+    border-bottom: 1px solid #1e2f47;
+}
+
+nav a {
+    color: #88aaff;
+    text-decoration: none;
+    margin-right: 22px;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #c3d7ff;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(5, 8, 20, 0.70);
+    border-radius: 6px;
+    border: 1px solid #1b2c42;
+    box-shadow: 0 0 15px rgba(0, 50, 110, 0.25);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #8ea0c4;
+    background: rgba(10, 15, 28, 0.9);
+    border-top: 1px solid #30415a;
+    margin-top: 60px;
+}
+
+h2, h3 {
+    color: #aec8ff;
+}
 
