@@ -1,1 +1,314 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>BSI</title></head><body><h1>Black Science Institute</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Black Science Institute — 3I/ATLAS · SPT v1.3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-space: #020617;
+      --accent-blue: #38bdf8;
+      --accent-amber: #fbbf24;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
+      min-height: 100vh;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top, rgba(56,189,248,0.3), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15,118,110,0.18), transparent 55%),
+        #020617;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #020617;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    }
+    .brand-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--accent-blue); }
+    nav a.primary {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--accent-blue);
+    }
+
+    .hero {
+      margin-top: 10px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.9);
+      background:
+        linear-gradient(135deg, rgba(15,23,42,0.98), rgba(3,7,18,0.98)),
+        radial-gradient(circle at 15% 0%, rgba(56,189,248,0.5), transparent 60%);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.75);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+    }
+    .hero-text {
+      padding: 26px 26px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+    }
+    .hero-kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 650;
+    }
+    .hero-title span { color: var(--accent-blue); }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 34rem;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+    .hero-meta strong { color: var(--accent-amber); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .btn {
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg,#0ea5e9,#22c55e);
+      color: #020617;
+      border-color: rgba(15,23,42,0.9);
+      font-weight: 600;
+    }
+    .hero-image {
+      position: relative;
+      min-height: 260px;
+      background: radial-gradient(circle at 30% 20%, rgba(56,189,248,0.4), transparent 60%);
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.9;
+    }
+    .hero-tagline {
+      position: absolute;
+      bottom: 12px;
+      left: 18px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      text-shadow: 0 6px 16px rgba(0,0,0,0.9);
+    }
+
+    .sections {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      gap: 18px;
+    }
+    .card {
+      border-radius: 20px;
+      padding: 16px 18px 14px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 60%),
+                  rgba(15,23,42,0.98);
+      border: 1px solid rgba(15,23,42,0.9);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
+      font-size: 13px;
+    }
+    .card h2 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .card-kicker {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+    .card p { color: var(--text-soft); }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+      color: var(--text-soft);
+    }
+    .card ul li + li { margin-top: 3px; }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(15,23,42,0.85);
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--accent-blue); text-decoration: none; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: minmax(0,1fr); }
+      .hero-text { padding: 20px 18px 18px; }
+      .hero-image { min-height: 200px; }
+      .sections { grid-template-columns: minmax(0,1fr); }
+      nav { flex-wrap: wrap; justify-content: flex-end; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">BSI</div>
+        <div>
+          <div class="brand-title">Black Science Institute</div>
+          <div class="brand-sub">Structural Plenitude Program</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" class="primary">Editorials</a>
+        <a href="structural-plenitude-theory.html">SPT v1.3</a>
+        <a href="3i-atlas-structural-predictions.html">Predictions</a>
+        <a href="research.html">Research Archive</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-kicker">BSI Editorial — January 2026</div>
+        <h1 class="hero-title">
+          Interstellar Material, Structural Dynamics, and the Emerging Pattern
+          Behind <span>3I/ATLAS</span>
+        </h1>
+        <p class="hero-sub">
+          An institutional reading of 3I/ATLAS under the Structural Plenitude Theory
+          (SPT v1.3), connecting metallicity imbalance, antitail persistence, jet
+          asymmetry and radio silence as a single viscoelastic substrate interaction.
+        </p>
+        <div class="hero-meta">
+          <span><strong>SPT v1.3</strong> · Structural Flux Paradigm</span>
+          <span>3I/ATLAS — C/2025 A1</span>
+          <span>BSI Editorial Review</span>
+        </div>
+        <div class="hero-actions">
+          <a href="research.html" class="btn btn-primary">Research Archive</a>
+          <a href="index-pt.html" class="btn">Versão em Português</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/hero-3iatlas.png" alt="3I/ATLAS traversing the plenomic substrate" />
+        <div class="hero-tagline">
+          3I/ATLAS · Viscoelastic Substrate Interaction · BSI
+        </div>
+      </div>
+    </section>
+
+    <section class="sections">
+      <article class="card">
+        <div class="card-kicker">Theory Framework</div>
+        <h2>Structural Plenitude Theory (SPT v1.3)</h2>
+        <p>
+          SPT models the vacuum as a viscoelastic substrate (Pleroma) with structural
+          impedance Z<sub>H</sub>, coupling efficiency η and residual radiative dissipation ℛ.
+        </p>
+        <ul>
+          <li>Viscoelastic vacuum substrate (Pleroma)</li>
+          <li>Material-dependent coupling η and impedance Z<sub>H</sub></li>
+          <li>Residual radiative channel ℛ</li>
+          <li>Jovian impedance gradient as a natural test bench</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-kicker">Observation Program</div>
+        <h2>3I/ATLAS — Jovian March 2026 Window</h2>
+        <p>
+          As 3I/ATLAS enters the Jovian impedance gradient, SPT predicts a transition
+          in substrate drag, potential brightening and measurable deviations from
+          purely gravitational trajectories without invoking classical outgassing.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
+      <span>Contact: <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></span>
+    </footer>
+  </div>
+</body>
+</html>
