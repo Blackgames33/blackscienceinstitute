@@ -1,1 +1,557 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>BSI</title></head><body><h1>Black Science Institute</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Archive — Black Science Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-space: #020617;
+      --accent-blue: #38bdf8;
+      --accent-amber: #fbbf24;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-soft: rgba(15,23,42,0.9);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
+      min-height: 100vh;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15,118,110,0.2), transparent 55%),
+        #020617;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #020617;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--accent-blue); }
+
+    nav a.primary {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--accent-blue);
+    }
+
+    /* LAYOUT PRINCIPAL */
+
+    .layout {
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 55%),
+        rgba(15,23,42,0.98);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
+      padding: 22px 22px 20px;
+    }
+
+    .layout-header {
+      margin-bottom: 14px;
+    }
+
+    .kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 50rem;
+    }
+
+    .toolbar {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-bar {
+      flex: 1 1 260px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.98);
+      color: var(--text-main);
+      font-size: 13px;
+    }
+
+    .search-bar input::placeholder {
+      color: #6b7280;
+    }
+
+    .toggle-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .tag-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 5px 10px;
+      background: transparent;
+      color: var(--text-soft);
+      cursor: pointer;
+    }
+
+    .tag-btn.active {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .btn-small {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: transparent;
+      color: var(--text-main);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .btn-small.primary {
+      background: linear-gradient(135deg,#0ea5e9,#22c55e);
+      color: #020617;
+      border-color: rgba(15,23,42,0.9);
+      font-weight: 600;
+    }
+
+    /* GRID DE ARTIGOS */
+
+    .paper-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0,1fr);
+      gap: 12px;
+    }
+
+    .paper-card {
+      border-radius: 18px;
+      padding: 12px 14px 12px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.12), transparent 55%),
+        rgba(3,7,18,0.98);
+      border: 1px solid rgba(15,23,42,0.95);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.7);
+      font-size: 13px;
+    }
+
+    .paper-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .paper-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .paper-desc {
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    .chip span {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 9px;
+    }
+
+    .paper-section-label {
+      margin-top: 18px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    hr.section-divider {
+      border: none;
+      border-top: 1px solid rgba(30,64,175,0.7);
+      margin: 4px 0 12px;
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: var(--accent-blue); text-decoration: none; }
+
+    @media (max-width: 880px) {
+      .layout { padding: 18px 14px 16px; }
+      .toolbar { flex-direction: column; align-items: stretch; }
+      .toggle-group { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER GLOBAL -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo">BSI</div>
+        <div>
+          <div class="brand-title">Black Science Institute</div>
+          <div class="brand-sub">Structural Plenitude Program</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Editorials</a>
+        <a href="structural-plenitude-theory.html">SPT v1.3</a>
+        <a href="3i-atlas-structural-predictions.html">Predictions</a>
+        <a href="research.html" class="primary">Research Archive</a>
+      </nav>
+    </header>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <main class="layout">
+      <section class="layout-header">
+        <div class="kicker">Archive</div>
+        <h1 class="title">SPT v1.1–v1.3 Research Archive</h1>
+        <p class="subtitle">
+          Consolidated manuscripts, preprints, institutional editorials and technical
+          reports associated with the Structural Plenitude Theory (SPT) and the
+          Black Science Institute. Use the search box or filters to quickly find
+          specific material.
+        </p>
+      </section>
+
+      <!-- TOOLBAR -->
+      <div class="toolbar">
+        <div class="search-bar">
+          <input
+            id="archiveSearch"
+            type="text"
+            placeholder="Search by title, year, DOI, object (e.g. 3I/ATLAS) or keyword…"
+          />
+        </div>
+
+        <div class="toggle-group">
+          <button class="tag-btn active" data-filter="all">All</button>
+          <button class="tag-btn" data-filter="zenodo">Zenodo</button>
+          <button class="tag-btn" data-filter="researchgate">ResearchGate</button>
+          <button class="tag-btn" data-filter="editorial">Editorial</button>
+          <button class="tag-btn" data-filter="book">Books</button>
+        </div>
+
+        <a href="index-pt.html" class="btn-small">Versão em Português</a>
+      </div>
+
+      <!-- GRID DE ARTIGOS -->
+      <div class="paper-section-label">Core SPT Manuscripts</div>
+      <hr class="section-divider" />
+
+      <div id="archiveGrid" class="paper-grid">
+
+        <!-- EXEMPLO 1 — SPT v1.3 (Zenodo) -->
+        <article
+          class="paper-card"
+          data-tags="spt v1.3 zenodo structural plenitude theory pleroma viscoelastic"
+          data-type="zenodo"
+        >
+          <h2 class="paper-title">
+            The Structural Plenitude Theory (SPT v1.3): A Viscoelastic Substrate for Light,
+            Gravitation and Cosmological Redshift
+          </h2>
+          <p class="paper-meta">
+            Preprint · Zenodo · 2025 —
+            DOI:
+            <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank">
+              10.5281/zenodo.18120931
+            </a>
+          </p>
+          <p class="paper-desc">
+            Foundational exposition of the viscoelastic vacuum (Pleroma), structural
+            impedance Z<sub>H</sub>, coupling efficiency η and residual radiative
+            dissipation ℛ, with applications from local gravitation to cosmological
+            redshift.
+          </p>
+          <div class="paper-links">
+            <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank" class="btn-small primary">
+              Open on Zenodo
+            </a>
+            <a href="https://www.researchgate.net/" target="_blank" class="btn-small">
+              Mirror on ResearchGate
+            </a>
+          </div>
+          <div class="chip">
+            <span>SPT v1.3</span>
+            <span>Zenodo</span>
+          </div>
+        </article>
+
+        <!-- EXEMPLO 2 — SPT v1.2 (Zenodo, placeholder) -->
+        <article
+          class="paper-card"
+          data-tags="spt v1.2 zenodo structural flux cosmology redshift"
+          data-type="zenodo"
+        >
+          <h2 class="paper-title">
+            Structural Flux Paradigm (SPT v1.2): Cosmological Implications of a
+            Viscoelastic Vacuum
+          </h2>
+          <p class="paper-meta">
+            Preprint · Zenodo · 2024 — DOI: <em>(substituir pelo DOI correto)</em>
+          </p>
+          <p class="paper-desc">
+            Extension of SPT to large-scale structure and cosmology, analysing luminosity
+            distance, redshift and substrate dissipation without invoking dark energy
+            as a fundamental component.
+          </p>
+          <div class="paper-links">
+            <a href="#" target="_blank" class="btn-small primary">Open on Zenodo</a>
+            <a href="#" target="_blank" class="btn-small">Mirror on ResearchGate</a>
+          </div>
+          <div class="chip">
+            <span>SPT v1.2</span>
+            <span>Zenodo</span>
+          </div>
+        </article>
+
+        <!-- EXEMPLO 3 — ResearchGate compilation -->
+        <article
+          class="paper-card"
+          data-tags="researchgate compilation structural plenitude theory pleroma field equations"
+          data-type="researchgate"
+        >
+          <h2 class="paper-title">
+            Structural Plenitude Theory — Collected Preprints and Technical Notes
+          </h2>
+          <p class="paper-meta">
+            Collection · ResearchGate · 10 publications linked
+          </p>
+          <p class="paper-desc">
+            Curated collection of SPT manuscripts hosted on ResearchGate, including
+            early drafts, technical appendices and exploratory notes on pleromic
+            field dynamics and observational signatures.
+          </p>
+          <div class="paper-links">
+            <a href="https://www.researchgate.net/" target="_blank" class="btn-small primary">
+              Open ResearchGate Collection
+            </a>
+          </div>
+          <div class="chip">
+            <span>ResearchGate</span>
+            <span>Collection</span>
+          </div>
+        </article>
+
+        <!-- EXEMPLO 4 — Editorial 3I/ATLAS -->
+        <article
+          class="paper-card"
+          data-tags="editorial 3i atlas antitail impedance gradient jovian predictions"
+          data-type="editorial"
+        >
+          <h2 class="paper-title">
+            Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS
+          </h2>
+          <p class="paper-meta">
+            BSI Editorial · 2026 · English / Portuguese versions
+          </p>
+          <p class="paper-desc">
+            Institutional editorial connecting Ni/Fe imbalance, persistent antitail,
+            jet asymmetry, radio silence and non-gravitational drift as a single
+            phenomenon within the Structural Plenitude Theory.
+          </p>
+          <div class="paper-links">
+            <a href="index.html" class="btn-small primary">Open Editorial (EN)</a>
+            <a href="index-pt.html" class="btn-small">Versão em Português</a>
+          </div>
+          <div class="chip">
+            <span>Editorial</span>
+            <span>3I/ATLAS</span>
+          </div>
+        </article>
+
+        <!-- EXEMPLO 5 — Book / Patologia de um Regime (placeholder) -->
+        <article
+          class="paper-card"
+          data-tags="book patologia de um regime geopolitical analysis black science institute"
+          data-type="book"
+        >
+          <h2 class="paper-title">
+            Patologia de um Regime — Geopolitical and Structural Analysis
+          </h2>
+          <p class="paper-meta">
+            Book · BSI Editorial — <em>(link a ser definido)</em>
+          </p>
+          <p class="paper-desc">
+            Geopolitical and historical work connected to the broader structural
+            perspective of BSI, providing contextual analysis complementary to the
+            physical SPT framework.
+          </p>
+          <div class="paper-links">
+            <a href="#" class="btn-small primary">Open Book / Landing Page</a>
+          </div>
+          <div class="chip">
+            <span>Book</span>
+            <span>BSI Editorial</span>
+          </div>
+        </article>
+
+      </div>
+
+      <footer>
+        <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
+        <span>
+          Contact:
+          <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
+        </span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- SCRIPT: busca + filtros -->
+  <script>
+    const searchInput = document.getElementById('archiveSearch');
+    const cards = Array.from(document.querySelectorAll('.paper-card'));
+    const tagButtons = Array.from(document.querySelectorAll('.tag-btn'));
+
+    function applyFilters() {
+      const query = (searchInput.value || '').toLowerCase();
+      const activeTag = tagButtons.find(btn => btn.classList.contains('active'))?.dataset.filter || 'all';
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const type = card.dataset.type || 'all';
+
+        const matchesText = text.includes(query);
+        const matchesTag = activeTag === 'all' || type === activeTag;
+
+        card.style.display = (matchesText && matchesTag) ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    tagButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tagButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+  </script>
+</body>
+</html>
