@@ -3,97 +3,167 @@
    Tema: Dark Cosmic / Structural Plenitude
    ============================================================ */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background: #0a0a0a;
+    background: #05060a;
     color: #e5e5e5;
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.7;
 }
 
-/* ================= HEADER SUPERIOR FIXO (MENU) ================= */
+/* ================= LINKS ================= */
 
-header {
-    width: 100%;
+a {
+    color: #4aa8ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8fd0ff;
+}
+
+/* ================= HEADER FIXO ================= */
+
+header.site-header {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.85);
+    width: 100%;
+    padding: 12px 40px;
+    background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid #1e1e1e;
-    padding: 14px 40px;
-    z-index: 999;
+    border-bottom: 1px solid #181b24;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
 }
 
-header .logo {
+.header-left {
     display: flex;
     align-items: center;
 }
 
-header .logo img {
+.header-left img {
     height: 38px;
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
-header nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    margin-left: 26px;
-    font-size: 15px;
+.header-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title span.name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-title span.tagline {
+    font-size: 11px;
+    color: #96b4ff;
+    letter-spacing: 0.05em;
+}
+
+nav.main-nav a {
+    margin-left: 24px;
+    font-size: 14px;
     font-weight: 500;
 }
 
-header nav a:hover {
-    color: #4aa8ff;
+nav.main-nav a.active {
+    color: #ffffff;
 }
 
-/* ================= HERO IMAGE ================= */
+/* ================= HERO ================= */
 
 .hero {
     width: 100%;
-    height: 440px;
+    height: 420px;
+    margin-top: 68px; /* compensa header fixo */
+    background-color: #05060a;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin-top: 80px; /* compensar header fixo */
     display: flex;
     align-items: flex-end;
-    padding: 60px;
-    box-sizing: border-box;
+    padding: 50px 40px;
 }
 
-.hero h1 {
-    font-size: 42px;
-    color: #ffffff;
-    text-shadow: 0 0 12px #000;
-}
-
-/* ================= CONTAINER / SEÇÕES ================= */
-
-section {
-    max-width: 1100px;
-    background: #111;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #1c1c1c;
-}
-
-h2, h3 {
+.hero-overlay {
+    max-width: 640px;
+    background: rgba(3, 6, 18, 0.80);
     border-left: 4px solid #4aa8ff;
-    padding-left: 12px;
+    padding: 22px 26px;
+    box-shadow: 0 0 24px rgba(0,0,0,0.7);
 }
 
-footer {
-    background: #000;
-    color: #808080;
-    padding: 20px;
-    margin-top: 80px;
+.hero-overlay h1 {
+    margin: 0 0 8px 0;
+    font-size: 30px;
+}
+
+.hero-overlay p {
+    margin: 0;
+    font-size: 15px;
+    color: #cfd8ff;
+}
+
+/* ================= CONTEÚDO PRINCIPAL ================= */
+
+main.page {
+    max-width: 1100px;
+    margin: 32px auto 80px auto;
+    padding: 0 20px;
+}
+
+section.card {
+    background: #0d1018;
+    border-radius: 8px;
+    border: 1px solid #1b2234;
+    padding: 28px 26px;
+    margin-bottom: 26px;
+}
+
+section.card h2 {
+    margin-top: 0;
+    font-size: 22px;
+    border-left: 4px solid #4aa8ff;
+    padding-left: 10px;
+}
+
+section.card h3 {
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+section.card p {
+    font-size: 15px;
+    color: #e3e3e3;
+}
+
+ul.link-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+ul.link-list li {
+    margin: 8px 0;
+}
+
+/* ================= FOOTER ================= */
+
+footer.site-footer {
+    background: #020308;
+    color: #8a8fa5;
     text-align: center;
+    padding: 20px;
+    border-top: 1px solid #181b24;
+    font-size: 13px;
 }
-
-
