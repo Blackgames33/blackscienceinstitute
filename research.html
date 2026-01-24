@@ -209,10 +209,24 @@
       font-weight: 600;
     }
 
-    /* GRID DE ARTIGOS */
+    /* GRID DE ARTIGOS / LIVROS */
+
+    .paper-section-label {
+      margin-top: 18px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    hr.section-divider {
+      border: none;
+      border-top: 1px solid rgba(30,64,175,0.7);
+      margin: 4px 0 10px;
+    }
 
     .paper-grid {
-      margin-top: 18px;
       display: grid;
       grid-template-columns: minmax(0,1fr);
       gap: 12px;
@@ -227,6 +241,9 @@
       border: 1px solid rgba(15,23,42,0.95);
       box-shadow: 0 10px 26px rgba(0,0,0,0.7);
       font-size: 13px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
     }
 
     .paper-title {
@@ -238,12 +255,12 @@
     .paper-meta {
       font-size: 11px;
       color: var(--text-soft);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .paper-desc {
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .paper-links {
@@ -270,19 +287,66 @@
       font-size: 9px;
     }
 
-    .paper-section-label {
-      margin-top: 18px;
-      margin-bottom: 4px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
+    /* CARDS DE LIVROS COM CAPA */
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 14px;
+      margin-top: 6px;
     }
 
-    hr.section-divider {
-      border: none;
-      border-top: 1px solid rgba(30,64,175,0.7);
-      margin: 4px 0 12px;
+    .book-card {
+      border-radius: 18px;
+      padding: 10px 12px 12px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%),
+        rgba(3,7,18,0.98);
+      border: 1px solid rgba(15,23,42,0.95);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.7);
+      display: grid;
+      grid-template-columns: 110px minmax(0,1fr);
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .book-cover {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.9);
+      background: #020617;
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .book-meta-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .book-meta-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .book-desc {
+      font-size: 12px;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .book-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
     footer {
@@ -301,6 +365,8 @@
       .layout { padding: 18px 14px 16px; }
       .toolbar { flex-direction: column; align-items: stretch; }
       .toggle-group { justify-content: flex-start; }
+      .book-grid { grid-template-columns: minmax(0,1fr); }
+      .book-card { grid-template-columns: minmax(0,1fr); }
     }
   </style>
 </head>
@@ -330,10 +396,9 @@
         <div class="kicker">Archive</div>
         <h1 class="title">SPT v1.1–v1.3 Research Archive</h1>
         <p class="subtitle">
-          Consolidated manuscripts, preprints, institutional editorials and technical
-          reports associated with the Structural Plenitude Theory (SPT) and the
-          Black Science Institute. Use the search box or filters to quickly find
-          specific material.
+          Consolidated manuscripts, preprints, institutional editorials and books
+          associated with the Structural Plenitude Theory (SPT) and the Black Science
+          Institute. Use the search box or filters for quick navigation.
         </p>
       </section>
 
@@ -358,40 +423,39 @@
         <a href="index-pt.html" class="btn-small">Versão em Português</a>
       </div>
 
-      <!-- GRID DE ARTIGOS -->
-      <div class="paper-section-label">Core SPT Manuscripts</div>
+      <!-- CORE SPT MANUSCRIPTS -->
+      <div class="paper-section-label">Core SPT Manuscripts (Zenodo)</div>
       <hr class="section-divider" />
 
       <div id="archiveGrid" class="paper-grid">
-
-        <!-- EXEMPLO 1 — SPT v1.3 (Zenodo) -->
+        <!-- SPT v1.3 -->
         <article
           class="paper-card"
           data-tags="spt v1.3 zenodo structural plenitude theory pleroma viscoelastic"
           data-type="zenodo"
         >
-          <h2 class="paper-title">
-            The Structural Plenitude Theory (SPT v1.3): A Viscoelastic Substrate for Light,
-            Gravitation and Cosmological Redshift
-          </h2>
-          <p class="paper-meta">
-            Preprint · Zenodo · 2025 —
-            DOI:
-            <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank">
-              10.5281/zenodo.18120931
-            </a>
-          </p>
-          <p class="paper-desc">
-            Foundational exposition of the viscoelastic vacuum (Pleroma), structural
-            impedance Z<sub>H</sub>, coupling efficiency η and residual radiative
-            dissipation ℛ, with applications from local gravitation to cosmological
-            redshift.
-          </p>
+          <div>
+            <h2 class="paper-title">
+              The Structural Plenitude Theory (SPT v1.3): A Viscoelastic Substrate for Light,
+              Gravitation and Cosmological Redshift
+            </h2>
+            <p class="paper-meta">
+              Preprint · Zenodo · 2025 — DOI:
+              <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank">
+                10.5281/zenodo.18120931
+              </a>
+            </p>
+            <p class="paper-desc">
+              Foundational exposition of the viscoelastic vacuum (Pleroma), structural
+              impedance Z<sub>H</sub>, coupling efficiency η and residual radiative
+              dissipation ℛ, from local gravitation to cosmological redshift.
+            </p>
+          </div>
           <div class="paper-links">
             <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank" class="btn-small primary">
               Open on Zenodo
             </a>
-            <a href="https://www.researchgate.net/" target="_blank" class="btn-small">
+            <a href="#" target="_blank" class="btn-small">
               Mirror on ResearchGate
             </a>
           </div>
@@ -401,24 +465,26 @@
           </div>
         </article>
 
-        <!-- EXEMPLO 2 — SPT v1.2 (Zenodo, placeholder) -->
+        <!-- SPT v1.2 (placeholder links) -->
         <article
           class="paper-card"
           data-tags="spt v1.2 zenodo structural flux cosmology redshift"
           data-type="zenodo"
         >
-          <h2 class="paper-title">
-            Structural Flux Paradigm (SPT v1.2): Cosmological Implications of a
-            Viscoelastic Vacuum
-          </h2>
-          <p class="paper-meta">
-            Preprint · Zenodo · 2024 — DOI: <em>(substituir pelo DOI correto)</em>
-          </p>
-          <p class="paper-desc">
-            Extension of SPT to large-scale structure and cosmology, analysing luminosity
-            distance, redshift and substrate dissipation without invoking dark energy
-            as a fundamental component.
-          </p>
+          <div>
+            <h2 class="paper-title">
+              Structural Flux Paradigm (SPT v1.2): Cosmological Implications of a
+              Viscoelastic Vacuum
+            </h2>
+            <p class="paper-meta">
+              Preprint · Zenodo · 2024 — DOI: <em>(substituir pelo DOI correto)</em>
+            </p>
+            <p class="paper-desc">
+              Extension of SPT to large-scale structure and cosmology, analysing luminosity
+              distance, redshift and dissipation without dark energy as a fundamental
+              component.
+            </p>
+          </div>
           <div class="paper-links">
             <a href="#" target="_blank" class="btn-small primary">Open on Zenodo</a>
             <a href="#" target="_blank" class="btn-small">Mirror on ResearchGate</a>
@@ -429,25 +495,56 @@
           </div>
         </article>
 
-        <!-- EXEMPLO 3 — ResearchGate compilation -->
+        <!-- Outro Zenodo genérico (placeholder para você replicar) -->
+        <article
+          class="paper-card"
+          data-tags="spt zenodo climate pleroma residual dissipation"
+          data-type="zenodo"
+        >
+          <div>
+            <h2 class="paper-title">
+              Structural Plenitude Theory — Applied Substrate Dynamics (Climate and Energy Balance)
+            </h2>
+            <p class="paper-meta">
+              Preprint · Zenodo · 2025 — DOI: <em>(substituir pelo DOI correto)</em>
+            </p>
+            <p class="paper-desc">
+              Application of SPT viscoelastic concepts to planetary energy balance,
+              radiative budgets and residual dissipation, providing independent tests
+              for the pleromic framework.
+            </p>
+          </div>
+          <div class="paper-links">
+            <a href="#" target="_blank" class="btn-small primary">Open on Zenodo</a>
+            <a href="#" target="_blank" class="btn-small">Mirror on ResearchGate</a>
+          </div>
+          <div class="chip">
+            <span>SPT</span>
+            <span>Zenodo</span>
+          </div>
+        </article>
+
+        <!-- ResearchGate collection -->
         <article
           class="paper-card"
           data-tags="researchgate compilation structural plenitude theory pleroma field equations"
           data-type="researchgate"
         >
-          <h2 class="paper-title">
-            Structural Plenitude Theory — Collected Preprints and Technical Notes
-          </h2>
-          <p class="paper-meta">
-            Collection · ResearchGate · 10 publications linked
-          </p>
-          <p class="paper-desc">
-            Curated collection of SPT manuscripts hosted on ResearchGate, including
-            early drafts, technical appendices and exploratory notes on pleromic
-            field dynamics and observational signatures.
-          </p>
+          <div>
+            <h2 class="paper-title">
+              Structural Plenitude Theory — Collected Preprints and Technical Notes
+            </h2>
+            <p class="paper-meta">
+              Collection · ResearchGate · 10 publications linked
+            </p>
+            <p class="paper-desc">
+              Curated collection of SPT manuscripts hosted on ResearchGate, including
+              early drafts, technical appendices and exploratory notes on pleromic
+              field dynamics and observational signatures.
+            </p>
+          </div>
           <div class="paper-links">
-            <a href="https://www.researchgate.net/" target="_blank" class="btn-small primary">
+            <a href="#" target="_blank" class="btn-small primary">
               Open ResearchGate Collection
             </a>
           </div>
@@ -457,23 +554,25 @@
           </div>
         </article>
 
-        <!-- EXEMPLO 4 — Editorial 3I/ATLAS -->
+        <!-- Editorial 3I/ATLAS -->
         <article
           class="paper-card"
           data-tags="editorial 3i atlas antitail impedance gradient jovian predictions"
           data-type="editorial"
         >
-          <h2 class="paper-title">
-            Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS
-          </h2>
-          <p class="paper-meta">
-            BSI Editorial · 2026 · English / Portuguese versions
-          </p>
-          <p class="paper-desc">
-            Institutional editorial connecting Ni/Fe imbalance, persistent antitail,
-            jet asymmetry, radio silence and non-gravitational drift as a single
-            phenomenon within the Structural Plenitude Theory.
-          </p>
+          <div>
+            <h2 class="paper-title">
+              Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS
+            </h2>
+            <p class="paper-meta">
+              BSI Editorial · 2026 · English / Portuguese versions
+            </p>
+            <p class="paper-desc">
+              Institutional editorial connecting Ni/Fe imbalance, persistent antitail,
+              jet asymmetry, radio silence and non-gravitational drift as a single
+              phenomenon within SPT.
+            </p>
+          </div>
           <div class="paper-links">
             <a href="index.html" class="btn-small primary">Open Editorial (EN)</a>
             <a href="index-pt.html" class="btn-small">Versão em Português</a>
@@ -483,34 +582,78 @@
             <span>3I/ATLAS</span>
           </div>
         </article>
+      </div>
 
-        <!-- EXEMPLO 5 — Book / Patologia de um Regime (placeholder) -->
+      <!-- BOOKS -->
+      <div class="paper-section-label">Books · BSI Editorial</div>
+      <hr class="section-divider" />
+
+      <section class="book-grid">
+        <!-- PATOLOGIA DE UM REGIME -->
         <article
-          class="paper-card"
+          class="book-card"
           data-tags="book patologia de um regime geopolitical analysis black science institute"
           data-type="book"
         >
-          <h2 class="paper-title">
-            Patologia de um Regime — Geopolitical and Structural Analysis
-          </h2>
-          <p class="paper-meta">
-            Book · BSI Editorial — <em>(link a ser definido)</em>
-          </p>
-          <p class="paper-desc">
-            Geopolitical and historical work connected to the broader structural
-            perspective of BSI, providing contextual analysis complementary to the
-            physical SPT framework.
-          </p>
-          <div class="paper-links">
-            <a href="#" class="btn-small primary">Open Book / Landing Page</a>
+          <div class="book-cover">
+            <!-- Substituir o arquivo pela capa real em assets/img/patologia-cover.png -->
+            <img src="assets/img/patologia-cover.png" alt="Patologia de um Regime — Capa" />
           </div>
-          <div class="chip">
-            <span>Book</span>
-            <span>BSI Editorial</span>
+          <div>
+            <div class="book-meta-title">Patologia de um Regime</div>
+            <div class="book-meta-sub">
+              Geopolitical and Structural Analysis · BSI Editorial
+            </div>
+            <p class="book-desc">
+              Obra de análise histórico-geopolítica estruturada em 16 capítulos e dossiês,
+              articulando mecanismos de poder, colapso institucional e dinâmica estrutural
+              de regimes. Funciona como eixo macro-político complementar à leitura física
+              da Structural Plenitude Theory.
+            </p>
+            <div class="book-links">
+              <a href="#" target="_blank" class="btn-small primary">
+                Open Book / Landing Page
+              </a>
+              <a href="#" target="_blank" class="btn-small">
+                Download Sample / Excerpt
+              </a>
+            </div>
           </div>
         </article>
 
-      </div>
+        <!-- VISIONÁRIOS -->
+        <article
+          class="book-card"
+          data-tags="book visionarios science fiction cosmogenesis talmont architecture"
+          data-type="book"
+        >
+          <div class="book-cover">
+            <!-- Substituir o arquivo pela capa real em assets/img/visionarios-cover.png -->
+            <img src="assets/img/visionarios-cover.png" alt="Visionários — Capa" />
+          </div>
+          <div>
+            <div class="book-meta-title">Visionários — Arquitetura Talmont</div>
+            <div class="book-meta-sub">
+              Science-Fiction · Cosmogenesis and Pleromic Technology
+            </div>
+            <p class="book-desc">
+              Romance de ficção científica que explora uma cosmogênese baseada em
+              estruturas concêntricas (Onion Cosmology), gravidade geo-hídrica e uma
+              superinteligência situada no Pacífico. A tecnologia é revelada de forma
+              gradual, aproximando a narrativa da lógica interna da SPT, sem abandonar
+              o enredo humano e o paradoxo do próprio criador.
+            </p>
+            <div class="book-links">
+              <a href="#" target="_blank" class="btn-small primary">
+                Open Book / Landing Page
+              </a>
+              <a href="#" target="_blank" class="btn-small">
+                Worldbuilding / Technical Notes
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
 
       <footer>
         <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
@@ -525,7 +668,7 @@
   <!-- SCRIPT: busca + filtros -->
   <script>
     const searchInput = document.getElementById('archiveSearch');
-    const cards = Array.from(document.querySelectorAll('.paper-card'));
+    const cards = Array.from(document.querySelectorAll('.paper-card, .book-card'));
     const tagButtons = Array.from(document.querySelectorAll('.tag-btn'));
 
     function applyFilters() {
