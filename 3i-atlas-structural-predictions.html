@@ -1,1 +1,475 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>BSI</title></head><body><h1>Black Science Institute</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3I/ATLAS — Structural Predictions · March 2026 Window</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg-space: #020617;
+      --accent-blue: #38bdf8;
+      --accent-amber: #fbbf24;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-soft: rgba(15,23,42,0.9);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
+      min-height: 100vh;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15,118,110,0.2), transparent 55%),
+        #020617;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #020617;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--accent-blue); }
+
+    nav a.primary {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--accent-blue);
+    }
+
+    /* LAYOUT PREDICTIONS */
+
+    .layout {
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 55%),
+        rgba(15,23,42,0.98);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
+      padding: 22px 22px 24px;
+    }
+
+    .header-block {
+      margin-bottom: 18px;
+    }
+
+    .kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 23px;
+      font-weight: 650;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 52rem;
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .links-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-small {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: transparent;
+      color: var(--text-main);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .btn-small.primary {
+      background: linear-gradient(135deg,#0ea5e9,#22c55e);
+      color: #020617;
+      border-color: rgba(15,23,42,0.9);
+      font-weight: 600;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .card {
+      border-radius: 18px;
+      padding: 14px 16px 14px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%),
+        rgba(3,7,18,0.98);
+      border: 1px solid rgba(15,23,42,0.95);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.75);
+      font-size: 13px;
+    }
+
+    .card h2 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .card p { color: var(--text-main); }
+
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+      color: var(--text-soft);
+    }
+
+    .card ul li + li { margin-top: 3px; }
+
+    .section-label {
+      margin-top: 18px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(30,64,175,0.7);
+      margin: 4px 0 10px;
+    }
+
+    .image-card {
+      margin-top: 8px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.9);
+      background: #020617;
+    }
+
+    .image-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      font-size: 11px;
+      color: var(--text-soft);
+      padding: 6px 8px 7px;
+      background: rgba(3,7,18,0.95);
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: var(--accent-blue); text-decoration: none; }
+
+    @media (max-width: 880px) {
+      .layout { padding: 18px 14px 18px; }
+      .two-col { grid-template-columns: minmax(0,1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER GLOBAL -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo">BSI</div>
+        <div>
+          <div class="brand-title">Black Science Institute</div>
+          <div class="brand-sub">Structural Plenitude Program</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Editorials</a>
+        <a href="structural-plenitude-theory.html">SPT v1.3</a>
+        <a href="3i-atlas-structural-predictions.html" class="primary">Predictions</a>
+        <a href="research.html">Research Archive</a>
+      </nav>
+    </header>
+
+    <!-- BLOCO PRINCIPAL -->
+    <main class="layout">
+      <section class="header-block">
+        <div class="kicker">Observation Program</div>
+        <h1 class="title">3I/ATLAS — Jovian March 2026 Structural Predictions</h1>
+        <p class="subtitle">
+          SPT interprets 3I/ATLAS as a Ni-dominant, high-impedance interstellar body
+          traversing a viscoelastic vacuum. The March 2026 Jovian window provides
+          a natural impedance gradient to test laminar coupling (η → 1), antitail
+          persistence and non-gravitational drift without invoking classical outgassing.
+        </p>
+        <div class="tagline">
+          3I/ATLAS · Viscoelastic Substrate Interaction · Jovian Impedance Gradient
+        </div>
+        <div class="links-row">
+          <a href="index.html" class="btn-small">Back to Editorial</a>
+          <a href="research.html" class="btn-small primary">Open Research Archive</a>
+        </div>
+      </section>
+
+      <!-- BLOCOS 1: JANELA E REGIMES -->
+      <div class="section-label">Prediction Window and Coupling Regimes</div>
+      <hr class="section-divider" />
+
+      <section class="two-col">
+        <article class="card">
+          <h2>Jovian Impedance Gradient — March 2026</h2>
+          <p>
+            As 3I/ATLAS crosses the Jovian sector, SPT predicts a variation in
+            structural impedance Z<sub>H</sub> due to the combined pleromic well of
+            Jupiter and the Sun. This gradient modulates the local coupling efficiency
+            η and may trigger subtle transitions in coma morphology and brightness.
+          </p>
+          <ul>
+            <li>Baseline laminar regime at large heliocentric distance.</li>
+            <li>Enhanced drag and possible brightening near the Jovian window.</li>
+            <li>
+              Non-gravitational drift decoupled from classical mass-loss indicators.
+            </li>
+            <li>
+              Opportunity to compare antitail geometry before/after the gradient.
+            </li>
+          </ul>
+          <div class="image-card">
+            <img src="assets/img/A_scientific-style_digital_infographic_titled_\"Jov.png"
+                 alt="Jovian impedance gradient infographic" />
+            <div class="image-caption">
+              Schematic of 3I/ATLAS crossing the Jovian impedance gradient within the
+              pleromic substrate.
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Coupling Efficiency η — Laminar vs. Non-Laminar</h2>
+          <p>
+            In SPT, radio silence is interpreted as a marker of efficient, laminar
+            coupling: η ≈ 1 and ℛ ≈ 0. Any emergence of structured radio emission,
+            sudden jet re-orientation or coma turbulence would signal a transition
+            to non-laminar coupling.
+          </p>
+          <ul>
+            <li>Laminar regime: smooth antitail, radio quiet, stable morphology.</li>
+            <li>
+              Non-laminar regime: localized tension release, jet asymmetry, possible
+              transient radio features.
+            </li>
+            <li>
+              March 2026 monitoring focuses on whether η remains high across the
+              Jovian sector.
+            </li>
+          </ul>
+          <div class="image-card">
+            <img src="assets/img/A_digital_infographic_titled_\"Laminar_vs_Non-Lamin.png"
+                 alt="Laminar vs non-laminar coupling infographic" />
+            <div class="image-caption">
+              Comparative regimes of laminar (η → 1) and non-laminar coupling in the
+              pleromic substrate.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- BLOCO 2: ANTITAIL / RESIDUAL -->
+      <div class="section-label">Antitail, Residual Channel ℛ and Drift</div>
+      <hr class="section-divider" />
+
+      <section class="two-col">
+        <article class="card">
+          <h2>Antitail as Substrate Drag and Momentum Lag</h2>
+          <p>
+            The persistent antitail of 3I/ATLAS is read as a momentum-lag artifact
+            of substrate drag. The geometry of the antitail encodes how the nucleus
+            interacts with the flow of the Pleroma rather than being purely driven
+            by dust dynamics and phase angle effects.
+          </p>
+          <div class="image-card">
+            <img src="assets/img/A_scientific_infographic_in_digital_illustration_s.png"
+                 alt="Antitail structural drag visualization" />
+            <div class="image-caption">
+              Structural visualization of antitail formation as a wake in the
+              viscoelastic substrate.
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Residual Radiative Channel ℛ and Non-Gravitational Drift</h2>
+          <p>
+            If part of the structural flux fails to anchor locally, SPT predicts a
+            residual channel ℛ. In interstellar objects this may appear as a small
+            but coherent drift not directly correlated with outgassing proxies.
+          </p>
+          <ul>
+            <li>
+              Track MPC residuals against classical non-gravitational models.
+            </li>
+            <li>
+              Look for phase-locked deviations near the Jovian gradient.
+            </li>
+            <li>
+              Compare orbital fits assuming η = 1 vs. η &lt; 1 + ℛ &gt; 0.
+            </li>
+          </ul>
+          <div class="image-card">
+            <img src="assets/img/A_scientific-style_infographic_titled_\"Residual_Ra.png"
+                 alt="Residual radiative channel infographic" />
+            <div class="image-caption">
+              Residual radiative channel ℛ as the non-anchored component of
+              structural flux in SPT.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- BLOCO 3: PAINEL UNIFICADO -->
+      <div class="section-label">Unified Prediction Panel</div>
+      <hr class="section-divider" />
+
+      <section class="two-col">
+        <article class="card">
+          <h2>Consolidated Observational Tests</h2>
+          <p>
+            The March 2026 window is treated as a compact, falsifiable test for the
+            Structural Plenitude interpretation of 3I/ATLAS:
+          </p>
+          <ul>
+            <li>
+              Does the antitail preserve its geometry as the impedance gradient
+              increases?
+            </li>
+            <li>
+              Does any radio emission appear where SPT expects turbulence?
+            </li>
+            <li>
+              Does the drift pattern match a purely gravitational + outgassing model
+              or a structural-drag model?
+            </li>
+          </ul>
+          <p style="margin-top:6px;">
+            Agreement, disagreement or partial alignment with these patterns refines
+            the allowed parameter space for η, Z<sub>H</sub> and ℛ.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Visual Synthesis</h2>
+          <p>
+            The unified panel below condenses the five main anomalies highlighted in
+            the editorial—Ni/Fe imbalance, antitail, jet asymmetry, radio silence
+            and drift—into a single structural interpretation.
+          </p>
+          <div class="image-card">
+            <img src="assets/img/A_digital_scientific_infographic_titled_\"Unified_5.png"
+                 alt="Unified five-anomaly panel" />
+            <div class="image-caption">
+              Unified five-anomaly panel for 3I/ATLAS under SPT v1.3.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
+        <span>
+          Contact:
+          <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
+        </span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
