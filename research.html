@@ -622,52 +622,41 @@
         </article>
 
         <!-- VISIONÁRIOS -->
-        <article
-          class="book-card"
-          data-tags="book visionarios science fiction cosmogenesis talmont architecture"
-          data-type="book"
-        >
-          <img src="assets/visionarios-cover.png" alt="Visionários — Capa" />
+<article
+    class="book-card"
+    data-tags="book visionarios science-fiction cosmogenesis"
+    data-type="book">
 
-          <div>
-            <div class="book-meta-title">Visionários — Arquitetura Talmont</div>
-            <div class="book-meta-sub">
-              Science-Fiction · Cosmogenesis and Pleromic Technology
-            </div>
-            <p class="book-desc">
-              Romance de ficção científica que explora uma cosmogênese baseada em
-              estruturas concêntricas (Onion Cosmology), gravidade geo-hídrica e uma
-              superinteligência situada no Pacífico. A tecnologia é revelada de forma
-              gradual, aproximando a narrativa da lógica interna da SPT, sem abandonar
-              o enredo humano e o paradoxo do próprio criador.
-            </p>
-            <div class="book-links">
-              <a href="#" target="_blank" class="btn-small primary">
-                Open Book / Landing Page
-              </a>
-              <a href="#" target="_blank" class="btn-small">
-                Worldbuilding / Technical Notes
-              </a>
-            </div>
-          </div>
-        </article>
-      </section>
+    <!-- Overlay escuro para melhorar a leitura -->
+    <div class="overlay"></div>
 
-      <footer>
-        <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
-        <span>
-          Contact:
-          <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-        </span>
-      </footer>
-    </main>
-  </div>
+    <!-- Capa do livro -->
+    <img src="assets/visionarios-cover.png" alt="Visionários Cover" class="book-cover">
 
-  <!-- SCRIPT: busca + filtros -->
-  <script>
-    const searchInput = document.getElementById('archiveSearch');
-    const cards = Array.from(document.querySelectorAll('.paper-card, .book-card'));
-    const tagButtons = Array.from(document.querySelectorAll('.tag-btn'));
+    <!-- Conteúdo do cartão -->
+    <div class="book-content">
+
+        <div class="book-meta-title">Visionários — Arquitetura Talmont</div>
+
+        <div class="book-meta-sub">
+            Science-Fiction · Cosmogenesis · Plenomic Technology
+        </div>
+
+        <p class="book-desc">
+            Romance de ficção científica que explora uma cosmogênese baseada em
+            estruturas concêntricas (Onion Cosmology), gravidade geo-hídrica e
+            uma superinteligência situada no Pacífico. A tecnologia é revelada
+            progressivamente, aproximando a narrativa da lógica interna da SPT.
+        </p>
+
+        <div class="button-row">
+            <a href="visionarios.html" class="button">Open Book / Landing Page</a>
+            <a href="#" class="button-secondary">Worldbuilding / Technical Notes</a>
+        </div>
+
+    </div>
+</article>
+
 
     function applyFilters() {
       const query = (searchInput.value || '').toLowerCase();
