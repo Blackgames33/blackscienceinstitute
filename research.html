@@ -1,687 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Research Archive — Black Science Institute</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
-    :root {
-      --bg-space: #020617;
-      --accent-blue: #38bdf8;
-      --accent-amber: #fbbf24;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --border-soft: rgba(15,23,42,0.9);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
-      min-height: 100vh;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 55%),
-        radial-gradient(circle at bottom, rgba(15,118,110,0.2), transparent 55%),
-        #020617;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    /* HEADER */
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #020617;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-    }
-
-    .brand-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    nav a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
-
-    nav a:hover { color: var(--accent-blue); }
-
-    nav a.primary {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-blue);
-    }
-
-    /* LAYOUT PRINCIPAL */
-
-    .layout {
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 55%),
-        rgba(15,23,42,0.98);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
-      padding: 22px 22px 20px;
-    }
-
-    .layout-header {
-      margin-bottom: 14px;
-    }
-
-    .kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .title {
-      font-size: 22px;
-      font-weight: 650;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 50rem;
-    }
-
-    .toolbar {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 12px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .search-bar {
-      flex: 1 1 260px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.98);
-      color: var(--text-main);
-      font-size: 13px;
-    }
-
-    .search-bar input::placeholder {
-      color: #6b7280;
-    }
-
-    .toggle-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-
-    .tag-btn {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
-      padding: 5px 10px;
-      background: transparent;
-      color: var(--text-soft);
-      cursor: pointer;
-    }
-
-    .tag-btn.active {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-      background: rgba(15,23,42,0.9);
-    }
-
-    .btn-small {
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: transparent;
-      color: var(--text-main);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-small.primary {
-      background: linear-gradient(135deg,#0ea5e9,#22c55e);
-      color: #020617;
-      border-color: rgba(15,23,42,0.9);
-      font-weight: 600;
-    }
-
-    /* GRID DE ARTIGOS / LIVROS */
-
-    .paper-section-label {
-      margin-top: 18px;
-      margin-bottom: 4px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    hr.section-divider {
-      border: none;
-      border-top: 1px solid rgba(30,64,175,0.7);
-      margin: 4px 0 10px;
-    }
-
-    .paper-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1fr);
-      gap: 12px;
-    }
-
-    .paper-card {
-      border-radius: 18px;
-      padding: 12px 14px 12px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.12), transparent 55%),
-        rgba(3,7,18,0.98);
-      border: 1px solid rgba(15,23,42,0.95);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.7);
-      font-size: 13px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 8px;
-    }
-
-    .paper-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .paper-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .paper-desc {
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .paper-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      color: var(--text-soft);
-      margin-top: 4px;
-    }
-
-    .chip span {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 9px;
-    }
-
-    /* CARDS DE LIVROS COM CAPA */
-
-    .book-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    .book-card {
-      border-radius: 18px;
-      padding: 10px 12px 12px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%),
-        rgba(3,7,18,0.98);
-      border: 1px solid rgba(15,23,42,0.95);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.7);
-      display: grid;
-      grid-template-columns: 110px minmax(0,1fr);
-      gap: 10px;
-      font-size: 13px;
-    }
-
-    .book-cover {
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      background: #020617;
-    }
-
-    .book-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .book-meta-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .book-meta-sub {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .book-desc {
-      font-size: 12px;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .book-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    footer {
-      margin-top: 22px;
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    @media (max-width: 880px) {
-      .layout { padding: 18px 14px 16px; }
-      .toolbar { flex-direction: column; align-items: stretch; }
-      .toggle-group { justify-content: flex-start; }
-      .book-grid { grid-template-columns: minmax(0,1fr); }
-      .book-card { grid-template-columns: minmax(0,1fr); }
-    }
-  </style>
+  <title>Research Archive · Black Science Institute</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-  <div class="page">
-    <!-- HEADER GLOBAL -->
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BSI</div>
-        <div>
-          <div class="brand-title">Black Science Institute</div>
-          <div class="brand-sub">Structural Plenitude Program</div>
-        </div>
-      </div>
 
-      <nav>
-        <a href="index.html">Editorials</a>
-        <a href="structural-plenitude-theory.html">SPT v1.3</a>
-        <a href="3i-atlas-structural-predictions.html">Predictions</a>
-        <a href="research.html" class="primary">Research Archive</a>
-      </nav>
-    </header>
+<body class="page-dark">
 
-    <!-- LAYOUT PRINCIPAL -->
-    <main class="layout">
-      <section class="layout-header">
-        <div class="kicker">Archive</div>
-        <h1 class="title">SPT v1.1–v1.3 Research Archive</h1>
-        <p class="subtitle">
-          Consolidated manuscripts, preprints, institutional editorials and books
-          associated with the Structural Plenitude Theory (SPT) and the Black Science
-          Institute. Use the search box or filters for quick navigation.
+  <!-- NAV SUPERIOR -->
+  <header class="top-nav">
+    <div class="logo">
+      <a href="index.html">Black Science Institute</a>
+    </div>
+    <nav class="top-nav-links">
+      <a href="index.html#editorials">Editorials</a>
+      <a href="structural-plenitude-theory.html">SPT v1.3</a>
+      <a href="3i-atlas-structural-predictions.html">3I/ATLAS Predictions</a>
+      <a href="research.html" class="active">Research Archive</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <!-- TÍTULO PRINCIPAL -->
+    <section class="hero hero-compact">
+      <h1>Research Archive</h1>
+      <p class="hero-meta">
+        Editorials · SPT v1.3 · 3I/ATLAS Predictions · Books
+      </p>
+    </section>
+
+    <!-- BOTÕES DE ÂNCORA (SEM JAVASCRIPT) -->
+    <nav class="pill-nav">
+      <a href="#editorials" class="pill">Editorials</a>
+      <a href="#spt" class="pill">SPT v1.3</a>
+      <a href="#predictions" class="pill">3I/ATLAS Predictions</a>
+      <a href="#books" class="pill">Books · BSI Editorial</a>
+    </nav>
+
+    <!-- EDITORIAIS -->
+    <section id="editorials" class="section-block">
+      <h2>Editorials</h2>
+
+      <article class="grid-card">
+        <h3>Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS</h3>
+        <p class="card-meta">BSI Editorial · January 2026 · SPT v1.3</p>
+        <p>
+          Editorial que sintetiza os dados públicos de 3I/ATLAS à luz do
+          paradigma estrutural, conectando metallicity imbalance, anticauda,
+          silêncio em rádio e desvios não gravitacionais a um único mecanismo:
+          interação matéria–substrato viscoelástico.
         </p>
-      </section>
+        <p>
+          <a href="3i-atlas-structural-predictions.html" class="button">
+            Open 3I/ATLAS Predictions Page
+          </a>
+        </p>
+      </article>
+    </section>
 
-      <!-- TOOLBAR -->
-      <div class="toolbar">
-        <div class="search-bar">
-          <input
-            id="archiveSearch"
-            type="text"
-            placeholder="Search by title, year, DOI, object (e.g. 3I/ATLAS) or keyword…"
-          />
-        </div>
+    <!-- SPT v1.3 -->
+    <section id="spt" class="section-block">
+      <h2>SPT v1.3 · Structural Plenitude Theory</h2>
 
-        <div class="toggle-group">
-          <button class="tag-btn active" data-filter="all">All</button>
-          <button class="tag-btn" data-filter="zenodo">Zenodo</button>
-          <button class="tag-btn" data-filter="researchgate">ResearchGate</button>
-          <button class="tag-btn" data-filter="editorial">Editorial</button>
-          <button class="tag-btn" data-filter="book">Books</button>
-        </div>
+      <article class="grid-card">
+        <h3>The Structural Plenitude Theory (SPT v1.3)</h3>
+        <p class="card-meta">Viscoelastic Substrate · Light · Gravitation · Redshift</p>
+        <p>
+          Conjunto de preprints que apresentam o pleroma como meio
+          viscoelástico, acoplamento η com matéria, impedância estrutural
+          <em>Z<sub>H</sub></em> e dissipação residual <em>ℛ</em>. Fundamenta a leitura
+          estrutural de cometas, objetos interestelares e dinâmica cosmológica.
+        </p>
+        <p>
+          <a href="structural-plenitude-theory.html" class="button">
+            Open SPT v1.3 Overview
+          </a>
+        </p>
+      </article>
+    </section>
 
-        <a href="index-pt.html" class="btn-small">Versão em Português</a>
-      </div>
+    <!-- 3I/ATLAS -->
+    <section id="predictions" class="section-block">
+      <h2>3I/ATLAS · Structural Predictions</h2>
 
-      <!-- CORE SPT MANUSCRIPTS -->
-      <div class="paper-section-label">Core SPT Manuscripts (Zenodo)</div>
-      <hr class="section-divider" />
+      <article class="grid-card">
+        <h3>3I/ATLAS – Jovian Impedance Window (March 2026)</h3>
+        <p class="card-meta">Prediction Dossier · Substrate Dynamics</p>
+        <p>
+          Dossiê de predição focado na entrada de 3I/ATLAS no gradiente de
+          impedância joviano, com cenários testáveis de emissão, silêncio
+          espectral e atraso de fase como critérios de refutação/validação da
+          SPT v1.3.
+        </p>
+        <p>
+          <a href="3i-atlas-structural-predictions.html" class="button">
+            Open Prediction Dossier
+          </a>
+        </p>
+      </article>
+    </section>
 
-      <div id="archiveGrid" class="paper-grid">
-        <!-- SPT v1.3 -->
-        <article
-          class="paper-card"
-          data-tags="spt v1.3 zenodo structural plenitude theory pleroma viscoelastic"
-          data-type="zenodo"
-        >
-          <div>
-            <h2 class="paper-title">
-              The Structural Plenitude Theory (SPT v1.3): A Viscoelastic Substrate for Light,
-              Gravitation and Cosmological Redshift
-            </h2>
-            <p class="paper-meta">
-              Preprint · Zenodo · 2025 — DOI:
-              <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank">
-                10.5281/zenodo.18120931
+    <!-- LIVROS -->
+    <section id="books" class="section-block">
+      <h2>Books · BSI Editorial</h2>
+
+      <div class="grid-2">
+
+        <!-- CARD PATOLOGIA -->
+        <article class="grid-card book-card">
+          <div class="book-cover-wrapper">
+            <img
+              src="patologia-cover.png"
+              alt="Capa de Patologia de um Regime"
+              class="book-cover"
+            />
+          </div>
+
+          <div class="book-meta">
+            <div class="book-meta-title">Patologia de um Regime</div>
+            <div class="book-meta-sub">
+              Geopolítica · Regimes · Análise Estrutural
+            </div>
+
+            <p class="book-desc">
+              Ensaio histórico-geopolítico que disseca a anatomia de regimes de
+              poder, expondo engrenagens de ideologia, conflito, controle e
+              manutenção do domínio em diferentes contextos do século XX e XXI.
+            </p>
+
+            <div class="button-row">
+              <a href="patologia.html" class="button">
+                Open Book / Landing Page
               </a>
-            </p>
-            <p class="paper-desc">
-              Foundational exposition of the viscoelastic vacuum (Pleroma), structural
-              impedance Z<sub>H</sub>, coupling efficiency η and residual radiative
-              dissipation ℛ, from local gravitation to cosmological redshift.
-            </p>
-          </div>
-          <div class="paper-links">
-            <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank" class="btn-small primary">
-              Open on Zenodo
-            </a>
-            <a href="#" target="_blank" class="btn-small">
-              Mirror on ResearchGate
-            </a>
-          </div>
-          <div class="chip">
-            <span>SPT v1.3</span>
-            <span>Zenodo</span>
+            </div>
           </div>
         </article>
 
-        <!-- SPT v1.2 (placeholder links) -->
-        <article
-          class="paper-card"
-          data-tags="spt v1.2 zenodo structural flux cosmology redshift"
-          data-type="zenodo"
-        >
-          <div>
-            <h2 class="paper-title">
-              Structural Flux Paradigm (SPT v1.2): Cosmological Implications of a
-              Viscoelastic Vacuum
-            </h2>
-            <p class="paper-meta">
-              Preprint · Zenodo · 2024 — DOI: <em>(substituir pelo DOI correto)</em>
-            </p>
-            <p class="paper-desc">
-              Extension of SPT to large-scale structure and cosmology, analysing luminosity
-              distance, redshift and dissipation without dark energy as a fundamental
-              component.
-            </p>
+        <!-- CARD VISIONÁRIOS -->
+        <article class="grid-card book-card">
+          <div class="book-cover-wrapper">
+            <img
+              src="visionarios-cover.png"
+              alt="Capa de Visionários — Semeando os Limites da Realidade"
+              class="book-cover"
+            />
           </div>
-          <div class="paper-links">
-            <a href="#" target="_blank" class="btn-small primary">Open on Zenodo</a>
-            <a href="#" target="_blank" class="btn-small">Mirror on ResearchGate</a>
-          </div>
-          <div class="chip">
-            <span>SPT v1.2</span>
-            <span>Zenodo</span>
+
+          <div class="book-meta">
+            <div class="book-meta-title">Visionários</div>
+            <div class="book-meta-sub">
+              Science-Fiction · Cosmogenesis
+            </div>
+
+            <p class="book-desc">
+              Romance de ficção científica situado em 2145 d.C., explorando uma
+              cosmogênese baseada em estruturas concêntricas, gravidade
+              geo-hídrica e tecnologias plenômicas ligadas à lógica interna da
+              SPT. A superinteligência no Pacífico e a arquitetura de poder
+              global revelam as consequências extremas de um planeta
+              completamente corporatizado.
+            </p>
+
+            <div class="button-row">
+              <a href="visionarios.html" class="button">
+                Open Book / Landing Page
+              </a>
+            </div>
           </div>
         </article>
 
-        <!-- Outro Zenodo genérico (placeholder para você replicar) -->
-        <article
-          class="paper-card"
-          data-tags="spt zenodo climate pleroma residual dissipation"
-          data-type="zenodo"
-        >
-          <div>
-            <h2 class="paper-title">
-              Structural Plenitude Theory — Applied Substrate Dynamics (Climate and Energy Balance)
-            </h2>
-            <p class="paper-meta">
-              Preprint · Zenodo · 2025 — DOI: <em>(substituir pelo DOI correto)</em>
-            </p>
-            <p class="paper-desc">
-              Application of SPT viscoelastic concepts to planetary energy balance,
-              radiative budgets and residual dissipation, providing independent tests
-              for the pleromic framework.
-            </p>
-          </div>
-          <div class="paper-links">
-            <a href="#" target="_blank" class="btn-small primary">Open on Zenodo</a>
-            <a href="#" target="_blank" class="btn-small">Mirror on ResearchGate</a>
-          </div>
-          <div class="chip">
-            <span>SPT</span>
-            <span>Zenodo</span>
-          </div>
-        </article>
-
-        <!-- ResearchGate collection -->
-        <article
-          class="paper-card"
-          data-tags="researchgate compilation structural plenitude theory pleroma field equations"
-          data-type="researchgate"
-        >
-          <div>
-            <h2 class="paper-title">
-              Structural Plenitude Theory — Collected Preprints and Technical Notes
-            </h2>
-            <p class="paper-meta">
-              Collection · ResearchGate · 10 publications linked
-            </p>
-            <p class="paper-desc">
-              Curated collection of SPT manuscripts hosted on ResearchGate, including
-              early drafts, technical appendices and exploratory notes on pleromic
-              field dynamics and observational signatures.
-            </p>
-          </div>
-          <div class="paper-links">
-            <a href="#" target="_blank" class="btn-small primary">
-              Open ResearchGate Collection
-            </a>
-          </div>
-          <div class="chip">
-            <span>ResearchGate</span>
-            <span>Collection</span>
-          </div>
-        </article>
-
-        <!-- Editorial 3I/ATLAS -->
-        <article
-          class="paper-card"
-          data-tags="editorial 3i atlas antitail impedance gradient jovian predictions"
-          data-type="editorial"
-        >
-          <div>
-            <h2 class="paper-title">
-              Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS
-            </h2>
-            <p class="paper-meta">
-              BSI Editorial · 2026 · English / Portuguese versions
-            </p>
-            <p class="paper-desc">
-              Institutional editorial connecting Ni/Fe imbalance, persistent antitail,
-              jet asymmetry, radio silence and non-gravitational drift as a single
-              phenomenon within SPT.
-            </p>
-          </div>
-          <div class="paper-links">
-            <a href="index.html" class="btn-small primary">Open Editorial (EN)</a>
-            <a href="index-pt.html" class="btn-small">Versão em Português</a>
-          </div>
-          <div class="chip">
-            <span>Editorial</span>
-            <span>3I/ATLAS</span>
-          </div>
-        </article>
       </div>
+    </section>
 
-      <!-- BOOKS -->
-      <div class="paper-section-label">Books · BSI Editorial</div>
-      <hr class="section-divider" />
+  </main>
 
-      <section class="book-grid">
-     <!-- PATOLOGIA DE UM REGIME -->
-<article
-  class="grid-card book-card"
-  data-tags="book patologia geopolitics non-fiction"
-  data-type="book">
-
-  <div class="book-cover-wrapper">
-    <img
-      src="assets/patologia-cover.png"
-      alt="Patologia de um Regime — Capa"
-      class="book-cover"
-    />
-  </div>
-
-  <div class="book-meta">
-    <div class="book-meta-title">Patologia de um Regime</div>
-    <div class="book-meta-sub">Geopolítica · Regimes · Análise Histórica</div>
-
-    <p class="book-desc">
-      Ensaio histórico-geopolítico que disseca a anatomia de regimes de poder,
-      expondo engrenagens de ideologia, controle, conflito e manutenção do
-      domínio ao longo do século XX e XXI. Estruturado em dossiês, conecta
-      eventos, atores e decisões estratégicas em uma leitura cirúrgica da
-      política global.
-    </p>
-
-    <div class="button-row">
-      <a href="patologia.html" class="button">Open Book / Landing Page</a>
-    </div>
-  </div>
-</article>
-
- 
-     <!-- VISIONÁRIOS -->
-<article
-  class="grid-card book-card"
-  data-tags="book visionarios sci-fi cosmogenesis"
-  data-type="book">
-
-  <div class="book-cover-wrapper">
-    <img
-      src="assets/visionarios-cover.png"
-      alt="Visionários — Capa"
-      class="book-cover"
-    />
-  </div>
-
-  <div class="book-meta">
-    <div class="book-meta-title">Visionários</div>
-    <div class="book-meta-sub">Science-Fiction · Cosmogenesis</div>
-
-    <p class="book-desc">
-      Romance de ficção científica que explora uma cosmogênese baseada em
-      estruturas concêntricas e em tecnologia plenômica avançada, situada no
-      Pacífico. A superinteligência é revelada de forma gradual, aproximando a
-      narrativa da lógica interna da SPT.
-    </p>
-
-    <div class="button-row">
-      <a href="visionarios.html" class="button">Open Book / Landing Page</a>
-    </div>
-  </div>
-</article>
-
-
-
-   <script>
-  function applyFilters() {
-    const query = (searchInput.value || "").toLowerCase();
-    const activeTag = tagButtons.find(btn => btn.classList.contains('active'))?.dataset.filter || 'all';
-    cards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      const type = card.dataset.type || 'all';
-      const matchesText = text.includes(query);
-      const matchesTag = activeTag === 'all' || type === activeTag;
-      card.style.display = (matchesText && matchesTag) ? '' : 'none';
-    });
-  }
-
-  const searchInput = document.querySelector('[data-role="search"]');
-  const tagButtons = Array.from(document.querySelectorAll('[data-role="tag-filter"]'));
-  const cards = Array.from(document.querySelectorAll('.grid-card'));
-
-  if (searchInput && tagButtons.length && cards.length) {
-    searchInput.addEventListener('input', applyFilters);
-    tagButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tagButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        applyFilters();
-      });
-    });
-  }
-</script>
 </body>
 </html>
