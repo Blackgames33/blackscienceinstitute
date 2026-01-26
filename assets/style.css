@@ -271,3 +271,16 @@ footer.site-footer {
   flex-wrap: wrap;
   gap: 8px;
 }
+/* Ajustes de capas de livros BSI */
+
+.hero-book-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;   /* mostra a capa inteira no patologia.html */
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;     /* para o card na research.html ficar bonito */
+}
