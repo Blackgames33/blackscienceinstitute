@@ -1,709 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Visionários — Semeando os Limites da Realidade · C. R. Ben Or</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
-    :root {
-      --bg-space: #020617;
-      --accent-blue: #38bdf8;
-      --accent-amber: #fbbf24;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --border-soft: rgba(15,23,42,0.9);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
-      min-height: 100vh;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 55%),
-        radial-gradient(circle at bottom, rgba(15,118,110,0.2), transparent 55%),
-        #020617;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    /* HEADER */
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #020617;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-    }
-
-    .brand-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    nav a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
-
-    nav a:hover { color: var(--accent-blue); }
-
-    nav a.primary {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-blue);
-    }
-
-    /* HERO */
-
-    .hero {
-      margin-top: 10px;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      background:
-        linear-gradient(135deg, rgba(15,23,42,0.98), rgba(3,7,18,0.98)),
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,0.5), transparent 60%);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.75);
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-    }
-
-    .hero-text {
-      padding: 24px 24px 22px 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .hero-kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .hero-title {
-      font-size: 26px;
-      font-weight: 650;
-    }
-
-    .hero-title span {
-      color: var(--accent-blue);
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 34rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-meta strong { color: var(--accent-amber); }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .btn {
-      font-size: 12px;
-      border-radius: 999px;
-      padding: 8px 16px;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: transparent;
-      color: var(--text-main);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg,#0ea5e9,#22c55e);
-      color: #020617;
-      border-color: rgba(15,23,42,0.9);
-      font-weight: 600;
-    }
-
-    .hero-image {
-      position: relative;
-      min-height: 260px;
-      background: radial-gradient(circle at 40% 20%, rgba(56,189,248,0.5), transparent 60%);
-      overflow: hidden;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.95;
-    }
-
-    .hero-tagline {
-      position: absolute;
-      bottom: 12px;
-      left: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-      text-shadow: 0 6px 16px rgba(0,0,0,0.9);
-    }
-
-    /* SEÇÕES */
-
-    .sections {
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
-      gap: 18px;
-    }
-
-    .card {
-      border-radius: 20px;
-      padding: 16px 18px 14px;
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 60%),
-                  rgba(15,23,42,0.98);
-      border: 1px solid rgba(15,23,42,0.9);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
-      font-size: 13px;
-    }
-
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .card-kicker {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .card p { color: var(--text-soft); }
-
-    .section-label {
-      margin-top: 26px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    hr.section-divider {
-      border: none;
-      border-top: 1px solid rgba(30,64,175,0.7);
-      margin: 4px 0 10px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-      gap: 18px;
-    }
-
-    .intro-card {
-      border-radius: 18px;
-      padding: 14px 16px 14px;
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.12), transparent 60%),
-                  rgba(3,7,18,0.98);
-      border: 1px solid rgba(15,23,42,0.95);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.75);
-      font-size: 13px;
-      line-height: 1.55;
-      max-height: 520px;
-      overflow-y: auto;
-    }
-
-    .intro-card h3 {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .intro-card p + p {
-      margin-top: 8px;
-    }
-
-    footer {
-      margin-top: 26px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(15,23,42,0.85);
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: minmax(0,1fr); }
-      .hero-text { padding: 20px 18px 18px; }
-      .hero-image { min-height: 220px; }
-      .sections { grid-template-columns: minmax(0,1fr); }
-      .intro-grid { grid-template-columns: minmax(0,1fr); }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Visionários — Arquitetura Talmont</title>
+<link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
-  <div class="page">
-    <!-- HEADER -->
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BSI</div>
-        <div>
-          <div class="brand-title">Black Science Institute</div>
-          <div class="brand-sub">Structural Plenitude Program</div>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html">Editorials</a>
-        <a href="structural-plenitude-theory.html">SPT v1.3</a>
-        <a href="3i-atlas-structural-predictions.html">Predictions</a>
-        <a href="research.html" class="primary">Research Archive</a>
-      </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <div class="hero-kicker">BSI · Fiction Program</div>
-        <h1 class="hero-title">
-          Visionários — <span>Semeando os Limites da Realidade</span>
-        </h1>
-        <p class="hero-subtitle">
-          Ano 2145 d.C. Três eixos corporativos controlam o planeta, uma elite dentro
-          da elite governa a partir de instalações invisíveis e tecnologias de
-          leitura mental sustentadas por servidores quânticos orbitam acima das
-          nuvens. Em meio a esse cenário, uma arquitetura secreta de poder — e uma
-          possível civilização paralela terrestre — começa a se revelar.
-        </p>
-        <div class="hero-meta">
-          <span><strong>C. R. Ben Or</strong></span>
-          <span>Arquitetura Talmont · Cosmogênese e Pleromic Technology</span>
-          <span>Fiction · Black Science Institute</span>
-        </div>
-        <div class="hero-actions">
-          <a href="research.html" class="btn btn-primary">Back to Research Archive</a>
-          <a href="index.html" class="btn">3I/ATLAS Editorial</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="assets/img/visionarios-cover.png" alt="Capa de Visionários — Semeando os Limites da Realidade" />
-        <div class="hero-tagline">Year 2145 A.D. · Financial Architects of Chaos</div>
-      </div>
-    </section>
+<header class="top-nav">
+  <a href="index.html" class="logo">Black Science Institute</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research Archive</a>
+    <a href="3i-atlas-structural-predictions.html">3I/ATLAS</a>
+  </nav>
+</header>
 
-    <!-- SEÇÕES CURTAS (SÍNTESE / UNIVERSO) -->
-    <section class="sections">
-      <article class="card">
-        <div class="card-kicker">About the Book</div>
-        <h2>Visionários as a BSI Narrative</h2>
-        <p>
-          <em>Visionários — Semeando os Limites da Realidade</em> is a science-fiction
-          project that extrapolates the political, economic and technological
-          implications of a fully corporatized planet in 2145 A.D. The novel
-          follows a world governed by three corporate axes, an invisible inner
-          circle of power and cognitive-control technologies derived from early
-          21st-century AI and quantum platforms.
-        </p>
-        <p style="margin-top:6px;">
-          The narrative is independent but aligned with the internal logic of the
-          Structural Plenitude Theory (SPT): parallel civilizations, deep
-          infrastructures and pleromic technologies are treated as consistent
-          structures rather than pure fantasy.
-        </p>
-      </article>
+<section class="hero-section">
+  <h1>Visionários — Arquitetura Talmont</h1>
+  <p class="hero-sub">Science-Fiction · Cosmogenesis · Plenomic Technology</p>
+  <img src="assets/visionarios-cover.png" class="hero-cover">
+</section>
 
-      <article class="card">
-        <div class="card-kicker">Universe &amp; Architecture Talmont</div>
-        <h2>Cosmogenesis and Hidden Governance</h2>
-        <p>
-          The broader universe of <em>Visionários</em> connects to the
-          <strong>Arquitetura Talmont (2092)</strong>: concentric brane-like layers
-          (Onion Cosmology), geo-hydric gravity channels, cronomagnetic effects and
-          deep-sea infrastructures in the Pacific hosting a super-intelligence.
-        </p>
-        <p style="margin-top:6px;">
-          While the present volume focuses on the socio-political and technological
-          surface — investors, executors, financial governance and cognitive
-          surveillance — subsequent material will expand the Talmont architecture
-          as a scientific-fiction backbone for the series.
-        </p>
-      </article>
-    </section>
+<section class="content">
 
-    <!-- INTRODUÇÕES EN / PT -->
-    <div class="section-label">Introdução · EN / PT</div>
-    <hr class="section-divider" />
+<h2>Introdução (Português)</h2>
+<p>
+Ano 2145 d.C.  
+A figura presidencial, outrora símbolo máximo do poder político, tornou-se
+uma relíquia decorativa — mero adorno cívico de um mundo que deixou de ser
+governado por nações.
+</p>
 
-    <section class="intro-grid">
-      <!-- Português -->
-      <article class="intro-card">
-        <h3>Introdução (Português)</h3>
+<p>
+O planeta reorganizou-se em três eixos administrativos geridos por
+megacorporações que assumiram silenciosamente o papel dos Estados.
+Territórios tornaram-se zonas corporativas e populações inteiras,
+funcionários globais.
+</p>
 
-        <p><strong>Ano 2145 d.C.</strong></p>
+<p>
+O conceito de cidadania foi substituído por filiação organizacional.
+A sociedade dividiu-se entre investidores — detentores do capital global — e
+cumpridores — operadores dos processos corporativos.
+</p>
 
-        <p>
-          A figura presidencial, outrora símbolo máximo do poder político, tornou-se
-          uma relíquia decorativa. Tal qual reis e rainhas da velha Europa,
-          presidentes tornaram-se mero adorno cívico — um símbolo esvaziado,
-          preservado mais por nostalgia do que por relevância.
-        </p>
+<p>
+Enquanto o mundo acreditava caminhar em direção a um governo mundial, uma
+verdade amarga foi revelada: esse projeto nunca existiu. O verdadeiro poder
+estava nas mãos de estruturas financeiras transnacionais e sistemas
+quânticos de inteligência artificial que remodelaram a própria lógica do
+poder.
+</p>
 
-        <p>
-          A era das nações havia terminado. O planeta, agora, se organizava em três
-          grandes eixos administrativos, estruturas colossais geridas por
-          megacorporações que assumiram, de maneira silenciosa e inevitável, a
-          função que antes pertencera aos Estados soberanos.
-        </p>
+<p>
+Servidores quânticos orbitais, tecnologias de decodificação mental e uma
+governança invisível sustentam um mundo que parece futurista, mas é apenas
+inevitável.
+</p>
 
-        <p>
-          Territórios transformaram-se em zonas corporativas, e suas populações, em
-          funcionários globais. O conceito de cidadania fora substituído por
-          filiação organizacional.
-        </p>
+<hr>
 
-        <p>
-          As políticas internas restringiam-se aos interesses de cada eixo. A
-          governança pública, como se conhecia no século XXI, não passava de
-          memória. A sociedade dividira-se entre duas castas irreversíveis: os
-          investidores, portadores da cadeia global de capital; e os cumpridores,
-          trabalhadores integrados aos processos operacionais dessas corporações.
-        </p>
+<h2>Introduction (English Version)</h2>
+<p>
+Year 2145 A.D.  
+The presidential figure — once the ultimate symbol of political authority —
+has become a decorative relic. Much like the monarchs of old Europe,
+presidents survive as civic ornaments preserved more for nostalgia than for
+relevance.
+</p>
 
-        <p>
-          Durante séculos, acreditou-se que o mundo caminhava rumo a um governo
-          mundial, uma espécie de ampliação da ONU. Teorias conspiratórias, debates
-          de bastidores, discursos diplomáticos — todos orbitavam essa narrativa.
-        </p>
+<p>
+The age of nations is over.  
+The planet is now governed by three administrative axes run by colossal
+megacorporations, which gradually and silently took over the role once
+assigned to sovereign states.
+</p>
 
-        <p>
-          Mas a verdade revelada tardiamente foi amarga: o suposto governo mundial
-          nunca passou de desvio de foco. Enquanto o mundo olhava para a ONU, para
-          organismos multilaterais, para tratados e conferências, um outro poder
-          crescia vorazmente, alimentado por mentes ambiciosas e por uma tecnologia
-          que remodelaria a própria natureza do poder.
-        </p>
+<p>
+Citizenship has been replaced by organizational affiliation. Society is
+divided into two irreversible castes: investors — holders of the global
+capital chain — and fulfillers — workers integrated into corporate
+operational structures.
+</p>
 
-        <p>
-          Plataformas híbridas quântico-clássicas, integradas a sistemas de
-          inteligência artificial de “computação universal”, tornaram-se o
-          verdadeiro centro de gravidade da nova ordem.
-        </p>
+<p>
+While the world looked toward the UN and diplomatic forums expecting the rise
+of a global government, a deeper truth emerged: the real power was never
+there. It was held by transnational financial structures and hybrid
+quantum-classical AI platforms capable of reshaping the nature of power
+itself.
+</p>
 
-        <p>
-          <strong>Contexto tecnológico — início do século XXI:</strong> IBM
-          Nighthawk: 1.121 qubits, 99,9% de fidelidade em seus gates. Google
-          Willow: primeiro sistema operacional abaixo do threshold de erro, marco
-          quântico em 2025. Algoritmos de otimização como o Monte Carlo, acelerados
-          em 12% por aplicações quânticas (JPMorgan). Decoerência ainda rápida
-          (100 μs) e escalabilidade limitada — mas suficiente para abrir a porta do
-          impossível.
-        </p>
+<hr>
 
-        <p>
-          Enquanto isso, as guerras do século XXI ainda pareciam disputas
-          territoriais. Governos, exércitos, bandeiras — tudo fachada. O verdadeiro
-          comando estava nas mãos de bancos de investimento e estruturas
-          financeiras transnacionais. Foram eles que guiaram, invisíveis, os passos
-          de cada nação.
-        </p>
+<a href="research.html" class="button">Back to Research Archive</a>
 
-        <p>
-          As megacorporações herdaram esse legado. Durante décadas, mascararam seu
-          avanço por meio da defesa insistente de privatizações como única solução
-          para o crescimento econômico. Criaram um vocabulário próprio para moldar
-          a opinião pública: “intervencionismo”, “protecionismo”, “economias
-          fechadas”, “riscos ao mercado”. Países nacionalistas eram taxados como
-          totalitários.
-        </p>
+</section>
 
-        <p>
-          Essa engenharia linguística foi a chave para justificar a transferência de
-          todos os setores estratégicos ao controle privado. Quando finalmente
-          consolidaram seu domínio, estruturaram-se em três eixos centrais de poder,
-          governados não por presidentes ou parlamentos, mas por oligarcas — famílias
-          que detinham o monopólio absoluto sobre os fluxos de capital, informação e
-          tecnologia.
-        </p>
-
-        <p>
-          Apenas um país resistiu: Israel. Diminuiu em território, perdeu parte do
-          Oriente Médio, mas sobreviveu apoiado em autonomia tecnológica e sistemas
-          de subsistência próprios. Os Estados Unidos, ironicamente — cofundadores
-          das primeiras corporações globais — foram absorvidos por um dos eixos.
-        </p>
-
-        <p>
-          Com o risco de que a própria estrutura corporativa se tornasse instável,
-          uma camada ainda mais profunda de governança foi criada: um poder acima
-          dos três eixos, tão metódico e disciplinado quanto o Partido Comunista em
-          sua forma mais rígida. Uma elite dentro da elite. Somente alguns poucos
-          tinham acesso a esse nível. O resto do planeta sequer sabia que tal câmara
-          existia.
-        </p>
-
-        <p>
-          Rumores falavam de instalações inacessíveis — uma delas localizada no
-          interior da Antártica, totalmente isolada. Outras eram mais misteriosas:
-          uma possível sede submarina no Pacífico, próxima à costa americana; ou
-          ainda estruturas móveis, invisíveis às redes civis.
-        </p>
-
-        <p>
-          Mas o rumor mais sombrio era outro: a hipótese de que uma civilização
-          terrestre paralela, existente há milhões de anos, teria se revelado a um
-          dos eixos. Não eram extraterrestres, como se acreditou por séculos nos
-          mitos ufológicos — mas seres que sempre estiveram aqui, ocultos, operando
-          em silêncio sob a superfície. Uma parceria antiga, finalmente exposta a
-          uma minúscula fração da elite dominante.
-        </p>
-
-        <p>
-          Para a maioria da população, tudo isso não passava de especulação —
-          teorias absurdas que continuavam circulando em setores da sociedade e nos
-          hangares de entretenimento, histórias que permaneciam no imaginário
-          popular.
-        </p>
-
-        <p>
-          Enquanto isso, tecnologias outrora consideradas impossíveis tornaram-se
-          armas de controle cognitivo. Ainda no início do século XXI, uma equipe da
-          Universidade do Texas havia desenvolvido um sistema de IA capaz de ler
-          pensamentos de forma não invasiva — um decodificador semântico publicado
-          na <em>Nature Neuroscience</em>. Dois séculos depois, essa tecnologia era a
-          base da governança global.
-        </p>
-
-        <p>
-          Servidores quânticos, sustentados por plataformas solares, flutuavam acima
-          das nuvens, próximos à ionosfera — invisíveis e inalcançáveis. A
-          humanidade vivia sob a vigilância constante de sistemas tão avançados que
-          pareciam sobrenaturais.
-        </p>
-
-        <p><strong>Na verdade, eram apenas inevitáveis.</strong></p>
-      </article>
-
-      <!-- English -->
-      <article class="intro-card">
-        <h3>Introduction (English)</h3>
-
-        <p><strong>Year 2145 A.D.</strong></p>
-
-        <p>
-          The presidential figure, once the highest symbol of political power, had
-          become a decorative relic. Like the kings and queens of old Europe,
-          presidents were reduced to mere civic ornaments — an emptied symbol,
-          preserved more out of nostalgia than relevance.
-        </p>
-
-        <p>
-          The age of nations had ended. The planet was now organized into three
-          great administrative axes, colossal structures managed by megacorporations
-          that had silently and inevitably taken over the role once held by
-          sovereign States.
-        </p>
-
-        <p>
-          Territories had been transformed into corporate zones, and their
-          populations into global employees. The very concept of citizenship had
-          been replaced by organizational affiliation.
-        </p>
-
-        <p>
-          Internal policies were limited to the interests of each axis. Public
-          governance, as it had been known in the 21st century, was nothing more
-          than a memory. Society had split into two irreversible castes: the
-          investors, holders of the global chain of capital; and the executors,
-          workers integrated into the operational processes of these corporations.
-        </p>
-
-        <p>
-          For centuries, it was believed that the world was moving toward a world
-          government, some kind of expanded UN. Conspiracy theories, backroom
-          debates, diplomatic speeches — everything orbited that narrative.
-        </p>
-
-        <p>
-          But the truth, revealed too late, was bitter: the supposed world
-          government had never been more than a distraction. While the world watched
-          the UN, multilateral organizations, treaties and conferences, another
-          power was growing voraciously, fed by ambitious minds and by a technology
-          that would reshape the very nature of power.
-        </p>
-
-        <p>
-          Hybrid quantum-classical platforms, integrated with “universal
-          computation” AI systems, became the true center of gravity of the new
-          order.
-        </p>
-
-        <p>
-          <strong>Technological context — early 21st century:</strong> IBM Nighthawk:
-          1,121 qubits, 99.9% gate fidelity. Google Willow: first operating system
-          below the error threshold, a quantum milestone in 2025. Optimization
-          algorithms such as Monte Carlo, accelerated by 12% through quantum
-          applications (JPMorgan). Decoherence still fast (100 μs) and scalability
-          limited — but sufficient to crack open the door to the impossible.
-        </p>
-
-        <p>
-          Meanwhile, the wars of the 21st century still looked like territorial
-          disputes. Governments, armies, flags — all of it was façade. The real
-          command lay in the hands of investment banks and transnational financial
-          structures. They were the ones who, invisibly, guided the steps of each
-          nation.
-        </p>
-
-        <p>
-          The megacorporations inherited that legacy. For decades, they masked their
-          advance through the relentless defense of privatization as the only path
-          to economic growth. They created a vocabulary of their own to mold public
-          opinion: “interventionism,” “protectionism,” “closed economies,” “market
-          risk.” Nationalist countries were branded as totalitarian.
-        </p>
-
-        <p>
-          This linguistic engineering was the key that justified transferring every
-          strategic sector into private control. When they finally consolidated
-          their dominion, they structured themselves into three central axes of
-          power, governed not by presidents or parliaments, but by oligarchs —
-          families that held absolute monopoly over the flows of capital,
-          information, and technology.
-        </p>
-
-        <p>
-          Only one country resisted: Israel. It shrank in territory, lost part of
-          the Middle East, but survived through technological autonomy and its own
-          subsistence systems. The United States, ironically — co-founder of the
-          first global corporations — was absorbed by one of the axes.
-        </p>
-
-        <p>
-          With the risk that the corporate structure itself might become unstable,
-          an even deeper layer of governance was created: a power above the three
-          axes, as methodical and disciplined as the Communist Party in its most
-          rigid form. An elite within the elite. Only a very few had access to that
-          level. The rest of the planet had no idea that such a chamber even
-          existed.
-        </p>
-
-        <p>
-          Rumors spoke of inaccessible facilities — one of them located deep in
-          Antarctica, completely isolated. Others were even more mysterious: a
-          possible submarine headquarters in the Pacific, near the American coast;
-          or mobile structures, invisible to civilian networks.
-        </p>
-
-        <p>
-          But the darkest rumor was another: the hypothesis that a parallel
-          terrestrial civilization, existing for millions of years, had revealed
-          itself to one of the axes. They were not extraterrestrials, as the UFO
-          myths had preached for centuries — but beings that had always been here,
-          hidden, operating in silence beneath the surface. An ancient partnership,
-          finally exposed to a tiny fraction of the ruling elite.
-        </p>
-
-        <p>
-          For most of the population, all this was nothing more than speculation —
-          absurd theories still circulating in corners of society and in
-          entertainment hangars, stories that lingered in the popular imagination.
-        </p>
-
-        <p>
-          Meanwhile, technologies once considered impossible had become weapons of
-          cognitive control. Back in the early 21st century, a team at the
-          University of Texas had developed an AI system capable of reading thoughts
-          non-invasively — a semantic decoder published in <em>Nature Neuroscience</em>.
-          Two centuries later, that technology was the backbone of global
-          governance.
-        </p>
-
-        <p>
-          Quantum servers, powered by solar platforms, floated above the clouds,
-          close to the ionosphere — invisible and unreachable. Humanity lived under
-          the constant surveillance of systems so advanced they seemed supernatural.
-        </p>
-
-        <p><strong>In truth, they were only inevitable.</strong></p>
-      </article>
-    </section>
-
-    <footer>
-      <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
-      <span>
-        Contact:
-        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-      </span>
-    </footer>
-  </div>
 </body>
 </html>
