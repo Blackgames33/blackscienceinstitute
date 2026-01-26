@@ -220,3 +220,54 @@ footer.site-footer {
     z-index: 1; /* Fica acima da overlay e da imagem */
     color: #fff;
 }
+/* Card Visionários — Layout padrão (capa em cima, texto embaixo) */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-cover-wrapper {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+.book-meta {
+  background: rgba(13, 17, 23, 0.85);
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.book-meta-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.book-meta-sub {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #9ca3af;
+}
+
+.book-desc {
+  font-size: 13px;
+  color: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.book-card .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
