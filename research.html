@@ -655,23 +655,25 @@
 
 
 
-    function applyFilters() {
-      const query = (searchInput.value || '').toLowerCase();
-      const activeTag = tagButtons.find(btn => btn.classList.contains('active'))?.dataset.filter || 'all';
+   <script>
+  function applyFilters() {
+    const query = (searchInput.value || "").toLowerCase();
+    const activeTag = tagButtons.find(btn => btn.classList.contains('active'))?.dataset.filter || 'all';
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      const type = card.dataset.type || 'all';
+      const matchesText = text.includes(query);
+      const matchesTag = activeTag === 'all' || type === activeTag;
+      card.style.display = (matchesText && matchesTag) ? '' : 'none';
+    });
+  }
 
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        const type = card.dataset.type || 'all';
+  const searchInput = document.querySelector('[data-role="search"]');
+  const tagButtons = Array.from(document.querySelectorAll('[data-role="tag-filter"]'));
+  const cards = Array.from(document.querySelectorAll('.grid-card'));
 
-        const matchesText = text.includes(query);
-        const matchesTag = activeTag === 'all' || type === activeTag;
-
-        card.style.display = (matchesText && matchesTag) ? '' : 'none';
-      });
-    }
-
+  if (searchInput && tagButtons.length && cards.length) {
     searchInput.addEventListener('input', applyFilters);
-
     tagButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         tagButtons.forEach(b => b.classList.remove('active'));
@@ -679,6 +681,7 @@
         applyFilters();
       });
     });
-  </script>
+  }
+</script>
 </body>
 </html>
