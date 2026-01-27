@@ -27,12 +27,15 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      background: #000000 !important;
-      color: var(--fg);
-      font-family: "Roboto", system-ui, -apple-system, sans-serif;
-      scroll-behavior: smooth;
+  html,
+body {
+  background: #000000 !important;
+  color: var(--fg);
+  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;   /* <<< adiciona esta linha */
+}
+
     }
 
     .page {
@@ -144,11 +147,17 @@
       background: #000 !important;
     }
 
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
-      align-items: center;
+  .hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;   /* tudo em uma coluna, centralizado */
+  text-align: center;
+}
+.hero-copy {
+  display: none;
+}
+
     }
 
     .hero-kicker {
@@ -194,16 +203,18 @@
     }
 
     .hero-moon {
-  width: min(480px, 70vw);
-  height: min(480px, 70vw);
+  width: min(900px, 95vw);      /* grande no desktop, quase tela cheia no mobile */
+  aspect-ratio: 16 / 9;         /* proporção típica de logo wide 4K */
   margin: 0 auto;
-  border-radius: 0; /* não queremos mais bolinha, e sim o retângulo da arte */
+  border-radius: 0;             /* nada de círculo, é retângulo mesmo */
   background-color: #000;
-  background-image: url('assets/images/bsi-hero.png'); /* ajuste o nome se usou outro */
+  background-image: url('assets/images/bsi-hero.png'); /* ou o nome que você usou */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: none; /* podemos desligar a sombra pra ficar igual ao Astron */
+  box-shadow: none;
+}
+
 }
 
     }
