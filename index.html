@@ -9,13 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --bg: #000000;
-      --fg: #f5f5f5;
-      --muted: #8b90a0;
-      --accent: #ffffff;
-      --accent-soft: rgba(255, 255, 255, 0.08);
-      --border-soft: rgba(255, 255, 255, 0.12);
+   :root {
+  --bg: #000000;
+  --fg: #ffffff;
+  --muted: #e0e0e0;                 /* cinza bem claro, quase branco */
+  --accent: #ffffff;
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.20);
+  ...
+}
+
       --radius-xl: 22px;
       --transition-fast: 160ms ease-out;
       --max-width: 1120px;
@@ -92,13 +95,13 @@ body {
 
     .nav-title-main {
       font-family: "Montserrat";
-      font-size: 0.78rem;
-      letter-spacing: 0.26em;
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
     .nav-title-sub {
-      font-size: 0.66rem;
+      font-size: 0.60rem;
       text-transform: uppercase;
       color: var(--muted);
       letter-spacing: 0.18em;
@@ -110,14 +113,19 @@ body {
       font-family: "Montserrat";
     }
 
-    .nav-links a {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: 0.18em;
-      position: relative;
-      padding-bottom: 4px;
-    }
+   .nav-links a {
+  font-size: 0.70rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: 0.8;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
 
     .nav-links a:hover {
       color: var(--fg);
@@ -185,6 +193,15 @@ body {
       margin-bottom: 28px;
       max-width: 430px;
     }
+.hero-sub,
+.lua-body,
+.section-sub,
+.area-body,
+.bp-body,
+.nav-links a,
+.nav-title-sub {
+  color: var(--fg);
+}
 
     .pill {
       border: 1px solid rgba(255,255,255,0.12);
@@ -338,7 +355,9 @@ body {
       border-radius: 50%;
       margin: 0 auto;
       background: #000; /* aqui depois entra a lua real */
-      box-shadow: 0 0 60px rgba(255,255,255,0.08);
+  box-shadow: 0 0 30px rgba(255,255,255,0.04);
+}
+
     }
 
     .lua-text-kicker {
@@ -393,6 +412,9 @@ body {
               <div class="nav-title-sub">Viscoelastic Vacuum &amp; SPT</div>
             </div>
           </div>
+.bsi-mark {
+  display: none;
+}
 
           <div class="nav-links">
             <a href="#topo">Home</a>
@@ -418,15 +440,16 @@ body {
               </h1>
 
               <p class="hero-sub">
-                Instituto independente de física teórica e cosmologia, dedicado à
-                <strong>Structural Plenitude Theory (SPT)</strong>, ao vácuo viscoelástico e à reinterpretação de dados observacionais.
-              </p>
+  Independent institute in theoretical physics and cosmology, focused on
+  <strong>Structural Plenitude Theory (SPT)</strong>, the viscoelastic vacuum and a critical reinterpretation of observational data.
+</p>
 
-              <div class="hero-tags">
-                <div class="pill">Structural Plenitude Theory</div>
-                <div class="pill">Viscoelastic Vacuum</div>
-                <div class="pill">3I/ATLAS Predictions</div>
-              </div>
+<div class="hero-tags">
+  <div class="pill">Structural Plenitude Theory (SPT)</div>
+  <div class="pill">Viscoelastic vacuum</div>
+  <div class="pill">3I/ATLAS predictions</div>
+</div>
+
 
               <div class="hero-actions">
                 <a href="#publicacoes">
@@ -464,19 +487,18 @@ body {
               </div>
             </div>
 
-            <div class="lua-text">
-              <div class="lua-text-kicker">Structural Plenitude Theory</div>
-              <h2 class="lua-title">Vácuo como meio viscoelástico</h2>
-              <p class="lua-body">
-                A SPT propõe que o “vácuo” não é vazio, mas um <strong>substrato plerômico</strong> com propriedades
-                viscoelásticas. Luz, gravidade e redshift cosmológico emergem como <strong>fenômenos de dissipação e
-                tensão</strong> nesse meio, e não apenas como geodésicas em um espaço-tempo geométrico.
-              </p>
-              <p class="lua-body">
-                Nesta abordagem, objetos como <strong>3I/ATLAS</strong>, caudas plasmáticas planetárias e anomalias de
-                campo deixam de ser exceções e passam a ser <strong>assinaturas dinâmicas</strong> do acoplamento entre
-                matéria e Pleroma.
-              </p>
+            <div class="lua-text-kicker">Structural Plenitude Theory (SPT)</div>
+<h2 class="lua-title">Vacuum as a viscoelastic medium</h2>
+<p class="lua-body">
+  SPT proposes that the "vacuum" is not empty, but a <strong>pleromic substrate</strong> with viscoelastic properties.
+  Light, gravitation and cosmological redshift emerge as <strong>dissipative and tension phenomena</strong> in this medium,
+  instead of mere geodesics in a geometric space-time.
+</p>
+<p class="lua-body">
+  In this framework, objects such as <strong>3I/ATLAS</strong>, planetary plasma tails and field anomalies cease to be exceptions
+  and become <strong>dynamic signatures</strong> of the coupling between matter and Pleroma.
+</p>
+
 
               <div class="lua-meta">
                 <div class="lua-meta-item">Modelo: SPT v1.3–1.4</div>
@@ -492,16 +514,13 @@ body {
       <section class="section-areas" id="areas">
         <div class="shell">
           <div class="section-header">
-            <div class="section-kicker" style="font-family: 'Montserrat'; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); font-size: 0.76rem;">
-              Research & Publishing
-            </div>
+           <div class="section-kicker" ...>Research & Publishing</div>
+<h2 class="section-title">Research axes</h2>
+<p class="section-sub">
+  BSI organizes its work in cores that connect theory, observation and data reinterpretation,
+  keeping SPT as a unifying structure.
+</p>
 
-            <h2 class="section-title">Eixos de atuação</h2>
-
-            <p class="section-sub" style="font-size: 0.9rem; color: var(--muted); line-height: 1.6; max-width: 460px;">
-              O BSI organiza sua produção em núcleos que conectam teoria, observação e reinterpretação de dados,
-              mantendo a SPT como estrutura unificadora.
-            </p>
           </div>
 
           <style>
@@ -588,43 +607,31 @@ body {
             <!-- PUBLICATIONS -->
             <article class="area-card">
               <div class="area-icon">P</div>
+            
               <h3 class="area-title">Publishing</h3>
-              <p class="area-body">
-                Pré-prints, relatórios técnicos e dossiês publicados em repositórios como o Zenodo,
-                com foco em previsões, refutabilidade e interface com modelos padrão.
-              </p>
-              <div class="area-link">Ver repositório</div>
-            </article>
+<p class="area-body">
+  Preprints, technical reports and dossiers released in repositories such as Zenodo,
+  focusing on predictions, refutability and interface with standard models.
+</p>
 
-            <!-- TEÓRICA -->
-            <article class="area-card">
-              <div class="area-icon">T</div>
-              <h3 class="area-title">Ciência Teórica</h3>
-              <p class="area-body">
-                Desenvolvimento matemático da SPT: campo plerômico, tensões viscoelásticas, acoplamento
-                e equações covariantes.
-              </p>
-              <div class="area-link">Equações & formalismo</div>
-            </article>
+<h3 class="area-title">Theoretical science</h3>
+<p class="area-body">
+  Mathematical development of SPT: pleromic field, viscoelastic tensions, coupling
+  and covariant equations.
+</p>
 
-            <!-- OBSERVACIONAL -->
-            <article class="area-card">
-              <div class="area-icon">O</div>
-              <h3 class="area-title">Observação & Predições</h3>
-              <p class="area-body">
-                Aplicações diretas: 3I/ATLAS, auroras anômalas, cauda plasmática da Terra,
-                anisotropias e assinaturas plerômicas mensuráveis.
-              </p>
-              <div class="area-link">3I/ATLAS & dados</div>
-            </article>
+<h3 class="area-title">Observation & predictions</h3>
+<p class="area-body">
+  Direct applications: 3I/ATLAS, anomalous auroras, Earth’s plasma tail,
+  anisotropies and measurable pleromic signatures.
+</p>
 
-            <!-- COSMOGENÉTICA -->
-            <article class="area-card">
-              <div class="area-icon">C</div>
-              <h3 class="area-title">Cosmogenética</h3>
-              <p class="area-body">
-                Implicações da SPT para a arquitetura cosmológica, distribuição de matéria e
-                formação de sistemas.
+<h3 class="area-title">Cosmogenetics</h3>
+<p class="area-body">
+  Implications of SPT for cosmological architecture, matter distribution and
+  system formation.
+</p>
+
               </p>
               <div class="area-link">Mapa conceitual</div>
             </article>
@@ -657,21 +664,22 @@ body {
 
               <h2 class="bp-title">BSI Black Planet</h2>
 
-              <p class="bp-body" style="font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 18px;">
-                O <strong>BSI Black Planet</strong> é o símbolo visual da proposta: um corpo imerso em Pleroma denso,
-                com camadas internas opacas e um halo sutil que indica tensão, dissipação e arraste.
-              </p>
+             <p class="bp-body">
+  The <strong>BSI Black Planet</strong> is the visual symbol of the proposal: a body immersed in a dense Pleroma,
+  with opaque internal layers and a subtle halo indicating tension, dissipation and drag.
+</p>
 
-              <p class="bp-body" style="font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 18px;">
-                Ele condensa a estética do instituto: <strong>minimalismo escuro</strong>, precisão técnica
-                e ruptura paradigmática. Toda a iconografia do site orbita este conceito.
-              </p>
+<p class="bp-body">
+  It condenses the institute’s aesthetic: <strong>dark minimalism</strong>, technical precision
+  and paradigm rupture. All site iconography orbits this concept.
+</p>
 
-              <div class="bp-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;">
-                <div class="bp-meta-pill">Estética: dark</div>
-                <div class="bp-meta-pill">Fundo: preto total</div>
-                <div class="bp-meta-pill">Marca d’água: BSI</div>
-                <div class="bp-meta-pill">Uso: Hero & Visuals</div>
+
+              <div class="bp-meta-pill">Aesthetic: dark</div>
+<div class="bp-meta-pill">Background: pure black</div>
+<div class="bp-meta-pill">Watermark: BSI</div>
+<div class="bp-meta-pill">Usage: hero & visuals</div>
+
               </div>
             </div>
           </div>
