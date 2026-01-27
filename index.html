@@ -2,313 +2,308 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Black Science Institute — 3I/ATLAS · SPT v1.3</title>
+  <title>Black Science Institute · Structural Plenitude Theory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg-space: #020617;
-      --accent-blue: #38bdf8;
-      --accent-amber: #fbbf24;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
-      min-height: 100vh;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.3), transparent 55%),
-        radial-gradient(circle at bottom, rgba(15,118,110,0.18), transparent 55%),
-        #020617;
-    }
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #020617;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-    }
-    .brand-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .brand-sub {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    nav a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
-    nav a:hover { color: var(--accent-blue); }
-    nav a.primary {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-blue);
-    }
+  <meta
+    name="description"
+    content="Black Science Institute — Structural Plenitude Theory (SPT v1.3), 3I/ATLAS structural predictions and planetary research archive."
+  />
 
-    .hero {
-      margin-top: 10px;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      background:
-        linear-gradient(135deg, rgba(15,23,42,0.98), rgba(3,7,18,0.98)),
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,0.5), transparent 60%);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.75);
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-    }
-    .hero-text {
-      padding: 26px 26px 26px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      justify-content: center;
-    }
-    .hero-kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-    .hero-title {
-      font-size: 26px;
-      font-weight: 650;
-    }
-    .hero-title span { color: var(--accent-blue); }
-    .hero-sub {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 34rem;
-    }
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-    .hero-meta strong { color: var(--accent-amber); }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-    .btn {
-      font-size: 12px;
-      border-radius: 999px;
-      padding: 8px 16px;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: transparent;
-      color: var(--text-main);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg,#0ea5e9,#22c55e);
-      color: #020617;
-      border-color: rgba(15,23,42,0.9);
-      font-weight: 600;
-    }
-    .hero-image {
-      position: relative;
-      min-height: 260px;
-      background: radial-gradient(circle at 30% 20%, rgba(56,189,248,0.4), transparent 60%);
-      overflow: hidden;
-    }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.9;
-    }
-    .hero-tagline {
-      position: absolute;
-      bottom: 12px;
-      left: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-      text-shadow: 0 6px 16px rgba(0,0,0,0.9);
-    }
+  <!-- Fonte limpa (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-    .sections {
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
-      gap: 18px;
-    }
-    .card {
-      border-radius: 20px;
-      padding: 16px 18px 14px;
-      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 60%),
-                  rgba(15,23,42,0.98);
-      border: 1px solid rgba(15,23,42,0.9);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
-      font-size: 13px;
-    }
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-    .card-kicker {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-    .card p { color: var(--text-soft); }
-    .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
-      color: var(--text-soft);
-    }
-    .card ul li + li { margin-top: 3px; }
-
-    footer {
-      margin-top: 28px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(15,23,42,0.85);
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: minmax(0,1fr); }
-      .hero-text { padding: 20px 18px 18px; }
-      .hero-image { min-height: 200px; }
-      .sections { grid-template-columns: minmax(0,1fr); }
-      nav { flex-wrap: wrap; justify-content: flex-end; }
-    }
-  </style>
+  <!-- CSS global antigo -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- CSS específico da nova home -->
+  <link rel="stylesheet" href="home.css" />
 </head>
-<body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BSI</div>
-        <div>
-          <div class="brand-title">Black Science Institute</div>
-          <div class="brand-sub">Structural Plenitude Program</div>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html" class="primary">Editorials</a>
+
+<body class="bsi-body">
+  <!-- ================= HEADER ================= -->
+  <header class="bsi-header">
+    <div class="bsi-header-inner">
+      <a href="index.html" class="bsi-logo">
+        <img src="assets/logo.png" alt="Black Science Institute" class="bsi-logo-mark" />
+        <span class="bsi-logo-text">
+          Black Science Institute
+          <span class="bsi-logo-sub">Structural Plenitude Theory</span>
+        </span>
+      </a>
+
+      <nav class="bsi-nav">
         <a href="structural-plenitude-theory.html">SPT v1.3</a>
-        <a href="3i-atlas-structural-predictions.html">Predictions</a>
+        <a href="3i-atlas-structural-predictions.html">3I/ATLAS</a>
         <a href="research.html">Research Archive</a>
+        <a href="#planets">Solar System</a>
+        <a href="#books">Books</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
+  <main>
+    <!-- ============== HERO PRINCIPAL ============== -->
     <section class="hero">
-      <div class="hero-text">
-        <div class="hero-kicker">BSI Editorial — January 2026</div>
-        <h1 class="hero-title">
-          Interstellar Material, Structural Dynamics, and the Emerging Pattern
-          Behind <span>3I/ATLAS</span>
-        </h1>
-        <p class="hero-sub">
-          An institutional reading of 3I/ATLAS under the Structural Plenitude Theory
-          (SPT v1.3), connecting metallicity imbalance, antitail persistence, jet
-          asymmetry and radio silence as a single viscoelastic substrate interaction.
-        </p>
-        <div class="hero-meta">
-          <span><strong>SPT v1.3</strong> · Structural Flux Paradigm</span>
-          <span>3I/ATLAS — C/2025 A1</span>
-          <span>BSI Editorial Review</span>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">Black Science Institute</p>
+          <h1 class="hero-title">
+            Structural Plenitude Theory<br />
+            <span class="hero-title-accent">Viscoelastic Vacuum &amp; Interstellar Dynamics</span>
+          </h1>
+
+          <p class="hero-lead">
+            A research program exploring light, gravitation and redshift as
+            dissipative phenomena in a viscoelastic substrate — from Solar
+            System anisotropies to the structural behaviour of 3I/ATLAS.
+          </p>
+
+          <div class="hero-actions">
+            <a href="3i-atlas-structural-predictions.html" class="btn btn-primary">
+              3I/ATLAS Predictions
+            </a>
+            <a href="research.html" class="btn btn-ghost">
+              Open Research Archive
+            </a>
+          </div>
+
+          <dl class="hero-meta">
+            <div>
+              <dt>Core Framework</dt>
+              <dd>SPT v1.1 · v1.2 · v1.3</dd>
+            </div>
+            <div>
+              <dt>Key Concepts</dt>
+              <dd>Viscoelastic Pleroma · η · Z<sub>H</sub> · ℛ</dd>
+            </div>
+          </dl>
         </div>
-        <div class="hero-actions">
-          <a href="research.html" class="btn btn-primary">Research Archive</a>
-          <a href="index-pt.html" class="btn">Versão em Português</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="assets/img/hero-3iatlas.png" alt="3I/ATLAS traversing the plenomic substrate" />
-        <div class="hero-tagline">
-          3I/ATLAS · Viscoelastic Substrate Interaction · BSI
+
+        <div class="hero-planet-wrap">
+          <!-- HERO PLANET IMAGE -->
+          <!-- Coloque aqui a lua/planeta dark em alta resolução -->
+          <!-- Nome do arquivo no GitHub: assets/hero-planet.jpg -->
+          <img
+            src="assets/hero-planet.jpg"
+            alt="BSI · Celestial substrate visualization"
+            class="hero-planet"
+          />
+
+          <!-- Halo / logo leve da BSI -->
+          <div class="hero-orbit-badge">
+            <div class="orbit-ring"></div>
+            <div class="orbit-core"></div>
+            <span class="orbit-label">BSI · SPT v1.3</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="sections">
-      <article class="card">
-        <div class="card-kicker">Theory Framework</div>
-        <h2>Structural Plenitude Theory (SPT v1.3)</h2>
+    <!-- ============== SOLAR SYSTEM CARDS ============== -->
+    <section id="planets" class="section section-planets">
+      <div class="section-header">
+        <h2>Solar System / Substrate Interactions</h2>
         <p>
-          SPT models the vacuum as a viscoelastic substrate (Pleroma) with structural
-          impedance Z<sub>H</sub>, coupling efficiency η and residual radiative dissipation ℛ.
+          Planetary environments used as natural laboratories for testing
+          viscoelastic coupling, anisotropy and structural dissipation in the
+          Pleroma.
         </p>
-        <ul>
-          <li>Viscoelastic vacuum substrate (Pleroma)</li>
-          <li>Material-dependent coupling η and impedance Z<sub>H</sub></li>
-          <li>Residual radiative channel ℛ</li>
-          <li>Jovian impedance gradient as a natural test bench</li>
-        </ul>
-      </article>
+      </div>
 
-      <article class="card">
-        <div class="card-kicker">Observation Program</div>
-        <h2>3I/ATLAS — Jovian March 2026 Window</h2>
-        <p>
-          As 3I/ATLAS enters the Jovian impedance gradient, SPT predicts a transition
-          in substrate drag, potential brightening and measurable deviations from
-          purely gravitational trajectories without invoking classical outgassing.
-        </p>
-      </article>
+      <div class="planet-grid">
+        <!-- Um card por planeta; você só precisa colocar as imagens em /assets/ -->
+        <!-- MERCURY -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-mercury.jpg');"></div>
+          <div class="planet-info">
+            <h3>Mercury</h3>
+            <p>
+              Extreme temperature gradients and minimal atmosphere as boundary
+              conditions for high-impedance coupling.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- VENUS -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-venus.jpg');"></div>
+          <div class="planet-info">
+            <h3>Venus</h3>
+            <p>
+              Dense atmosphere and runaway greenhouse as probes of radiative
+              dissipation and residual emission ℛ.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- EARTH -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-earth.jpg');"></div>
+          <div class="planet-info">
+            <h3>Earth</h3>
+            <p>
+              Magnetosphere, auroral asymmetries and Jovian-aligned structures
+              as direct signatures of substrate flow.
+            </p>
+            <a href="structural-plenitude-theory.html" class="planet-link">
+              Open SPT overview
+            </a>
+          </div>
+        </article>
+
+        <!-- MOON -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-moon.jpg');"></div>
+          <div class="planet-info">
+            <h3>Moon</h3>
+            <p>
+              Tidal locking and libration patterns under viscoelastic tension
+              in the local Pleroma field.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- MARS -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-mars.jpg');"></div>
+          <div class="planet-info">
+            <h3>Mars</h3>
+            <p>
+              Atmospheric loss, dust storms and remnant magnetism as dissipative
+              endpoints of substrate-anchored regimes.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- JUPITER -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-jupiter.jpg');"></div>
+          <div class="planet-info">
+            <h3>Jupiter</h3>
+            <p>
+              Jovian impedance gradient, antitails and 3I/ATLAS as coupled
+              probes of large-scale substrate structure.
+            </p>
+            <a href="3i-atlas-structural-predictions.html" class="planet-link">
+              3I/ATLAS window · March 2026
+            </a>
+          </div>
+        </article>
+
+        <!-- SATURN -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-saturn.jpg');"></div>
+          <div class="planet-info">
+            <h3>Saturn</h3>
+            <p>
+              Ring dynamics and oscillatory modes interpreted as stratified
+              viscoelastic responses.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- URANUS -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-uranus.jpg');"></div>
+          <div class="planet-info">
+            <h3>Uranus</h3>
+            <p>
+              Axial tilt and seasonal extremes as tests of anisotropic
+              substrate alignment over long timescales.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+
+        <!-- NEPTUNE -->
+        <article class="planet-card">
+          <div class="planet-thumb" style="background-image:url('assets/planet-neptune.jpg');"></div>
+          <div class="planet-info">
+            <h3>Neptune</h3>
+            <p>
+              Supersonic winds and deep convection driven by structural fluxes
+              in the outer Pleroma.
+            </p>
+            <a href="research.html" class="planet-link">Open related notes</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <footer>
-      <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
-      <span>Contact: <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></span>
-    </footer>
-  </div>
+    <!-- ============== BOOKS SECTION ============== -->
+    <section id="books" class="section section-books">
+      <div class="section-header">
+        <h2>Books · BSI Editorial</h2>
+        <p>
+          Long-form projects connecting SPT, geopolitics and speculative
+          cosmogenesis — anchored in technical research.
+        </p>
+      </div>
+
+      <div class="books-grid">
+        <!-- Patologia de um Regime -->
+        <article class="book-card">
+          <div class="book-thumb">
+            <img src="assets/patologia-cover.png" alt="Patologia de um Regime" />
+          </div>
+          <div class="book-info">
+            <h3>Patologia de um Regime</h3>
+            <p class="book-tagline">
+              Geopolítica · Regimes · Análise Estrutural
+            </p>
+            <p class="book-desc">
+              Ensaio histórico-geopolítico que disseca a anatomia de regimes de
+              poder, expondo engrenagens de ideologia, controle, conflito e
+              manutenção do domínio ao longo do século XX e XXI.
+            </p>
+            <div class="book-actions">
+              <a href="patologia.html" class="btn btn-primary">Open Book Page</a>
+              <a href="https://zenodo.org/" class="btn btn-ghost">Zenodo / Preprints</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Visionários -->
+        <article class="book-card">
+          <div class="book-thumb">
+            <img src="assets/visionarios-cover.png" alt="Visionários — Semeando os Limites da Realidade" />
+          </div>
+          <div class="book-info">
+            <h3>Visionários — Semeando os Limites da Realidade</h3>
+            <p class="book-tagline">
+              Science-Fiction · Cosmogenesis · Plenomic Technology
+            </p>
+            <p class="book-desc">
+              Romance de ficção científica situado em 2145 d.C., explorando uma
+              ordem corporativa global, uma superinteligência no Pacífico e uma
+              cosmogênese baseada em estruturas concêntricas e gravidade
+              geo-hídrica.
+            </p>
+            <div class="book-actions">
+              <a href="visionarios.html" class="btn btn-primary">Open Book Page</a>
+              <a href="research.html" class="btn btn-ghost">Worldbuilding Notes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="bsi-footer">
+    <p>© Black Science Institute — Structural Plenitude Theory Program</p>
+    <p class="bsi-footer-sub">
+      Hosted research: Zenodo · ResearchGate · Independent archive
+    </p>
+  </footer>
 </body>
 </html>
