@@ -194,21 +194,18 @@
     }
 
     .hero-moon {
-      width: min(360px, 70vw);
-      height: min(360px, 70vw);
-      border-radius: 50%;
-      margin: auto;
-      background: #000; /* fundo neutro */
-      overflow: hidden;
-      box-shadow: 0 0 50px rgba(255,255,255,0.06);
-    }
+  width: min(480px, 70vw);
+  height: min(480px, 70vw);
+  margin: 0 auto;
+  border-radius: 0; /* não queremos mais bolinha, e sim o retângulo da arte */
+  background-color: #000;
+  background-image: url('assets/images/bsi-hero.png'); /* ajuste o nome se usou outro */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: none; /* podemos desligar a sombra pra ficar igual ao Astron */
+}
 
-    /* SEÇÃO LUA 100% PRETA */
-    .section-lua {
-      padding: 120px 0 140px;
-      background: #000 !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
     .lua-title {
