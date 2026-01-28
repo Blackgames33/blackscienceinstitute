@@ -57,51 +57,32 @@
 
     /* HEADER / NAV ------------------------------------------------------- */
     .site-header {
-      position: fixed;
+      position: absolute;           /* rola junto com a página */
       top: 0;
       left: 0;
       width: 100%;
       z-index: 40;
-      background: rgba(0,0,0,0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: transparent;      /* sem barra sólida em cima */
     }
 
     .nav {
-      height: 68px;
+      height: 72px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
     }
 
+    /* escondemos o bloco de texto da esquerda */
     .nav-left {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .nav-title-main {
-      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-      font-size: 0.70rem;
-      font-weight: 300;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-    }
-
-    .nav-title-sub {
-      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
-      font-size: 0.60rem;
-      font-weight: 300;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      color: var(--muted);
+      display: none;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 28px;
       font-family: "Montserrat", system-ui, -apple-system, sans-serif;
       align-items: center;
+      margin: 0 auto;
     }
 
     .nav-links a {
@@ -110,9 +91,28 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--fg);
-      opacity: 0.8;
+      opacity: 0.85;
       position: relative;
       padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--fg);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     /* DROPDOWN PAGES ----------------------------------------------------- */
@@ -163,31 +163,12 @@
       display: flex;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--fg);
-      transition: width var(--transition-fast);
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
     @media (max-width: 820px) {
       .nav {
         gap: 16px;
       }
       .nav-links {
-        gap: 14px;
+        gap: 16px;
       }
       .nav-links a {
         letter-spacing: 0.14em;
@@ -201,7 +182,7 @@
     /* HERO --------------------------------------------------------------- */
     .hero {
       min-height: 100vh;
-      padding-top: 110px;
+      padding-top: 120px;  /* espaço suficiente para o menu sobre a lua */
       display: flex;
       align-items: center;
       background: #000000;
@@ -294,7 +275,7 @@
 
     /* SECTION SPT -------------------------------------------------------- */
     .section-lua {
-      padding: 120px 0 140px;
+      padding: 110px 0 130px;
       background: #000000;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -348,7 +329,7 @@
 
     /* SECTION AREAS ------------------------------------------------------ */
     .section-areas {
-      padding: 120px 0 110px;
+      padding: 110px 0 110px;
       background: #000000;
     }
 
@@ -423,7 +404,7 @@
 
     /* SECTION BLACK PLANET ----------------------------------------------- */
     .section-black-planet {
-      padding: 140px 0 140px;
+      padding: 130px 0 130px;
       background: #000000;
       border-top: 1px solid rgba(255,255,255,0.12);
     }
@@ -517,8 +498,7 @@
       <div class="shell">
         <nav class="nav">
           <div class="nav-left">
-            <div class="nav-title-main">BLACK SCIENCE INSTITUTE</div>
-            <div class="nav-title-sub">Viscoelastic vacuum · SPT</div>
+            <!-- oculto por CSS, mantido só por semântica -->
           </div>
           <div class="nav-links">
             <a href="#top">Home</a>
@@ -531,12 +511,11 @@
                 Pages <span class="nav-caret">▾</span>
               </a>
               <div class="nav-dropdown">
-                <!-- Ajuste os href para os arquivos reais que você já tem -->
                 <a href="structural-plenitude-theory.html">SPT — main paper</a>
                 <a href="3i-atlas-structural-predictions.html">3I/ATLAS predictions</a>
                 <a href="research.html">Research notes</a>
                 <a href="patologia.html">Book — Patologia de um Regime</a>
-                <a href="visionarios.html">Project — Visionários</a>
+                <a href="visionarios.html">Book — Visionários</a>
                 <a href="index-pt.html">Homepage · Portuguese</a>
               </div>
             </div>
@@ -576,9 +555,7 @@
         <div class="shell">
           <div class="section-lua-inner">
             <div class="lua-visual-wrapper">
-              <div class="lua-full" id="lua-full">
-                <!-- Future: full BSI Moon artwork as background-image -->
-              </div>
+              <div class="lua-full" id="lua-full"></div>
             </div>
 
             <div class="lua-text">
@@ -674,9 +651,7 @@
         <div class="shell">
           <div class="bp-inner">
             <div class="bp-visual">
-              <div class="bp-planet" id="bp-planet">
-                <!-- Later this becomes the BSI Black Planet artwork -->
-              </div>
+              <div class="bp-planet" id="bp-planet"></div>
             </div>
 
             <div class="bp-text">
