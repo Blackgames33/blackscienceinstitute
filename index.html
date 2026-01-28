@@ -62,7 +62,7 @@
       left: 0;
       width: 100%;
       z-index: 40;
-      background: transparent;      /* sem barra sólida em cima */
+      background: transparent;
     }
 
     .nav {
@@ -72,9 +72,8 @@
       justify-content: center;
     }
 
-    /* escondemos o bloco de texto da esquerda */
     .nav-left {
-      display: none;
+      display: none; /* mantido vazio só por semântica */
     }
 
     .nav-links {
@@ -182,7 +181,7 @@
     /* HERO --------------------------------------------------------------- */
     .hero {
       min-height: 100vh;
-      padding-top: 120px;  /* espaço suficiente para o menu sobre a lua */
+      padding-top: 120px;
       display: flex;
       align-items: center;
       background: #000000;
@@ -208,8 +207,7 @@
       margin: 0 auto;
       border-radius: 0;
       background-color: #000;
-      /* AJUSTE O CAMINHO SE O NOME DA IMAGEM FOR OUTRO */
-      background-image: url('assets/images/bsi-hero.png');
+      background-image: url('assets/images/bsi-hero.png'); /* caminho da imagem do logo */
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -449,6 +447,74 @@
       color: var(--fg);
     }
 
+    /* SECTION CONTACT ---------------------------------------------------- */
+    .section-contact {
+      padding: 100px 0 90px;
+      background: #000000;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-brand-title {
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      font-size: 1.0rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .contact-brand-body {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--fg);
+      max-width: 420px;
+    }
+
+    .contact-icons {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-col-title {
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--fg);
+    }
+
+    .contact-list-item + .contact-list-item {
+      margin-top: 4px;
+    }
+
     /* FOOTER ------------------------------------------------------------- */
     .site-footer {
       background: #000000;
@@ -482,6 +548,11 @@
       .areas-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -497,9 +568,7 @@
     <header class="site-header">
       <div class="shell">
         <nav class="nav">
-          <div class="nav-left">
-            <!-- oculto por CSS, mantido só por semântica -->
-          </div>
+          <div class="nav-left"></div>
           <div class="nav-links">
             <a href="#top">Home</a>
             <a href="#lua">SPT</a>
@@ -521,6 +590,7 @@
             </div>
 
             <a href="#black-planet">BSI Planet</a>
+            <a href="#contact">Contact</a>
           </div>
         </nav>
       </div>
@@ -673,6 +743,38 @@
                 <div class="bp-meta-pill">Background: pure black</div>
                 <div class="bp-meta-pill">Watermark: BSI</div>
                 <div class="bp-meta-pill">Usage: hero &amp; visuals</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION — CONTACT -->
+      <section class="section-contact" id="contact">
+        <div class="shell">
+          <div class="contact-inner">
+            <div class="contact-brand">
+              <div class="contact-brand-title">BLACK SCIENCE INSTITUTE</div>
+              <p class="contact-brand-body">
+                Independent research in Structural Plenitude Theory, viscoelastic vacuum and
+                cosmology. For collaborations, data exchange or peer discussion, use the channels below.
+              </p>
+
+              <div class="contact-icons">
+                <!-- Troque os href="#" pelos links reais -->
+                <a class="contact-icon" href="#" target="_blank" title="Zenodo">Z</a>
+                <a class="contact-icon" href="#" target="_blank" title="ResearchGate">R</a>
+                <a class="contact-icon" href="#" target="_blank" title="GitHub / Code">G</a>
+              </div>
+            </div>
+
+            <div class="contact-info">
+              <div class="contact-col">
+                <div class="contact-col-title">Get in touch</div>
+                <div class="contact-list">
+                  <div class="contact-list-item">research@blackscienceinstitute.org</div>
+                  <div class="contact-list-item">São Paulo · Brazil</div>
+                </div>
               </div>
             </div>
           </div>
