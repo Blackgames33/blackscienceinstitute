@@ -559,7 +559,31 @@
       .areas-grid {
         grid-template-columns: 1fr;
       }
-    }
+ /* AJUSTES PARA CELULAR (TELAS ESTREITAS) */
+@media (max-width: 540px) {
+  .nav {
+    height: auto;
+    padding-top: 14px;
+    padding-bottom: 8px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;              /* permite quebrar em 2 linhas */
+    row-gap: 6px;
+    column-gap: 18px;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.60rem;           /* um pouco menor no mobile */
+    letter-spacing: 0.12em;       /* menos espaço entre letras */
+  }
+
+  .hero {
+    padding-top: 160px;           /* mais espaço porque o header ficou mais alto */
+  }
+}
+   }
   </style>
 </head>
 <body>
