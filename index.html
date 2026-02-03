@@ -1,231 +1,374 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Science Institute | SPT v1.4</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --dim: rgba(255, 255, 255, 0.5);
-            --border: rgba(255, 255, 255, 0.1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Science Institute — Structural Plenitude Theory</title>
+  <meta name="description" content="Instituto independente de pesquisa em Structural Plenitude Theory (SPT), substrato viscoelástico do vácuo (Pleroma), cosmologia e análise de objetos interestelares como 3I/ATLAS." />
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Fonts leves e modernas (como no Astron) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+  <!-- Seu favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
-        /* Fundo de Estrelas Estático e Profundo */
-        canvas#space {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.6;
-        }
+  <style>
+    :root {
+      --bg: #000000;
+      --fg: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --border-soft: rgba(255, 255, 255, 0.18);
+      --radius: 16px;
+      --max-width: 1240px;
+      --transition: 0.3s ease;
+    }
 
-        .shell { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* HEADER INSPIRADO NA FOTO 2 (ASTRON) */
-        header {
-            height: 100px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-        }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        nav {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    a { color: inherit; text-decoration: none; }
 
-        .logo-area img {
-            height: 50px; /* Logo BSI da primeira foto */
-            display: block;
-        }
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
+    /* Header fixo com backdrop blur (como Astron) */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.4s;
+    }
 
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            font-weight: 300;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
+    header.scrolled { background: rgba(0,0,0,0.92); }
 
-        .nav-links a:hover { opacity: 1; color: #fff; }
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        /* HERO SECTION - FOTO 1 */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            padding-top: 100px;
-        }
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      font-weight: 400;
+    }
 
-        .hero-title {
-            z-index: 10;
-        }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-        .hero h1 {
-            font-size: clamp(2rem, 6vw, 4.5rem);
-            font-weight: 100;
-            letter-spacing: 15px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+    .nav-links a {
+      opacity: 0.85;
+      transition: opacity var(--transition), transform var(--transition);
+    }
 
-        .hero h2 {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: 300;
-            letter-spacing: 8px;
-            color: var(--dim);
-            text-transform: uppercase;
-        }
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
 
-        /* LUA INFERIOR - IDENTIDADE BSI */
-        .lunar-base {
-            position: absolute;
-            bottom: -5%;
-            width: 100%;
-            max-width: 900px;
-            z-index: 5;
-            filter: brightness(0.9) contrast(1.1);
-            mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0));
-        }
+    /* Hero full-screen (inspirado no Astron) */
+    .hero {
+      height: 100vh;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
 
-        .lunar-base img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('assets/images/bsi-hero.png') center/cover no-repeat;
+      opacity: 0.6;
+      z-index: 1;
+    }
 
-        /* STATUS BAR - TELEMETRIA */
-        .telemetry-grid {
-            position: absolute;
-            bottom: 40px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            z-index: 20;
-            font-family: 'Roboto Mono', monospace;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
 
-        .t-item span {
-            display: block;
-            font-size: 0.6rem;
-            letter-spacing: 4px;
-            color: var(--dim);
-            margin-bottom: 5px;
-        }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
 
-        .t-item p { font-size: 0.8rem; letter-spacing: 1px; }
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      max-width: 720px;
+      margin: 0 auto 48px;
+      opacity: 0.9;
+    }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .telemetry-grid { gap: 20px; flex-direction: column; bottom: 20px; }
-            .hero h1 { letter-spacing: 5px; }
-        }
-    </style>
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 10px 22px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      transition: all var(--transition);
+    }
+
+    .tag:hover {
+      background: var(--accent-soft);
+      opacity: 1;
+    }
+
+    /* Seções gerais */
+    section {
+      padding: 140px 0;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 80px;
+      text-transform: uppercase;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .visual {
+      text-align: center;
+    }
+
+    .planet {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 50%;
+      box-shadow: 0 0 80px rgba(255,255,255,0.05);
+      transition: transform 0.6s ease;
+    }
+
+    .planet:hover { transform: scale(1.05); }
+
+    .text-content {
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+
+    /* Cards de research (como no Astron) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    footer {
+      padding: 80px 0 40px;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer a { opacity: 0.7; transition: opacity var(--transition); }
+    footer a:hover { opacity: 1; }
+
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+      .hero-title { font-size: 5rem; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 3.5rem; }
+      .section-title { font-size: 2.4rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <canvas id="space"></canvas>
-
-    <header>
-        <div class="shell">
-            <nav>
-                <div class="logo-area">
-                    <img src="logo-bsi.png" alt="BLACK SCIENCE INSTITUTE">
-                </div>
-                <div class="nav-links">
-                    <a href="#spt">Theory</a>
-                    <a href="#data">3I/ATLAS</a>
-                    <a href="#lab">Laboratory</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
+  <!-- Header -->
+  <header>
+    <div class="shell">
+      <nav>
+        <div class="logo">BLACK SCIENCE INSTITUTE</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#spt">SPT</a>
+          <a href="#research">Pesquisa</a>
+          <a href="#contact">Contato</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <main class="hero">
-        <div class="hero-title">
-            <h1>Black Science</h1>
-            <h2>Institute</h2>
+  <!-- Hero (grande e cósmico como Astron) -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Structural Plenitude Theory</h1>
+      <p class="hero-subtitle">
+        O vácuo não é vazio. É um substrato contínuo, viscoelástico e denso — o Pleroma — onde luz, gravidade e matéria emergem como tensões estruturais e respostas dinâmicas.
+      </p>
+      <div class="hero-tags">
+        <div class="tag">SPT v1.4</div>
+        <div class="tag">Pleroma Substrate</div>
+        <div class="tag">Viscoelastic Vacuum</div>
+        <div class="tag">3I/ATLAS Analysis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPT Section -->
+  <section id="spt">
+    <div class="shell">
+      <h2 class="section-title">O Substrato Pleroma</h2>
+      <div class="grid-2">
+        <div class="visual">
+          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
         </div>
-
-        <div class="telemetry-grid">
-            <div class="t-item"><span>SYSTEM</span><p>SPT v1.4 ACTIVE</p></div>
-            <div class="t-item"><span>ROTATION</span><p>6.842H / SYNC</p></div>
-            <div class="t-item"><span>ANOMALY</span><p>CLASS X8.1 SOLAR</p></div>
+        <div class="text-content">
+          <p>SPT propõe que o vácuo quântico é um meio físico absoluto, com propriedades viscoelásticas perfeitas. Não há espaço vazio: há tensão estrutural contínua e dissipação residual.</p>
+          <p>Luz, gravidade e redshift cosmológico são emergentes desse substrato. Objetos como 3I/ATLAS revelam assinaturas diretas de acoplamento dinâmico — anti-tail assimétrico, jets, silêncio rádio inicial.</p>
+          <div class="meta-tags">
+            <div class="meta">v1.4 — Unified Framework</div>
+            <div class="meta">Pesquisa Independente</div>
+            <div class="meta">Black Science Institute</div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="lunar-base">
-            <img src="lua-bsi-base.png" alt="Celestial Body">
+  <!-- Research Cards -->
+  <section id="research" style="background:#0a0a0a;">
+    <div class="shell">
+      <h2 class="section-title">Eixos de Pesquisa</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title">Formalismo Matemático</h3>
+          <p class="card-body">Equações covariantes, viscoelasticidade relativística (Israel-Stewart), impedância estrutural Z_H e acoplamento η.</p>
         </div>
-    </main>
+        <div class="card">
+          <h3 class="card-title">Aplicações Observacionais</h3>
+          <p class="card-body">Predições para 3I/ATLAS (substrate drag, transição impedante joviana), auroras anômalas, caudas plasmáticas.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cosmogênese</h3>
+          <p class="card-body">Implicações para formação de matéria, distribuição cosmológica e sistemas complexos emergentes do Pleroma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        const canvas = document.getElementById('space');
-        const ctx = canvas.getContext('2d');
-        let stars = [];
+  <!-- Contact -->
+  <section id="contact">
+    <div class="shell" style="text-align:center;">
+      <h2 class="section-title">Contato</h2>
+      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
+        Colaborações teóricas, discussões sobre SPT ou troca de dados observacionais: estamos abertos.
+      </p>
+      <p style="font-size:1.4rem; margin:20px 0;">
+        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
+      </p>
+      <p style="opacity:0.7;">São Paulo, Brasil</p>
+    </div>
+  </section>
 
-        function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            stars = [];
-            for(let i=0; i<400; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    size: Math.random() * 1.1,
-                    opacity: Math.random()
-                });
-            }
-        }
+  <!-- Footer -->
+  <footer>
+    <div class="shell">
+      <p>© 2026 Black Science Institute · Structural Plenitude Theory</p>
+      <p style="margin-top:16px;">
+        <a href="https://x.com/CRAzevedo33" target="_blank">X</a> ·
+        <a href="https://www.researchgate.net/profile/Carlos-Azevedo-17" target="_blank">ResearchGate</a> ·
+        <a href="https://zenodo.org" target="_blank">Zenodo</a>
+      </p>
+    </div>
+  </footer>
 
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(s => {
-                ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
-                ctx.fill();
-            });
-        }
+  <script>
+    // Parallax leve no hero (como Astron)
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      document.querySelector('.hero-bg').style.transform = `translateY(${scroll * 0.3}px)`;
+    });
 
-        window.addEventListener('resize', init);
-        init();
-        draw();
-    </script>
+    // Header scrolled effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 100);
+    });
+  </script>
+
 </body>
 </html>
