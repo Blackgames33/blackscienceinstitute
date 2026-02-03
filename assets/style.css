@@ -284,3 +284,115 @@ footer.site-footer {
   height: auto;
   object-fit: cover;     /* para o card na research.html ficar bonito */
 }
+/* ================================
+   BOOKS · BSI EDITORIAL
+================================ */
+
+.books-wrap {
+  padding: 96px 0;
+  background: #000;
+}
+
+.books-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.books-head {
+  margin-bottom: 64px;
+}
+
+.books-head .kicker {
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.books-head .title {
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin: 12px 0;
+}
+
+.books-head .subtitle {
+  max-width: 520px;
+  font-size: 0.95rem;
+  opacity: 0.6;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.cover img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.meta h3 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tags span {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.meta p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 520px;
+  opacity: 0.7;
+}
+
+.actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 10px 18px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn.ghost {
+  opacity: 0.6;
+}
+
+@media (max-width: 860px) {
+  .book {
+    grid-template-columns: 1fr;
+  }
+
+  .cover img {
+    max-width: 240px;
+    margin-bottom: 24px;
+  }
+}
