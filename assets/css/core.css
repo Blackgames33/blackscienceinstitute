@@ -1,1 +1,48 @@
 
+/* ===============================
+   BSI — CORE (BASE GLOBAL)
+   =============================== */
+
+:root {
+  --bg: #0b0b0d;
+  --bg-soft: #111216;
+  --fg: #e8e8ea;
+  --fg-muted: #9a9aa3;
+  --accent: #4da6ff;
+  --border-soft: rgba(255,255,255,0.08);
+  --radius: 14px;
+  --max-width: 1180px;
+  --transition: 160ms ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
