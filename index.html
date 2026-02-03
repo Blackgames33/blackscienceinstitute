@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Science Institute — Structural Plenitude Theory</title>
-  <meta name="description" content="Instituto independente de pesquisa em Structural Plenitude Theory (SPT), substrato viscoelástico do vácuo (Pleroma), cosmologia e análise de objetos interestelares como 3I/ATLAS." />
+  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
 
-  <!-- Fonts leves e modernas (como no Astron) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 
-  <!-- Seu favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <style>
+    /* Seu CSS completo mantido + ajustes leves para texto em EN */
     :root {
       --bg: #000000;
       --fg: #e0e0e0;
@@ -25,11 +26,7 @@
       --transition: 0.3s ease;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: var(--bg);
@@ -44,12 +41,9 @@
 
     .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-    /* Header fixo com backdrop blur (como Astron) */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      top: 0; left: 0; width: 100%;
       z-index: 1000;
       background: rgba(0,0,0,0.7);
       backdrop-filter: blur(12px);
@@ -92,7 +86,6 @@
       transform: translateY(-2px);
     }
 
-    /* Hero full-screen (inspirado no Astron) */
     .hero {
       height: 100vh;
       min-height: 800px;
@@ -107,7 +100,7 @@
 
     .hero-bg {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background: url('assets/images/bsi-hero.png') center/cover no-repeat;
       opacity: 0.6;
       z-index: 1;
@@ -158,10 +151,7 @@
       opacity: 1;
     }
 
-    /* Seções gerais */
-    section {
-      padding: 140px 0;
-    }
+    section { padding: 140px 0; }
 
     .section-title {
       font-family: 'Montserrat', sans-serif;
@@ -180,9 +170,7 @@
       align-items: center;
     }
 
-    .visual {
-      text-align: center;
-    }
+    .visual { text-align: center; }
 
     .planet {
       width: 100%;
@@ -194,12 +182,8 @@
 
     .planet:hover { transform: scale(1.05); }
 
-    .text-content {
-      font-size: 1.1rem;
-      opacity: 0.92;
-    }
+    .text-content { font-size: 1.1rem; opacity: 0.92; }
 
-    /* Cards de research (como no Astron) */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -228,11 +212,8 @@
       margin-bottom: 20px;
     }
 
-    .card-body {
-      opacity: 0.85;
-    }
+    .card-body { opacity: 0.85; }
 
-    /* Footer */
     footer {
       padding: 80px 0 40px;
       text-align: center;
@@ -257,7 +238,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="shell">
       <nav>
@@ -265,20 +245,19 @@
         <div class="nav-links">
           <a href="#home">Home</a>
           <a href="#spt">SPT</a>
-          <a href="#research">Pesquisa</a>
-          <a href="#contact">Contato</a>
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero (grande e cósmico como Astron) -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content">
       <h1 class="hero-title">Structural Plenitude Theory</h1>
       <p class="hero-subtitle">
-        O vácuo não é vazio. É um substrato contínuo, viscoelástico e denso — o Pleroma — onde luz, gravidade e matéria emergem como tensões estruturais e respostas dinâmicas.
+        The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
       </p>
       <div class="hero-tags">
         <div class="tag">SPT v1.4</div>
@@ -289,20 +268,19 @@
     </div>
   </section>
 
-  <!-- SPT Section -->
   <section id="spt">
     <div class="shell">
-      <h2 class="section-title">O Substrato Pleroma</h2>
+      <h2 class="section-title">The Pleroma Substrate</h2>
       <div class="grid-2">
         <div class="visual">
           <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
         </div>
         <div class="text-content">
-          <p>SPT propõe que o vácuo quântico é um meio físico absoluto, com propriedades viscoelásticas perfeitas. Não há espaço vazio: há tensão estrutural contínua e dissipação residual.</p>
-          <p>Luz, gravidade e redshift cosmológico são emergentes desse substrato. Objetos como 3I/ATLAS revelam assinaturas diretas de acoplamento dinâmico — anti-tail assimétrico, jets, silêncio rádio inicial.</p>
+          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
+          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
           <div class="meta-tags">
             <div class="meta">v1.4 — Unified Framework</div>
-            <div class="meta">Pesquisa Independente</div>
+            <div class="meta">Independent Research</div>
             <div class="meta">Black Science Institute</div>
           </div>
         </div>
@@ -310,42 +288,39 @@
     </div>
   </section>
 
-  <!-- Research Cards -->
   <section id="research" style="background:#0a0a0a;">
     <div class="shell">
-      <h2 class="section-title">Eixos de Pesquisa</h2>
+      <h2 class="section-title">Research Axes</h2>
       <div class="cards-grid">
         <div class="card">
-          <h3 class="card-title">Formalismo Matemático</h3>
-          <p class="card-body">Equações covariantes, viscoelasticidade relativística (Israel-Stewart), impedância estrutural Z_H e acoplamento η.</p>
+          <h3 class="card-title">Mathematical Formalism</h3>
+          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">Aplicações Observacionais</h3>
-          <p class="card-body">Predições para 3I/ATLAS (substrate drag, transição impedante joviana), auroras anômalas, caudas plasmáticas.</p>
+          <h3 class="card-title">Observational Applications</h3>
+          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">Cosmogênese</h3>
-          <p class="card-body">Implicações para formação de matéria, distribuição cosmológica e sistemas complexos emergentes do Pleroma.</p>
+          <h3 class="card-title">Cosmogenesis</h3>
+          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <div class="shell" style="text-align:center;">
-      <h2 class="section-title">Contato</h2>
+      <h2 class="section-title">Contact</h2>
       <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
-        Colaborações teóricas, discussões sobre SPT ou troca de dados observacionais: estamos abertos.
+        Open to theoretical collaborations, SPT discussions, or observational data exchange.
       </p>
       <p style="font-size:1.4rem; margin:20px 0;">
         <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
       </p>
-      <p style="opacity:0.7;">São Paulo, Brasil</p>
+      <p style="opacity:0.7;">São Paulo, Brazil</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="shell">
       <p>© 2026 Black Science Institute · Structural Plenitude Theory</p>
@@ -358,15 +333,10 @@
   </footer>
 
   <script>
-    // Parallax leve no hero (como Astron)
     window.addEventListener('scroll', () => {
       const scroll = window.scrollY;
       document.querySelector('.hero-bg').style.transform = `translateY(${scroll * 0.3}px)`;
-    });
-
-    // Header scrolled effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 100);
+      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
     });
   </script>
 
