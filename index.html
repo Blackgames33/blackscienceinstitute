@@ -3,225 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Black Science Institute — Structural Plenitude Theory</title>
-  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and observational reinterpretation including 3I/ATLAS." />
-
-  <!-- Fonts leves e elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <title>Black Science Institute — SPT v1.4</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg: #000000;
-      --fg: #e8e8e8;
-      --muted: #b0b0b0;
+      --fg: #ffffff;
+      --dim: rgba(255, 255, 255, 0.5);
       --accent: #ffffff;
-      --border-soft: rgba(255,255,255,0.12);
-      --radius: 16px;
-      --transition: 0.4s ease;
+      --border: rgba(255, 255, 255, 0.1);
+      --glass: rgba(255, 255, 255, 0.02);
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
+    * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+    
+    body { 
+      background-color: var(--bg); 
+      color: var(--fg); 
+      font-family: 'Montserrat', sans-serif; 
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    a { color:inherit; text-decoration:none; }
+    canvas#pleroma-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
 
-    .shell { max-width:1240px; margin:0 auto; padding:0 24px; }
+    .shell { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
 
+    /* Header Estilo Astron */
     header {
-      position:fixed;
-      top:0; left:0; width:100%;
-      z-index:1000;
-      background:rgba(0,0,0,0.8);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--border-soft);
+      height: 100px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      background: rgba(0,0,0,0.5);
     }
 
-    nav {
-      height:80px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    nav { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { 
+      font-weight: 500; 
+      letter-spacing: 6px; 
+      font-size: 0.85rem; 
+      text-transform: uppercase; 
     }
 
-    .logo {
-      font-family:'Montserrat',sans-serif;
-      font-size:1.5rem;
-      letter-spacing:0.15em;
-      font-weight:300;
+    .nav-links a { 
+      margin-left: 35px; 
+      text-decoration: none; 
+      color: #fff; 
+      font-size: 0.7rem; 
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      opacity: 0.5;
+      transition: 0.4s;
     }
+    .nav-links a:hover { opacity: 1; }
 
-    .nav-links {
-      display:flex;
-      gap:40px;
-      font-size:0.9rem;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-    }
-
-    .nav-links a { opacity:0.85; transition:var(--transition); }
-    .nav-links a:hover { opacity:1; transform:translateY(-2px); }
-
+    /* Hero Section */
     .hero {
-      height:100vh;
-      min-height:900px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-      background:linear-gradient(to bottom, #000 0%, #0a0a0a 100%);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
     }
 
-    .hero-bg {
-      position:absolute;
-      inset:0;
-      background:url('assets/images/bsi-hero.png') center/cover no-repeat;
-      opacity:0.4;
-      z-index:1;
+    .hero-content { width: 60%; z-index: 2; }
+
+    .hero-tag {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 5px;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: block;
     }
 
-    .hero-content {
-      position:relative;
-      z-index:2;
-      max-width:900px;
-      padding:0 20px;
+    .hero h1 { 
+      font-size: clamp(2.5rem, 8vw, 5rem); 
+      font-weight: 100; 
+      line-height: 1.1;
+      margin-bottom: 30px;
+      letter-spacing: -2px;
     }
 
-    .institute-name {
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(2.2rem,5vw,4.5rem);
-      font-weight:300;
-      letter-spacing:0.18em;
-      margin-bottom:20px;
-      opacity:0.95;
+    .hero p { 
+      max-width: 500px; 
+      font-weight: 300; 
+      color: var(--dim);
+      font-size: 1.1rem; 
+      line-height: 1.8;
     }
 
-    .hero-title {
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(3.8rem,9vw,7.5rem);
-      font-weight:300;
-      letter-spacing:0.06em;
-      line-height:1.05;
-      margin:40px 0 20px;
+    /* O Objeto - 3I/ATLAS */
+    .celestial-body {
+      position: absolute;
+      right: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #222 0%, #000 70%);
+      box-shadow: inset -50px -50px 100px #000, 0 0 60px rgba(255,255,255,0.02);
+      z-index: 1;
+      overflow: hidden;
     }
 
-    .hero-subtitle {
-      font-size:clamp(1.15rem,2.8vw,1.6rem);
-      max-width:720px;
-      margin:0 auto 50px;
-      opacity:0.85;
+    .celestial-body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg');
+      background-size: cover;
+      opacity: 0.15;
+      mix-blend-mode: screen;
+      filter: grayscale(1);
     }
 
-    .hero-tags {
-      display:flex;
-      flex-wrap:wrap;
-      gap:16px;
-      justify-content:center;
-    }
-
-    .tag {
-      padding:10px 24px;
-      border:1px solid var(--border-soft);
-      border-radius:999px;
-      font-size:0.85rem;
-      letter-spacing:0.12em;
-      opacity:0.9;
-      transition:var(--transition);
-    }
-
-    .tag:hover { background:var(--accent-soft); opacity:1; }
-
-    section { padding:140px 0; }
-
-    .section-title {
-      font-family:'Montserrat',sans-serif;
-      font-size:3.2rem;
-      font-weight:300;
-      letter-spacing:0.12em;
-      text-align:center;
-      margin-bottom:80px;
-      text-transform:uppercase;
-    }
-
-    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-
-    .visual { text-align:center; }
-
-    .planet {
-      width:100%;
-      max-width:500px;
-      border-radius:50%;
-      box-shadow:0 0 80px rgba(255,255,255,0.05);
-      transition:transform 0.6s ease;
-    }
-
-    .planet:hover { transform:scale(1.05); }
-
-    .text-content { font-size:1.1rem; opacity:0.92; }
-
+    /* Info Cards */
     .cards-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:32px;
-      margin-top:60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 100px 0;
     }
 
-    .card {
-      padding:40px 32px;
-      border:1px solid var(--border-soft);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,0.02);
-      backdrop-filter:blur(8px);
-      transition:all var(--transition);
+    .card { background: var(--bg); padding: 50px; transition: 0.4s; }
+    .card:hover { background: var(--glass); }
+
+    .card h3 { 
+      font-size: 0.7rem; 
+      letter-spacing: 4px; 
+      text-transform: uppercase; 
+      color: var(--dim);
+      margin-bottom: 20px;
     }
 
-    .card:hover {
-      transform:translateY(-12px);
-      border-color:var(--accent);
-      box-shadow:0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    .card-title { font-family:'Montserrat',sans-serif; font-size:1.5rem; margin-bottom:20px; }
+    .card p { font-size: 0.9rem; font-weight: 300; opacity: 0.8; }
 
     footer {
-      padding:80px 0 40px;
-      text-align:center;
-      border-top:1px solid var(--border-soft);
-      font-size:0.9rem;
-      opacity:0.8;
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      opacity: 0.4;
     }
 
-    footer a { opacity:0.7; transition:var(--transition); }
-    footer a:hover { opacity:1; }
-
-    @media (max-width:1024px) {
-      .grid-2 { grid-template-columns:1fr; gap:60px; }
-      .hero-title { font-size:5rem; }
-    }
-
-    @media (max-width:640px) {
-      .hero-title { font-size:3.5rem; }
-      .section-title { font-size:2.4rem; }
+    @media (max-width: 1024px) {
+      .hero-content { width: 100%; text-align: center; }
+      .hero p { margin: 0 auto; }
+      .celestial-body { opacity: 0.2; right: -30%; }
+      .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <canvas id="pleroma-bg"></canvas>
+
   <header>
     <div class="shell">
       <nav>
-        <div class="logo">BLACK SCIENCE INSTITUTE</div>
+        <div class="logo">Black Science Institute</div>
         <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#spt">SPT</a>
+          <a href="#theory">Theory</a>
           <a href="#research">Research</a>
           <a href="#contact">Contact</a>
         </div>
@@ -229,45 +189,71 @@
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h2 class="institute-name">BLACK SCIENCE INSTITUTE</h2>
-      <h1 class="hero-title">Structural Plenitude Theory</h1>
-      <p class="hero-subtitle">
-        The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
-      </p>
-      <div class="hero-tags">
-        <div class="tag">SPT v1.4</div>
-        <div class="tag">Pleroma Substrate</div>
-        <div class="tag">Viscoelastic Vacuum</div>
-        <div class="tag">3I/ATLAS Analysis</div>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">Structural Plenitude Theory v1.4</span>
+        <h1>Viscoelastic<br>Pleroma.</h1>
+        <p>The vacuum is a dense physical medium. Matter is resonance; gravity is structural tension.</p>
+      </div>
+      <div class="celestial-body"></div>
+    </section>
+
+    <div class="cards-grid" id="theory">
+      <div class="card">
+        <h3>Mathematical</h3>
+        <p>Covariant equations and structural impedance $Z_H$ applied to vacuum dynamics.</p>
+      </div>
+      <div class="card">
+        <h3>Observational</h3>
+        <p>Telemetry analysis of 3I/ATLAS and anomalous Jovian transitions.</p>
+      </div>
+      <div class="card">
+        <h3>Cosmogenesis</h3>
+        <p>Redefining matter formation through pleromic impedance gradients.</p>
       </div>
     </div>
-  </section>
+  </main>
 
-  <section id="spt">
+  <footer>
     <div class="shell">
-      <h2 class="section-title">The Pleroma Substrate</h2>
-      <div class="grid-2">
-        <div class="visual">
-          <div class="planet" style="background:radial-gradient(circle at 30% 30%, #111, #000);"></div>
-        </div>
-        <div class="text-content">
-          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
-          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
-          <div class="meta-tags">
-            <div class="meta">v1.4 — Unified Framework</div>
-            <div class="meta">Independent Research</div>
-            <div class="meta">Black Science Institute</div>
-          </div>
-        </div>
-      </div>
+      © 2026 BLACK SCIENCE INSTITUTE · SAO PAULO · BRAZIL
     </div>
-  </section>
+  </footer>
 
-  <section id="research" style="background:#0a0a0a;">
-    <div class="shell">
-      <h2 class="section-title">Research Axes</h2>
-      <div class="cards-grid">
-        <div
+  <script>
+    const canvas = document.getElementById('pleroma-bg');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = Array.from({length: 250}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5,
+        opacity: Math.random(),
+        drift: Math.random() * 0.2
+      }));
+    }
+
+    function animate() {
+      ctx.clearRect(0,0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        ctx.fillStyle = `rgba(255,255,255,${s.opacity})`;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
+        ctx.fill();
+        s.x -= s.drift;
+        if(s.x < 0) s.x = canvas.width;
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init(); animate();
+  </script>
+
+</body>
+</html>
