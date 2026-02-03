@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Science Institute — SPT v1.4</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
 
   <style>
@@ -12,73 +11,70 @@
       --bg: #000000;
       --fg: #ffffff;
       --dim: rgba(255, 255, 255, 0.5);
-      --accent: #ffffff;
       --border: rgba(255, 255, 255, 0.1);
-      --glass: rgba(255, 255, 255, 0.02);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body { 
       background-color: var(--bg); 
       color: var(--fg); 
       font-family: 'Montserrat', sans-serif; 
       overflow-x: hidden;
-      line-height: 1.6;
     }
 
-    canvas#pleroma-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-
-    .shell { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-
-    /* Header Estilo Astron */
+    /* HEADER - Ajustado para não sobrepor */
     header {
-      height: 100px;
+      height: 90px;
       display: flex;
       align-items: center;
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 1000; /* Garante que fica no topo */
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(20px);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(15px);
     }
 
-    nav { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+    .shell { max-width: 1300px; margin: 0 auto; padding: 0 40px; width: 100%; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; }
     
     .logo { 
       font-weight: 500; 
-      letter-spacing: 6px; 
-      font-size: 0.85rem; 
+      letter-spacing: 5px; 
+      font-size: 0.9rem; 
       text-transform: uppercase; 
     }
 
     .nav-links a { 
-      margin-left: 35px; 
+      margin-left: 30px; 
       text-decoration: none; 
       color: #fff; 
-      font-size: 0.7rem; 
+      font-size: 0.75rem; 
       text-transform: uppercase;
-      letter-spacing: 3px;
-      opacity: 0.5;
-      transition: 0.4s;
+      letter-spacing: 2px;
+      opacity: 0.6;
+      transition: 0.3s;
     }
     .nav-links a:hover { opacity: 1; }
 
-    /* Hero Section */
+    /* HERO SECTION - Corrigida a sobreposição */
     .hero {
       height: 100vh;
       display: flex;
       align-items: center;
       position: relative;
+      padding-top: 90px; /* MESMA ALTURA DO HEADER PARA EMPURRAR O CONTEÚDO PARA BAIXO */
     }
 
-    .hero-content { width: 60%; z-index: 2; }
+    .hero-content { 
+      width: 60%; 
+      z-index: 2; 
+      position: relative;
+    }
 
     .hero-tag {
       font-family: 'Roboto Mono', monospace;
@@ -86,95 +82,62 @@
       letter-spacing: 5px;
       color: var(--dim);
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       display: block;
     }
 
     .hero h1 { 
-      font-size: clamp(2.5rem, 8vw, 5rem); 
+      font-size: clamp(2.5rem, 7vw, 5rem); 
       font-weight: 100; 
-      line-height: 1.1;
-      margin-bottom: 30px;
-      letter-spacing: -2px;
+      line-height: 1.2; /* Aumentado para as letras não encostarem */
+      margin-bottom: 25px;
+      letter-spacing: -1px;
     }
 
     .hero p { 
-      max-width: 500px; 
+      max-width: 520px; 
       font-weight: 300; 
       color: var(--dim);
       font-size: 1.1rem; 
       line-height: 1.8;
     }
 
-    /* O Objeto - 3I/ATLAS */
+    /* OBJETO LUNAR / ATLAS */
     .celestial-body {
       position: absolute;
-      right: -10%;
-      top: 50%;
+      right: -5%;
+      top: 55%;
       transform: translateY(-50%);
-      width: 700px;
-      height: 700px;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #222 0%, #000 70%);
-      box-shadow: inset -50px -50px 100px #000, 0 0 60px rgba(255,255,255,0.02);
+      background: radial-gradient(circle at 30% 30%, #222 0%, #000 75%);
+      box-shadow: inset -30px -30px 80px #000, 0 0 40px rgba(255,255,255,0.02);
       z-index: 1;
-      overflow: hidden;
     }
 
-    .celestial-body::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg');
-      background-size: cover;
-      opacity: 0.15;
-      mix-blend-mode: screen;
-      filter: grayscale(1);
-    }
-
-    /* Info Cards */
+    /* GRID DE INFO */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
-      margin: 100px 0;
+      margin-bottom: 100px;
     }
 
-    .card { background: var(--bg); padding: 50px; transition: 0.4s; }
-    .card:hover { background: var(--glass); }
-
-    .card h3 { 
-      font-size: 0.7rem; 
-      letter-spacing: 4px; 
-      text-transform: uppercase; 
-      color: var(--dim);
-      margin-bottom: 20px;
-    }
-
+    .card { background: var(--bg); padding: 50px; }
+    .card h3 { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--dim); margin-bottom: 15px; }
     .card p { font-size: 0.9rem; font-weight: 300; opacity: 0.8; }
-
-    footer {
-      padding: 60px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      opacity: 0.4;
-    }
 
     @media (max-width: 1024px) {
       .hero-content { width: 100%; text-align: center; }
       .hero p { margin: 0 auto; }
-      .celestial-body { opacity: 0.2; right: -30%; }
-      .cards-grid { grid-template-columns: 1fr; }
+      .celestial-body { opacity: 0.15; right: -20%; width: 400px; height: 400px; }
     }
   </style>
 </head>
 <body>
-
-  <canvas id="pleroma-bg"></canvas>
 
   <header>
     <div class="shell">
@@ -193,8 +156,8 @@
     <section class="hero">
       <div class="hero-content">
         <span class="hero-tag">Structural Plenitude Theory v1.4</span>
-        <h1>Viscoelastic<br>Pleroma.</h1>
-        <p>The vacuum is a dense physical medium. Matter is resonance; gravity is structural tension.</p>
+        <h1>Structural<br>Plenitude Theory</h1>
+        <p>The vacuum is not empty. It is a continuous, viscoelastic substrate — the Pleroma — where matter emerges as structural tension.</p>
       </div>
       <div class="celestial-body"></div>
     </section>
@@ -214,46 +177,6 @@
       </div>
     </div>
   </main>
-
-  <footer>
-    <div class="shell">
-      © 2026 BLACK SCIENCE INSTITUTE · SAO PAULO · BRAZIL
-    </div>
-  </footer>
-
-  <script>
-    const canvas = document.getElementById('pleroma-bg');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-
-    function init() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      stars = Array.from({length: 250}, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 1.5,
-        opacity: Math.random(),
-        drift: Math.random() * 0.2
-      }));
-    }
-
-    function animate() {
-      ctx.clearRect(0,0, canvas.width, canvas.height);
-      stars.forEach(s => {
-        ctx.fillStyle = `rgba(255,255,255,${s.opacity})`;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
-        ctx.fill();
-        s.x -= s.drift;
-        if(s.x < 0) s.x = canvas.width;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', init);
-    init(); animate();
-  </script>
 
 </body>
 </html>
