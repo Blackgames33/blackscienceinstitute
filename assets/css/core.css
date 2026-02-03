@@ -1,18 +1,17 @@
-
-/* ===============================
-   BSI — CORE (BASE GLOBAL)
-   =============================== */
-
 :root {
-  --bg: #0b0b0d;
-  --bg-soft: #111216;
-  --fg: #e8e8ea;
-  --fg-muted: #9a9aa3;
-  --accent: #4da6ff;
-  --border-soft: rgba(255,255,255,0.08);
-  --radius: 14px;
-  --max-width: 1180px;
-  --transition: 160ms ease;
+  --bg: #000000;
+  --fg: #eaeaea;
+  --muted: #9a9a9a;
+
+  --accent: #ffffff;
+  --accent-soft: rgba(255,255,255,0.08);
+
+  --border-soft: rgba(255,255,255,0.18);
+
+  --max-width: 1120px;
+  --radius: 18px;
+
+  --font-main: 'Montserrat', system-ui, sans-serif;
 }
 
 * {
@@ -21,28 +20,52 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+html, body {
   background: var(--bg);
   color: var(--fg);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-main);
+  line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: opacity var(--transition);
 }
 
 a:hover {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.4rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--fg);
+}
+
+.btn:hover {
+  background: var(--accent-soft);
 }
