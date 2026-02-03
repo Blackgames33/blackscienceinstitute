@@ -396,3 +396,6 @@ footer.site-footer {
     margin-bottom: 24px;
   }
 }
+body {
+  outline: 6px solid red !important;
+}
