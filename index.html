@@ -4,181 +4,225 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Science Institute — SPT v1.4</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #020202;
-      --accent: #ffffff;
-      --text-dim: rgba(255, 255, 255, 0.6);
-      --glass: rgba(255, 255, 255, 0.03);
-      --border: rgba(255, 255, 255, 0.1);
+      --bg-color: #000000;
+      --accent-color: #ffffff;
+      --text-dim: rgba(255, 255, 255, 0.5);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --accent-glow: rgba(255, 255, 255, 0.03);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body { 
-      background: var(--bg); 
-      color: #fff; 
+      background-color: var(--bg-color); 
+      color: #ffffff; 
       font-family: 'Montserrat', sans-serif; 
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Fundo de Estrelas */
-    #space-canvas {
+    /* Fundo Pleroma (Estrelas Dinâmicas) */
+    #pleroma-stars {
       position: fixed;
       top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: -2;
+      background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
     }
 
-    /* Objeto Central (Lua/3I-ATLAS) */
-    .celestial-body {
-      position: absolute;
-      top: 15%;
-      right: 5%;
-      width: clamp(250px, 40vw, 500px);
-      height: clamp(250px, 40vw, 500px);
-      border-radius: 50%;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg'); /* Substituir pela sua imagem do Atlas dps */
-      background-size: cover;
-      box-shadow: inset 50px -20px 80px 20px #000, 0 0 50px rgba(255,255,255,0.05);
-      z-index: -1;
-      filter: grayscale(100%) contrast(1.2);
-      opacity: 0.8;
-    }
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 50px; }
 
-    .shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
-    /* Header Estilo Astron */
+    /* Header e Logo BSI */
     header {
-      padding: 40px 0;
+      height: 100px;
+      display: flex;
+      align-items: center;
       position: absolute;
       width: 100%;
       z-index: 100;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 500; letter-spacing: 6px; font-size: 0.8rem; text-transform: uppercase; }
-    
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bsi-logo {
+      font-weight: 600;
+      letter-spacing: 5px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .bsi-logo img {
+      height: 40px; /* Ajuste conforme o seu arquivo de logo */
+      filter: brightness(0) invert(1);
+    }
+
     .nav-links a { 
-      margin-left: 40px; 
+      margin-left: 45px; 
       text-decoration: none; 
       color: #fff; 
       font-size: 0.7rem; 
       text-transform: uppercase;
       letter-spacing: 3px;
-      opacity: 0.5;
-      transition: 0.5s;
+      font-weight: 300;
+      opacity: 0.4;
+      transition: opacity 0.4s ease;
     }
     .nav-links a:hover { opacity: 1; }
 
-    /* Hero */
+    /* Hero Section (Inspirado no Astron) */
     .hero {
       height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
       position: relative;
     }
 
-    .hero-pre-title {
+    .hero-content {
+      width: 55%;
+      z-index: 2;
+    }
+
+    .tagline {
+      font-family: 'Roboto Mono', monospace;
       font-size: 0.7rem;
-      letter-spacing: 5px;
       color: var(--text-dim);
-      margin-bottom: 20px;
       text-transform: uppercase;
+      letter-spacing: 6px;
+      margin-bottom: 25px;
+      display: block;
     }
 
     .hero h1 { 
-      font-size: clamp(2.5rem, 8vw, 5rem); 
-      font-weight: 200; 
-      line-height: 1;
-      margin-bottom: 30px;
-      letter-spacing: -2px;
+      font-size: clamp(3rem, 7vw, 5.5rem); 
+      font-weight: 100; 
+      line-height: 1.05;
+      margin-bottom: 35px;
+      letter-spacing: -3px;
     }
 
     .hero p { 
-      max-width: 500px; 
-      font-weight: 400; 
-      opacity: 0.6; 
-      font-size: 0.95rem; 
-      line-height: 1.8;
-    }
-
-    /* Grid de Dados */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      margin-top: 50px;
-      border: 1px solid var(--border);
-    }
-
-    .info-item {
-      background: var(--bg);
-      padding: 40px;
-    }
-
-    .info-item h3 {
-      font-size: 0.65rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+      max-width: 480px; 
+      font-weight: 300; 
       color: var(--text-dim);
+      font-size: 1rem; 
+      line-height: 1.9;
+      margin-bottom: 40px;
     }
 
-    .info-item p { font-size: 0.85rem; opacity: 0.8; font-weight: 400; }
-
-    @media (max-width: 768px) {
-      .info-grid { grid-template-columns: 1fr; }
-      .celestial-body { top: 10%; right: -10%; opacity: 0.3; }
+    /* Objeto Central (A Lua/3I-ATLAS) */
+    .celestial-display {
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/1200px-FullMoon2010.jpg');
+      background-size: cover;
+      filter: grayscale(100%) contrast(1.1) brightness(0.8);
+      box-shadow: inset 100px -20px 150px 30px #000, 0 0 80px rgba(255,255,255,0.02);
+      z-index: 1;
     }
+
+    /* Status Bar Inferior */
+    .status-bar {
+      position: absolute;
+      bottom: 60px;
+      display: flex;
+      gap: 60px;
+      border-left: 1px solid var(--border-color);
+      padding-left: 30px;
+    }
+
+    .status-item span {
+      display: block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .status-item p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content { width: 100%; text-align: center; }
+      .hero p { margin: 0 auto 40px; }
+      .celestial-display { opacity: 0.2; right: -20%; }
+      .status-bar { display: none; }
+    }
+
   </style>
 </head>
 <body>
 
-  <canvas id="space-canvas"></canvas>
-  <div class="celestial-body"></div>
+  <canvas id="pleroma-stars"></canvas>
 
   <header>
-    <div class="shell">
+    <div class="container">
       <nav>
-        <div class="logo">Black Science Institute</div>
+        <div class="bsi-logo">
+          <img src="https://via.placeholder.com/40x40/fff/fff?text=BSI" alt="BSI LOGO">
+          Black Science Institute
+        </div>
         <div class="nav-links">
-          <a href="#">Teoria</a>
-          <a href="#">Observações</a>
-          <a href="#">Arquivo</a>
+          <a href="#theory">Theory</a>
+          <a href="#atlas">3I/ATLAS</a>
+          <a href="#archive">Archive</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <main class="shell">
+  <main class="container">
     <section class="hero">
-      <span class="hero-pre-title">Structural Plenitude Theory v1.4</span>
-      <h1>Vácuo<br>Viscoelástico.</h1>
-      <p>Investigando a mecânica do Pleroma através de anomalias sistêmicas e o monitoramento contínuo do objeto 3I/ATLAS.</p>
-      
-      <div class="info-grid">
-        <div class="info-item">
-          <h3>Rotação 3I</h3>
-          <p>6,842h Estável</p>
-        </div>
-        <div class="info-item">
-          <h3>Impedância</h3>
-          <p>Z_H: Gradiente Máximo</p>
-        </div>
-        <div class="info-item">
-          <h3>Status</h3>
-          <p>Anomalia Classe X-8</p>
+      <div class="hero-content">
+        <span class="tagline">Structural Plenitude Theory v1.4</span>
+        <h1>Pleroma &<br>Deep Science.</h1>
+        <p>A nova fronteira da física interestelar. Estudando o vácuo não como um vazio, mas como a estrutura viscoelástica que governa o cosmos.</p>
+        
+        <div class="status-bar">
+          <div class="status-item">
+            <span>Rotation</span>
+            <p>6,842h</p>
+          </div>
+          <div class="status-item">
+            <span>Impedance</span>
+            <p>ZH-ALPHA</p>
+          </div>
+          <div class="status-item">
+            <span>Observation</span>
+            <p>3I/ATLAS SECTOR</p>
+          </div>
         </div>
       </div>
+
+      <div class="celestial-display"></div>
     </section>
   </main>
 
   <script>
-    const canvas = document.getElementById('space-canvas');
+    // Gerador de Fundo Estelar Profundo
+    const canvas = document.getElementById('pleroma-stars');
     const ctx = canvas.getContext('2d');
     let stars = [];
 
@@ -186,29 +230,33 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       stars = [];
-      for(let i=0; i<200; i++) {
+      for(let i=0; i<300; i++) {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 1.5,
-          opacity: Math.random()
+          size: Math.random() * 1.2,
+          opacity: Math.random(),
+          speed: Math.random() * 0.05
         });
       }
     }
 
-    function draw() {
+    function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       stars.forEach(s => {
         ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
         ctx.fill();
+        s.y -= s.speed; // Movimento sutil para cima
+        if(s.y < 0) s.y = canvas.height;
       });
+      requestAnimationFrame(animate);
     }
 
     window.addEventListener('resize', init);
     init();
-    draw();
+    animate();
   </script>
 </body>
 </html>
