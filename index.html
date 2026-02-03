@@ -4,213 +4,235 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Science Institute — Structural Plenitude Theory</title>
-  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and observational reinterpretation including 3I/ATLAS." />
+  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
 
-  <!-- Fonts leves -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <style>
+    /* Seu CSS completo mantido + ajustes leves para texto em EN */
     :root {
       --bg: #000000;
-      --fg: #e8e8e8;
-      --muted: #b0b0b0;
+      --fg: #e0e0e0;
+      --muted: #a0a0a0;
       --accent: #ffffff;
-      --border-soft: rgba(255,255,255,0.12);
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --border-soft: rgba(255, 255, 255, 0.18);
       --radius: 16px;
-      --transition: 0.4s ease;
+      --max-width: 1240px;
+      --transition: 0.3s ease;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: var(--bg);
       color: var(--fg);
       font-family: 'Roboto', sans-serif;
       font-weight: 300;
-      line-height: 1.9;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
-    a { color:inherit; text-decoration:none; }
+    a { color: inherit; text-decoration: none; }
 
-    .shell { max-width:1240px; margin:0 auto; padding:0 32px; }
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
     header {
-      position:fixed;
-      top:0; left:0; width:100%;
-      z-index:1000;
-      background:rgba(0,0,0,0.75);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--border-soft);
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.4s;
     }
 
+    header.scrolled { background: rgba(0,0,0,0.92); }
+
     nav {
-      height:80px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-family:'Montserrat',sans-serif;
-      font-size:1.5rem;
-      letter-spacing:0.18em;
-      font-weight:300;
-      opacity:0.95;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      font-weight: 400;
     }
 
     .nav-links {
-      display:flex;
-      gap:48px;
-      font-size:0.92rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
+      display: flex;
+      gap: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .nav-links a { opacity:0.8; transition:var(--transition); }
-    .nav-links a:hover { opacity:1; transform:translateY(-2px); }
+    .nav-links a {
+      opacity: 0.85;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
 
     .hero {
-      height:100vh;
-      min-height:960px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-      background:linear-gradient(to bottom, #000 0%, #0a0a0a 100%);
+      height: 100vh;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: #000;
     }
 
-    background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
-      opacity:0.45;
-      z-index:1;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/bsi-hero.png') center/cover no-repeat;
+      opacity: 0.6;
+      z-index: 1;
     }
 
     .hero-content {
-      position:relative;
-      z-index:2;
-      max-width:960px;
-      padding:0 20px;
-    }
-
-    .institute-name {
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(2.4rem,5vw,4.8rem);
-      font-weight:300;
-      letter-spacing:0.22em;
-      margin-bottom:60px;
-      opacity:0.92;
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
     }
 
     .hero-title {
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(4.2rem,9vw,8rem);
-  font-weight:300;
-  letter-spacing:0.12em;
-  line-height:1.05;
-}
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      line-height: 1.1;
     }
 
     .hero-subtitle {
-      font-size:clamp(1.2rem,3vw,1.7rem);
-      max-width:760px;
-      margin:0 auto 60px;
-      opacity:0.88;
-      line-height:1.8;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      max-width: 720px;
+      margin: 0 auto 48px;
+      opacity: 0.9;
     }
 
     .hero-tags {
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      justify-content:center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
     }
 
     .tag {
-      padding:10px 24px;
-      border:1px solid var(--border-soft);
-      border-radius:999px;
-      font-size:0.88rem;
-      letter-spacing:0.14em;
-      opacity:0.9;
-      transition:var(--transition);
+      padding: 10px 22px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      transition: all var(--transition);
     }
 
-    .tag:hover { background:var(--accent-soft); opacity:1; }
+    .tag:hover {
+      background: var(--accent-soft);
+      opacity: 1;
+    }
 
-    section { padding:160px 0; }
+    section { padding: 140px 0; }
 
     .section-title {
-      font-family:'Montserrat',sans-serif;
-      font-size:3.4rem;
-      font-weight:300;
-      letter-spacing:0.14em;
-      text-align:center;
-      margin-bottom:100px;
-      text-transform:uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 80px;
+      text-transform: uppercase;
     }
 
-    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-    .visual { text-align:center; }
+    .visual { text-align: center; }
 
     .planet {
-      width:100%;
-      max-width:560px;
-      border-radius:50%;
-      box-shadow:0 0 100px rgba(255,255,255,0.04);
-      transition:transform 0.7s ease;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 50%;
+      box-shadow: 0 0 80px rgba(255,255,255,0.05);
+      transition: transform 0.6s ease;
     }
 
-    .planet:hover { transform:scale(1.04); }
+    .planet:hover { transform: scale(1.05); }
 
-    .text-content { font-size:1.12rem; opacity:0.9; line-height:1.9; }
+    .text-content { font-size: 1.1rem; opacity: 0.92; }
 
     .cards-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:40px;
-      margin-top:80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
     }
 
     .card {
-      padding:48px 36px;
-      border:1px solid var(--border-soft);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,0.02);
-      backdrop-filter:blur(10px);
-      transition:all var(--transition);
+      padding: 40px 32px;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
     }
 
     .card:hover {
-      transform:translateY(-16px);
-      border-color:var(--accent);
-      box-shadow:0 24px 48px rgba(0,0,0,0.45);
+      transform: translateY(-12px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    .card-title { font-family:'Montserrat',sans-serif; font-size:1.6rem; margin-bottom:24px; }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
 
-    .card-body { opacity:0.87; }
+    .card-body { opacity: 0.85; }
 
     footer {
-      padding:100px 0 60px;
-      text-align:center;
-      border-top:1px solid var(--border-soft);
-      font-size:0.92rem;
-      opacity:0.8;
+      padding: 80px 0 40px;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
-    footer a { opacity:0.7; transition:var(--transition); }
-    footer a:hover { opacity:1; }
+    footer a { opacity: 0.7; transition: opacity var(--transition); }
+    footer a:hover { opacity: 1; }
 
-    @media (max-width:1024px) {
-      .grid-2 { grid-template-columns:1fr; gap:80px; }
-      .hero-title { font-size:6rem; }
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+      .hero-title { font-size: 5rem; }
     }
 
-    @media (max-width:640px) {
-      .hero-title { font-size:4rem; }
-      .section-title { font-size:2.6rem; }
+    @media (max-width: 640px) {
+      .hero-title { font-size: 3.5rem; }
+      .section-title { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -233,7 +255,6 @@
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <h2 class="institute-name">BLACK SCIENCE INSTITUTE</h2>
       <h1 class="hero-title">Structural Plenitude Theory</h1>
       <p class="hero-subtitle">
         The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
@@ -252,7 +273,7 @@
       <h2 class="section-title">The Pleroma Substrate</h2>
       <div class="grid-2">
         <div class="visual">
-          <div class="planet" style="background:radial-gradient(circle at 30% 30%, #111, #000);"></div>
+          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
         </div>
         <div class="text-content">
           <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
@@ -273,15 +294,15 @@
       <div class="cards-grid">
         <div class="card">
           <h3 class="card-title">Mathematical Formalism</h3>
-          <p class="card-body">Covariant equations, relativistic viscoelasticity, structural impedance Z_H, and coupling efficiency η.</p>
+          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
         </div>
         <div class="card">
           <h3 class="card-title">Observational Applications</h3>
-          <p class="card-body">Predictions for 3I/ATLAS, anomalous auroras, planetary plasma tails.</p>
+          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
         </div>
         <div class="card">
           <h3 class="card-title">Cosmogenesis</h3>
-          <p class="card-body">Implications for matter formation, cosmological distribution, and complex system emergence.</p>
+          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
         </div>
       </div>
     </div>
