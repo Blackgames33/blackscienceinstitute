@@ -74,3 +74,51 @@ footer {
   color: var(--muted);
   font-size: 0.75rem;
 }
+/* ============================
+   HERO TAGS – SPT INTERATIVO
+============================ */
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-tags .tag {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  transition: 
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+  cursor: default;
+}
+
+/* INTERAÇÃO */
+.hero-tags .tag:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.55);
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-tags {
+    justify-content: center;
+  }
+
+  .hero-tags .tag {
+    font-size: 0.7rem;
+    padding: 9px 16px;
+  }
+}
