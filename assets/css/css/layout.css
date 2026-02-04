@@ -122,3 +122,24 @@ footer {
     padding: 9px 16px;
   }
 }
+/* ============================
+   HERO MOON (DESKTOP)
+============================ */
+
+.hero-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.hero-moon {
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: url("../images/bsi-moon.png") center/cover no-repeat;
+
+  box-shadow:
+    inset -120px -40px 180px rgba(0,0,0,0.95),
+    0 0 140px rgba(255,255,255,0.05);
+}
