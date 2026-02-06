@@ -6,74 +6,55 @@
 
 <title>Structural Plenitude Theory — Black Science Institute</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
 --bg:#000;
 --fg:#e0e0e0;
 --muted:#9a9a9a;
---border-soft:rgba(255,255,255,0.15);
---accent:rgba(255,255,255,0.08);
---max-width:1200px;
+--border:rgba(255,255,255,0.18);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-background:var(--bg);
+background:#000;
 color:var(--fg);
 font-family:'Roboto',sans-serif;
+font-weight:300;
+margin:0;
 line-height:1.7;
 }
 
 .shell{
-max-width:var(--max-width);
+max-width:1100px;
 margin:auto;
 padding:0 24px;
 }
 
-/* HEADER */
-
 header{
 position:fixed;
 top:0;
-left:0;
 width:100%;
 background:rgba(0,0,0,0.75);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border-soft);
-z-index:999;
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border);
+z-index:100;
 }
 
 nav{
-height:80px;
+height:70px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 }
 
 .logo{
-font-family:'Montserrat';
-letter-spacing:0.15em;
-font-size:1.3rem;
+font-family:'Montserrat',sans-serif;
+letter-spacing:.18em;
 }
-
-.nav-links{
-display:flex;
-gap:40px;
-font-family:'Montserrat';
-font-size:.85rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-}
-
-/* HERO */
 
 .hero{
-padding-top:140px;
-padding-bottom:100px;
+padding:160px 0 120px;
 text-align:center;
 }
 
@@ -81,96 +62,69 @@ text-align:center;
 font-family:'Montserrat';
 font-weight:300;
 letter-spacing:.12em;
-font-size:clamp(2.5rem,6vw,5rem);
-margin-bottom:20px;
+font-size:clamp(2.5rem,5vw,4rem);
 }
 
 .hero p{
 max-width:700px;
-margin:auto;
+margin:30px auto 0;
 opacity:.85;
 }
 
-/* EDITORIAL */
+section{
+padding:120px 0;
+border-top:1px solid var(--border);
+}
+
+h2{
+font-family:'Montserrat';
+letter-spacing:.15em;
+font-weight:300;
+margin-bottom:30px;
+}
 
 .editorial{
-padding:120px 0;
-border-top:1px solid var(--border-soft);
+max-width:780px;
+margin:auto;
+font-size:1.05rem;
+opacity:.92;
 }
 
-.editorial h2{
-font-family:'Montserrat';
-letter-spacing:.2em;
-font-weight:300;
-margin-bottom:40px;
-text-align:center;
-}
-
-.editorial p{
-max-width:760px;
-margin:18px auto;
-opacity:.9;
-}
-
-/* TABLE */
-
-.compare{
-margin-top:60px;
-border-collapse:collapse;
-width:100%;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.compare td{
-border:1px solid var(--border-soft);
-padding:14px;
-font-size:.9rem;
-}
-
-/* PAPERS */
-
-.papers{
-padding:120px 0;
-border-top:1px solid var(--border-soft);
-}
-
-.cards{
+.versions{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
-margin-top:60px;
+margin-top:50px;
 }
 
-.card{
-padding:40px;
-border:1px solid var(--border-soft);
-background:rgba(255,255,255,0.02);
-transition:.4s;
+.version-card{
+border:1px solid var(--border);
+padding:30px;
+border-radius:14px;
+transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-border-color:white;
+.version-card:hover{
+transform:translateY(-6px);
+border-color:#fff;
 }
 
-.card h3{
-font-family:'Montserrat';
-font-weight:300;
-margin-bottom:16px;
+.version-card a{
+display:inline-block;
+margin-top:20px;
+font-size:.8rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+opacity:.8;
 }
-
-/* FOOTER */
 
 footer{
 padding:80px 0;
-border-top:1px solid var(--border-soft);
 text-align:center;
+border-top:1px solid var(--border);
+opacity:.6;
 font-size:.85rem;
-opacity:.7;
 }
-
 </style>
 </head>
 
@@ -180,95 +134,90 @@ opacity:.7;
 <div class="shell">
 <nav>
 <div class="logo">BLACK SCIENCE INSTITUTE</div>
-<div class="nav-links">
+<div>
 <a href="index.html">Home</a>
-<a href="structural-plenitude-theory.html">SPT</a>
 <a href="research.html">Research</a>
-<a href="#contact">Contact</a>
 </div>
 </nav>
 </div>
 </header>
 
+<main>
+
 <section class="hero">
 <div class="shell">
 <h1>Structural Plenitude Theory</h1>
 <p>
-The vacuum is not empty. It is a structured, viscoelastic physical substrate — the Pleroma —
-from which light, gravity and matter emerge as structural responses.
+The vacuum is not empty. It is a structured physical substrate — the Pleroma —
+where light, gravity and matter emerge as structural responses.
 </p>
 </div>
 </section>
 
-<section class="editorial">
+<section>
 <div class="shell">
 
 <h2>From Ether to Structure</h2>
 
+<div class="editorial">
+
 <p>
-The historical ether failed not because space is empty, but because its structure was never defined.
-Structural Plenitude Theory replaces the undefined medium concept with a physically described substrate.
+Throughout the history of physics, the ether emerged as an attempt to reconcile
+wave propagation, inertial frames and the apparent continuity of space. Its
+failure was structural — it lacked physical definition, predictive equations and
+falsifiable dynamics.
 </p>
 
-<table class="compare">
-<tr>
-<td>Classical Ether</td>
-<td>Structural Plenitude</td>
-</tr>
-<tr>
-<td>Carrier Medium</td>
-<td>Physical Substrate</td>
-</tr>
-<tr>
-<td>No Equations</td>
-<td>Explicit Coupling Laws</td>
-</tr>
-<tr>
-<td>Not Falsifiable</td>
-<td>Predictive & Testable</td>
-</tr>
-</table>
+<p>
+Structural Plenitude Theory does not revive the ether. It resolves its historical
+limitations by redefining the vacuum as a viscoelastic substrate governed by
+coupling efficiency, structural impedance and dissipative regimes.
+</p>
+
+<p>
+In SPT, the vacuum — the Pleroma — is not a reference frame. It is a physical
+structure whose effects emerge through interaction with matter and energy.
+</p>
+
+</div>
 
 </div>
 </section>
 
-<section class="papers">
+<section>
 <div class="shell">
 
-<h2 style="text-align:center;font-family:Montserrat;font-weight:300;letter-spacing:.2em;">
-Publications
-</h2>
+<h2>SPT Evolution</h2>
 
-<div class="cards">
+<div class="versions">
 
-<a href="https://zenodo.org/records/18409392" target="_blank">
-<div class="card">
-<h3>SPT v1.4 — Unified Framework</h3>
-<p>Complete formulation of viscoelastic vacuum mechanics and radiative dissipation.</p>
+<div class="version-card">
+<h3>SPT v1.4</h3>
+<p>Unified substrate framework.</p>
+<a href="https://zenodo.org/records/18409392" target="_blank">Open Zenodo</a>
 </div>
-</a>
 
-<a href="https://zenodo.org/records/18157921" target="_blank">
-<div class="card">
-<h3>3I/ATLAS Structural Analysis</h3>
-<p>Substrate drag and radiative dissipation observational dossier.</p>
+<div class="version-card">
+<h3>SPT v1.3</h3>
+<p>Structural coupling and dissipation regimes.</p>
+<a href="https://zenodo.org/records/18157921" target="_blank">Open Zenodo</a>
 </div>
-</a>
 
-<a href="https://www.researchgate.net/" target="_blank">
-<div class="card">
-<h3>ResearchGate Archive</h3>
-<p>Complete research repository and theoretical notes.</p>
+<div class="version-card">
+<h3>SPT Early Papers</h3>
+<p>Foundations and early formulations.</p>
+<a href="https://zenodo.org/records/18120931" target="_blank">Archive</a>
 </div>
-</a>
 
 </div>
 
 </div>
 </section>
 
+</main>
+
 <footer>
-Black Science Institute · Structural Plenitude Theory
+BLACK SCIENCE INSTITUTE · SPT Research
 </footer>
 
 </body>
