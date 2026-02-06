@@ -1,436 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Structural Plenitude Theory (SPT v1.3) — Black Science Institute</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --bg-space: #020617;
-      --accent-blue: #38bdf8;
-      --accent-amber: #fbbf24;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --border-soft: rgba(15,23,42,0.9);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<title>Structural Plenitude Theory — Black Science Institute</title>
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
-      min-height: 100vh;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.32), transparent 55%),
-        radial-gradient(circle at bottom, rgba(15,118,110,0.2), transparent 55%),
-        #020617;
-      -webkit-font-smoothing: antialiased;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
+<style>
 
-    /* HEADER */
+:root{
+--bg:#000;
+--fg:#e0e0e0;
+--muted:#9a9a9a;
+--border-soft:rgba(255,255,255,0.15);
+--accent:rgba(255,255,255,0.08);
+--max-width:1200px;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:'Roboto',sans-serif;
+line-height:1.7;
+}
 
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #e5e7eb 0, #020617 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #020617;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-    }
+.shell{
+max-width:var(--max-width);
+margin:auto;
+padding:0 24px;
+}
 
-    .brand-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+/* HEADER */
 
-    .brand-sub {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border-soft);
+z-index:999;
+}
 
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+nav{
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
 
-    nav a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
+.logo{
+font-family:'Montserrat';
+letter-spacing:0.15em;
+font-size:1.3rem;
+}
 
-    nav a:hover { color: var(--accent-blue); }
+.nav-links{
+display:flex;
+gap:40px;
+font-family:'Montserrat';
+font-size:.85rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+}
 
-    nav a.primary {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent-blue);
-    }
+/* HERO */
 
-    /* LAYOUT TEORIA */
+.hero{
+padding-top:140px;
+padding-bottom:100px;
+text-align:center;
+}
 
-    .layout {
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 55%),
-        rgba(15,23,42,0.98);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
-      padding: 22px 22px 24px;
-    }
+.hero h1{
+font-family:'Montserrat';
+font-weight:300;
+letter-spacing:.12em;
+font-size:clamp(2.5rem,6vw,5rem);
+margin-bottom:20px;
+}
 
-    .header-block {
-      margin-bottom: 18px;
-    }
+.hero p{
+max-width:700px;
+margin:auto;
+opacity:.85;
+}
 
-    .kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
+/* EDITORIAL */
 
-    .title {
-      font-size: 24px;
-      font-weight: 650;
-      margin-bottom: 6px;
-    }
+.editorial{
+padding:120px 0;
+border-top:1px solid var(--border-soft);
+}
 
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 50rem;
-    }
+.editorial h2{
+font-family:'Montserrat';
+letter-spacing:.2em;
+font-weight:300;
+margin-bottom:40px;
+text-align:center;
+}
 
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-      gap: 18px;
-      margin-top: 16px;
-    }
+.editorial p{
+max-width:760px;
+margin:18px auto;
+opacity:.9;
+}
 
-    .card {
-      border-radius: 18px;
-      padding: 14px 16px 14px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%),
-        rgba(3,7,18,0.98);
-      border: 1px solid rgba(15,23,42,0.95);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.75);
-      font-size: 13px;
-    }
+/* TABLE */
 
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
+.compare{
+margin-top:60px;
+border-collapse:collapse;
+width:100%;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
 
-    .card p { color: var(--text-main); }
+.compare td{
+border:1px solid var(--border-soft);
+padding:14px;
+font-size:.9rem;
+}
 
-    .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
-      color: var(--text-soft);
-    }
+/* PAPERS */
 
-    .card ul li + li { margin-top: 3px; }
+.papers{
+padding:120px 0;
+border-top:1px solid var(--border-soft);
+}
 
-    .equation-block {
-      margin-top: 8px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px dashed rgba(148,163,184,0.5);
-      font-family: "SF Mono", "Menlo", "Consolas", monospace;
-      font-size: 12px;
-      background: rgba(15,23,42,0.9);
-      color: #e5e7eb;
-    }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:60px;
+}
 
-    .image-card {
-      margin-top: 10px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      background: #020617;
-    }
+.card{
+padding:40px;
+border:1px solid var(--border-soft);
+background:rgba(255,255,255,0.02);
+transition:.4s;
+}
 
-    .image-card img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
+.card:hover{
+transform:translateY(-8px);
+border-color:white;
+}
 
-    .image-caption {
-      font-size: 11px;
-      color: var(--text-soft);
-      padding: 6px 8px 7px;
-      background: rgba(3,7,18,0.95);
-    }
+.card h3{
+font-family:'Montserrat';
+font-weight:300;
+margin-bottom:16px;
+}
 
-    .section-label {
-      margin-top: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
+/* FOOTER */
 
-    .section-divider {
-      border: none;
-      border-top: 1px solid rgba(30,64,175,0.7);
-      margin: 4px 0 10px;
-    }
+footer{
+padding:80px 0;
+border-top:1px solid var(--border-soft);
+text-align:center;
+font-size:.85rem;
+opacity:.7;
+}
 
-    .links-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .btn-small {
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: transparent;
-      color: var(--text-main);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-small.primary {
-      background: linear-gradient(135deg,#0ea5e9,#22c55e);
-      color: #020617;
-      border-color: rgba(15,23,42,0.9);
-      font-weight: 600;
-    }
-
-    footer {
-      margin-top: 22px;
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    @media (max-width: 880px) {
-      .layout { padding: 18px 14px 18px; }
-      .two-col { grid-template-columns: minmax(0,1fr); }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="page">
-    <!-- HEADER GLOBAL -->
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BSI</div>
-        <div>
-          <div class="brand-title">Black Science Institute</div>
-          <div class="brand-sub">Structural Plenitude Program</div>
-        </div>
-      </div>
 
-      <nav>
-        <a href="index.html">Editorials</a>
-        <a href="structural-plenitude-theory.html" class="primary">SPT v1.3</a>
-        <a href="3i-atlas-structural-predictions.html">Predictions</a>
-        <a href="research.html">Research Archive</a>
-      </nav>
-    </header>
+<header>
+<div class="shell">
+<nav>
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="research.html">Research</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
 
-    <!-- BLOCO PRINCIPAL -->
-    <main class="layout">
-      <section class="header-block">
-        <div class="kicker">Theory Framework</div>
-        <h1 class="title">Structural Plenitude Theory (SPT v1.3)</h1>
-        <p class="subtitle">
-          SPT models the vacuum as a viscoelastic substrate (Pleroma) endowed with
-          structural impedance Z<sub>H</sub>, coupling efficiency η and residual
-          radiative dissipation ℛ, replacing ideal empty-space metrics by a
-          continuous structural medium.
-        </p>
-        <div class="links-row">
-          <a href="research.html" class="btn-small primary">Go to Research Archive</a>
-          <a href="index-pt.html" class="btn-small">Versão em Português</a>
-        </div>
-      </section>
+<section class="hero">
+<div class="shell">
+<h1>Structural Plenitude Theory</h1>
+<p>
+The vacuum is not empty. It is a structured, viscoelastic physical substrate — the Pleroma —
+from which light, gravity and matter emerge as structural responses.
+</p>
+</div>
+</section>
 
-      <!-- FUNDAMENTOS + MATEMÁTICA -->
-      <section class="two-col">
-        <article class="card">
-          <h2>Core Physical Principles</h2>
-          <p>
-            The Structural Plenitude Theory introduces a fully interactive substrate:
-            no strict vacuum, but a dense pleromic medium through which matter and
-            radiation continuously exchange energy.
-          </p>
-          <ul>
-            <li>Viscoelastic vacuum substrate (Pleroma).</li>
-            <li>Structural impedance Z<sub>H</sub> as a measure of resistance to deformation.</li>
-            <li>Material and environment-dependent coupling efficiency η.</li>
-            <li>
-              Residual radiative channel ℛ accounting for non-anchored energy and
-              dissipation.
-            </li>
-            <li>
-              Substrate flow and drag terms m<sub>2</sub> replacing idealized inertial frames.
-            </li>
-          </ul>
-        </article>
+<section class="editorial">
+<div class="shell">
 
-        <article class="card">
-          <h2>Conceptual Mathematical Structure</h2>
-          <p>
-            At field level, SPT is formulated as a viscoelastic continuum with an
-            effective covariant operator acting on a pleromic field φ and its
-            couplings to matter and radiation.
-          </p>
-          <div class="equation-block">
-            𝓓<sub>μ</sub>𝓓<sup>μ</sup> φ + V′(φ) = J(x)  
-            <br />
-            with 𝓓<sub>μ</sub> = ∇<sub>μ</sub> + A<sub>μ</sub>[φ,g,F]
-          </div>
-          <p style="margin-top:6px;">
-            Where the effective connection A<sub>μ</sub> encodes viscoelastic
-            response, coupling to electromagnetism and non-linear structural terms.
-            Metric curvature and substrate tension appear on equal footing.
-          </p>
-        </article>
-      </section>
+<h2>From Ether to Structure</h2>
 
-      <!-- MAPA Ni–Fe / DIAGRAMA UNIFICADO -->
-      <div class="section-label">Impedance Signatures and Interstellar Objects</div>
-      <hr class="section-divider" />
+<p>
+The historical ether failed not because space is empty, but because its structure was never defined.
+Structural Plenitude Theory replaces the undefined medium concept with a physically described substrate.
+</p>
 
-      <section class="two-col">
-        <article class="card">
-          <h2>Ni–Fe Structural Impedance Map</h2>
-          <p>
-            3I/ATLAS exhibits a Ni-dominant lattice, unlike typical Oort-cloud comets.
-            In SPT this translates into a distinct impedance signature Z<sub>H</sub>,
-            modifying how the nucleus anchors to the pleromic substrate.
-          </p>
-          <div class="image-card">
-            <img src="assets/img/An_infographic_titled_\"Ni–Fe_Structural_Impedance_.png"
-                 alt="Ni–Fe Structural Impedance Map" />
-            <div class="image-caption">
-              Comparative Ni/Fe spectral response interpreted as different structural
-              impedance regimes in the Pleroma.
-            </div>
-          </div>
-        </article>
+<table class="compare">
+<tr>
+<td>Classical Ether</td>
+<td>Structural Plenitude</td>
+</tr>
+<tr>
+<td>Carrier Medium</td>
+<td>Physical Substrate</td>
+</tr>
+<tr>
+<td>No Equations</td>
+<td>Explicit Coupling Laws</td>
+</tr>
+<tr>
+<td>Not Falsifiable</td>
+<td>Predictive & Testable</td>
+</tr>
+</table>
 
-        <article class="card">
-          <h2>Unified Structural Flux Diagram</h2>
-          <p>
-            Light propagation, gravitation and cosmological redshift are described as
-            different manifestations of structural deformation and dissipative flux in
-            the same substrate, instead of separate mechanisms.
-          </p>
-          <div class="image-card">
-            <img src="assets/img/A_digital_scientific_infographic_titled_\"Unified_5.png"
-                 alt="Unified flux diagram — light, gravitation and redshift" />
-            <div class="image-caption">
-              Unified visualization of structural flux: local gravitation, wave
-              propagation and cumulative redshift.
-            </div>
-          </div>
-        </article>
-      </section>
+</div>
+</section>
 
-      <!-- LINKS PARA PDF/LATEX -->
-      <div class="section-label">Full Mathematical Treatment</div>
-      <hr class="section-divider" />
+<section class="papers">
+<div class="shell">
 
-      <section class="two-col">
-        <article class="card">
-          <h2>LaTeX Manuscripts and Field Equations</h2>
-          <p>
-            The complete LaTeX formulation of SPT v1.3, including covariant field
-            equations, viscoelastic kernels and dissipation operators, is maintained
-            in the official Zenodo and ResearchGate archives.
-          </p>
-          <div class="links-row" style="margin-top:8px;">
-            <a href="https://doi.org/10.5281/zenodo.18120931" target="_blank" class="btn-small primary">
-              Open SPT v1.3 on Zenodo
-            </a>
-            <a href="https://www.researchgate.net/" target="_blank" class="btn-small">
-              Open SPT collection on ResearchGate
-            </a>
-          </div>
-        </article>
+<h2 style="text-align:center;font-family:Montserrat;font-weight:300;letter-spacing:.2em;">
+Publications
+</h2>
 
-        <article class="card">
-          <h2>Related Observational Programs</h2>
-          <p>
-            Predictions derived from SPT are being monitored via interstellar objects
-            such as 3I/ATLAS, Jovian impedance windows and comparative cometology,
-            with results consolidated in the 3I/ATLAS predictions page.
-          </p>
-          <div class="links-row" style="margin-top:8px;">
-            <a href="3i-atlas-structural-predictions.html" class="btn-small primary">
-              3I/ATLAS — Predictions
-            </a>
-            <a href="research.html" class="btn-small">
-              Back to Research Archive
-            </a>
-          </div>
-        </article>
-      </section>
+<div class="cards">
 
-      <footer>
-        <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
-        <span>
-          Contact:
-          <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-        </span>
-      </footer>
-    </main>
-  </div>
+<a href="https://zenodo.org/records/18409392" target="_blank">
+<div class="card">
+<h3>SPT v1.4 — Unified Framework</h3>
+<p>Complete formulation of viscoelastic vacuum mechanics and radiative dissipation.</p>
+</div>
+</a>
+
+<a href="https://zenodo.org/records/18157921" target="_blank">
+<div class="card">
+<h3>3I/ATLAS Structural Analysis</h3>
+<p>Substrate drag and radiative dissipation observational dossier.</p>
+</div>
+</a>
+
+<a href="https://www.researchgate.net/" target="_blank">
+<div class="card">
+<h3>ResearchGate Archive</h3>
+<p>Complete research repository and theoretical notes.</p>
+</div>
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+Black Science Institute · Structural Plenitude Theory
+</footer>
+
 </body>
 </html>
