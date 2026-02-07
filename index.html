@@ -1,188 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Science Institute | SPT v1.4</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #00f2ff;
+            --moon-glow: rgba(0, 242, 255, 0.2);
+            --text-color: #ffffff;
+            --secondary-text: #a0a0a0;
+        }
 
-<title>Black Science Institute — Structural Plenitude Theory</title>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+        /* Elemento da Lua Central */
+        .moon-container {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #111 0%, #000 70%);
+        }
 
-<style>
+        .moon {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, #fff, #888 50%, #222 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 60px var(--moon-glow), inset -20px -20px 50px #000;
+            position: relative;
+            z-index: 2;
+        }
 
-:root{
- --bg:#000;
- --fg:#e0e0e0;
- --border-soft:rgba(255,255,255,0.15);
-}
+        .orbital-ring {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
 
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
-}
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-body{
- background:#000;
- color:#e0e0e0;
- font-family:'Roboto',sans-serif;
-}
+        .hero-text {
+            position: absolute;
+            bottom: 10%;
+            text-align: center;
+            width: 100%;
+            z-index: 3;
+        }
 
-/* HEADER ORIGINAL */
-header{
- position:fixed;
- top:0;
- left:0;
- width:100%;
- z-index:1000;
- background:rgba(0,0,0,0.7);
- backdrop-filter:blur(12px);
- border-bottom:1px solid var(--border-soft);
-}
+        .hero-text h1 {
+            font-size: 2.5rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+        }
 
-.shell{
- max-width:1200px;
- margin:0 auto;
- padding:0 24px;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #111;
+        }
 
-nav{
- height:80px;
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
+        nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
 
-.logo{
- font-family:'Montserrat',sans-serif;
- letter-spacing:0.18em;
- font-size:1.4rem;
-}
+        nav a:hover { color: var(--accent-color); }
 
-.nav-links{
- display:flex;
- gap:40px;
- font-family:'Montserrat',sans-serif;
- font-size:0.9rem;
- letter-spacing:0.12em;
- text-transform:uppercase;
-}
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
 
-.nav-links a{
- color:#ccc;
- text-decoration:none;
- transition:0.3s;
-}
+        .section-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #1a1a1a;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            border-radius: 4px;
+        }
 
-.nav-links a:hover{
- color:#fff;
-}
+        .equation {
+            background: #050505;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #222;
+            margin: 20px 0;
+            text-align: center;
+        }
 
-/* HERO ORIGINAL */
-.hero{
- height:100vh;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- position:relative;
- overflow:hidden;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-.hero-bg{
- position:absolute;
- inset:0;
- background:url('./assets/images/bsi-moon.png') center/cover no-repeat;
- opacity:0.6;
-}
+        .metric-box {
+            border-top: 2px solid var(--accent-color);
+            background: #0a0a0a;
+            padding: 20px;
+        }
 
-.hero-content{
- position:relative;
- z-index:2;
- max-width:900px;
- padding:0 20px;
-}
-
-.hero-title{
- font-family:'Montserrat',sans-serif;
- font-size:clamp(3rem,8vw,7rem);
- font-weight:300;
- letter-spacing:0.08em;
- margin-bottom:20px;
-}
-
-.hero-subtitle{
- font-size:1.3rem;
- opacity:0.9;
- margin-bottom:40px;
-}
-
-.hero-tags{
- display:flex;
- flex-wrap:wrap;
- gap:16px;
- justify-content:center;
-}
-
-.tag{
- padding:10px 22px;
- border:1px solid var(--border-soft);
- border-radius:999px;
- font-size:0.85rem;
- transition:0.3s;
-}
-
-.tag:hover{
- background:rgba(255,255,255,0.08);
-}
-
-</style>
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 1px solid #111;
+            color: #444;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<div class="shell">
-<nav>
+    <div class="moon-container">
+        <div class="orbital-ring"></div>
+        <div class="moon"></div>
+        <div class="hero-text">
+            <h1>Black Science Institute</h1>
+            <p style="letter-spacing: 3px; color: #666;">STRUCTURAL PLENITUDE THEORY</p>
+        </div>
+    </div>
 
-<div class="logo">
-BLACK SCIENCE INSTITUTE
-</div>
+    <nav>
+        <a href="#about">MANIFESTO</a>
+        <a href="#physics">MECÂNICA ESTRUTURAL</a>
+        <a href="#data">DADOS OBSERVACIONAIS</a>
+    </nav>
 
-<div class="nav-links">
-<a href="#home">Home</a>
-<a href="structural-plenitude-theory.html">SPT</a>
-<a href="#research">Research</a>
-<a href="#contact">Contact</a>
-</div>
+    <main>
+        <section id="about" class="section-card">
+            <h2 style="color: var(--accent-color);">O Pleroma e a Nova Cosmologia</h2>
+            <p>A SPT v1.4 define o espaço não como um vazio geométrico, mas como um <strong>substrato viscoelástico</strong>. A luz não apenas viaja através do nada; ela interage com a densidade estrutural do Pleroma, perdendo energia de forma calculável e previsível.</p>
+        </section>
 
-</nav>
-</div>
-</header>
+        <section id="physics" class="section-card">
+            <h2>Formalismo Covariante</h2>
+            <p>A resposta do substrato às excitações fundamentais é regida pela função de resposta estrutural:</p>
+            <div class="equation">
+                $$\chi(\omega) = \frac{1}{K - \rho_s \omega^2 + i\eta \omega}$$
+            </div>
+            <p>Este termo dissipativo \(i\eta\omega\) é a chave para resolver as tensões cosmológicas de Hubble e \(S_8\), integrando a perda de energia radiativa diretamente na métrica de Einstein.</p>
+        </section>
 
-<section class="hero" id="home">
+        <section id="data" class="section-card">
+            <h2>Janelas de Validação</h2>
+            <div class="grid">
+                <div class="metric-box">
+                    <h3>\(\Delta z\) Cromático</h3>
+                    <p>Desvio espectral dependente da frequência como prova de meio material cósmico.</p>
+                </div>
+                <div class="metric-box">
+                    <h3>Atrito Estrutural</h3>
+                    <p>Drenagem energética \(Q\) que reduz a taxa de crescimento das grandes estruturas.</p>
+                </div>
+                <div class="metric-box">
+                    <h3>Voids de Vácuo</h3>
+                    <p>Análise de dispersão em regiões de densidade bariônica zero.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<div class="hero-bg"></div>
-
-<div class="hero-content">
-
-<h1 class="hero-title">
-Structural Plenitude Theory
-</h1>
-
-<p class="hero-subtitle">
-The vacuum is not empty. It is a continuous, viscoelastic and dense substrate — the Pleroma — where light, gravity and matter emerge as structural responses.
-</p>
-
-<div class="hero-tags">
-<div class="tag">SPT v1.4</div>
-<div class="tag">Pleroma Substrate</div>
-<div class="tag">Viscoelastic Vacuum</div>
-<div class="tag">3I / ATLAS</div>
-</div>
-
-</div>
-</section>
+    <footer>
+        BLACK SCIENCE INSTITUTE &copy; 2026<br>
+        PLEROMA DYNAMICS UNIT | INDEPENDENT RESEARCH
+    </footer>
 
 </body>
 </html>
