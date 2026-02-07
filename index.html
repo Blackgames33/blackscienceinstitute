@@ -1,218 +1,419 @@
-<!-- MENU PAGES ▾ -->
-        <div class="nav-item">
-          <a href="#pages">
-            Pages <span class="nav-caret">▾</span>
-          </a>
-          <div class="nav-dropdown">
-            <a href="structural-plenitude-theory.html">SPT — main paper</a>
-            <a href="3i-atlas-structural-predictions.html">3I/ATLAS predictions</a>
-            <a href="research.html">Research notes</a>
-            <a href="patologia.html">Book — Patologia de um Regime</a>
-            <a href="visionarios.html">Book — Visionários</a>
-            <a href="index-pt.html">Homepage · Portuguese</a>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Science Institute — Structural Plenitude Theory</title>
+  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
 
-        <a href="#black-planet">BSI Planet</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 
-<main id="top">
-  <!-- HERO LOGO -->
-  <section class="hero">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <style>
+    /* Seu CSS completo mantido */
+    :root {
+      --bg: #000000;
+      --fg: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --border-soft: rgba(255, 255, 255, 0.18);
+      --radius: 16px;
+      --max-width: 1240px;
+      --transition: 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.4s;
+    }
+
+    header.scrolled { background: rgba(0,0,0,0.92); }
+
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.85;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      height: 100vh;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      max-width: 720px;
+      margin: 0 auto 48px;
+      opacity: 0.9;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 10px 22px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      transition: all var(--transition);
+    }
+
+    .tag:hover {
+      background: var(--accent-soft);
+      opacity: 1;
+    }
+
+    section { padding: 140px 0; }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 80px;
+      text-transform: uppercase;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .visual { text-align: center; }
+
+    .planet {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 50%;
+      box-shadow: 0 0 80px rgba(255,255,255,0.05);
+      transition: transform 0.6s ease;
+    }
+
+    .planet:hover { transform: scale(1.05); }
+
+    .text-content { font-size: 1.1rem; opacity: 0.92; }
+
+    /* ESTILO FUNCIONAL DOS ÍCONES/PILLS SPT */
+    .spt-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .spt-icon {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .spt-pill {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      background: rgba(255,255,255,0.03);
+      transition: all var(--transition);
+    }
+
+    .spt-hover {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      padding: 0 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-left: 1px solid var(--border-soft);
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .spt-icon:hover .spt-pill {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .spt-icon:hover .spt-hover {
+      max-height: 150px;
+      opacity: 1;
+      padding: 10px 10px;
+      margin-top: 15px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .card-body { opacity: 0.85; }
+
+    footer {
+      padding: 80px 0 40px;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer a { opacity: 0.7; transition: opacity var(--transition); }
+    footer a:hover { opacity: 1; }
+
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+      .hero-title { font-size: 5rem; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 3.5rem; }
+      .section-title { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
     <div class="shell">
-      <div class="hero-inner">
-        <div class="hero-logo-wrapper">
-          <div class="hero-moon" id="hero-moon"></div>
+      <nav>
+        <div class="logo">BLACK SCIENCE INSTITUTE</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#spt">SPT</a>
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
         </div>
+      </nav>
+    </div>
+  </header>
 
-        <p class="hero-sub">
-          Independent institute in theoretical physics and cosmology focused on
-          <strong>Structural Plenitude Theory (SPT)</strong>, the viscoelastic vacuum and a
-          critical reinterpretation of observational data.
-        </p>
-
-        <div class="hero-tags">
-          <a href="https://www.researchgate.net/publication/400186698_The_Structural_Plenitude_Theory_SPT_v14_A_Unified_Substrate_Framework_for_Thermalization_Radiative_Dissipation_and_Vacuum_Mechanics" class="pill" target="_blank" rel="noopener noreferrer">SPT v1.4</a>
-          <a href="#lua" class="pill">Pleroma Substrate</a>
-          <a href="https://zenodo.org/records/18409392" class="pill" target="_blank" rel="noopener noreferrer">Viscoelastic Vacuum</a>
-          <a href="#areas" class="pill">3I/ATLAS</a>
-        </div>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Structural Plenitude Theory</h1>
+      <p class="hero-subtitle">
+        The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
+      </p>
+      <div class="hero-tags">
+        <div class="tag">SPT v1.4</div>
+        <div class="tag">Pleroma Substrate</div>
+        <div class="tag">Viscoelastic Vacuum</div>
+        <div class="tag">3I/ATLAS Analysis</div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION — SPT -->
-  <section class="section-lua" id="lua">
+  <section id="spt">
     <div class="shell">
-      <div class="section-lua-inner">
-        <div class="lua-visual-wrapper">
-          <div class="lua-full" id="lua-full"></div>
+      <h2 class="section-title">The Pleroma Substrate</h2>
+      <div class="grid-2">
+        <div class="visual">
+          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
         </div>
+        <div class="text-content">
+          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
+          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
+          
+          <div class="spt-icons">
+            <div class="spt-icon">
+              <div class="spt-pill">SPT v1.4</div>
+              <div class="spt-hover">
+                <p>Structural Plenitude Theory v1.4 defines the vacuum as a structured, viscoelastic substrate (Pleroma), governed by coupling efficiency, impedance gradients and residual dissipation.</p>
+              </div>
+            </div>
 
-        <div class="lua-text">
-          <div class="lua-text-kicker">Structural Plenitude Theory (SPT)</div>
-          <h2 class="lua-title">Vacuum as a viscoelastic medium</h2>
+            <div class="spt-icon">
+              <div class="spt-pill">Pleroma Substrate</div>
+              <div class="spt-hover">
+                <p>The Pleroma is not a medium nor a reference frame. It is a continuous physical substrate whose structural tensions give rise to light, gravity and inertia.</p>
+              </div>
+            </div>
 
-          <p class="lua-body">
-            SPT proposes that the “vacuum” is not empty, but a <strong>pleromic substrate</strong> with
-            viscoelastic properties. Light, gravitation and cosmological redshift emerge as
-            <strong>dissipative and tension phenomena</strong> in this medium, instead of mere geodesics
-            in a geometric space-time.
-          </p>
+            <div class="spt-icon">
+              <div class="spt-pill">Viscoelastic Vacuum</div>
+              <div class="spt-hover">
+                <p>In SPT, the vacuum behaves as a viscoelastic structure, exhibiting elastic anchoring, delayed response and dissipative regimes depending on coupling conditions.</p>
+              </div>
+            </div>
 
-          <p class="lua-body">
-            In this framework, objects such as <strong>3I/ATLAS</strong>, planetary plasma tails and
-            field anomalies cease to be exceptions and become <strong>dynamic signatures</strong>
-            of the coupling between matter and Pleroma.
-          </p>
-
-          <div class="lua-meta">
-            <div class="lua-meta-item">Model: SPT v1.3–1.4</div>
-            <div class="lua-meta-item">Domain: Cosmology &amp; gravitation</div>
-            <div class="lua-meta-item">Status: Independent research</div>
-            <div class="lua-meta-item">Institution: Black Science Institute</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION — RESEARCH AXES -->
-  <section class="section-areas" id="areas">
-    <div class="shell">
-      <div class="section-header">
-        <div class="section-kicker">RESEARCH &amp; PUBLISHING</div>
-        <h2 class="section-title">Research axes</h2>
-        <p class="section-sub">
-          BSI organizes its work in cores that connect theory, observation and reinterpretation of data,
-          keeping SPT as a unifying structure.
-        </p>
-      </div>
-
-      <div class="areas-grid" id="publicacoes">
-        <!-- Publishing -->
-        <article class="area-card">
-          <div class="area-icon">P</div>
-          <h3 class="area-title">Publishing</h3>
-          <p class="area-body">
-            Preprints, technical reports and dossiers released in repositories such as Zenodo,
-            focusing on predictions, refutability and direct comparison with standard models.
-          </p>
-          <div class="area-link">View repository</div>
-        </article>
-
-        <!-- Theoretical science -->
-        <article class="area-card">
-          <div class="area-icon">T</div>
-          <h3 class="area-title">Theoretical science</h3>
-          <p class="area-body">
-            Mathematical development of SPT: pleromic field, viscoelastic tensions, coupling and
-            covariant equations.
-          </p>
-          <div class="area-link">Equations &amp; formalism</div>
-        </article>
-
-        <!-- Observation & predictions -->
-        <article class="area-card">
-          <div class="area-icon">O</div>
-          <h3 class="area-title">Observation &amp; predictions</h3>
-          <p class="area-body">
-            Direct applications: 3I/ATLAS, anomalous auroras, Earth’s plasma tail, anisotropies and
-            measurable pleromic signatures.
-          </p>
-          <div class="area-link">3I/ATLAS &amp; data</div>
-        </article>
-
-        <!-- Cosmogenetics -->
-        <article class="area-card">
-          <div class="area-icon">C</div>
-          <h3 class="area-title">Cosmogenetics</h3>
-          <p class="area-body">
-            Implications of SPT for cosmological architecture, matter distribution and the formation
-            of complex systems.
-          </p>
-          <div class="area-link">Conceptual map</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION — BSI BLACK PLANET -->
-  <section class="section-black-planet" id="black-planet">
-    <div class="shell">
-      <div class="bp-inner">
-        <div class="bp-visual">
-          <div class="bp-planet" id="bp-planet"></div>
-        </div>
-
-        <div class="bp-text">
-          <div class="section-kicker">Signature world</div>
-          <h2 class="bp-title">BSI Black Planet</h2>
-
-          <p class="bp-body">
-            The <strong>BSI Black Planet</strong> is the visual symbol of the proposal: a body immersed in a
-            dense Pleroma, with opaque internal layers and a subtle halo indicating tension, dissipation and drag.
-          </p>
-
-          <p class="bp-body">
-            It condenses the institute’s aesthetic: <strong>dark minimalism</strong>, technical precision
-            and paradigm rupture. All site iconography orbits this concept.
-          </p>
-
-          <div class="bp-meta">
-            <div class="bp-meta-pill">Aesthetic: dark</div>
-            <div class="bp-meta-pill">Background: pure black</div>
-            <div class="bp-meta-pill">Watermark: BSI</div>
-            <div class="bp-meta-pill">Usage: hero &amp; visuals</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION — CONTACT -->
-  <section class="section-contact" id="contact">
-    <div class="shell">
-      <div class="contact-inner">
-        <div class="contact-brand">
-          <div class="contact-brand-title">BLACK SCIENCE INSTITUTE</div>
-          <p class="contact-brand-body">
-            Independent research in Structural Plenitude Theory, viscoelastic vacuum and
-            cosmology. For collaborations, data exchange or peer discussion, use the channels below.
-          </p>
-
-          <div class="contact-icons">
-            <!-- Troque os href="#" pelos links reais -->
-            <a class="contact-icon" href="#" target="_blank" title="Zenodo">Z</a>
-            <a class="contact-icon" href="#" target="_blank" title="ResearchGate">R</a>
-            <a class="contact-icon" href="#" target="_blank" title="GitHub / Code">G</a>
-          </div>
-        </div>
-
-        <div class="contact-info">
-          <div class="contact-col">
-            <div class="contact-col-title">Get in touch</div>
-            <div class="contact-list">
-              <div class="contact-list-item">research@blackscienceinstitute.org</div>
-              <div class="contact-list-item">São Paulo · Brazil</div>
+            <div class="spt-icon">
+              <div class="spt-pill">3I/ATLAS Analysis</div>
+              <div class="spt-hover">
+                <p>The 3I/ATLAS object exhibits structural drag, asymmetric response and radiative dissipation consistent with SPT predictions, without relying on outgassing models.</p>
+              </div>
             </div>
           </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" style="background:#0a0a0a;">
+    <div class="shell">
+      <h2 class="section-title">Research Axes</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title">Mathematical Formalism</h3>
+          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Observational Applications</h3>
+          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cosmogenesis</h3>
+          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
         </div>
       </div>
     </div>
   </section>
-</main>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="shell">
-    <div class="footer-inner">
-      <div>BLACK SCIENCE INSTITUTE · SPT RESEARCH</div>
-      <div><a href="#top">BACK TO TOP</a></div>
+  <section id="contact">
+    <div class="shell" style="text-align:center;">
+      <h2 class="section-title">Contact</h2>
+      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
+        Open to theoretical collaborations, SPT discussions, or observational data exchange.
+      </p>
+      <p style="font-size:1.4rem; margin:20px 0;">
+        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
+      </p>
+      <p style="opacity:0.7;">São Paulo, Brazil</p>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <footer>
+    <div class="shell">
+      <p>© 2026 Black Science Institute · Structural Plenitude Theory</p>
+      <p style="margin-top:16px;">
+        <a href="https://x.com/CRAzevedo33" target="_blank">X</a> ·
+        <a href="https://www.researchgate.net/profile/Carlos-Azevedo-17" target="_blank">ResearchGate</a> ·
+        <a href="https://zenodo.org" target="_blank">Zenodo</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      const heroBg = document.querySelector('.hero-bg');
+      if(heroBg) heroBg.style.transform = `translateY(${scroll * 0.3}px)`;
+      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
+    });
+  </script>
+
+</body>
+</html>
