@@ -1,84 +1,279 @@
-<section id="spt">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Structural Plenitude Theory — Black Science Institute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#000;
+--fg:#e8e8e8;
+--muted:#9a9a9a;
+--border-soft:rgba(255,255,255,0.12);
+--accent:#fff;
+}
+
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:Roboto,sans-serif;
+margin:0;
+}
+
+.shell{
+max-width:1100px;
+margin:auto;
+padding:0 24px;
+}
+
+/* NAV */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border-soft);
+z-index:1000;
+}
+
+nav{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:Montserrat;
+letter-spacing:.18em;
+font-weight:300;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+font-family:Montserrat;
+font-size:.9rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+}
+
+.nav-links a{
+opacity:.8;
+text-decoration:none;
+color:inherit;
+}
+
+.nav-links a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+main{
+padding-top:120px;
+}
+
+.hero{
+text-align:center;
+padding:120px 0 80px;
+}
+
+.hero-title{
+font-family:Montserrat;
+font-size:clamp(3rem,7vw,5rem);
+letter-spacing:.14em;
+font-weight:300;
+}
+
+.hero-sub{
+max-width:720px;
+margin:30px auto;
+opacity:.85;
+line-height:1.8;
+}
+
+/* EDITORIAL */
+
+.section{
+padding:100px 0;
+border-top:1px solid var(--border-soft);
+}
+
+.section h2{
+font-family:Montserrat;
+letter-spacing:.14em;
+font-weight:300;
+text-align:center;
+margin-bottom:60px;
+}
+
+.editorial{
+max-width:820px;
+margin:auto;
+line-height:1.9;
+}
+
+.editorial p{
+margin-bottom:28px;
+}
+
+.editorial blockquote{
+border-left:3px solid var(--muted);
+padding-left:22px;
+margin:50px 0;
+opacity:.85;
+font-style:italic;
+}
+
+/* SCIENCE CARDS */
+
+.cards{
+margin-top:80px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+border:1px solid var(--border-soft);
+padding:30px;
+border-radius:16px;
+background:rgba(255,255,255,0.02);
+transition:.3s;
+text-decoration:none;
+color:inherit;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:white;
+}
+
+.card h3{
+font-family:Montserrat;
+font-weight:300;
+letter-spacing:.12em;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:80px 0;
+border-top:1px solid var(--border-soft);
+font-size:.9rem;
+opacity:.7;
+}
+
+footer a{
+color:inherit;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
 <div class="shell">
-  <h2 class="section-title">The Pleroma Substrate</h2>
-  <div class="grid-2">
-    <div class="visual">
-       <div class="planet" style="background: radial-gradient(circle at 30% 30%, #151515, #000); width: 320px; height: 320px; margin: 0 auto; border-radius: 50%; box-shadow: 0 0 60px rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
-         <div style="position: absolute; inset: 0; opacity: 0.1; background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');"></div>
-       </div>
-    </div>
+<nav>
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
 
-    <div class="text-content">
-      <p style="margin-bottom: 30px; opacity: 0.8; font-size: 1.1rem;">Explore o framework unificado da SPT v1.4. Clique nos pilares abaixo para expandir o conhecimento técnico e o editorial oficial.</p>
-      
-      <div class="spt-accordion" style="display: flex; flex-direction: column; gap: 20px;">
-        
-        <div class="spt-item" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
-          <div class="spt-trigger" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: 0.3s;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-              <span style="padding: 10px 24px; border: 1px solid #fff; border-radius: 30px; font-size: 0.8rem; letter-spacing: 2px; font-family: 'Montserrat'; font-weight: 400; background: rgba(255,255,255,0.05);">SPT V1.4</span>
-              <span style="font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 1px; color: #fff;">From Ether to Structure</span>
-            </div>
-            <span class="arrow" style="transition: 0.4s; opacity: 0.5;">▼</span>
-          </div>
-          
-          <div class="spt-content" style="max-height: 0; opacity: 0; overflow: hidden; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);">
-            <div style="padding: 30px 0 20px 20px; border-left: 2px solid #fff; margin-top: 20px;">
-              <p style="font-style: italic; color: #fff; margin-bottom: 25px; font-size: 1.1rem; opacity: 0.9;">
-                "Structural Plenitude Theory emerges not as a revival of ether-like concepts, but as a structural reformulation of vacuum physics."
-              </p>
-              <div style="font-size: 0.95rem; line-height: 1.8; text-align: justify; color: #bbb;">
-                <p style="margin-bottom: 15px;"><strong>A Emergência do Pleroma:</strong> No framework da SPT, o vácuo é compreendido como um substrato físico contínuo — o Pleroma — exibindo comportamento viscoelástico e regimes dissipativos. Em vez de tratar o espaço-tempo como puramente geométrico, a SPT introduz um substrato fisicamente reativo onde energia, matéria e radiação emergem como respostas às condições de acoplamento.</p>
-                <p style="margin-bottom: 15px;">A motivação não surge de uma única anomalia, mas do acúmulo de padrões observacionais independentes. Objetos como visitantes interestelares (3I/ATLAS), caudas de plasma planetário e distribuições aurorais anômalas tornam-se candidatos para a análise de interação de substrato.</p>
-                <p>Esta formulação v1.4 visa permanecer totalmente falsificável e compatível com testes observacionais, expandindo o espaço de interpretação física sem substituir a geometria relativística, mas estendendo-a para o domínio estrutural reativo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="research.html">Research</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+</div>
+</header>
 
-        <div class="spt-item" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
-           <div class="spt-trigger" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center; gap: 15px;">
-              <span style="padding: 10px 24px; border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; font-size: 0.8rem; letter-spacing: 2px; font-family: 'Montserrat';">PLEROMA</span>
-              <span style="font-family: 'Montserrat'; font-size: 0.9rem; letter-spacing: 1px; color: #888;">Physical Substrate</span>
-            </div>
-            <span class="arrow" style="transition: 0.4s; opacity: 0.5;">▼</span>
-          </div>
-          <div class="spt-content" style="max-height: 0; opacity: 0; overflow: hidden; transition: 0.5s ease;">
-            <p style="padding: 20px; color: #aaa; line-height: 1.7; text-align: justify;">O Pleroma não é um referencial, mas um contínuo estrutural cujos gradientes de tensão interna e transições de impedância determinam como os fenômenos físicos se manifestam em todas as escalas.</p>
-          </div>
-        </div>
+<main>
 
-        </div>
-    </div>
-  </div>
+<section class="hero">
+<div class="shell">
+
+<h1 class="hero-title">Structural Plenitude Theory</h1>
+
+<p class="hero-sub">
+A unified substrate framework describing the vacuum as a viscoelastic structural continuum — the Pleroma — governing coupling, dissipation and cosmological interaction regimes.
+</p>
+
 </div>
 </section>
 
-<script>
-  // Script Único e Seguro para o Black Science Institute
-  document.querySelectorAll('.spt-trigger').forEach(trigger => {
-    trigger.addEventListener('click', function() {
-      const content = this.nextElementSibling;
-      const arrow = this.querySelector('.arrow');
-      const isOpened = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+<section class="section">
+<div class="shell editorial">
 
-      // Fecha todos antes de abrir o novo (Opcional, para foco total)
-      document.querySelectorAll('.spt-content').forEach(c => {
-        c.style.maxHeight = '0px';
-        c.style.opacity = '0';
-        c.previousElementSibling.querySelector('.arrow').style.transform = 'rotate(0deg)';
-        c.previousElementSibling.querySelector('span').style.background = 'transparent';
-        c.previousElementSibling.querySelector('span').style.color = '#fff';
-      });
+<h2>From Ether to Structure</h2>
 
-      if (!isOpened) {
-        content.style.maxHeight = '1000px'; 
-        content.style.opacity = '1';
-        arrow.style.transform = 'rotate(180deg)';
-        this.querySelector('span').style.background = '#fff';
-        this.querySelector('span').style.color = '#000';
-      }
-    });
-  });
-</script>
+<p>
+Structural Plenitude Theory proposes a structural interpretation of the vacuum as a continuous physical substrate rather than an empty geometric background.
+</p>
+
+<blockquote>
+SPT is not a revival of ether concepts — it is a structural reformulation of vacuum physics.
+</blockquote>
+
+<p>
+The Pleroma is modeled as a viscoelastic continuum where matter, radiation and gravitational effects emerge from coupling interactions, structural impedance and dissipative regimes.
+</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="shell">
+
+<h2>Scientific Framework</h2>
+
+<div class="cards">
+
+<a class="card" href="https://zenodo.org/records/18409392" target="_blank">
+<h3>Mathematical Formalism</h3>
+<p>Covariant equations, structural impedance ZH, coupling efficiency η and viscoelastic cosmology.</p>
+</a>
+
+<a class="card" href="https://zenodo.org/records/18157921" target="_blank">
+<h3>Observational Predictions</h3>
+<p>3I/ATLAS interaction, substrate drag signatures and radiative dissipation regimes.</p>
+</a>
+
+<a class="card" href="https://zenodo.org/records/18120931" target="_blank">
+<h3>Cosmogenesis</h3>
+<p>Formation of structure and matter distribution through Pleromic structural tension dynamics.</p>
+</a>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="shell">
+
+<p>© 2026 Black Science Institute</p>
+
+<p style="margin-top:14px;">
+<a href="https://x.com/blackscienceSPT" target="_blank">X</a> ·
+<a href="https://www.researchgate.net/" target="_blank">ResearchGate</a> ·
+<a href="https://zenodo.org/" target="_blank">Zenodo</a>
+</p>
+
+</div>
+</footer>
+
+</body>
+</html>
