@@ -1,263 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Science Institute — Structural Plenitude Theory</title>
+  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
 
-<title>Structural Plenitude Theory — Black Science Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
-<style>
-:root{
---bg:#000;
---fg:#e0e0e0;
---muted:#9a9a9a;
---border:rgba(255,255,255,0.18);
-}
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  text-decoration: none;
-}
+  <style>
+    /* Seu CSS completo mantido */
+    :root {
+      --bg: #000000;
+      --fg: #e0e0e0;
+      --muted: #a0a0a0;
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --border-soft: rgba(255, 255, 255, 0.18);
+      --radius: 16px;
+      --max-width: 1240px;
+      --transition: 0.3s ease;
+    }
 
-body{
-background:#000;
-color:var(--fg);
-font-family:'Roboto',sans-serif;
-font-weight:300;
-margin:0;
-line-height:1.7;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.shell{
-max-width:1100px;
-margin:auto;
-padding:0 24px;
-}
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.75);
-backdrop-filter:blur(10px);
-border-bottom:1px solid var(--border);
-z-index:100;
-}
+    a { color: inherit; text-decoration: none; }
 
-nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+    .shell { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-.logo{
-font-family:'Montserrat',sans-serif;
-letter-spacing:.18em;
-}
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.4s;
+    }
 
-.hero{
-padding:160px 0 120px;
-text-align:center;
-}
+    header.scrolled { background: rgba(0,0,0,0.92); }
 
-.hero h1{
-font-family:'Montserrat';
-font-weight:300;
-letter-spacing:.12em;
-font-size:clamp(2.5rem,5vw,4rem);
-}
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.hero p{
-max-width:700px;
-margin:30px auto 0;
-opacity:.85;
-}
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      font-weight: 400;
+    }
 
-section{
-padding:120px 0;
-border-top:1px solid var(--border);
-}
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-h2{
-font-family:'Montserrat';
-letter-spacing:.15em;
-font-weight:300;
-margin-bottom:30px;
-}
+    .nav-links a {
+      opacity: 0.85;
+      transition: opacity var(--transition), transform var(--transition);
+    }
 
-.editorial{
-max-width:780px;
-margin:auto;
-font-size:1.05rem;
-opacity:.92;
-}
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
 
-.versions{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:50px;
-}
+    .hero {
+      height: 100vh;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
 
-.version-card{
-border:1px solid var(--border);
-padding:30px;
-border-radius:14px;
-transition:.3s;
-}
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
+      opacity: 0.6;
+      z-index: 1;
+    }
 
-.version-card:hover{
-transform:translateY(-6px);
-border-color:#fff;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
 
-.version-card a{
-display:inline-block;
-margin-top:20px;
-font-size:.8rem;
-letter-spacing:.15em;
-text-transform:uppercase;
-opacity:.8;
-}
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
 
-footer{
-padding:80px 0;
-text-align:center;
-border-top:1px solid var(--border);
-opacity:.6;
-font-size:.85rem;
-}
-</style>
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      max-width: 720px;
+      margin: 0 auto 48px;
+      opacity: 0.9;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 10px 22px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      transition: all var(--transition);
+    }
+
+    .tag:hover {
+      background: var(--accent-soft);
+      opacity: 1;
+    }
+
+    section { padding: 140px 0; }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin-bottom: 80px;
+      text-transform: uppercase;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .visual { text-align: center; }
+
+    .planet {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 50%;
+      box-shadow: 0 0 80px rgba(255,255,255,0.05);
+      transition: transform 0.6s ease;
+    }
+
+    .planet:hover { transform: scale(1.05); }
+
+    .text-content { font-size: 1.1rem; opacity: 0.92; }
+
+    /* ESTILO FUNCIONAL DOS ÍCONES/PILLS SPT */
+    .spt-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .spt-icon {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .spt-pill {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      background: rgba(255,255,255,0.03);
+      transition: all var(--transition);
+    }
+
+    .spt-hover {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      padding: 0 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-left: 1px solid var(--border-soft);
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .spt-icon:hover .spt-pill {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .spt-icon:hover .spt-hover {
+      max-height: 150px;
+      opacity: 1;
+      padding: 10px 10px;
+      margin-top: 15px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .card-body { opacity: 0.85; }
+
+    footer {
+      padding: 80px 0 40px;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    footer a { opacity: 0.7; transition: opacity var(--transition); }
+    footer a:hover { opacity: 1; }
+
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+      .hero-title { font-size: 5rem; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 3.5rem; }
+      .section-title { font-size: 2.4rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<div class="shell">
-<nav>
-<div class="logo">BLACK SCIENCE INSTITUTE</div>
-<div>
-<a href="index.html">Home</a>
-<a href="research.html">Research</a>
-</div>
-</nav>
-</div>
-</header>
+  <header>
+    <div class="shell">
+      <nav>
+        <div class="logo">BLACK SCIENCE INSTITUTE</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#spt">SPT</a>
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<main>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Structural Plenitude Theory</h1>
+      <p class="hero-subtitle">
+        The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
+      </p>
+      <div class="hero-tags">
+        <div class="tag">SPT v1.4</div>
+        <div class="tag">Pleroma Substrate</div>
+        <div class="tag">Viscoelastic Vacuum</div>
+        <div class="tag">3I/ATLAS Analysis</div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-<div class="shell">
-<h1>Structural Plenitude Theory</h1>
-<p>
-The vacuum is not empty. It is a structured physical substrate — the Pleroma —
-where light, gravity and matter emerge as structural responses.
-</p>
-</div>
-</section>
+  <section id="spt">
+    <div class="shell">
+      <h2 class="section-title">The Pleroma Substrate</h2>
+      <div class="grid-2">
+        <div class="visual">
+          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
+        </div>
+        <div class="text-content">
+          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
+          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
+          
+          <div class="spt-icons">
+            <div class="spt-icon">
+              <div class="spt-pill">SPT v1.4</div>
+              <div class="spt-hover">
+                <p>Structural Plenitude Theory v1.4 defines the vacuum as a structured, viscoelastic substrate (Pleroma), governed by coupling efficiency, impedance gradients and residual dissipation.</p>
+              </div>
+            </div>
 
-<section>
-<div class="shell">
+            <div class="spt-icon">
+              <div class="spt-pill">Pleroma Substrate</div>
+              <div class="spt-hover">
+                <p>The Pleroma is not a medium nor a reference frame. It is a continuous physical substrate whose structural tensions give rise to light, gravity and inertia.</p>
+              </div>
+            </div>
 
-<h2>From Ether to Structure</h2>
+            <div class="spt-icon">
+              <div class="spt-pill">Viscoelastic Vacuum</div>
+              <div class="spt-hover">
+                <p>In SPT, the vacuum behaves as a viscoelastic structure, exhibiting elastic anchoring, delayed response and dissipative regimes depending on coupling conditions.</p>
+              </div>
+            </div>
 
-<div class="editorial">
+            <div class="spt-icon">
+              <div class="spt-pill">3I/ATLAS Analysis</div>
+              <div class="spt-hover">
+                <p>The 3I/ATLAS object exhibits structural drag, asymmetric response and radiative dissipation consistent with SPT predictions, without relying on outgassing models.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-Throughout the history of physics, the ether emerged as an attempt to reconcile
-wave propagation, inertial frames and the apparent continuity of space. Its
-failure was structural — it lacked physical definition, predictive equations and
-falsifiable dynamics.
-</p>
+  <section id="research" style="background:#0a0a0a;">
+    <div class="shell">
+      <h2 class="section-title">Research Axes</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title">Mathematical Formalism</h3>
+          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Observational Applications</h3>
+          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cosmogenesis</h3>
+          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-Structural Plenitude Theory does not revive the ether. It resolves its historical
-limitations by redefining the vacuum as a viscoelastic substrate governed by
-coupling efficiency, structural impedance and dissipative regimes.
-</p>
+  <section id="contact">
+    <div class="shell" style="text-align:center;">
+      <h2 class="section-title">Contact</h2>
+      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
+        Open to theoretical collaborations, SPT discussions, or observational data exchange.
+      </p>
+      <p style="font-size:1.4rem; margin:20px 0;">
+        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
+      </p>
+      <p style="opacity:0.7;">São Paulo, Brazil</p>
+    </div>
+  </section>
 
-<p>
-In SPT, the vacuum — the Pleroma — is not a reference frame. It is a physical
-structure whose effects emerge through interaction with matter and energy.
+  <footer>
+    <div class="shell">
+      <p>© 2026 Black Science Institute · Structural Plenitude Theory</p>
+      <p style="margin-top:16px;">
+        <a href="https://x.com/CRAzevedo33" target="_blank">X</a> ·
+        <a href="https://www.researchgate.net/profile/Carlos-Azevedo-17" target="_blank">ResearchGate</a> ·
+        <a href="https://zenodo.org" target="_blank">Zenodo</a>
+      </p>
+    </div>
+  </footer>
 
-🔹 Editorial — Structural Plenitude Theory
-Throughout the history of physics, the concept of empty space has functioned more as an operational approximation than as a physically defined entity. From classical mechanics to relativistic cosmology, the vacuum has been treated primarily as geometry, metric structure, or quantum fluctuation background, but never as a fully characterized physical substrate.
-The historical ether attempted to fill this conceptual void, proposing a propagation medium for electromagnetic phenomena. However, it failed not due to experimental refutation alone, but because it lacked a consistent physical formalism, predictive dynamics and covariant mathematical structure.
-Structural Plenitude Theory emerges not as a revival of ether-like concepts, but as a structural reformulation of vacuum physics.
-In SPT, the vacuum is understood as a continuous physical substrate — the Pleroma — exhibiting viscoelastic behavior, structural tension fields and dissipative regimes. Instead of treating spacetime as purely geometric, SPT introduces a physically reactive substrate where energy, matter and radiation emerge as responses to coupling conditions within this continuum.
-🔹 The Pleroma as Physical Substrate
-Within this framework, the Pleroma is not a reference frame, nor a propagation medium in the classical sense. It is a structural continuum whose internal tension gradients, impedance transitions and coupling efficiency determine how physical phenomena manifest across scales.
-Light propagation, gravitational behavior and cosmological redshift are interpreted as emergent responses of this substrate, rather than purely geometric effects or metric distortions.
-This perspective allows the integration of dissipation, structural drag and delayed response phenomena directly into cosmological modeling.
-🔹 From Geometry to Structure
-Standard cosmology successfully models large-scale structure using metric expansion and relativistic field equations. However, several observational anomalies suggest the presence of structural behaviors not fully captured by purely geometric frameworks.
-SPT proposes that part of these anomalies can be reinterpreted as signatures of substrate interaction effects, including:
-• Structural drag in high-velocity interstellar objects
-• Asymmetric plasma and radiation behavior
-• Non-thermal dissipation regimes
-• Residual coupling effects across astrophysical boundaries
-This does not replace relativistic geometry, but extends it into a physically reactive structural domain.
-🔹 Observational Motivation
-The motivation for SPT does not arise from a single anomaly, but from the accumulation of independent observational patterns across multiple domains of astrophysics and space plasma physics.
-Rather than confronting standard models directly, SPT seeks to reorganize these phenomena into a coherent structural interpretation framework.
-Objects such as interstellar visitors, planetary plasma tails, anomalous auroral distributions and large-scale anisotropic signatures become candidates for structural substrate interaction analysis.
-🔹 Evolution of the Theory
-SPT evolved through successive conceptual and mathematical consolidation stages, culminating in version 1.4, where the theory establishes a unified substrate framework integrating:
-• Viscoelastic vacuum dynamics
-• Covariant coupling formalism
-• Structural impedance modeling
-• Dissipative cosmological regimes
-The current formulation aims to remain fully falsifiable, predictive and compatible with observational testing.
-🔹 Scientific Positioning
-Structural Plenitude Theory does not claim to replace existing cosmological frameworks. Instead, it proposes an additional structural layer capable of explaining phenomena that may lie outside purely geometric or particle-based interpretations.
-The objective is to expand the physical interpretation space of vacuum behavior while maintaining compatibility with established observational constraints.
-</p>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="shell">
-
-<h2>SPT Evolution</h2>
-
-<div class="versions">
-
-<div class="version-card">
-<h3>SPT v1.4</h3>
-<p>Unified substrate framework.</p>
-<a href="https://zenodo.org/records/18409392" target="_blank">Open Zenodo</a>
-</div>
-
-<div class="version-card">
-<h3>SPT v1.3</h3>
-<p>Structural coupling and dissipation regimes.</p>
-<a href="https://zenodo.org/records/18157921" target="_blank">Open Zenodo</a>
-</div>
-
-<div class="version-card">
-<h3>SPT Early Papers</h3>
-<p>Foundations and early formulations.</p>
-<a href="https://zenodo.org/records/18120931" target="_blank">Archive</a>
-</div>
-
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-BLACK SCIENCE INSTITUTE · SPT Research
-</footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      const heroBg = document.querySelector('.hero-bg');
+      if(heroBg) heroBg.style.transform = `translateY(${scroll * 0.3}px)`;
+      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
+    });
+  </script>
 
 </body>
 </html>
