@@ -9,6 +9,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+.section-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:2rem;
+  font-weight:300;
+  letter-spacing:0.14em;
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.research-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+.research-card{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:32px;
+  border-radius:16px;
+  transition:0.35s ease;
+}
+
+.research-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.25);
+}
+
+.research-tag{
+  font-size:0.7rem;
+  letter-spacing:2px;
+  opacity:0.5;
+}
+
+.research-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  margin-top:14px;
+  margin-bottom:14px;
+}
+
+.research-card p{
+  font-size:0.95rem;
+  opacity:0.8;
+}
 
 :root{
 --bg:#000;
@@ -242,53 +287,41 @@ opacity:.7;
 Official publication repository of Structural Plenitude Theory research,
 including mathematical formalism, observational datasets and predictive models.
 </p>
-<section id="research-core">
-  <div class="shell">
+<section>
+<div class="shell">
 
-    <h2 class="section-title">Research Core</h2>
+<h2 class="section-title">Research Core</h2>
 
-    <div class="research-grid">
+<div class="research-grid">
 
-      <div class="research-card">
-        <span class="research-tag">THEORETICAL FRAMEWORK</span>
-        <h3>SPT Mathematical Structure</h3>
-        <p>
-          Tensor formalism, substrate coupling equations, structural impedance 
-          modeling and dissipative vacuum dynamics.
-        </p>
-      </div>
+<div class="research-card">
+<span class="research-tag">THEORETICAL FRAMEWORK</span>
+<h3>SPT Mathematical Structure</h3>
+<p>Tensor formalism, substrate coupling equations, structural impedance modeling and dissipative vacuum dynamics.</p>
+</div>
 
-      <div class="research-card">
-        <span class="research-tag">FIELD OBSERVATION</span>
-        <h3>Astrophysical & Plasma Signatures</h3>
-        <p>
-          Interstellar object drag patterns, plasma asymmetries, auroral structural 
-          distribution and heliospheric boundary interactions.
-        </p>
-      </div>
+<div class="research-card">
+<span class="research-tag">FIELD OBSERVATION</span>
+<h3>Astrophysical & Plasma Signatures</h3>
+<p>Interstellar trajectories, plasma asymmetries, auroral structural distributions and heliospheric boundary behavior.</p>
+</div>
 
-      <div class="research-card">
-        <span class="research-tag">COSMOLOGICAL APPLICATION</span>
-        <h3>Large Scale Structure</h3>
-        <p>
-          Structural dissipation regimes, anisotropic signatures and substrate 
-          response effects in cosmological evolution.
-        </p>
-      </div>
+<div class="research-card">
+<span class="research-tag">COSMOLOGICAL APPLICATION</span>
+<h3>Dissipative Cosmological Regimes</h3>
+<p>Redshift structural interpretation, non-thermal dissipation signatures and anisotropic substrate responses.</p>
+</div>
 
-      <div class="research-card">
-        <span class="research-tag">ARCHIVE & FORMAL PAPERS</span>
-        <h3>Preprints & Formal Models</h3>
-        <p>
-          Zenodo archives, ResearchGate publications and formal theoretical 
-          development timeline of SPT.
-        </p>
-      </div>
+<div class="research-card">
+<span class="research-tag">DATA & MODELS</span>
+<h3>Observational Correlation Layer</h3>
+<p>Cross comparison between telescope datasets, plasma field measurements and structural prediction models.</p>
+</div>
 
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
+
 
 </div>
 </section>
