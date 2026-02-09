@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Research Library — Black Science Institute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+--bg:#000;
+--fg:#e8e8e8;
+--muted:#9a9a9a;
+--border-soft:rgba(255,255,255,0.12);
+}
+
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:Roboto,sans-serif;
+margin:0;
+}
+
+.shell{
+max-width:1100px;
+margin:auto;
+padding:0 24px;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+border-bottom:1px solid var(--border-soft);
+}
+
+nav{
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-family:Montserrat;
+letter-spacing:.2em;
+}
+
+.nav-links a{
+margin-left:32px;
+opacity:.8;
+}
+
+main{
+padding-top:120px;
+}
+
+.hero{
+text-align:center;
+padding:120px 0 80px;
+}
+
+.hero h1{
+font-family:Montserrat;
+font-weight:300;
+letter-spacing:.15em;
+}
+
+.section{
+padding:100px 0;
+border-top:1px solid var(--border-soft);
+}
+
+.library-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+margin-top:60px;
+}
+
+.paper-card{
+border:1px solid var(--border-soft);
+padding:32px;
+background:rgba(255,255,255,0.02);
+}
+
+.paper-card:hover{
+transform:translateY(-6px);
+transition:.4s;
+}
+
+.paper-title{
+font-family:Montserrat;
+font-size:1.4rem;
+margin-bottom:18px;
+}
+
+.paper-meta{
+font-size:.8rem;
+opacity:.6;
+margin-top:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="shell">
+<nav>
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="research.html">Research</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="shell">
+
+<h1>Research Library</h1>
+
+<p style="max-width:700px;margin:auto;margin-top:30px;opacity:.8;">
+Official scientific repository of Structural Plenitude Theory publications,
+datasets and technical reports.
+</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="shell">
+
+<h2 style="text-align:center;font-family:Montserrat;font-weight:300;">
+SPT Core Publications
+</h2>
+
+<div class="library-grid">
+
+<a href="https://zenodo.org/records/18409392" target="_blank">
+<div class="paper-card">
+
+<div class="paper-title">
+SPT v1.4 — Unified Substrate Framework
+</div>
+
+<p>
+Viscoelastic vacuum formalism, structural impedance modelling,
+covariant dissipative regimes and cosmological coupling mechanics.
+</p>
+
+<div class="paper-meta">
+Zenodo Record · 2026
+</div>
+
+</div>
+</a>
+
+<a href="https://zenodo.org/records/18157921" target="_blank">
+<div class="paper-card">
+
+<div class="paper-title">
+3I/ATLAS Structural Predictions
+</div>
+
+<p>
+Substrate drag modelling, radiative dissipation regimes and
+high-velocity structural coupling analysis.
+</p>
+
+<div class="paper-meta">
+Zenodo Record · Observational Series
+</div>
+
+</div>
+</a>
+
+<a href="https://zenodo.org/records/18120931" target="_blank">
+<div class="paper-card">
+
+<div class="paper-title">
+Cosmogenesis & Structural Matter Formation
+</div>
+
+<p>
+Pleromic tension fields, matter emergence regimes and
+cosmological structure distribution modelling.
+</p>
+
+<div class="paper-meta">
+Zenodo Archive · Dataset Collection
+</div>
+
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer style="text-align:center;padding:80px 0;border-top:1px solid var(--border-soft);">
+
+<p>© 2026 Black Science Institute</p>
+
+<div style="margin-top:20px;">
+<a href="https://x.com/blackscienceSPT" target="_blank">X</a> ·
+<a href="https://zenodo.org" target="_blank">Zenodo</a>
+</div>
+
+</footer>
+
+</body>
+</html>
