@@ -1,173 +1,309 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Research Archive · Black Science Institute</title>
-  <link rel="stylesheet" href="assets/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Research Library — Black Science Institute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#000;
+--fg:#e8e8e8;
+--muted:#a0a0a0;
+--border-soft:rgba(255,255,255,0.12);
+--radius:16px;
+--transition:.4s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:'Roboto',sans-serif;
+line-height:1.9;
+}
+
+.shell{
+max-width:1100px;
+margin:auto;
+padding:0 24px;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--border-soft);
+z-index:1000;
+}
+
+nav{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:'Montserrat';
+letter-spacing:.18em;
+font-size:1.4rem;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+font-size:.85rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+.nav-links a{
+color:inherit;
+text-decoration:none;
+opacity:.8;
+}
+
+.nav-links a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+padding:160px 0 80px;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Montserrat';
+font-weight:300;
+letter-spacing:.12em;
+font-size:clamp(2.5rem,6vw,4.2rem);
+margin-bottom:24px;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+opacity:.9;
+}
+
+/* LIBRARY GRID */
+
+.library-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:28px;
+margin-top:70px;
+}
+
+.paper-card{
+padding:30px;
+border:1px solid var(--border-soft);
+border-radius:var(--radius);
+background:rgba(255,255,255,.02);
+transition:var(--transition);
+}
+
+.paper-card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,.35);
+}
+
+.paper-card h3{
+font-family:'Montserrat';
+font-weight:300;
+letter-spacing:.1em;
+margin-bottom:14px;
+}
+
+.paper-card p{
+opacity:.85;
+font-size:.95rem;
+margin-bottom:20px;
+}
+
+.paper-card a{
+display:inline-block;
+font-size:.8rem;
+letter-spacing:.12em;
+opacity:.8;
+}
+
+.paper-card a:hover{
+opacity:1;
+}
+
+/* FOOTER */
+
+footer{
+padding:80px 0 40px;
+text-align:center;
+border-top:1px solid var(--border-soft);
+margin-top:100px;
+font-size:.85rem;
+opacity:.7;
+}
+
+</style>
 </head>
 
-<body class="page-dark">
+<body>
 
-  <!-- NAV SUPERIOR -->
-  <header class="top-nav">
-    <div class="logo">
-      <a href="index.html">Black Science Institute</a>
-    </div>
-    <nav class="top-nav-links">
-      <a href="index.html#editorials">Editorials</a>
-      <a href="structural-plenitude-theory.html">SPT v1.3</a>
-      <a href="3i-atlas-structural-predictions.html">3I/ATLAS Predictions</a>
-      <a href="research.html" class="active">Research Archive</a>
-    </nav>
-  </header>
+<header>
+<div class="shell">
+<nav>
 
-  <main class="page-main">
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
 
-    <!-- TÍTULO PRINCIPAL -->
-    <section class="hero hero-compact">
-      <h1>Research Archive</h1>
-      <p class="hero-meta">
-        Editorials · SPT v1.3 · 3I/ATLAS Predictions · Books
-      </p>
-    </section>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="phenomena.html">Phenomena</a>
+<a href="research.html">Research</a>
+</div>
 
-    <!-- BOTÕES DE ÂNCORA (SEM JAVASCRIPT) -->
-    <nav class="pill-nav">
-      <a href="#editorials" class="pill">Editorials</a>
-      <a href="#spt" class="pill">SPT v1.3</a>
-      <a href="#predictions" class="pill">3I/ATLAS Predictions</a>
-      <a href="#books" class="pill">Books · BSI Editorial</a>
-    </nav>
+</nav>
+</div>
+</header>
 
-    <!-- EDITORIAIS -->
-    <section id="editorials" class="section-block">
-      <h2>Editorials</h2>
+<section class="hero">
+<div class="shell">
 
-      <article class="grid-card">
-        <h3>Interstellar Material, Structural Dynamics, and the Emerging Pattern Behind 3I/ATLAS</h3>
-        <p class="card-meta">BSI Editorial · January 2026 · SPT v1.3</p>
-        <p>
-          Editorial que sintetiza os dados públicos de 3I/ATLAS à luz do
-          paradigma estrutural, conectando metallicity imbalance, anticauda,
-          silêncio em rádio e desvios não gravitacionais a um único mecanismo:
-          interação matéria–substrato viscoelástico.
-        </p>
-        <p>
-          <a href="3i-atlas-structural-predictions.html" class="button">
-            Open Editorial (EN)
-          </a>
-        </p>
-      </article>
-    </section>
+<h1>Research Library</h1>
 
-    <!-- SPT v1.3 -->
-    <section id="spt" class="section-block">
-      <h2>SPT v1.3 · Structural Plenitude Theory</h2>
+<p>
+Official publication repository of Structural Plenitude Theory research,
+including mathematical formalism, observational datasets and predictive models.
+</p>
 
-      <article class="grid-card">
-        <h3>The Structural Plenitude Theory (SPT v1.3)</h3>
-        <p class="card-meta">Viscoelastic Substrate · Light · Gravitation · Redshift</p>
-        <p>
-          Conjunto de preprints que apresentam o pleroma como meio viscoelástico,
-          acoplamento η com matéria, impedância estrutural
-          <em>Z<sub>H</sub></em> e dissipação residual <em>ℛ</em>. Fundamenta a leitura
-          estrutural de cometas, objetos interestelares e dinâmica cosmológica.
-        </p>
-        <p>
-          <a href="structural-plenitude-theory.html" class="button">
-            Open SPT v1.3 Overview
-          </a>
-        </p>
-      </article>
-    </section>
-
-    <!-- 3I/ATLAS -->
-    <section id="predictions" class="section-block">
-      <h2>3I/ATLAS · Structural Predictions</h2>
-
-      <article class="grid-card">
-        <h3>3I/ATLAS – Jovian Impedance Window (March 2026)</h3>
-        <p class="card-meta">Prediction Dossier · Substrate Dynamics</p>
-        <p>
-          Dossiê de predição focado na entrada de 3I/ATLAS no gradiente de
-          impedância joviano, com cenários testáveis de emissão, silêncio
-          espectral e atraso de fase como critérios de refutação/validação da
-          SPT v1.3.
-        </p>
-        <p>
-          <a href="3i-atlas-structural-predictions.html" class="button">
-            Open Prediction Dossier
-          </a>
-        </p>
-      </article>
-    </section>
-
-    <!-- LIVROS -->
-    <section id="books" class="section-block">
-     <section class="books-wrap" id="books">
-  <div class="books-shell">
-    <header class="books-head">
-      <div class="kicker">BOOKS</div>
-      <h2 class="title">Editorial</h2>
-      <p class="subtitle">
-        Selected titles from Black Science Institute. Click a cover to open the book page.
-      </p>
-    </header>
-
-    <div class="books-grid">
-      <!-- BOOK 1 -->
-      <article class="book">
-        <a class="cover" href="patologia.html" aria-label="Open: Patologia de um Regime">
-          <img src="img/patologia.jpg" alt="Patologia de um Regime - cover">
-        </a>
-
-        <div class="meta">
-          <h3>Patologia de um Regime</h3>
-          <div class="tags">
-            <span>Geopolitics</span>
-            <span>History</span>
-            <span>Dossiers</span>
-          </div>
-          <p>
-            A historical–geopolitical analysis structured in chapters and dossiers, focused on
-            regime pathologies, power architectures and systemic fracture.
-          </p>
-          <div class="actions">
-            <a class="btn" href="patologia.html">Read introduction</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- BOOK 2 -->
-      <article class="book">
-        <a class="cover" href="visionarios.html" aria-label="Open: Visionários">
-          <img src="img/visionarios.jpg" alt="Visionários - cover">
-        </a>
-
-        <div class="meta">
-          <h3>Visionários</h3>
-          <div class="tags">
-            <span>Science Fiction</span>
-            <span>Physics</span>
-            <span>Paradox</span>
-          </div>
-          <p>
-            A sci-fi narrative with scientific grounding for anomalous phenomena and synchronicity,
-            unveiling a subtle technological layer across the plot.
-          </p>
-          <div class="actions">
-            <a class="btn" href="visionarios.html">Read introduction</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
+</div>
 </section>
 
-  </main>
+<section>
+<div class="shell">
+
+<div class="library-grid">
+
+<!-- PAPER 1 -->
+<div class="paper-card">
+<h3>SPT v1.4 — Unified Substrate Framework</h3>
+<p>
+Unified framework integrating viscoelastic vacuum dynamics, structural impedance
+and dissipative cosmological regimes.
+</p>
+<a href="https://zenodo.org/records/18409392" target="_blank">ACCESS ZENODO RECORD →</a>
+</div>
+
+<!-- PAPER 2 -->
+<div class="paper-card">
+<h3>3I / ATLAS Structural Predictions</h3>
+<p>
+Observational analysis of interstellar object behavior under substrate drag and
+radiative dissipation conditions.
+</p>
+<a href="https://zenodo.org/records/18157921" target="_blank">ACCESS ZENODO RECORD →</a>
+</div>
+
+<!-- PAPER 3 -->
+<div class="paper-card">
+<h3>Cosmogenesis Structural Archive</h3>
+<p>
+Datasets and theoretical models exploring structural formation of matter inside
+pleromic tension environments.
+</p>
+<a href="https://zenodo.org/records/18120931" target="_blank">ACCESS ARCHIVE →</a>
+</div>
+
+</div>
+
+</div>
+</section>
+<section id="collaborations">
+<div class="shell">
+
+<h2 class="section-title">Collaborations & Peer-Review</h2>
+
+<div class="editorial" style="margin-bottom: 50px; text-align: center;">
+  <p>
+  The Black Science Institute maintains an open channel for integration of research
+  challenging purely geometric vacuum interpretations. We operate as a validation
+  framework for emerging theories, providing structural and rheological context
+  for independent hypotheses.
+  </p>
+</div>
+
+<div class="versions" style="
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+">
+
+<div class="version-card" style="
+border-left: 4px solid #fff;
+padding:25px;
+background: rgba(255,255,255,0.02);
+border-radius:12px;
+">
+
+  <span style="font-size: 0.7rem; letter-spacing: 2px; opacity: 0.5;">
+  EXTERNAL PREPRINT REVIEW
+  </span>
+
+  <h3 style="margin-top:10px;">Gravity: Magnetism & Heat</h3>
+
+  <p style="font-size: 0.95rem; margin-top: 15px;">
+  Analysis of A. Guzzon’s thesis under the SPT framework.
+  We investigate whether thermal and magnetic gradients act
+  as tension exciters within the Pleroma substrate.
+  </p>
+
+  <div style="margin-top: 20px; font-weight: bold; font-size: 0.8rem;">
+  STATUS: IN ANALYSIS / CROSS-EXAMINATION
+  </div>
+
+</div>
+
+<div class="version-card" style="
+background: rgba(255,255,255,0.03);
+padding:25px;
+border-radius:12px;
+">
+
+  <h3>Submit for Review</h3>
+
+  <p style="font-size: 0.95rem;">
+  Independent researchers (Zenodo, ResearchGate, institutional repositories)
+  may submit preprints for compatibility analysis with the SPT v1.4 framework.
+  </p>
+
+  <a href="mailto:research@blackscienceinstitute.org"
+     style="color:#fff;border-bottom:1px solid #fff;">
+  CONTACT OFFICE
+  </a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="shell">
+© 2026 Black Science Institute — Research Division
+</div>
+</footer>
 
 </body>
 </html>
-      
