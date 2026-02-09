@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Phenomena Correlation Portal — Black Science Institute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#000;
+--fg:#e8e8e8;
+--muted:#a0a0a0;
+--border-soft:rgba(255,255,255,0.12);
+--radius:16px;
+--transition:.4s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:'Roboto',sans-serif;
+line-height:1.9;
+}
+
+.shell{
+max-width:1100px;
+margin:auto;
+padding:0 24px;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border-soft);
+z-index:1000;
+}
+
+nav{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:'Montserrat',sans-serif;
+letter-spacing:.18em;
+font-size:1.4rem;
+}
+
+.nav-links{
+display:flex;
+gap:32px;
+font-size:.85rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+.nav-links a{
+opacity:.8;
+text-decoration:none;
+color:inherit;
+}
+
+.nav-links a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+padding:160px 0 80px;
+text-align:center;
+}
+
+.hero h1{
+font-family:'Montserrat';
+font-weight:300;
+letter-spacing:.12em;
+font-size:clamp(2.5rem,6vw,4.5rem);
+margin-bottom:30px;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+opacity:.9;
+}
+
+/* GRID */
+
+.phenomena-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+margin-top:70px;
+}
+
+.card{
+padding:28px;
+border:1px solid var(--border-soft);
+border-radius:var(--radius);
+background:rgba(255,255,255,.02);
+transition:var(--transition);
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,.35);
+}
+
+.card h3{
+font-family:'Montserrat';
+font-weight:300;
+letter-spacing:.12em;
+margin-bottom:14px;
+}
+
+.card p{
+opacity:.85;
+font-size:.95rem;
+}
+
+footer{
+padding:80px 0 40px;
+text-align:center;
+border-top:1px solid var(--border-soft);
+margin-top:100px;
+font-size:.85rem;
+opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="shell">
+<nav>
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="phenomena.html">Phenomena</a>
+<a href="research.html">Research</a>
+</div>
+
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="shell">
+
+<h1>Phenomena Correlation Portal</h1>
+
+<p>
+Observational patterns across astrophysics and plasma environments are
+presented here as independent data clusters. Correlation analysis is left
+to the reader and research community.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="shell">
+
+<div class="phenomena-grid">
+
+<div class="card">
+<h3>Interstellar Objects</h3>
+<p>
+Velocity anomalies, asymmetric radiation response, non-standard tail
+formation and radiative dissipation behavior.
+</p>
+</div>
+
+<div class="card">
+<h3>Planetary Plasma Tails</h3>
+<p>
+Earth plasma tail elongation and structural coupling with solar wind
+conditions and heliospheric transitions.
+</p>
+</div>
+
+<div class="card">
+<h3>Auroral Anomalies</h3>
+<p>
+Low latitude auroras, circular auroral rings and unexpected energy
+distribution patterns.
+</p>
+</div>
+
+<div class="card">
+<h3>Solar Boundary Transitions</h3>
+<p>
+Thermal and magnetic gradient zones across heliopause and planetary
+magnetosphere boundaries.
+</p>
+</div>
+
+<div class="card">
+<h3>Cosmic Background Anisotropies</h3>
+<p>
+Large scale anisotropic signatures and directional asymmetries in cosmic
+microwave background mapping.
+</p>
+</div>
+
+<div class="card">
+<h3>Radio Silence Phenomena</h3>
+<p>
+Transient radio absorption windows and delayed signal re-emergence
+patterns in deep space objects.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="shell">
+© 2026 Black Science Institute — Phenomena Research Portal
+</div>
+</footer>
+
+</body>
+</html>
