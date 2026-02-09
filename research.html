@@ -1,120 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Research Library — Black Science Institute</title>
+<title>Research — Black Science Institute</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
 
 <style>
-.section-title{
-  font-family:'Montserrat',sans-serif;
-  font-size:2rem;
-  font-weight:300;
-  letter-spacing:0.14em;
-  text-align:center;
-  margin-bottom:60px;
-}
 
-.research-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-
-.research-card{
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:32px;
-  border-radius:16px;
-  transition:0.35s ease;
-}
-
-.research-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(255,255,255,0.25);
-}
-
-.research-tag{
-  font-size:0.7rem;
-  letter-spacing:2px;
-  opacity:0.5;
-}
-
-.research-card h3{
-  font-family:'Montserrat',sans-serif;
-  font-weight:300;
-  margin-top:14px;
-  margin-bottom:14px;
-}
-
-.research-card p{
-  font-size:0.95rem;
-  opacity:0.8;
-}
+/* ================= BASE ================= */
 
 :root{
 --bg:#000;
 --fg:#e8e8e8;
---muted:#a0a0a0;
---border-soft:rgba(255,255,255,0.12);
---radius:16px;
---transition:.4s ease; 
-  /* ===== Research Advanced Cards ===== */
-
-.research-advanced-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.research-advanced-card {
-  position: relative;
-  padding: 35px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.02);
-  transition: all 0.35s ease;
-  overflow: hidden;
-}
-
-.research-advanced-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255,255,255,0.5);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.research-advanced-title {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.15em;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-.research-advanced-links {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.35s ease;
-}
-
-.research-advanced-card:hover .research-advanced-links {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.research-advanced-links a {
-  display: block;
-  margin: 8px 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.research-advanced-links a:hover {
-  opacity: 1;
-
+--muted:#999;
+--border:rgba(255,255,255,0.08);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -122,8 +25,8 @@
 body{
 background:var(--bg);
 color:var(--fg);
-font-family:'Roboto',sans-serif;
-line-height:1.9;
+font-family:Roboto,sans-serif;
+line-height:1.8;
 }
 
 .shell{
@@ -132,126 +35,126 @@ margin:auto;
 padding:0 24px;
 }
 
-/* HEADER */
+a{color:inherit;text-decoration:none;}
+
+/* ================= HEADER ================= */
 
 header{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,0.75);
 backdrop-filter:blur(14px);
-border-bottom:1px solid var(--border-soft);
+border-bottom:1px solid var(--border);
 z-index:1000;
 }
 
 nav{
-height:80px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+height:80px;
 }
 
 .logo{
-font-family:'Montserrat';
-letter-spacing:.18em;
-font-size:1.4rem;
+font-family:Montserrat;
+letter-spacing:0.2em;
+font-size:1.3rem;
 }
 
 .nav-links{
 display:flex;
-gap:30px;
-font-size:.85rem;
-letter-spacing:.14em;
+gap:34px;
+font-size:0.85rem;
+letter-spacing:0.15em;
 text-transform:uppercase;
 }
 
-.nav-links a{
-color:inherit;
-text-decoration:none;
-opacity:.8;
-}
+/* ================= HERO ================= */
 
-.nav-links a:hover{
-opacity:1;
-transform:translateY(-2px);
-}
-
-/* HERO */
+main{padding-top:120px;}
 
 .hero{
-padding:160px 0 80px;
+padding:120px 0 80px;
 text-align:center;
 }
 
 .hero h1{
-font-family:'Montserrat';
+font-family:Montserrat;
+font-size:4rem;
+letter-spacing:0.12em;
 font-weight:300;
-letter-spacing:.12em;
-font-size:clamp(2.5rem,6vw,4.2rem);
-margin-bottom:24px;
 }
 
 .hero p{
-max-width:720px;
-margin:auto;
-opacity:.9;
+margin-top:30px;
+opacity:0.85;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
 }
 
-/* LIBRARY GRID */
+/* ================= GRID CARDS ================= */
 
-.library-grid{
+.section{
+padding:100px 0;
+border-top:1px solid var(--border);
+}
+
+.section-title{
+text-align:center;
+font-family:Montserrat;
+letter-spacing:0.14em;
+margin-bottom:70px;
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:28px;
-margin-top:70px;
+gap:36px;
 }
 
-.paper-card{
-padding:30px;
-border:1px solid var(--border-soft);
-border-radius:var(--radius);
-background:rgba(255,255,255,.02);
-transition:var(--transition);
+.card{
+background:rgba(255,255,255,0.03);
+border:1px solid var(--border);
+padding:32px;
+border-radius:18px;
+transition:0.4s;
 }
 
-.paper-card:hover{
+.card:hover{
 transform:translateY(-6px);
-border-color:rgba(255,255,255,.35);
+border-color:rgba(255,255,255,0.25);
 }
 
-.paper-card h3{
-font-family:'Montserrat';
+.card h3{
+font-family:Montserrat;
 font-weight:300;
-letter-spacing:.1em;
 margin-bottom:14px;
 }
 
-.paper-card p{
-opacity:.85;
-font-size:.95rem;
-margin-bottom:20px;
+.tag{
+font-size:0.7rem;
+letter-spacing:2px;
+opacity:0.6;
+margin-bottom:14px;
+display:block;
 }
 
-.paper-card a{
-display:inline-block;
-font-size:.8rem;
-letter-spacing:.12em;
-opacity:.8;
+.eq{
+font-family:Courier New, monospace;
+margin:18px 0;
+opacity:0.9;
 }
 
-.paper-card a:hover{
-opacity:1;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-padding:80px 0 40px;
+padding:80px 0;
+border-top:1px solid var(--border);
 text-align:center;
-border-top:1px solid var(--border-soft);
-margin-top:100px;
-font-size:.85rem;
-opacity:.7;
+opacity:0.8;
+font-size:0.9rem;
 }
 
 </style>
@@ -262,184 +165,154 @@ opacity:.7;
 <header>
 <div class="shell">
 <nav>
-
 <div class="logo">BLACK SCIENCE INSTITUTE</div>
 
 <div class="nav-links">
 <a href="index.html">Home</a>
- <a href="archive.html">Archive</a>
-<a href="#contact">Contact</a>
-
-
-
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="phenomena.html">Phenomena</a>
+<a href="research.html">Research</a>
+<a href="contact.html">Contact</a>
 </div>
 
 </nav>
 </div>
 </header>
 
+<main>
+
+<!-- HERO -->
 <section class="hero">
 <div class="shell">
-<section>
-<div class="shell">
-
-<h2 class="section-title">Research Core</h2>
-
-<div class="research-grid">
-
-<div class="research-card">
-<span class="research-tag">THEORETICAL FRAMEWORK</span>
-<h3>SPT Mathematical Structure</h3>
-<p>Tensor formalism, substrate coupling equations, structural impedance modeling and dissipative vacuum dynamics.</p>
-</div>
-
-<div class="research-card">
-<span class="research-tag">FIELD OBSERVATION</span>
-<h3>Astrophysical & Plasma Signatures</h3>
-<p>Interstellar trajectories, plasma asymmetries, auroral structural distributions and heliospheric boundary behavior.</p>
-</div>
-
-<div class="research-card">
-<span class="research-tag">COSMOLOGICAL APPLICATION</span>
-<h3>Dissipative Cosmological Regimes</h3>
-<p>Redshift structural interpretation, non-thermal dissipation signatures and anisotropic substrate responses.</p>
-</div>
-
-<div class="research-card">
-<span class="research-tag">DATA & MODELS</span>
-<h3>Observational Correlation Layer</h3>
-<p>Cross comparison between telescope datasets, plasma field measurements and structural prediction models.</p>
-</div>
-
-</div>
-</div>
-</section>
 
 <h1>Research Library</h1>
 
 <p>
-Official publication repository of Structural Plenitude Theory research,
-including mathematical formalism, observational datasets and predictive models.
+Official research repository of Structural Plenitude Theory, including mathematical formalism, observational correlations and predictive cosmological modeling.
 </p>
-
 
 </div>
 </section>
 
-
-    </div>
-
-  </div>
-</section>
-
-<section>
+<!-- RESEARCH CORE -->
+<section class="section">
 <div class="shell">
 
-<div class="library-grid">
+<h2 class="section-title">Research Core</h2>
 
-<!-- PAPER 1 -->
-<div class="paper-card">
+<div class="grid">
+
+<div class="card">
+<span class="tag">THEORETICAL FRAMEWORK</span>
+<h3>SPT Mathematical Structure</h3>
+
+<div class="eq">
+Gμν + Σμν = 8πG Tμν
+</div>
+
+<p>
+Extension of Einstein field structure including substrate stress tensor and structural impedance dynamics.
+</p>
+</div>
+
+<div class="card">
+<span class="tag">FIELD OBSERVATION</span>
+<h3>Astrophysical & Plasma Signatures</h3>
+
+<p>
+Interstellar trajectory asymmetries, plasma tail distributions, heliospheric boundary structural coupling and auroral anisotropies.
+</p>
+</div>
+
+<div class="card">
+<span class="tag">COSMOLOGICAL REGIME</span>
+<h3>Dissipative Cosmology</h3>
+
+<p>
+Structural contribution to redshift, non-thermal dissipation patterns and anisotropic substrate responses at large scale.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MATHEMATICAL FRAMEWORK -->
+<section class="section">
+<div class="shell">
+
+<h2 class="section-title">Mathematical Framework</h2>
+
+<div class="grid">
+
+<div class="card">
+<span class="tag">VISCOELASTIC RESPONSE</span>
+
+<div class="eq">
+σ(t) = ∫ K(t − τ) ε(τ) dτ
+</div>
+
+<p>
+Memory kernel describing delayed structural response of physical vacuum substrate.
+</p>
+</div>
+
+<div class="card">
+<span class="tag">STRUCTURAL DRAG</span>
+
+<div class="eq">
+Fd = −ηv − ξ∇ρs
+</div>
+
+<p>
+Momentum dissipation from viscoelastic interaction and substrate density gradients.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ARCHIVE / PUBLICATIONS -->
+<section class="section">
+<div class="shell">
+
+<h2 class="section-title">Structural Archive</h2>
+
+<div class="grid">
+
+<div class="card">
 <h3>SPT v1.4 — Unified Substrate Framework</h3>
-<p>
-Unified framework integrating viscoelastic vacuum dynamics, structural impedance
-and dissipative cosmological regimes.
-</p>
-<a href="https://zenodo.org/records/18409392" target="_blank">ACCESS ZENODO RECORD →</a>
+<p>Unified integration of viscoelastic vacuum dynamics, structural impedance and dissipative cosmological regimes.</p>
+<a href="https://zenodo.org" target="_blank">Access Zenodo Record →</a>
 </div>
 
-<!-- PAPER 2 -->
-<div class="paper-card">
+<div class="card">
 <h3>3I / ATLAS Structural Predictions</h3>
-<p>
-Observational analysis of interstellar object behavior under substrate drag and
-radiative dissipation conditions.
-</p>
-<a href="https://zenodo.org/records/18157921" target="_blank">ACCESS ZENODO RECORD →</a>
+<p>Observational analysis of interstellar objects under substrate drag and radiative dissipation conditions.</p>
 </div>
 
-<!-- PAPER 3 -->
-<div class="paper-card">
+<div class="card">
 <h3>Cosmogenesis Structural Archive</h3>
-<p>
-Datasets and theoretical models exploring structural formation of matter inside
-pleromic tension environments.
-</p>
-<a href="https://zenodo.org/records/18120931" target="_blank">ACCESS ARCHIVE →</a>
-</div>
-
-</div>
-
-</div>
-</section>
-<section id="collaborations">
-<div class="shell">
-
-<h2 class="section-title">Collaborations & Peer-Review</h2>
-
-<div class="editorial" style="margin-bottom: 50px; text-align: center;">
-  <p>
-  The Black Science Institute maintains an open channel for integration of research
-  challenging purely geometric vacuum interpretations. We operate as a validation
-  framework for emerging theories, providing structural and rheological context
-  for independent hypotheses.
-  </p>
-</div>
-
-<div class="versions" style="
-display:grid;
-grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-">
-
-<div class="version-card" style="
-border-left: 4px solid #fff;
-padding:25px;
-background: rgba(255,255,255,0.02);
-border-radius:12px;
-">
-
-  <span style="font-size: 0.7rem; letter-spacing: 2px; opacity: 0.5;">
-  EXTERNAL PREPRINT REVIEW
-  </span>
-
-  <h3 style="margin-top:10px;">
-  <p style="font-size: 0.95rem; margin-top: 15px;">
-  
-  </p>
-
-  <div style="margin-top: 20px; font-weight: bold; font-size: 0.8rem;">
-  STATUS: IN ANALYSIS / CROSS-EXAMINATION
-  </div>
-
-</div>
-
-<div class="version-card" style="
-background: rgba(255,255,255,0.03);
-padding:25px;
-border-radius:12px;
-">
-
-  <h3>Submit for Review</h3>
-
-  <p style="font-size: 0.95rem;">
-  Independent researchers (Zenodo, ResearchGate, institutional repositories)
-  may submit preprints for compatibility analysis with the SPT v1.4 framework.
-  </p>
-
-  <a href="mailto:research@blackscienceinstitute.org"
-     style="color:#fff;border-bottom:1px solid #fff;">
-  CONTACT OFFICE
-  </a>
-
+<p>Datasets and theoretical models exploring structural formation of matter inside pleromic tension environments.</p>
 </div>
 
 </div>
 </div>
 </section>
+
+</main>
 
 <footer>
 <div class="shell">
-© 2026 Black Science Institute — Research Division
+
+<p>© 2026 Black Science Institute</p>
+
+<p style="margin-top:12px;">
+<a href="https://x.com/blackscienceSPT" target="_blank">X</a> ·
+<a href="https://zenodo.org" target="_blank">Zenodo</a>
+</p>
+
 </div>
 </footer>
 
