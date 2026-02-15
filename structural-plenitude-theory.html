@@ -179,11 +179,26 @@
 }
 
 .btn-outline {
-  border-bottom: 1px solid #fff;
-  padding: 12px 20px;
-  margin: 10px;
   display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: translateY(0px);
+  opacity: 0.8;
+}
+
 
     @media (max-width: 768px) {  
       .hero-title { font-size:4rem; }  
