@@ -12,6 +12,13 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <style>
+ 
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+  
     /* Seu CSS completo mantido */
     :root {
       --bg: #000000;
@@ -128,24 +135,29 @@
       transform: translateY(-2px);
     }
 
-    .hero {
-      height: 100vh;
-      min-height: 800px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: #000;
+   .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
     }
 
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
-      opacity: 0.6;
-      z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: url('./assets/images/bsi-moon.png') no-repeat left center;
+    background-size: contain;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
     }
 
     .hero-content {
@@ -383,6 +395,28 @@
     width: 90%;
     text-align: center;
   }
+
+}
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .hero-bg {
+        background-position: left top;
+        background-size: 180%;
+        opacity: 0.25;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
 
 }
 
