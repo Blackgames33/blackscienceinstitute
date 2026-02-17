@@ -392,6 +392,17 @@ section {
  .hero-overlay { z-index: 3; }
  .hero-cntent { z-index: 4; }   
 }
+/* ===== PLANETA LATERAL FUNDO ===== */
+
+.hero-planet-bg {
+  position:absolute;
+  inset:0;
+  background:url('./assets/images/planeta-fundo.png') right center no-repeat;
+  background-size:contain;
+  opacity:0.18;          /* ajuste fino aqui */
+  z-index:0;             /* Fica atrás da lua principal */
+  pointer-events:none;
+}
 
   </style>
 </head>
@@ -414,7 +425,7 @@ section {
   </header>
 
   <section class="hero" id="home">
-  <div class="hero-planet"></div>
+  <div class="hero-planet-bg"></div>
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
