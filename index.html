@@ -392,6 +392,27 @@ section {
  .hero-overlay { z-index: 3; }
  .hero-cntent { z-index: 4; }   
 }
+/* ===== PLANETA LATERAL PROFUNDO ===== */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -35%;
+  transform: translateY(-50%);
+  width: 75vw;
+  height: 75vw;
+  background: url('./assets/images/moon-orbit.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ajuste de camadas corretas */
+.hero-bg { z-index: 2; }
+.hero-overlay { z-index: 3; }
+.hero-content { position: relative; z-index: 4; }
 
   </style>
 </head>
@@ -414,7 +435,6 @@ section {
   </header>
 
   <section class="hero" id="home">
-  <div class="hero-planet"></div>
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
