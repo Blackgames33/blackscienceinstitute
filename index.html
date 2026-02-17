@@ -354,56 +354,16 @@ nav {
 
 #spt {
   position: relative;
-  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(255,255,255,0.08) 0%,
+      rgba(255,255,255,0.04) 25%,
+      transparent 60%
+    ),
+    #000;
 }
 
-#spt::after {
-  content: "";
-  position: absolute;
-  right: -200px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle at center,
-    rgba(255,255,255,0.08) 0%,
-    rgba(255,255,255,0.03) 40%,
-    rgba(255,255,255,0.01) 60%,
-    transparent 75%);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-#spt .shell {
-  position: relative;
-  z-index: 1;
-}
-/* === Deep Space Effect - Phenomena Section === */
-
-#phenomena {
-  position: relative;
-  overflow: hidden;
-}
-
-#phenomena::before {
-  content: "";
-  position: absolute;
-  left: -250px;
-  top: 40%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle at center,
-    rgba(100,150,255,0.06) 0%,
-    rgba(50,80,150,0.03) 40%,
-    transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-#phenomena .shell {
-  position: relative;
-  z-index: 1;
-}
 
   </style>
 </head>
