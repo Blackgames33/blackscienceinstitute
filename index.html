@@ -326,6 +326,26 @@ nav {
   }
 
 }
+/* ===== Pleroma Atmosphere Layer ===== */
+
+#spt {
+  position: relative;
+  overflow: hidden;
+}
+
+#spt::after {
+  content: "";
+  position: absolute;
+  right: -200px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: url('./assets/images/pleroma-planet.png') no-repeat center/contain;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
 
   </style>
 </head>
