@@ -373,6 +373,29 @@ section {
 .section-title {
   opacity:0.9;
 }
+/* ===== COSMIC SECTION REBUILD ===== */
+
+.cosmic-section {
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
+
+.cosmic-bg {
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08), transparent 50%),
+    url('./assets/images/pleroma-planet.png') no-repeat right center/700px;
+  opacity:0.18;
+  z-index:0;
+}
+
+.cosmic-content {
+  position:relative;
+  z-index:1;
+  max-width:800px;
+}
 
   </style>
 </head>
@@ -412,17 +435,17 @@ section {
   </section>
 
   <!-- Todo o conteúdo original preservado e completo -->
-  <section id="spt">
-    <div class="shell">
-      <h2 class="section-title">The Pleroma Substrate</h2>
-      <div class="grid-2">
-        <div class="visual">
-          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
-        </div>
-        <div class="text-content">
-          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
-          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
-          
+ <section id="spt" class="cosmic-section">
+  <div class="cosmic-bg"></div>
+
+  <div class="shell cosmic-content">
+    <h2 class="section-title">The Pleroma Substrate</h2>
+
+    <div class="text-content">
+      <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties.</p>
+      <p>Light, gravity, and cosmological redshift are emergent from this substrate.</p>
+    </div>
+  </div>
           <div class="spt-icons">
             <div class="spt-icon">
               <div class="spt-pill">SPT v1.4</div>
