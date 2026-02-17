@@ -59,7 +59,7 @@
 
     .logo {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       letter-spacing: 0.15em;
       font-weight: 400;
     }
@@ -94,8 +94,7 @@
     .hamburger:hover { opacity: 1; }
 
     .hero {
-      height: 100vh;
-      min-height: 760px;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -103,6 +102,7 @@
       position: relative;
       overflow: hidden;
       background: #000;
+      padding: 120px 0 80px;
     }
 
     .hero-bg {
@@ -117,24 +117,25 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 960px;
       padding: 0 20px;
     }
 
     .hero-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
       font-weight: 300;
       letter-spacing: 0.08em;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       line-height: 1.1;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      max-width: 720px;
-      margin: 0 auto 48px;
+      font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+      max-width: 760px;
+      margin: 0 auto 56px;
       opacity: 0.9;
+      line-height: 1.6;
     }
 
     .hero-tags {
@@ -159,11 +160,11 @@
       opacity: 1;
     }
 
-    section { padding: 140px 0; }
+    section { padding: 160px 0; }
 
     .section-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3.2rem;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 300;
       letter-spacing: 0.12em;
       text-align: center;
@@ -190,7 +191,7 @@
 
     .planet:hover { transform: scale(1.05); }
 
-    .text-content { font-size: 1.1rem; opacity: 0.92; }
+    .text-content { font-size: 1.1rem; opacity: 0.92; line-height: 1.8; }
 
     .spt-icons {
       display: flex;
@@ -283,20 +284,16 @@
     footer a { opacity: 0.7; transition: opacity var(--transition); }
     footer a:hover { opacity: 1; }
 
-    /* =====================================
-       MOBILE REFINEMENT – Elegante e funcional
-    ===================================== */
-
+    /* MOBILE REFINEMENT – Elegante e equilibrado */
     @media (max-width: 1024px) {
       .grid-2 { grid-template-columns: 1fr; gap: 60px; }
-      .hero-title { font-size: 5rem; }
+      .hero-title { font-size: clamp(3rem, 6vw, 5rem); }
+      .hero { padding: 140px 0 80px; }
     }
 
     @media (max-width: 768px) {
-      /* Hamburger aparece */
       .hamburger { display: block; }
 
-      /* Menu some e vira dropdown */
       .nav-links {
         display: none;
         flex-direction: column;
@@ -312,19 +309,16 @@
         backdrop-filter: blur(12px);
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
 
-      /* Hero mais respirável */
       .hero {
-        min-height: 90vh;
+        min-height: 85vh;
         padding: 100px 20px 60px;
       }
 
       .hero-title {
-        font-size: clamp(2.8rem, 7vw, 4rem);
-        margin-bottom: 16px;
+        font-size: clamp(2.6rem, 6vw, 3.8rem);
+        margin-bottom: 20px;
       }
 
       .hero-subtitle {
@@ -333,12 +327,11 @@
       }
 
       .hero-bg {
-        background-position: center top;
+        background-position: center 20%;
         background-size: cover;
         opacity: 0.55;
       }
 
-      /* Tags em coluna, centralizadas */
       .hero-tags {
         flex-direction: column;
         gap: 12px;
@@ -350,11 +343,8 @@
         padding: 12px 20px;
       }
 
-      /* Seções mais leves */
       section { padding: 100px 0; }
-
       .section-title { font-size: 2.4rem; }
-
       .planet { max-width: 380px; }
     }
 
@@ -399,8 +389,8 @@
     </div>
   </section>
 
-  <!-- Resto do seu conteúdo aqui (spt, research, phenomena, contact, footer) -->
-  <!-- ... cole o restante do seu HTML aqui, sem alterações ... -->
+  <!-- Resto do conteúdo (spt, research, phenomena, contact, footer) permanece igual -->
+  <!-- ... cole aqui o restante do seu HTML original ... -->
 
   <script>
     function toggleMenu() {
