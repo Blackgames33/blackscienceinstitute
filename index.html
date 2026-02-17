@@ -1,477 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Black Science Institute — Structural Plenitude Theory</title>
-  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Black Science Institute — Structural Plenitude Theory</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+<style>
+:root{
+--bg:#000;
+--fg:#f0f0f0;
+--muted:#aaa;
+--accent:#fff;
+--accent-glow:rgba(255,255,255,0.12);
+--border:rgba(255,255,255,0.1);
+--radius:12px;
+--transition:0.4s ease;
+}
 
-  <style>
-    :root {
-      --bg: #000;
-      --fg: #f0f0f0;
-      --muted: #aaa;
-      --accent: #fff;
-      --accent-glow: rgba(255,255,255,0.12);
-      --border: rgba(255,255,255,0.1);
-      --radius: 12px;
-      --transition: 0.4s ease;
-    }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+html,body{
+overflow-x:hidden;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+body{
+background:var(--bg);
+color:var(--fg);
+font-family:'Roboto',sans-serif;
+font-weight:300;
+line-height:1.7;
+}
 
-    a { color:inherit; text-decoration:none; }
+a{color:inherit;text-decoration:none;}
 
-    .shell { max-width:1280px; margin:0 auto; padding:0 5%; }
+.shell{
+max-width:1280px;
+margin:0 auto;
+padding:0 5%;
+}
 
-    /* Header – Astron style: transparente com blur */
-    header {
-      position:fixed;
-      top:0; left:0; width:100%;
-      z-index:1000;
-      background:rgba(0,0,0,0.5);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--border);
-      transition:background 0.4s;
-    }
+/* HEADER */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(16px);
+border-bottom:1px solid var(--border);
+transition:background 0.4s;
+}
 
-    header.scrolled { background:rgba(0,0,0,0.85); }
+header.scrolled{
+background:rgba(0,0,0,0.85);
+}
 
-    nav {
-      height:90px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
+nav{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
 
-    .logo {
-      font-family:'Montserrat',sans-serif;
-      font-size:1.5rem;
-      letter-spacing:0.2em;
-      font-weight:500;
-      opacity:0.95;
-    }
+.logo{
+font-family:'Montserrat',sans-serif;
+font-size:1.5rem;
+letter-spacing:0.2em;
+font-weight:500;
+opacity:0.95;
+white-space:nowrap;
+}
 
-    .nav-links {
-      display:flex;
-      gap:48px;
-      font-family:'Montserrat',sans-serif;
-      font-size:0.95rem;
-      letter-spacing:0.15em;
-      text-transform:uppercase;
-    }
+.nav-links{
+display:flex;
+gap:48px;
+font-family:'Montserrat',sans-serif;
+font-size:0.95rem;
+letter-spacing:0.15em;
+text-transform:uppercase;
+}
 
-    .nav-links a {
-      opacity:0.8;
-      transition:opacity var(--transition),transform var(--transition);
-    }
+.nav-links a{
+opacity:0.8;
+transition:var(--transition);
+}
 
-    .nav-links a:hover {
-      opacity:1;
-      transform:translateY(-3px);
-    }
+.nav-links a:hover{
+opacity:1;
+transform:translateY(-3px);
+}
 
-    .hamburger {
-      display:none;
-      font-size:1.8rem;
-      cursor:pointer;
-      opacity:0.85;
-    }
+.hamburger{
+display:none;
+font-size:1.6rem;
+cursor:pointer;
+}
 
-    /* Hero – Full-screen com Lua central, Astron style */
-    .hero {
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-      background:#000;
-    }
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+background:#000;
+}
 
-    .hero-bg {
-      position:absolute;
-      inset:0;
-      background:url('./assets/images/bsi-moon.png') center/cover no-repeat;
-      background-position:center 50%;
-      opacity:0.65;
-      z-index:1;
-    }
+.hero-bg{
+position:absolute;
+inset:0;
+background:url('./assets/images/bsi-moon.png') center/cover no-repeat;
+opacity:0.65;
+z-index:1;
+}
 
-    .hero-overlay {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
-      z-index:2;
-    }
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+z-index:2;
+}
 
-    .hero-content {
-      position:relative;
-      z-index:3;
-      max-width:1100px;
-      padding:0 5%;
-    }
+.hero-content{
+position:relative;
+z-index:3;
+max-width:1100px;
+padding:0 5%;
+}
 
-    .hero-title {
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(3.5rem,8vw,7.5rem);
-      font-weight:300;
-      letter-spacing:0.1em;
-      margin-bottom:32px;
-      line-height:1.05;
-    }
+.hero-title{
+font-family:'Montserrat',sans-serif;
+font-size:clamp(3.5rem,8vw,7.5rem);
+font-weight:300;
+letter-spacing:0.1em;
+margin-bottom:32px;
+line-height:1.05;
+}
 
-    .hero-subtitle {
-      font-size:clamp(1.2rem,3vw,1.8rem);
-      max-width:880px;
-      margin:0 auto 64px;
-      opacity:0.9;
-      line-height:1.6;
-    }
+.hero-subtitle{
+font-size:clamp(1.2rem,3vw,1.8rem);
+max-width:880px;
+margin:0 auto 64px;
+opacity:0.9;
+line-height:1.6;
+}
 
-    .hero-tags {
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      justify-content:center;
-    }
+.hero-tags{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
 
-    .tag {
-      padding:12px 28px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      font-size:0.9rem;
-      letter-spacing:0.15em;
-      opacity:0.9;
-      transition:all var(--transition);
-    }
+.tag{
+padding:12px 28px;
+border:1px solid var(--border);
+border-radius:999px;
+font-size:0.9rem;
+letter-spacing:0.15em;
+opacity:0.9;
+transition:var(--transition);
+}
 
-    .tag:hover {
-      background:var(--accent-glow);
-      opacity:1;
-      transform:translateY(-4px);
-    }
+.tag:hover{
+background:var(--accent-glow);
+transform:translateY(-4px);
+}
 
-    /* Seções gerais – Astron breathing space */
-    section { padding:clamp(120px,15vh,180px) 0; }
+/* SECTIONS */
+section{
+padding:clamp(120px,15vh,180px) 0;
+}
 
-    .section-title {
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(2.4rem,5vw,4rem);
-      font-weight:300;
-      letter-spacing:0.15em;
-      text-align:center;
-      margin-bottom:80px;
-      text-transform:uppercase;
-    }
+.section-title{
+font-family:'Montserrat',sans-serif;
+font-size:clamp(2.4rem,5vw,4rem);
+font-weight:300;
+letter-spacing:0.15em;
+text-align:center;
+margin-bottom:80px;
+text-transform:uppercase;
+}
 
-    .grid-2 {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-      gap:clamp(40px,5vw,80px);
-      align-items:center;
-    }
+.cards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:40px;
+margin-top:80px;
+}
 
-    .visual { text-align:center; }
+.card{
+padding:48px 36px;
+border:1px solid var(--border);
+border-radius:var(--radius);
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
+transition:var(--transition);
+}
 
-    .planet {
-      width:100%;
-      max-width:560px;
-      border-radius:50%;
-      box-shadow:0 0 100px rgba(255,255,255,0.06);
-      transition:transform 0.7s ease;
-    }
+.card:hover{
+transform:translateY(-16px);
+border-color:var(--accent);
+box-shadow:0 24px 48px rgba(0,0,0,0.5);
+}
 
-    .planet:hover { transform:scale(1.04); }
+footer{
+padding:120px 0 60px;
+text-align:center;
+border-top:1px solid var(--border);
+font-size:0.95rem;
+opacity:0.8;
+}
 
-    .text-content { font-size:1.12rem; opacity:0.92; line-height:1.8; }
+/* ================= MOBILE FIX ================= */
 
-    .cards-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:40px;
-      margin-top:80px;
-    }
+@media(max-width:768px){
 
-    .card {
-      padding:48px 36px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,0.03);
-      backdrop-filter:blur(10px);
-      transition:all var(--transition);
-    }
+.shell{
+padding:0 20px;
+}
 
-    .card:hover {
-      transform:translateY(-16px);
-      border-color:var(--accent);
-      box-shadow:0 24px 48px rgba(0,0,0,0.5);
-    }
+nav{
+height:80px;
+}
 
-    .card-title { font-family:'Montserrat',sans-serif; font-size:1.6rem; margin-bottom:24px; }
+.logo{
+font-size:1rem;
+letter-spacing:0.12em;
+}
 
-    .card-body { opacity:0.87; }
+.nav-links{
+display:none;
+flex-direction:column;
+gap:28px;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.96);
+padding:40px 0;
+text-align:center;
+border-bottom:1px solid var(--border);
+}
 
-    footer {
-      padding:120px 0 60px;
-      text-align:center;
-      border-top:1px solid var(--border);
-      font-size:0.95rem;
-      opacity:0.8;
-    }
+.nav-links.active{
+display:flex;
+}
 
-    footer a { opacity:0.7; transition:var(--transition); }
-    footer a:hover { opacity:1; }
+.hamburger{
+display:block;
+margin-left:auto;
+}
 
-    /* Responsividade fina – inspirada no Astron */
-    @media (max-width:1024px) {
-      .grid-2 { grid-template-columns:1fr; gap:60px; }
-      .hero-title { font-size:clamp(3rem,7vw,5.5rem); }
-      .hero { padding:clamp(120px,18vh,160px) 0 clamp(80px,12vh,120px); }
-    }
+.hero{
+min-height:90vh;
+padding:120px 0 80px;
+}
 
-    @media (max-width:768px) {
-      .hamburger { display:block; }
+.hero-title{
+font-size:clamp(2.6rem,6vw,4rem);
+}
 
-      .nav-links {
-        display:none;
-        flex-direction:column;
-        gap:28px;
-        position:absolute;
-        top:90px;
-        left:0;
-        width:100%;
-        background:rgba(0,0,0,0.96);
-        padding:40px 0;
-        text-align:center;
-        border-bottom:1px solid var(--border);
-        backdrop-filter:blur(16px);
-      }
+.hero-subtitle{
+font-size:1rem;
+margin-bottom:48px;
+}
 
-      .nav-links.active { display:flex; }
+.hero-tags{
+flex-direction:column;
+gap:14px;
+}
 
-      .hero {
-        min-height:90vh;
-        padding:clamp(100px,15vh,140px) 5% clamp(60px,10vh,100px);
-      }
+.tag{
+width:100%;
+}
 
-      .hero-title { font-size:clamp(2.8rem,6.5vw,4.2rem); margin-bottom:24px; }
-      .hero-subtitle { font-size:1.05rem; margin-bottom:48px; }
+}
 
-      .hero-bg { background-position:center 35%; background-size:cover; opacity:0.58; }
-
-      .hero-tags { flex-direction:column; gap:14px; }
-      .tag { width:90%; text-align:center; padding:14px 24px; }
-
-      section { padding:clamp(90px,12vh,130px) 0; }
-      .section-title { font-size:clamp(2.2rem,5vw,3rem); }
-      .planet { max-width:420px; }
-    }
-
-    @media (max-width:480px) {
-      .logo { font-size:1.15rem; }
-      .hero-title { font-size:2.6rem; }
-      .hero-subtitle { font-size:1rem; }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="shell">
-      <nav>
-        <div class="logo">BLACK SCIENCE INSTITUTE</div>
-        <div class="nav-links" id="navMenu">
-          <a href="index.html">Home</a>
-          <a href="structural-plenitude-theory.html">SPT</a>
-          <a href="phenomena.html">Phenomena</a>
-          <a href="research.html">Research</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-      </nav>
-    </div>
-  </header>
+<header>
+<div class="shell">
+<nav>
+<div class="logo">BLACK SCIENCE INSTITUTE</div>
 
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Structural Plenitude Theory</h1>
-      <p class="hero-subtitle">
-        The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
-      </p>
-      <div class="hero-tags">
-        <div class="tag">SPT v1.4</div>
-        <div class="tag">Pleroma Substrate</div>
-        <div class="tag">Viscoelastic Vacuum</div>
-        <div class="tag">3I/ATLAS Analysis</div>
-      </div>
-    </div>
-  </section>
+<div class="nav-links" id="navMenu">
+<a href="index.html">Home</a>
+<a href="structural-plenitude-theory.html">SPT</a>
+<a href="phenomena.html">Phenomena</a>
+<a href="research.html">Research</a>
+<a href="#contact">Contact</a>
+</div>
 
-  <!-- Todo o conteúdo original preservado e completo -->
-  <section id="spt">
-    <div class="shell">
-      <h2 class="section-title">The Pleroma Substrate</h2>
-      <div class="grid-2">
-        <div class="visual">
-          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000);"></div>
-        </div>
-        <div class="text-content">
-          <p>Structural Plenitude Theory proposes that the quantum vacuum is an absolute physical medium with perfect viscoelastic properties. There is no empty space: there is continuous structural tension and residual dissipation.</p>
-          <p>Light, gravity, and cosmological redshift are emergent from this substrate. Objects like 3I/ATLAS reveal direct signatures of dynamic coupling — asymmetric anti-tail, jets, initial radio silence.</p>
-          
-          <div class="spt-icons">
-            <div class="spt-icon">
-              <div class="spt-pill">SPT v1.4</div>
-              <div class="spt-hover">
-                <p>Structural Plenitude Theory v1.4 defines the vacuum as a structured, viscoelastic substrate (Pleroma), governed by coupling efficiency, impedance gradients and residual dissipation.</p>
-              </div>
-            </div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+</div>
+</header>
 
-            <div class="spt-icon">
-              <div class="spt-pill">Pleroma Substrate</div>
-              <div class="spt-hover">
-                <p>The Pleroma is not a medium nor a reference frame. It is a continuous physical substrate whose structural tensions give rise to light, gravity and inertia.</p>
-              </div>
-            </div>
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1 class="hero-title">Structural Plenitude Theory</h1>
+<p class="hero-subtitle">
+The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma.
+</p>
+<div class="hero-tags">
+<div class="tag">SPT v1.4</div>
+<div class="tag">Pleroma Substrate</div>
+<div class="tag">Viscoelastic Vacuum</div>
+<div class="tag">3I/ATLAS Analysis</div>
+</div>
+</div>
+</section>
 
-            <div class="spt-icon">
-              <div class="spt-pill">Viscoelastic Vacuum</div>
-              <div class="spt-hover">
-                <p>In SPT, the vacuum behaves as a viscoelastic structure, exhibiting elastic anchoring, delayed response and dissipative regimes depending on coupling conditions.</p>
-              </div>
-            </div>
+<footer>
+<div class="shell">
+© 2026 Black Science Institute
+</div>
+</footer>
 
-            <div class="spt-icon">
-              <div class="spt-pill">3I/ATLAS Analysis</div>
-              <div class="spt-hover">
-                <p>The 3I/ATLAS object exhibits structural drag, asymmetric response and radiative dissipation consistent with SPT predictions, without relying on outgassing models.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+function toggleMenu(){
+document.getElementById('navMenu').classList.toggle('active');
+}
 
-  <section id="research" style="background:#0a0a0a;">
-    <div class="shell">
-      <h2 class="section-title">Research Axes</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <h3 class="card-title">Mathematical Formalism</h3>
-          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">Observational Applications</h3>
-          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">Cosmogenesis</h3>
-          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="phenomena">
-    <div class="shell">
-      <h2 class="section-title">Phenomenological Observatory</h2>
-      <div class="editorial" style="text-align:center; max-width:800px; margin:0 auto 60px;">
-        <p>The Black Science Institute maintains an open catalog of observational phenomena that challenge purely geometric or particle-only interpretations of physical reality.</p>
-        <p>Rather than proposing immediate theoretical replacement, this observatory organizes patterns across astrophysics, plasma physics and cosmology.</p>
-      </div>
-      <div class="cards-grid">
-        <a href="research.html" class="card-link">
-          <div class="card">
-            <h3 class="card-title">Plasma & Magnetosphere</h3>
-            <p class="card-body">Planetary plasma tails, auroral asymmetries, solar wind structural coupling and magnetospheric tension behavior.</p>
-          </div>
-        </a>
-        <a href="research.html" class="card-link">
-          <div class="card">
-            <h3 class="card-title">Interstellar Objects</h3>
-            <p class="card-body">Transit anomalies, non-gravitational residuals, radiation asymmetry and structural drag candidates.</p>
-          </div>
-        </a>
-        <a href="research.html" class="card-link">
-          <div class="card">
-            <h3 class="card-title">Cosmological Tensions</h3>
-            <p class="card-body">Redshift residuals, anisotropy structures, growth parameter deviations and observational clustering effects.</p>
-          </div>
-        </a>
-        <a href="research.html" class="card-link">
-          <div class="card">
-            <h3 class="card-title">Emerging Signatures</h3>
-            <p class="card-body">Chromatic propagation tests, phase-drag observational windows and substrate-interaction candidates.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="shell" style="text-align:center;">
-      <h2 class="section-title">Contact</h2>
-      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
-        Open to theoretical collaborations, SPT discussions, or observational data exchange.
-      </p>
-      <p style="font-size:1.4rem; margin:20px 0;">
-        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-      </p>
-      <div class="contact-social-main">
-        <a href="https://x.com/blackscienceSPT" target="_blank" class="x-main-button">
-          <span class="x-icon">𝕏</span>
-          <div class="x-text">
-            <div class="x-label">OFFICIAL SCIENCE FEED</div>
-            <div class="x-handle">@blackscienceSPT</div>
-          </div>
-        </a>
-      </div>
-      <p style="opacity:0.7; margin-top:40px;">São Paulo, Brazil</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="shell">
-      <p>© 2026 Black Science Institute</p>
-      <p style="margin-top:16px;">
-        <a href="https://x.com/blackscienceSPT" target="_blank">X (Official Updates)</a> ·
-        <a href="https://zenodo.org" target="_blank">Zenodo</a> ·
-        <a href="mailto:research@blackscienceinstitute.org">Contact Office</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('active');
-    }
-
-    window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      const heroBg = document.querySelector('.hero-bg');
-      if (heroBg) heroBg.style.transform = `translateY(${scroll * 0.25}px)`;
-      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
-    });
-  </script>
+window.addEventListener('scroll',()=>{
+const heroBg=document.querySelector('.hero-bg');
+if(heroBg){
+heroBg.style.transform=`translateY(${window.scrollY*0.25}px)`;
+}
+document.querySelector('header').classList.toggle('scrolled',window.scrollY>100);
+});
+</script>
 
 </body>
 </html>
