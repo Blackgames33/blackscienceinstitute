@@ -10,15 +10,16 @@
 <style>
 :root{
 --bg:#000;
---fg:#e0e0e0;
---muted:#a0a0a0;
---accent:#ffffff;
---border-soft:rgba(255,255,255,0.18);
+--fg:#e8e8e8;
+--muted:#9a9a9a;
+--accent:#fff;
+--border-soft:rgba(255,255,255,.15);
 --radius:16px;
---transition:.3s ease;
+--transition:.35s ease;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 background:#000;
 color:var(--fg);
@@ -28,17 +29,21 @@ line-height:1.7;
 overflow-x:hidden;
 }
 
-a{color:inherit;text-decoration:none;}
-.shell{max-width:1240px;margin:0 auto;padding:0 24px;}
+a{text-decoration:none;color:inherit;}
+
+.shell{max-width:1200px;margin:0 auto;padding:0 24px;}
 
 header{
 position:fixed;
 top:0;left:0;width:100%;
-z-index:1000;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,.7);
 backdrop-filter:blur(12px);
 border-bottom:1px solid var(--border-soft);
+z-index:1000;
+transition:.4s;
 }
+
+header.scrolled{background:rgba(0,0,0,.92);}
 
 nav{
 height:80px;
@@ -49,21 +54,30 @@ justify-content:space-between;
 
 .logo{
 font-family:'Montserrat',sans-serif;
-font-size:1.3rem;
-letter-spacing:.15em;
+letter-spacing:.18em;
+font-size:1.25rem;
+font-weight:300;
+opacity:.9;
 }
 
 .nav-links{
 display:flex;
 gap:40px;
 font-family:'Montserrat',sans-serif;
-font-size:.9rem;
-letter-spacing:.12em;
+font-size:.85rem;
+letter-spacing:.14em;
 text-transform:uppercase;
 }
 
-.nav-links a{opacity:.85;transition:var(--transition);}
-.nav-links a:hover{opacity:1;}
+.nav-links a{
+opacity:.8;
+transition:var(--transition);
+}
+
+.nav-links a:hover{
+opacity:1;
+transform:translateY(-2px);
+}
 
 .hamburger{
 display:none;
@@ -79,61 +93,76 @@ justify-content:center;
 text-align:center;
 position:relative;
 overflow:hidden;
-padding:120px 0 80px;
+padding-top:80px;
 }
 
 .hero-bg{
 position:absolute;
 inset:0;
 background:url('./assets/images/bsi-moon.png') center/cover no-repeat;
-opacity:.6;
+opacity:.55;
 z-index:1;
 }
 
-.hero-content{position:relative;z-index:2;max-width:900px;}
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:0 20px;
+}
+
 .hero-title{
 font-family:'Montserrat',sans-serif;
+font-weight:300;
+letter-spacing:.12em;
 font-size:clamp(3rem,7vw,6rem);
-letter-spacing:.08em;
-margin-bottom:32px;
+opacity:.92;
+margin-bottom:28px;
 }
 
 .hero-subtitle{
-font-size:clamp(1.1rem,2.8vw,1.6rem);
-margin-bottom:48px;
-opacity:.9;
+font-size:1.15rem;
+opacity:.75;
+max-width:720px;
+margin:0 auto 50px;
 }
 
 .hero-tags{
 display:flex;
-gap:16px;
-justify-content:center;
 flex-wrap:wrap;
+gap:14px;
+justify-content:center;
 }
 
 .tag{
-padding:10px 22px;
+padding:10px 20px;
 border:1px solid var(--border-soft);
 border-radius:999px;
-font-size:.85rem;
-letter-spacing:.12em;
+font-size:.75rem;
+letter-spacing:.15em;
 transition:var(--transition);
 }
-.tag:hover{background:rgba(255,255,255,.08);}
 
-section{padding:140px 0;}
+.tag:hover{
+background:rgba(255,255,255,.08);
+}
+
+section{
+padding:140px 0;
+}
+
 .section-title{
 font-family:'Montserrat',sans-serif;
-font-size:clamp(2rem,4vw,3rem);
+letter-spacing:.14em;
+font-size:2.5rem;
+font-weight:300;
 text-align:center;
-letter-spacing:.12em;
 margin-bottom:80px;
-text-transform:uppercase;
 }
 
 .cards-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:32px;
 }
 
@@ -147,40 +176,56 @@ transition:var(--transition);
 
 .card:hover{
 transform:translateY(-10px);
-border-color:var(--accent);
+border-color:#fff;
 }
 
 .card-title{
 font-family:'Montserrat',sans-serif;
-font-size:1.4rem;
-margin-bottom:16px;
+margin-bottom:18px;
+font-size:1.3rem;
 }
 
-footer{
-padding:80px 0;
-border-top:1px solid var(--border-soft);
+.card-body{
+opacity:.75;
+}
+
+.contact-section{
 text-align:center;
 }
 
-.contact-x{
+.contact-section p{
+opacity:.7;
+margin-bottom:20px;
+}
+
+.x-button{
 display:inline-block;
 margin-top:20px;
-padding:12px 28px;
-border:1px solid var(--border-soft);
+padding:14px 28px;
+border:1px solid #fff;
 border-radius:999px;
 font-family:'Montserrat',sans-serif;
-letter-spacing:.12em;
+letter-spacing:.15em;
+font-size:.75rem;
 transition:var(--transition);
 }
 
-.contact-x:hover{
+.x-button:hover{
 background:#fff;
 color:#000;
 }
 
-@media(max-width:768px){
+footer{
+padding:60px 0 40px;
+text-align:center;
+border-top:1px solid var(--border-soft);
+font-size:.8rem;
+opacity:.6;
+}
 
-.hamburger{display:block;}
+/* MOBILE */
+
+@media(max-width:768px){
 
 .nav-links{
 display:none;
@@ -191,15 +236,21 @@ left:0;
 width:100%;
 background:#000;
 padding:30px 0;
+gap:24px;
 text-align:center;
-border-bottom:1px solid var(--border-soft);
 }
 
 .nav-links.active{display:flex;}
 
-.hero{padding:100px 20px;}
-.hero-bg{background-position:center top;}
+.hamburger{display:block;}
+
+.hero-title{font-size:2.5rem;}
+
+.hero-subtitle{font-size:1rem;}
+
+section{padding:100px 0;}
 }
+
 </style>
 </head>
 
@@ -224,14 +275,15 @@ border-bottom:1px solid var(--border-soft);
 <section class="hero">
 <div class="hero-bg"></div>
 <div class="hero-content">
-<h1 class="hero-title">Structural Plenitude Theory</h1>
+<h1 class="hero-title">STRUCTURAL PLENITUDE THEORY</h1>
 <p class="hero-subtitle">
-The vacuum is not empty. It is a continuous viscoelastic substrate — the Pleroma — where light and gravity emerge as structural responses.
+The vacuum is not empty. It is a continuous viscoelastic substrate — the Pleroma — where light, gravity and matter emerge as structural responses.
 </p>
 <div class="hero-tags">
 <div class="tag">SPT v1.4</div>
 <div class="tag">Pleroma</div>
 <div class="tag">Viscoelastic Vacuum</div>
+<div class="tag">3I/ATLAS</div>
 </div>
 </div>
 </section>
@@ -240,48 +292,48 @@ The vacuum is not empty. It is a continuous viscoelastic substrate — the Plero
 <div class="shell">
 <h2 class="section-title">Research Axes</h2>
 <div class="cards-grid">
-<a href="structural-plenitude-theory.html" class="card">
-<div class="card-title">SPT v1.4</div>
-<p>Unified substrate formalism and propagation correction framework.</p>
-</a>
-
-<a href="research.html" class="card">
-<div class="card-title">Research Library</div>
-<p>Preprints, datasets and cosmological implementations.</p>
-</a>
-
-<a href="phenomena.html" class="card">
-<div class="card-title">Phenomena</div>
-<p>Interstellar objects, plasma tails and structural anomalies.</p>
-</a>
+<div class="card">
+<h3 class="card-title">Mathematical Formalism</h3>
+<p class="card-body">Covariant equations, impedance structure and propagation corrections.</p>
+</div>
+<div class="card">
+<h3 class="card-title">Observational Applications</h3>
+<p class="card-body">3I/ATLAS, plasma tails and chromatic signatures.</p>
+</div>
+<div class="card">
+<h3 class="card-title">Cosmogenesis</h3>
+<p class="card-body">Structural emergence and large-scale formation.</p>
+</div>
 </div>
 </div>
 </section>
 
-<section id="contact">
-<div class="shell" style="text-align:center;">
+<section id="contact" class="contact-section">
+<div class="shell">
 <h2 class="section-title">Contact</h2>
-<p>Open for collaborations and theoretical discussions.</p>
-<a class="contact-x" href="https://x.com/blackscienceSPT" target="_blank">
-X Official Updates
+<p>Independent cosmological research.</p>
+<p>research@blackscienceinstitute.org</p>
+<a href="https://x.com/blackscienceSPT" target="_blank" class="x-button">
+FOLLOW ON X
 </a>
-<p style="margin-top:30px;">research@blackscienceinstitute.org</p>
 </div>
 </section>
 
 <footer>
-© 2026 Black Science Institute
+<div class="shell">
+© 2026 Black Science Institute · All rights reserved
+</div>
 </footer>
 
 <script>
 function toggleMenu(){
-document.getElementById('navMenu').classList.toggle('active');
+document.getElementById("navMenu").classList.toggle("active");
 }
 
 window.addEventListener('scroll',()=>{
-const scroll=window.scrollY;
 const heroBg=document.querySelector('.hero-bg');
-if(heroBg) heroBg.style.transform=`translateY(${scroll*.3}px)`;
+if(heroBg)heroBg.style.transform=`translateY(${window.scrollY*.3}px)`;
+document.querySelector('header').classList.toggle('scrolled',window.scrollY>100);
 });
 </script>
 
