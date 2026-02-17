@@ -231,7 +231,7 @@ section {
   max-width:540px;
   border-radius:50%;
   box-shadow:0 0 120px rgba(255,255,255,0.05);
-  background:url('./assets/images/moon-orbit.png') center/cover no-repeat;
+  
 }
 
 .text-content {
@@ -351,7 +351,12 @@ body::after {
   pointer-events:none;
   z-index:-4;
 }
-
+.body-bg {
+  position:absolute;
+  inset:0;
+  background:url('./assets/images/moon-orbit.png') center/cover no-repeat;
+  opacity:0.65;
+  z-index:1;
 /* Suavização geral de contraste */
 section {
   position:relative;
