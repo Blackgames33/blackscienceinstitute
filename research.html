@@ -223,7 +223,84 @@ text-align:center;
 opacity:0.8;
 font-size:0.9rem;
 }
+/* ===============================
+   CINEMATIC DEPTH SYSTEM
+   =============================== */
 
+/* PLANET BACKGROUND BASE */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* SECOND PLANET – RESEARCH */
+#research::before {
+  content: "";
+  position: absolute;
+  left: -250px;
+  top: 40%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* THIRD PLANET – PHENOMENA */
+#phenomena::before {
+  content: "";
+  position: absolute;
+  right: -300px;
+  top: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02) 45%,
+    transparent 75%
+  );
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* EQUATION LAYER */
+#phenomena::after {
+  content: "∇μT^{μν}=0   ηH₀/c   Δν/ν ≈ (H₀/c)d   Z_H   Israel–Stewart";
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+  opacity: 0.03;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* MOBILE CONTROL */
+@media (max-width: 768px) {
+
+  #research::before,
+  #phenomena::before {
+    width: 500px;
+    height: 500px;
+    opacity: 0.18;
+  }
+
+  #phenomena::after {
+    font-size: 1.8rem;
+    bottom: 10%;
+  }
+
+}
 </style>
 </head>
 
