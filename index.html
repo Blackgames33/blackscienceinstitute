@@ -373,6 +373,26 @@ section {
 .section-title {
   opacity:0.9;
 }
+/* ===== Deep Orbital Planet Overlay ===== */
+
+.hero {
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: url('./assets/images/moon-orbit.png') no-repeat left center;
+  background-size: cover;
+  opacity: 0.22; /* ajuste fino aqui */
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
 
 }
 
