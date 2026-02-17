@@ -350,6 +350,34 @@ nav {
   position: relative;
   z-index: 1;
 }
+/* === Atmospheric Depth Effect - Pleroma Section === */
+
+#spt {
+  position: relative;
+  overflow: hidden;
+}
+
+#spt::after {
+  content: "";
+  position: absolute;
+  right: -200px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at center,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.03) 40%,
+    rgba(255,255,255,0.01) 60%,
+    transparent 75%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+#spt .shell {
+  position: relative;
+  z-index: 1;
+}
 
   </style>
 </head>
