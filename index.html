@@ -420,6 +420,30 @@ section {
 .hero-content { position: relative; z-index: 4; }
 
 }
+/* ===== RESEARCH PLANET BACKGROUND ===== */
+
+#research {
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+#research .section-planet {
+  position: absolute;
+  bottom: -25%;
+  right: -15%;
+  width: 70vw;
+  height: 70vw;
+  background: url('./assets/images/moon-orbit.png') center/cover no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#research .shell {
+  position: relative;
+  z-index: 1;
+}
 
   </style>
 </head>
@@ -504,8 +528,10 @@ section {
     </div>
   </section>
 
-  <section id="research" style="background:#0a0a0a;">
-    <div class="shell">
+ <section id="research">
+  <div class="section-planet"></div>
+  <div class="shell">
+
       <h2 class="section-title">Research Axes</h2>
       <div class="cards-grid">
         <div class="card">
