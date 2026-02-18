@@ -189,6 +189,7 @@ nav {
 
 .hamburger {
   display:none;
+}
   font-size:1.8rem;
   cursor:pointer;
 }
@@ -352,8 +353,19 @@ footer {
 
 @media (max-width:768px){
 
-  .hamburger { display:block; }
+  .search-icon {
+    right: 60px;
+  }
 
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+}
   .nav-links {
     display:none;
     flex-direction:column;
@@ -582,9 +594,10 @@ section {
 }
 .search-icon {
   position: absolute;
-  right: 5%;
-  font-size: 1.2rem;
+  right: 70px;
   cursor: pointer;
+}
+
   color: rgba(255,255,255,0.7);
   transition: 0.3s ease;
 }
