@@ -165,12 +165,17 @@
   text-align: center;
   overflow: hidden;
 }
-
 .hero-bg {
   position: absolute;
   inset: 0;
   background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
+  background-size: 120%;
+  background-position: center 40%;
   z-index: 0;
+  will-change: transform;
+}
+
+
 }
 
 .hero-overlay {
@@ -285,7 +290,6 @@
   </header>
 
   <section class="hero" id="home">
-   
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -380,6 +384,15 @@
       const searchInput = document.getElementById("searchInput");
       const backBtn = document.getElementById("backToTop");
       const header = document.getElementById("mainHeader");
+const heroBg = document.querySelector(".hero-bg");
+
+window.addEventListener("scroll", function() {
+  const scrollPosition = window.scrollY;
+
+  if (heroBg) {
+    heroBg.style.transform = "translateY(" + scrollPosition * 0.25 + "px)";
+  }
+});
 
       // Scroll effect for header
       window.addEventListener("scroll", () => {
