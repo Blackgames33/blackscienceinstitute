@@ -754,7 +754,7 @@ section {
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact-section">
     <div class="shell" style="text-align:center;">
       <h2 class="section-title">Contact</h2>
       <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
@@ -838,37 +838,49 @@ section {
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      if (menu) menu.classList.toggle('active');
-    }
+document.addEventListener("DOMContentLoaded", function() {
 
-    window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      const heroBg = document.querySelector('.hero-bg');
-      if (heroBg) heroBg.style.transform = `translateY(${scroll * 0.25}px)`;
-      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
+  const searchIcon = document.querySelector(".search-icon");
+  const searchModal = document.getElementById("searchModal");
+  const searchInput = document.getElementById("searchInput");
+  const backBtn = document.getElementById("backToTop");
+
+  /* ===== SEARCH ===== */
+
+  if (searchIcon && searchModal && searchInput) {
+
+    searchIcon.addEventListener("click", function(e) {
+      e.stopPropagation();
+      searchModal.classList.add("active");
+      searchInput.focus();
     });
 
-    // SEARCH
-    const searchIcon = document.querySelector(".search-icon");
-    const searchModal = document.getElementById("searchModal");
+    searchModal.addEventListener("click", function() {
+      searchModal.classList.remove("active");
+    });
 
-    if (searchIcon) {
-      searchIcon.addEventListener("click", () => {
-        searchModal.classList.add("active");
-      });
-    }
+    searchInput.addEventListener("click", function(e){
+      e.stopPropagation();
+    });
 
-    if (searchModal) {
-      searchModal.addEventListener("click", () => {
-        searchModal.classList.remove("active");
-      });
-    }
+    searchInput.addEventListener("keydown", function(e){
+      if (e.key === "Enter") {
+        const query = searchInput.value.toLowerCase();
+        const bodyText = document.body.innerText.toLowerCase();
 
-    // BACK TO TOP
-    const backBtn = document.getElementById("backToTop");
+        if (bodyText.includes(query)) {
+          alert("Term found on this page.");
+        } else {
+          alert("No match found.");
+        }
+      }
+    });
+  }
 
-    window.addEventListener("scroll", () => {
+  /* ===== BACK TO TOP ===== */
+
+  if (backBtn) {
+    window.addEventListener("scroll", function() {
       if (window.scrollY > 600) {
         backBtn.classList.add("show");
       } else {
@@ -876,45 +888,12 @@ section {
       }
     });
 
-    backBtn.addEventListener("click", () => {
+    backBtn.addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-// ===== SEARCH FUNCTION =====
+  }
 
-const searchIcon = document.querySelector(".search-icon");
-const searchModal = document.getElementById("searchModal");
-const searchInput = document.getElementById("searchInput");
-
-if (searchIcon && searchModal) {
-
-  searchIcon.addEventListener("click", function(e) {
-    e.stopPropagation();
-    searchModal.classList.add("active");
-    searchInput.focus();
-  });
-
-  searchModal.addEventListener("click", function() {
-    searchModal.classList.remove("active");
-  });
-
-  searchInput.addEventListener("click", function(e){
-    e.stopPropagation();
-  });
-
-  searchInput.addEventListener("keydown", function(e){
-    if (e.key === "Enter") {
-      const query = searchInput.value.toLowerCase();
-      const bodyText = document.body.innerText.toLowerCase();
-
-      if (bodyText.includes(query)) {
-        alert("Term found on this page.");
-      } else {
-        alert("No match found.");
-      }
-    }
-  });
-
-}
+});
 
   </script>
 
