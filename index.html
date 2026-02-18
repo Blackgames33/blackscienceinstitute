@@ -166,12 +166,15 @@
       overflow:hidden;
     }
 
-    .hero-bg {
-      position:absolute;
-      inset:0;
-      background:url('./assets/images/bsi-moon.png') center/cover no-repeat;
-      opacity:0.65;
-      z-index:1;
+    ..hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
+  background-size: 120%;
+  background-position: center 40%;
+  z-index: 1;
+  will-change: transform;
+}
     }
 
     .hero-planet-bg {
