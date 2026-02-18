@@ -580,6 +580,19 @@ section {
   border-top: 1px solid var(--border);
   padding-top: 30px;
 }
+.search-icon {
+  position: absolute;
+  right: 5%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  transition: 0.3s ease;
+}
+
+.search-icon:hover {
+  color: white;
+  transform: scale(1.15);
+}
 
   </style>
 </head>
@@ -606,7 +619,13 @@ section {
     <a href="#contact">Contact</a>
   </div>
 
-  <div class="search-icon">
+ <div class="search-icon">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+    <circle cx="11" cy="11" r="7"/>
+    <line x1="16.65" y1="16.65" x2="21" y2="21"/>
+  </svg>
+</div>
+
     🔍
   </div>
 
@@ -758,8 +777,8 @@ section {
   </section>
 
   
-<footer class="footer-astron">
-  <div class="shell footer-grid">
+<footer id="contact" class="footer-astron">
+ <div class="shell footer-grid">
 
     <!-- COLUNA 1 -->
     <div class="footer-col">
@@ -808,11 +827,12 @@ section {
 
 
   <!-- SEARCH MODAL -->
-  <div id="searchModal" class="search-modal">
-    <div class="search-box">
-      <input type="text" placeholder="Search..." />
-    </div>
+ <div id="searchModal" class="search-modal">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search in site..." />
   </div>
+</div>
+
 
   <button id="backToTop">↑</button>
 
@@ -859,6 +879,42 @@ section {
     backBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+// ===== SEARCH FUNCTION =====
+
+const searchIcon = document.querySelector(".search-icon");
+const searchModal = document.getElementById("searchModal");
+const searchInput = document.getElementById("searchInput");
+
+if (searchIcon && searchModal) {
+
+  searchIcon.addEventListener("click", function(e) {
+    e.stopPropagation();
+    searchModal.classList.add("active");
+    searchInput.focus();
+  });
+
+  searchModal.addEventListener("click", function() {
+    searchModal.classList.remove("active");
+  });
+
+  searchInput.addEventListener("click", function(e){
+    e.stopPropagation();
+  });
+
+  searchInput.addEventListener("keydown", function(e){
+    if (e.key === "Enter") {
+      const query = searchInput.value.toLowerCase();
+      const bodyText = document.body.innerText.toLowerCase();
+
+      if (bodyText.includes(query)) {
+        alert("Term found on this page.");
+      } else {
+        alert("No match found.");
+      }
+    }
+  });
+
+}
 
   </script>
 
