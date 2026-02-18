@@ -73,9 +73,16 @@ a { color:inherit; text-decoration:none; }
   margin:0 auto;
   padding:0 5%;
 }
-
 header {
-  position:fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
   top:0;
   left:0;
   width:100%;
@@ -91,37 +98,79 @@ header.scrolled {
 }
 
 nav {
-  height:90px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
+/* Logo menor */
 .logo {
-  font-family:'Montserrat',sans-serif;
-  font-size:1.4rem;
-  letter-spacing:0.18em;
-  font-weight:400;
-  opacity:0.95;
+  position: absolute;
+  left: 5%;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  opacity: 0.8;
 }
 
-.nav-links {
-  display:flex;
-  gap:42px;
-  font-family:'Montserrat',sans-serif;
-  font-size:0.9rem;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
+/* Centro */
+.nav-center {
+  display: flex;
+  gap: 70px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-.nav-links a {
-  opacity:0.75;
-  transition:all var(--transition);
+.nav-center a {
+  position: relative;
+  opacity: 0.75;
+  transition: all 0.4s ease;
 }
 
-.nav-links a:hover {
-  opacity:1;
-  transform:translateY(-3px);
+.nav-center a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  background: rgba(0,0,0,0.95);
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Search */
+.search-icon {
+  position: absolute;
+  right: 5%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.search-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 }
 
 .hamburger {
@@ -410,17 +459,30 @@ section {
 
   <header>
     <div class="shell">
-      <nav>
-        <div class="logo">BLACK SCIENCE INSTITUTE</div>
-        <div class="nav-links" id="navMenu">
-          <a href="index.html">Home</a>
-          <a href="structural-plenitude-theory.html">SPT</a>
-          <a href="phenomena.html">Phenomena</a>
-          <a href="research.html">Research</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-      </nav>
+    <nav>
+
+  <div class="logo">BLACK SCIENCE INSTITUTE</div>
+
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="structural-plenitude-theory.html">SPT</a>
+      <div class="dropdown-menu">
+        <a href="phenomena.html">Phenomena</a>
+        <a href="research.html">Research</a>
+      </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="search-icon">
+    🔍
+  </div>
+
+</nav>
+
     </div>
   </header>
 
