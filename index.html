@@ -580,6 +580,79 @@ section {
   border-top: 1px solid var(--border);
   padding-top: 30px;
 }
+.search-icon {
+  position: absolute;
+  right: 5%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  transition: 0.3s ease;
+}
+
+.search-icon:hover {
+  color: white;
+  transform: scale(1.15);
+}
+@media (max-width:768px){
+
+  nav {
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  /* Logo deixa de ser absoluto */
+  .logo {
+    position: relative;
+    left: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Esconde menu central */
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 75%;
+    background: rgba(0,0,0,0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s ease;
+  }
+
+  .nav-center.active {
+    right: 0;
+  }
+
+  /* Dropdown vira simples */
+  .dropdown-menu {
+    position: relative;
+    background: none;
+    padding: 10px 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  /* Lupa alinhada */
+  .search-icon {
+    position: absolute;
+    right: 60px;
+  }
+
+  /* Ícone hamburguer */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 5%;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+}
 
   </style>
 </head>
@@ -606,8 +679,16 @@ section {
     <a href="#contact">Contact</a>
   </div>
 
-  <div class="search-icon">
-    🔍
+ <div class="search-icon">
+  <div class="hamburger">☰</div>
+ 
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+    <circle cx="11" cy="11" r="7"/>
+    <line x1="16.65" y1="16.65" x2="21" y2="21"/>
+  </svg>
+</div>
+
+
   </div>
 
 </nav>
@@ -735,38 +816,14 @@ section {
     </div>
   </section>
 
-  <section id="contact">
+
+
+<footer id="contact" class="footer-astron">
+    <section id="contact-section">
     <div class="shell" style="text-align:center;">
       <h2 class="section-title">Contact</h2>
       <p style="font-size:1.2rem; max-width:700px; margin:0 auto 40px;">
-        Open to theoretical collaborations, SPT discussions, or observational data exchange.
-      </p>
-      <p style="font-size:1.4rem; margin:20px 0;">
-        <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-      </p>
-      <div class="contact-social-main">
-        <a href="https://x.com/blackscienceSPT" target="_blank" class="x-main-button">
-          <span class="x-icon">𝕏</span>
-          <div class="x-text">
-            <div class="x-label">OFFICIAL SCIENCE FEED</div>
-            <div class="x-handle">@blackscienceSPT</div>
-          </div>
-        </a>
-      </div>
-      <p style="opacity:0.7; margin-top:40px;">São Paulo, Brazil</p>
-    </div>
-  </section>
-
-
-<footer>
-    <div class="shell">
-      <p>© 2026 Black Science Institute</p>
-      <p style="margin-top:16px;">
-        <a href="https://x.com/blackscienceSPT" target="_blank">X (Official Updates)</a> ·
-        <a href="https://zenodo.org" target="_blank">Zenodo</a> ·
-        <a href="mailto:research@blackscienceinstitute.org">Contact Office</a>
-<footer class="footer-astron">
-  <div class="shell footer-grid">
+ <div class="shell footer-grid">
 
     <!-- COLUNA 1 -->
     <div class="footer-col">
@@ -781,7 +838,6 @@ section {
         <a href="https://zenodo.org" target="_blank">Z</a>
       </div>
     </div>
-  </footer>
 
     <!-- COLUNA 2 -->
     <div class="footer-col">
@@ -816,47 +872,60 @@ section {
 
 
   <!-- SEARCH MODAL -->
-  <div id="searchModal" class="search-modal">
-    <div class="search-box">
-      <input type="text" placeholder="Search..." />
-    </div>
+ <div id="searchModal" class="search-modal">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search in site..." />
   </div>
+</div>
+
 
   <button id="backToTop">↑</button>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      if (menu) menu.classList.toggle('active');
-    }
+document.addEventListener("DOMContentLoaded", function() {
 
-    window.addEventListener('scroll', () => {
-      const scroll = window.scrollY;
-      const heroBg = document.querySelector('.hero-bg');
-      if (heroBg) heroBg.style.transform = `translateY(${scroll * 0.25}px)`;
-      document.querySelector('header').classList.toggle('scrolled', scroll > 100);
+  const searchIcon = document.querySelector(".search-icon");
+  const searchModal = document.getElementById("searchModal");
+  const searchInput = document.getElementById("searchInput");
+  const backBtn = document.getElementById("backToTop");
+
+  /* ===== SEARCH ===== */
+
+  if (searchIcon && searchModal && searchInput) {
+
+    searchIcon.addEventListener("click", function(e) {
+      e.stopPropagation();
+      searchModal.classList.add("active");
+      searchInput.focus();
     });
 
-    // SEARCH
-    const searchIcon = document.querySelector(".search-icon");
-    const searchModal = document.getElementById("searchModal");
+    searchModal.addEventListener("click", function() {
+      searchModal.classList.remove("active");
+    });
 
-    if (searchIcon) {
-      searchIcon.addEventListener("click", () => {
-        searchModal.classList.add("active");
-      });
-    }
+    searchInput.addEventListener("click", function(e){
+      e.stopPropagation();
+    });
 
-    if (searchModal) {
-      searchModal.addEventListener("click", () => {
-        searchModal.classList.remove("active");
-      });
-    }
+    searchInput.addEventListener("keydown", function(e){
+      if (e.key === "Enter") {
+        const query = searchInput.value.toLowerCase();
+        const bodyText = document.body.innerText.toLowerCase();
 
-    // BACK TO TOP
-    const backBtn = document.getElementById("backToTop");
+        if (bodyText.includes(query)) {
+          alert("Term found on this page.");
+        } else {
+          alert("No match found.");
+        }
+      }
+    });
+  }
 
-    window.addEventListener("scroll", () => {
+  /* ===== BACK TO TOP ===== */
+
+  if (backBtn) {
+    window.addEventListener("scroll", function() {
       if (window.scrollY > 600) {
         backBtn.classList.add("show");
       } else {
@@ -864,12 +933,22 @@ section {
       }
     });
 
-    backBtn.addEventListener("click", () => {
+    backBtn.addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+
+});
+const hamburger = document.querySelector(".hamburger");
+const navCenter = document.querySelector(".nav-center");
+
+if (hamburger && navCenter) {
+  hamburger.addEventListener("click", () => {
+    navCenter.classList.toggle("active");
+  });
+}
 
   </script>
 
 </body>
-</html>
 </html>
