@@ -672,7 +672,8 @@ section {
     </div>
   </section>
 
-  <footer>
+  
+<footer>
     <div class="shell">
       <p>© 2026 Black Science Institute</p>
       <p style="margin-top:16px;">
@@ -683,10 +684,19 @@ section {
     </div>
   </footer>
 
+  <!-- SEARCH MODAL -->
+  <div id="searchModal" class="search-modal">
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+    </div>
+  </div>
+
+  <button id="backToTop">↑</button>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
-      menu.classList.toggle('active');
+      if (menu) menu.classList.toggle('active');
     }
 
     window.addEventListener('scroll', () => {
@@ -695,38 +705,39 @@ section {
       if (heroBg) heroBg.style.transform = `translateY(${scroll * 0.25}px)`;
       document.querySelector('header').classList.toggle('scrolled', scroll > 100);
     });
-    <script>
-const searchIcon = document.querySelector(".search-icon");
-const searchModal = document.getElementById("searchModal");
 
-searchIcon.addEventListener("click", () => {
-  searchModal.classList.add("active");
-});
+    // SEARCH
+    const searchIcon = document.querySelector(".search-icon");
+    const searchModal = document.getElementById("searchModal");
 
-</footer>
-
-<button id="backToTop">↑</button>
-
-<script>
-  const backBtn = document.getElementById("backToTop");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 600) {
-      backBtn.classList.add("show");
-    } else {
-      backBtn.classList.remove("show");
+    if (searchIcon) {
+      searchIcon.addEventListener("click", () => {
+        searchModal.classList.add("active");
+      });
     }
-  });
 
-  backBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+    if (searchModal) {
+      searchModal.addEventListener("click", () => {
+        searchModal.classList.remove("active");
+      });
+    }
 
-</body>
-</html>
+    // BACK TO TOP
+    const backBtn = document.getElementById("backToTop");
 
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        backBtn.classList.add("show");
+      } else {
+        backBtn.classList.remove("show");
+      }
+    });
 
-</script>
+    backBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+  </script>
+
 </body>
 </html>
