@@ -703,10 +703,29 @@ searchIcon.addEventListener("click", () => {
   searchModal.classList.add("active");
 });
 
-searchModal.addEventListener("click", () => {
-  searchModal.classList.remove("active");
-});
-|
+</footer>
+
+<button id="backToTop">↑</button>
+
+<script>
+  const backBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 600) {
+      backBtn.classList.add("show");
+    } else {
+      backBtn.classList.remove("show");
+    }
+  });
+
+  backBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
+
 
 </script>
 </body>
