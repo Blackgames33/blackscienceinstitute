@@ -403,6 +403,71 @@ section {
   z-index:0;             /* Fica atrás da lua principal */
   pointer-events:none;
 }
+/* ========================================= */
+/* CINEMATIC DEPTH ADD-ON (SAFE LAYER)      */
+/* ========================================= */
+
+/* Textura de filme sutil */
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity:0.025;
+  pointer-events:none;
+  z-index:-3;
+}
+
+/* Atmosfera espacial mais profunda */
+body::before {
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255,255,255,0.04), transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03), transparent 55%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.02), transparent 60%);
+}
+
+/* Lua distante reaparecendo sutilmente nas sections */
+section::before {
+  content:"";
+  position:absolute;
+  right:-25%;
+  top:20%;
+  width:70%;
+  height:70%;
+  background:url('./assets/moon-orbit.png') no-repeat right center;
+  background-size:contain;
+  opacity:0.05;
+  pointer-events:none;
+  z-index:0;
+  filter:blur(1px);
+}
+
+/* Garante que conteúdo fique acima */
+.shell {
+  position:relative;
+  z-index:2;
+}
+
+/* Glow frio leve na lua principal */
+.hero-bg {
+  filter:brightness(0.9) contrast(1.1);
+}
+
+.hero-bg::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(180,220,255,0.06), transparent 60%);
+}
+
+/* Cards mais profundos */
+.card {
+  backdrop-filter:blur(12px);
+}
+
+.card:hover {
+  box-shadow:0 30px 60px rgba(0,0,0,0.85);
+}
 
   </style>
 </head>
