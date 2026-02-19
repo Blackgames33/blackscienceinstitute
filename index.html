@@ -296,7 +296,42 @@ body::before {
 .card:hover::before {
   opacity: 1;
 }
-  
+  .formal-structure {
+  position: relative;
+  padding: 160px 0;
+  background: linear-gradient(
+    to bottom,
+    #050508 0%,
+    #000 100%
+  );
+  overflow: hidden;
+}
+
+.formal-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.formal-text p {
+  font-size: 1.18rem;
+  line-height: 1.95;
+  opacity: 0.9;
+}
+
+.formal-bg-equation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10rem;
+  color: rgba(255,255,255,0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
   </style>
 </head>
 
@@ -413,6 +448,35 @@ body::before {
       </div>
     </div>
   </section>
+<section class="formal-structure">
+
+  <div class="formal-bg-equation">
+    ∇μT^{μν} = 0
+  </div>
+
+  <div class="shell formal-grid">
+
+    <div class="formal-text">
+      <h2 class="section-title">Structural Continuity Framework</h2>
+
+      <p>
+        Structural Plenitude Theory proposes that vacuum dynamics
+        are governed by stress-energy continuity rather than emptiness.
+        The substrate behaves as a viscoelastic field with measurable
+        impedance gradients and coupling response.
+      </p>
+
+      <p style="margin-top:25px;">
+        Cosmological observations traditionally attributed to
+        expansion-only metrics may reveal deeper structural
+        anisotropies consistent with continuous medium interaction.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
  <footer id="contact" class="footer-astron">
     <div class="shell footer-grid">
