@@ -174,16 +174,6 @@
   z-index: 0;
   will-change: transform;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 60% 40%, rgba(70,90,160,0.12), transparent 60%),
-    radial-gradient(circle at 30% 70%, rgba(120,60,160,0.08), transparent 70%);
-  z-index: 0;
-  pointer-events: none;
-}
 
 
 }
@@ -214,7 +204,7 @@
     .section-title { font-family:'Montserrat',sans-serif; font-size:clamp(2.2rem,4vw,3.5rem); font-weight:300; letter-spacing:0.15em; text-align:center; margin-bottom:80px; }
     .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:70px; align-items:center; }
     .planet { width:100%; max-width:540px; border-radius:50%; box-shadow:0 0 120px rgba(255,255,255,0.05); }
-    
+
     .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; margin-top:80px; }
     .card { padding:44px 34px; border:1px solid var(--border); border-radius:var(--radius); background:rgba(255,255,255,0.025); backdrop-filter:blur(8px); transition:all var(--transition); height: 100%; }
     .card:hover { transform:translateY(-12px); border-color:rgba(255,255,255,0.3); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
@@ -277,29 +267,13 @@ body::before {
   background-size: 800px 800px;
   pointer-events: none;
   z-index: -10;
-}.cosmic-planet {
-  position: fixed;
-  top: 60%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle at 30% 30%, #111, #000);
-  border-radius: 50%;
-  opacity: 0.08;
-  filter: blur(2px);
-  z-index: -9;
-  pointer-events: none;
 }
-
   </style>
 </head>
 
 <body>
-}
 
   <header id="mainHeader">
-   <div class="cosmic-planet"></div>
- 
     <div class="shell">
       <nav>
         <div class="logo">BLACK SCIENCE INSTITUTE</div>
@@ -345,9 +319,6 @@ body::before {
       </div>
     </div>
   </section>
-}
-
-}
 
   <section id="spt">
     <div class="shell">
@@ -441,7 +412,7 @@ window.addEventListener("scroll", function() {
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
         else header.style.background = "rgba(0,0,0,0.45)";
-        
+
         if (window.scrollY > 600) backBtn.classList.add("show");
         else backBtn.classList.remove("show");
       });
