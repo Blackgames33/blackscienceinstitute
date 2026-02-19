@@ -272,6 +272,31 @@ body::before {
   pointer-events: none;
   z-index: -10;
 }
+  .card-title {
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+.card-body {
+  line-height: 1.9;
+  font-size: 1.02rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right,
+              rgba(255,255,255,0.05),
+              transparent 60%);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+  
   </style>
 </head>
 
@@ -376,6 +401,15 @@ body::before {
           <h3 class="card-title">Cosmogenesis</h3>
           <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
         </div>
+   <div class="card">
+  <h3 class="card-title">3I/ATLAS Analysis</h3>
+  <p class="card-body">
+    Structural drag modeling, Jovian impedance transition,
+    asymmetric radiative emission and substrate-coupling
+    interpretation beyond classical outgassing frameworks.
+  </p>
+</div>
+
       </div>
     </div>
   </section>
