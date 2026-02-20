@@ -209,8 +209,14 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1;
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0.2) 0%,
+      rgba(0,0,0,0.7) 70%,
+      rgba(0,0,0,0.95) 100%);
+  z-index: 2;
+}
+
 }
 
 .hero-content {
