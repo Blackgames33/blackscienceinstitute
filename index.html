@@ -394,6 +394,18 @@ body::before {
   position: relative;
   z-index: 2;
 }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}    
   </style>
 </head>
 
