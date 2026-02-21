@@ -418,17 +418,18 @@ body::before {
   gap: 80px;
   align-items: center;
 }
-
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;   
+}  
 @media (max-width: 900px) {
   .grid-2 {
     grid-template-columns: 1fr;
   }
-} 
-  .grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;       
+  
+  }
   </style>
 </head>
 
