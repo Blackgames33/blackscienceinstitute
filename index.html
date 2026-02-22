@@ -419,28 +419,20 @@ body::before {
   align-items: center;
 }
 
-}  
 @media (max-width: 900px) {
   .grid-2 {
     grid-template-columns: 1fr;
-  }
-  .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 80px;
+
+}
+ .visual {
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 1000px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 680px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
+.spt-planet {
+  max-width: 500px;
+  width: 100%;
+} 
 }
   }
   </style>
