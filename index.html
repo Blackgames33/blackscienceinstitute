@@ -71,7 +71,8 @@
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
-      transition: background 0.4s;
+      
+      
     }
 
     nav {
@@ -205,7 +206,7 @@
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
    .hero-title {
   display: flex;
@@ -716,6 +717,11 @@ window.addEventListener("scroll", function() {
       backBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+      window.addEventListener("scroll", () => {
+  const moon = document.querySelector(".hero-bg");
+  let offset = window.scrollY * 0.2;
+  moon.style.transform = `translateY(${offset}px)`;
+});
     });
   </script>
 </body>
