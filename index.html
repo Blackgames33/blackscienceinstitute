@@ -213,11 +213,15 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
- background: linear-gradient(
-  to bottom,
-  rgba(0,0,0,0.15) 0%,
-  rgba(0,0,0,0.45) 50%,
-  rgba(0,0,0,0.8) 100%
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.75) 75%,
+    rgba(0,0,0,0.95) 100%
+  );
+  z-index: 2;
+}
 );
   z-index: 1;
 }
@@ -423,22 +427,7 @@ body::before {
 }
 }
 
-#spt::before {
-  content: "";
-  position: absolute;
-  top: -110px;
-  inset: 0;
-  width: 100%;
-  hegth: 120px;
- background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.8) 0%,
-    rgba(0,0,0,0.65) 50%,
-    rgba(0,0,0,0.8) 100%
-    rgba(0,0,0,0),
-    #0a0a0a
-  );
-  pointer-events: none;
+
   z-index: 0;
 }
 
