@@ -212,27 +212,42 @@
       .editorial { font-size:1.05rem; } 
       
     /* MOBILE ADJUSTMENTS */
-    @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-center {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        background: rgba(5,5,5,0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        border-left: 1px solid var(--border);
-      }
-      .nav-center.active { right: 0; }
-      .hero-title { font-size: 2.8rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-    }  
+  @media (max-width: 768px) {
+
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    background: rgba(5,5,5,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--border-soft);
+  }
+
+  .nav-center.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+}
   </style>  
 <body>   
   
@@ -327,8 +342,7 @@
       <p style="opacity:0.88; font-style:italic;">  
 
  
-.btn-outline {
-  border-bottom: 1px solid #fff;
+
   padding: 12px 20px;
   margin: 10px;
   display: inline-block;
@@ -385,4 +399,28 @@
         <a href="https://zenodo.org" target="_blank">Zenodo</a>  
       </p>  
     </div>  
-  </footer>  </body>  
+  </footer> 
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const menuBtn = document.getElementById("menuBtn");
+  const navCenter = document.querySelector(".nav-center");
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      navCenter.classList.toggle("active");
+      menuBtn.innerText = navCenter.classList.contains("active") ? "✕" : "☰";
+    });
+  }
+
+  document.addEventListener("click", function(e) {
+    if (!navCenter.contains(e.target) && e.target !== menuBtn) {
+      navCenter.classList.remove("active");
+      menuBtn.innerText = "☰";
+    }
+  });
+
+});
+</script>
+</body>  
