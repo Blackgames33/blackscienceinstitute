@@ -44,7 +44,7 @@
 
     body::after {
       content:"∇μT^{μν}=0    Δη/Δt = -Aω²    Z_H ∝ ∂P/∂ρ";
-      position:fixed;
+      position:relative;
       bottom:15%;
       left:8%;
       font-family:'Montserrat',sans-serif;
@@ -463,6 +463,37 @@ body::before {
     transform: translateY(-03px);
   }
 }
+  .spt-brand{
+  font-family:'Montserrat',sans-serif;
+  letter-spacing:0.3em;
+  font-size:0.85rem;
+  margin-bottom:40px;
+  opacity:0.85;
+}
+
+.spt-nav{
+  margin-top:60px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.spt-pill{
+  padding:12px 28px;
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:999px;
+  font-size:0.8rem;
+  letter-spacing:0.15em;
+  opacity:0.8;
+  transition:0.3s ease;
+}
+
+.spt-pill:hover{
+  background:rgba(255,255,255,0.08);
+  transform:translateY(-3px);
+  opacity:1;
+}
   }
   </style>
 </head>
@@ -486,16 +517,32 @@ body::before {
   </div>
 </header>
 
-<section class="hero">
+<section class="hero spt-hero">
+
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="hero-title">Structural Plenitude Theory</h1>
-    <p class="hero-subtitle">
-      A unified substrate framework for viscoelastic vacuum dynamics and structural cosmology.
-    </p>
+
+    <div class="spt-brand">
+      BLACK SCIENCE INSTITUTE
+    </div>
+
+    <h1 class="hero-title">
+      Structural Plenitude Theory
+    </h1>
+
+    <div class="spt-nav">
+
+      <a href="#editorial" class="spt-pill">SPT v1.4</a>
+      <a href="#pleroma" class="spt-pill">Pleroma</a>
+      <a href="#viscoelastic" class="spt-pill">Viscoelastic</a>
+      <a href="#atlas" class="spt-pill">3I / ATLAS</a>
+
+    </div>
+
   </div>
+
 </section>
 <section>
   <div class="shell">
