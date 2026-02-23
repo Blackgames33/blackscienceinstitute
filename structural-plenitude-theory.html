@@ -238,7 +238,7 @@
     <div class="shell">  
       <nav>  
         <div class="logo">BLACK SCIENCE INSTITUTE</div>  
-        <div class="nav-links">  
+        <div class="nav-center">  
           <a href="index.html">Home</a>  
         <a href="structural-plenitude-theory.html">SPT</a> 
           <a href="research.html">Research</a>  
@@ -378,3 +378,12 @@
       </p>  
     </div>  
   </footer>  </body>  
+    // Hamburger Toggle
+      if (menuBtn) {
+        menuBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          navCenter.classList.toggle("active");
+          menuBtn.innerText = navCenter.classList.contains("active") ? "✕" : "☰";
+        })
+     });
+  </script>
