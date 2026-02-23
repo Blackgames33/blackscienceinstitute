@@ -583,6 +583,48 @@ background: transparent;
   .hero-menu a{
     padding:16px 28px !important;
   }
+    /* ===== DESKTOP FORCE HERO MENU ===== */
+
+section .hero-menu{
+  width:100%;
+  margin-top:120px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:48px;
+  flex-wrap:wrap;
+}
+
+section .hero-menu a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+
+  padding:20px 46px;
+
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(16px);
+
+  color:#ffffff;
+  opacity:0.85;
+
+  transition:all 0.4s ease;
+}
+
+section .hero-menu a:hover{
+  background:rgba(255,255,255,0.18);
+  border-color:rgba(255,255,255,0.85);
+  transform:translateY(-6px);
+  opacity:1;
+}
   </style>
 </head>
 
