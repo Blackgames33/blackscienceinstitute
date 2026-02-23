@@ -207,11 +207,10 @@
   opacity: 0.8;
 }
 
-    @media (max-width: 768px) {  
-      .hero-title { font-size:4rem; }  
-      .editorial { font-size:1.05rem; } 
-      
-    /* MOBILE ADJUSTMENTS */
+.hamburger {
+  display: none;
+}
+     {
   @media (max-width: 768px) {
 
   .nav-center {
@@ -246,7 +245,87 @@
   .hero-title {
     font-size: 2.6rem;
   }
+.hamburger {
+  display: none;
+}
 
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .editorial {
+    font-size: 1.05rem;
+  }
+
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    background: rgba(5,5,5,0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--border-soft);
+  }
+
+  .nav-center.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .editorial {
+    font-size: 1.05rem;
+  }
+
+  .nav-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    background: rgba(5,5,5,0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--border-soft);
+  }
+
+  .nav-center.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+}
+}
 }
   </style>  
 <body>   
@@ -343,9 +422,7 @@
 
  
 
-  padding: 12px 20px;
-  margin: 10px;
-  display: inline-block;
+ 
 }     The objective is to expand the physical interpretation space of vacuum behavior while maintaining compatibility with established observational constraints.  
       </p>  
     </div>  
