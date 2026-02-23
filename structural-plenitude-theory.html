@@ -474,6 +474,24 @@ background: transparent;
     transform: translateY(-03px);
   }
 }
+  .spt-pill{
+  padding:14px 34px;
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:999px;
+  font-size:0.75rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  opacity:0.85;
+  backdrop-filter:blur(6px);
+  transition:all 0.35s ease;
+}
+
+.spt-pill:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(255,255,255,0.6);
+  transform:translateY(-4px);
+  opacity:1;
+}
   }
   </style>
 </head>
@@ -514,13 +532,14 @@ background: transparent;
     </h1>
 
    
-  <div class="hero-tags">
-         <a href="#spt" class="tag">SPT v1.4</a>
-          <a href="#spt" class="tag">Pleroma Substrate</a>
-          <a href="#spt" class="tag">Viscoelastic Vacuum</a>
-          <a href="#spt" class="tag">3i/ATLAS</a>
-      </div>
-    </div>
+<div class="spt-nav">
+
+  <a href="index.html" class="spt-pill">Home</a>
+  <a href="research.html" class="spt-pill">Research</a>
+  <a href="phenomena.html" class="spt-pill">Phenomena</a>
+  <a href="contact.html" class="spt-pill">Contact</a>
+
+</div>
 
 </section>
 <section>
