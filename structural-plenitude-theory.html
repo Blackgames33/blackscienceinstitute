@@ -670,6 +670,48 @@ section .hero-menu a:hover{
   transform:translateY(-6px);
   opacity:1;
 }
+
+/* ===== FIX SPT HERO STRUCTURE ===== */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  width:100%;
+}
+
+.spt-nav{
+  margin-top:80px;
+}
+
+.hero-menu{
+  display:flex;
+  justify-content:center;
+  gap:48px;
+  flex-wrap:wrap;
+}
+
+.hero-menu a{
+  display:inline-block;
+  padding:18px 46px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+
+  transition:all 0.4s ease;
+}
+
+.hero-menu a:hover{
+  background:rgba(255,255,255,0.18);
+  transform:translateY(-6px);
+}    
   </style>
 </head>
 
