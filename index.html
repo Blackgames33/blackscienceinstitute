@@ -478,15 +478,18 @@ background: transparent;
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Structural Plenitude Theory</h1>
+     <h1 class="hero-title">
+  <span class="title-line-1">Structural</span>
+  <span class="title-line-2">Plenitude Theory</span>
+</h1>
       <p class="hero-subtitle">
         The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
       </p>
       <div class="hero-tags">
-        <div class="tag">SPT v1.4</div>
-        <div class="tag">Pleroma Substrate</div>
-        <div class="tag">Viscoelastic Vacuum</div>
-        <div class="tag">3I/ATLAS Analysis</div>
+        <a href="#spt" class="tag">SPT v1.4</a>
+          <a href="#spt" class="tag">Pleroma Substrate</a>
+          <a href="#spt" class="tag">Viscoelastic Vacuum</a>
+          <a href="#spt" class="tag">3i/ATLAS</a>
       </div>
     </div>
   </section>
@@ -496,27 +499,31 @@ background: transparent;
       <h2 class="section-title">The Pleroma Substrate</h2>
       <div class="grid-2">
         <div class="visual">
-          <div class="planet" style="background: radial-gradient(circle at 30% 30%, #111, #000); aspect-ratio:1/1;"></div>
-        </div>
+  <div class="spt-planet"></div>
+</div>
        <div class="text-content">
 
-  <p>
+  <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
     Structural Plenitude Theory describes the vacuum not as emptiness,
     but as a continuous, viscoelastic substrate — the Pleroma —
     whose structural tensions govern light propagation,
     gravitational coupling and cosmological redshift.
   </p>
 
-  <p style="margin-top:25px;">
+  <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
     In this framework, physical phenomena are not isolated interactions,
     but emergent responses of a dense underlying medium.
     Objects such as 3I/ATLAS exhibit measurable structural drag,
     asymmetric radiative signatures and impedance transitions
     consistent with substrate interaction models.
   </p>
-
-  <p style="margin-top:25px; opacity:0.75; font-size:0.95rem;">
-  <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
+    <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
+    The upcoming passage near Jupiter provides a critical observational window.
+     Within SPT, massive bodies are not merely gravitational wells, 
+     but regions of altered substrate impedance. 
+     The Jovian interaction phase offers a natural test for structural coupling predictions.
+</p>
+  <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
     The objective is not speculative replacement,
     but structural reinterpretation of observational anomalies
     within a physically continuous cosmological architecture.
@@ -550,9 +557,33 @@ background: transparent;
     Structural drag modeling, Jovian impedance transition,
     asymmetric radiative emission and substrate-coupling
     interpretation beyond classical outgassing frameworks.
-  </p>
-</div>
+    </div>
+   <a href="phenomenology.html" class="card-link">
+  <div class="card">
+    <h3 class="card-title">Phenomenology & Paradoxes</h3>
 
+    <p>
+      Reinterpretation of classical and quantum paradoxes through the framework of Structural Plenitude Theory.
+    </p>
+
+    <p style="margin-top:14px; opacity:0.75;">
+      Double-slit experiment, twin paradox, auroral asymmetries and substrate-interaction phenomena.
+    </p>
+  </div>
+</a>
+<a href="predictions.html" class="card-link">
+  <div class="card">
+    <h3 class="card-title">Experimental Predictions</h3>
+
+    <p>
+      Testable implications derived from viscoelastic vacuum modeling and impedance-transition dynamics.
+    </p>
+
+    <p style="margin-top:14px; opacity:0.75;">
+      Observational windows, substrate coupling tests and falsifiability criteria.
+    </p>
+  </div>
+</a>
       </div>
     </div>
   </section>
@@ -567,14 +598,14 @@ background: transparent;
     <div class="formal-text">
       <h2 class="section-title">Structural Continuity Framework</h2>
 
-      <p>
+       <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
         Structural Plenitude Theory proposes that vacuum dynamics
         are governed by stress-energy continuity rather than emptiness.
         The substrate behaves as a viscoelastic field with measurable
         impedance gradients and coupling response.
       </p>
 
-      <p style="margin-top:25px;">
+       <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
         Cosmological observations traditionally attributed to
         expansion-only metrics may reveal deeper structural
         anisotropies consistent with continuous medium interaction.
@@ -608,6 +639,7 @@ background: transparent;
           <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
           <div class="footer-social">
             <li><a href="https://x.com/blackscienceSPT">https://x.com/blackscienceSPT</a></li>
+               <li><a href="https:///www.youtube.com/@BLACKSCIENCEINSTITUTE">https:///www.youtube.com</a></li>
             <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
       <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
      </div>
@@ -689,6 +721,11 @@ window.addEventListener("scroll", function() {
       backBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+      window.addEventListener("scroll", () => {
+  const moon = document.querySelector(".hero-bg");
+  let offset = window.scrollY * 0.4;
+  moon.style.transform = `translateY(${offset}px)`;
+});
     });
   </script>
 </body>
