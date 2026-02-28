@@ -170,34 +170,23 @@
   position: absolute;
   inset: 0;
   background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
-  background-size: 90%;
+  background-size:   90%;
   background-position: center 40%;
-  background-blend-mode: multiply;
-  backgroubd-light blue;
-   opacity: 0.25;
   z-index: 1;
   will-change: transform;
-
-
-}
-
-
-}
-
-    }
-    
-}
-
 }
 .hero::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 220px;
+  inset: 0;
+  background:
+    radial-gradient(circle at left center,
+      rgba(0,0,0,0.2) 0%,
+      rgba(0,0,0,0.6) 60%,
+      rgba(0,0,0,0.95) 100%);
   pointer-events: none;
-  z-index: 3;
+  z-index: 1;
+}
 
  background: linear-gradient(
   to bottom,
