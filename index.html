@@ -170,29 +170,60 @@
   position: absolute;
   inset: 0;
   background: url('./assets/images/bsi-moon.png') center/cover no-repeat;
-  background-size: 120%;
+  background-size: 80%;
   background-position: center 40%;
+  background-blend-mode: multiply;
+  opacity: 0.85;
+  filter: brightness(0.9) contrast(1.15) saturate(1.3);
+  filter: brightness(025) contrast(1.1) saturate(1.2);
+}
+}
+
+
+    
   z-index: 1;
   will-change: transform;
 }
-
-}
-
-}
-
-
-}
-
-.hero-overlay {
+.hero::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  pointer-events: none;
+  z-index: 3;
 
- filter: brightness(0.55) contrast(1.1) saturate(1.2);
+ background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,0) 0%,
+  rgba(0,0,0,0.15) 20%,
+  rgba(0,0,0,0.35) 45%,
+  rgba(0,0,0,0.65) 70%,
+  rgba(0,0,0,0.85) 85%,
+  #000 100%
+);
+  );
+}
+}
+
+}
+
+}
+
+
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
   background:
     radial-gradient(
       circle at center,
       rgba(0,0,0,0.15) 0%,
+      rgba(0,0,0,0.35) 55%,
+      rgba(0,0,0,0.65) 100%
       rgba(0,0,0,0.25) 55%,
       rgba(0,0,0,0.45) 100%
     );
@@ -395,26 +426,36 @@ body::before {
   border-radius: 50%;
   position: relative;
 
-  filter: brightness(0.9) contrast(1.15) saturate(1.3);
-  filter: brightness(0.55) contrast(1.1) saturate(1.2);
-  
   background:
        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 20%),
     radial-gradient(circle at 60% 70%, rgba(120,120,160,0.15), transparent 20%),
     url('./assets/images/Júpiter.png') right/cover no-repeat;
 
 
-
+  opacity: 0.18;
+  filter: brightness(0.78) contrast(1.08);
+  box-shadow: 0 0 120px rgba(255,255,255,0.05);
+}
+#spt {
+  position: relative;
+}
+background: transparent;
     }   
 
-
+#spt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.0) 0%,
+    rgba(0,0,0,0.85) 200px
+    #a0a0a 400px
   )
-    );
-}
-  
-    } 
 
-    
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.65) 50%,
+    rgba(0,0,0,0.8) 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -423,8 +464,6 @@ body::before {
 #spt .shell {
   position: relative;
   z-index: 2;
-
-
 }
   .grid-2 {
   display: grid;
@@ -653,7 +692,6 @@ body::before {
           <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
           <div class="footer-social">
             <li><a href="https://x.com/blackscienceSPT">https://x.com/blackscienceSPT</a></li>
-               <li><a href="https:///www.youtube.com/@BLACKSCIENCEINSTITUTE">https:///www.youtube.com</a></li>
             <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
       <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
      </div>
