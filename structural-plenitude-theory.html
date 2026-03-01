@@ -727,7 +727,26 @@ section .hero-menu a:hover{
   max-width: 700px;
   margin: 60px auto 0;
 }
-
+  #backToTop {
+      position: fixed; bottom: 30px; right: 30px; padding: 15px; background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border); color: white; border-radius: 50%; cursor: pointer;
+      opacity: 0; visibility: hidden; transition: 0.3s; z-index: 500;
+    }
+    #backToTop.show { opacity: 1; visibility: visible; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 40% 60%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.3), transparent);
+  background-repeat: repeat;
+  background-size: 800px 800px;
+  pointer-events: none;
+  z-index: -10;
+}
 } 
     
   </style>
