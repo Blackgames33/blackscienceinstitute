@@ -906,6 +906,8 @@ section .hero-menu a:hover{
 
 
   
+ <button id="backToTop">↑</button>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const menuBtn = document.getElementById("menuBtn");
@@ -971,29 +973,7 @@ window.addEventListener("scroll", function() {
   let offset = window.scrollY * 0.4;
   moon.style.transform = `translateY(${offset}px)`;
 });
-     
- });   
- <button id="backToTop">↑</button>
-
-const backBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 600) {
-    backBtn.classList.add("show");
-  } else {
-    backBtn.classList.remove("show");
-  }
-});
-
-backBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-});    
-</script>
-  
-  <button id="backToTop">↑</button>
+    });
+  </script>
 </body>
 </html>
