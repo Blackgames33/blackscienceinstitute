@@ -1,4 +1,4 @@
-
+7
 /* CONTAINER GLOBAL */
 .container {
   max-width: var(--max-width);
@@ -142,4 +142,70 @@ footer {
   box-shadow:
     inset -120px -40px 180px rgba(0,0,0,0.95),
     0 0 140px rgba(255,255,255,0.05);
+}
+/* =====================================
+   VISIONARIOS — BOOK HERO LAYOUT
+===================================== */
+
+.hero-book{
+  position:relative;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:80px;
+  padding:140px 8%;
+  overflow:hidden;
+}
+
+.hero-book::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.75));
+  z-index:1;
+}
+
+.hero-book-text{
+  position:relative;
+  z-index:2;
+  max-width:620px;
+}
+
+.hero-book-text h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(3rem,5vw,5rem);
+  letter-spacing:0.14em;
+  font-weight:300;
+}
+
+.hero-sub{
+  margin-top:14px;
+  font-size:1.35rem;
+  opacity:0.85;
+}
+
+.hero-meta{
+  margin-top:22px;
+  opacity:0.6;
+  letter-spacing:0.18em;
+  font-size:0.85rem;
+}
+
+.hero-book-cover{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-cover{
+  width:100%;
+  max-width:420px;
+  border-radius:10px;
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.7);
 }
