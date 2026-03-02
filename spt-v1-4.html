@@ -80,5 +80,123 @@ Official Zenodo Record →
 
 </div>
 
+
+ <footer id="contact" class="footer-astron">
+    <div class="shell footer-grid">
+      <div class="footer-col">
+        <h3 class="footer-logo">BLACK SCIENCE INSTITUTE</h3>
+        <p style="opacity:0.6; font-size:0.9rem; line-height:1.7;">Independent theoretical research on Structural Plenitude Theory and viscoelastic vacuum cosmology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="structural-plenitude-theory.html">SPT</a></li>
+          <li><a href="phenomena.html">Phenomena</a></li>
+          <li><a href="research.html">Research</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>São Paulo, Brazil</li>
+          <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
+          <div class="footer-social">
+            <li><a href="https://x.com/blackscienceSPT">https://x.com/blackscienceSPT</a></li>
+               <li><a href="https:///www.youtube.com/@BLACKSCIENCEINSTITUTE">https:///www.youtube.com</a></li>
+            <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
+      <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
+     </div>
+
+    </div>
+
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Black Science Institute · All Rights Reserved</div>
+  </footer>
+
+
+  <div id="searchModal" class="search-modal">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search in site..." />
+    </div>
+  </div>
+
+
+  
+ <button id="backToTop">↑</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuBtn = document.getElementById("menuBtn");
+      const navCenter = document.querySelector(".nav-center");
+      const searchTrigger = document.getElementById("searchTrigger");
+      const searchModal = document.getElementById("searchModal");
+      const searchInput = document.getElementById("searchInput");
+      const backBtn = document.getElementById("backToTop");
+      const header = document.getElementById("mainHeader");
+const heroBg = document.querySelector(".hero-bg");
+
+window.addEventListener("scroll", function() {
+  const scrollPosition = window.scrollY;
+
+  if (heroBg) {
+    heroBg.style.transform = "translateY(" + scrollPosition * 0.25 + "px)";
+  }
+});
+
+      // Scroll effect for header
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
+        else header.style.background = "rgba(0,0,0,0.45)";
+
+        if (window.scrollY > 600) backBtn.classList.add("show");
+        else backBtn.classList.remove("show");
+      });
+
+      // Hamburger Toggle
+      if (menuBtn) {
+        menuBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          navCenter.classList.toggle("active");
+          menuBtn.innerText = navCenter.classList.contains("active") ? "✕" : "☰";
+        });
+      }
+
+      // Search Modal
+      if (searchTrigger) {
+        searchTrigger.addEventListener("click", () => {
+          searchModal.classList.add("active");
+          searchInput.focus();
+        });
+      }
+
+      searchModal.addEventListener("click", (e) => {
+        if (e.target === searchModal) searchModal.classList.remove("active");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navCenter.contains(e.target) && e.target !== menuBtn) {
+          navCenter.classList.remove("active");
+          if(menuBtn) menuBtn.innerText = "☰";
+        }
+      });
+
+      backBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      window.addEventListener("scroll", () => {
+  const moon = document.querySelector(".hero-bg");
+  let offset = window.scrollY * 0.4;
+  moon.style.transform = `translateY(${offset}px)`;
+});
+    });
+  </script>
+</body>
+</html>
+
+
 </body>
 </html>
