@@ -1,224 +1,234 @@
-7
-/* CONTAINER GLOBAL */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 4rem 1.6rem;
+/* =====================================================
+   BLACK SCIENCE INSTITUTE — GLOBAL LAYOUT
+===================================================== */
+
+:root{
+  --bg:#000;
+  --fg:#f2f2f2;
+  --muted:#9a9a9a;
+  --border-soft:rgba(255,255,255,.08);
+  --radius:12px;
+  --max-width:1200px;
 }
 
-/* HEADER SIMPLES */
-header {
-  border-bottom: 1px solid var(--border-soft);
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
+html,body{
+  background:#000;
+  color:var(--fg);
+  font-family:'Roboto',sans-serif;
+  line-height:1.75;
+  overflow-x:hidden;
 }
 
-header h1 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.6px;
+/* CONTAINER */
+.container{
+  max-width:var(--max-width);
+  margin:auto;
+  padding:4rem 2rem;
 }
 
-nav a {
-  margin-left: 1.2rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  border-bottom:1px solid var(--border-soft);
 }
 
-nav a:hover {
-  color: var(--fg);
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* HERO */
-.hero {
-  padding: 6rem 0 4rem;
+.logo{
+  font-family:'Montserrat',sans-serif;
+  letter-spacing:.25em;
+  font-size:.9rem;
 }
 
-.hero h1 {
-  margin-bottom: 1rem;
+nav a{
+  margin-left:1.4rem;
+  font-size:.85rem;
+  color:var(--muted);
+  text-decoration:none;
 }
 
-.hero p {
-  font-size: 1.05rem;
+nav a:hover{
+  color:#fff;
 }
 
-/* SEÇÕES */
-section {
-  padding: 4.5rem 0;
-  border-bottom: 1px solid var(--border-soft);
+/* =====================================================
+   HERO BASE
+===================================================== */
+
+.hero{
+  padding:6rem 0;
+  text-align:center;
 }
 
-section:last-child {
-  border-bottom: none;
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  letter-spacing:.14em;
+  font-size:clamp(2.5rem,6vw,5rem);
 }
 
-/* LISTAS DE CONTEÚDO */
-.block {
-  margin-top: 2.2rem;
+.hero p{
+  margin-top:1rem;
+  opacity:.8;
 }
 
-.block p {
-  margin-bottom: 0.6rem;
+/* =====================================================
+   HERO MOON (HOME / SPT)
+===================================================== */
+
+.hero-logo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:3rem;
 }
 
-/* FOOTER */
-footer {
-  padding: 3rem 1.6rem;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.75rem;
-}
-/* ============================
-   HERO TAGS – SPT INTERATIVO
-============================ */
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.hero-tags .tag {
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(6px);
-  transition: 
-    transform 0.35s ease,
-    background 0.35s ease,
-    border-color 0.35s ease,
-    color 0.35s ease;
-  cursor: default;
-}
-
-/* INTERAÇÃO */
-.hero-tags .tag:hover {
-  transform: translateY(-4px);
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.55);
-  color: #ffffff;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero-tags {
-    justify-content: center;
-  }
-
-  .hero-tags .tag {
-    font-size: 0.7rem;
-    padding: 9px 16px;
-  }
-/* ============================
-   HERO MOON (DESKTOP)
-============================ */
-
-.hero-logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-.hero-moon {
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: url("../images/bsi-moon.png") center/cover no-repeat;
+.hero-moon{
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:url("../images/bsi-moon.png") center/cover no-repeat;
 
   box-shadow:
-    inset -120px -40px 180px rgba(0,0,0,0.95),
-    0 0 140px rgba(255,255,255,0.05);
+    inset -140px -60px 200px rgba(0,0,0,.95),
+    0 0 140px rgba(255,255,255,.05);
 }
 
+/* =====================================================
+   HERO TAGS
+===================================================== */
 
-/* ==========================================
-   VISIONARIOS — BOOK HERO
-========================================== */
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:28px;
+}
+
+.hero-tags .tag{
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  font-size:.75rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(6px);
+  transition:.35s;
+}
+
+.hero-tags .tag:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.08);
+}
+
+/* =====================================================
+   VISIONARIOS PAGE
+===================================================== */
 
 .hero-book{
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  text-align: left;
-  overflow: hidden;
-  padding: 6rem 2rem;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:70px;
+  padding:6rem 2rem;
+  position:relative;
 }
 
-/* fundo espacial suave */
+/* fundo espacial */
 .hero-book::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05), transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 60%);
+    radial-gradient(circle at 25% 30%, rgba(255,255,255,.05), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.04), transparent 60%);
   z-index:0;
 }
 
 .hero-book-text{
-  position:relative;
-  z-index:2;
   max-width:520px;
+  z-index:2;
 }
 
 .hero-book-text h1{
-  font-size: clamp(3rem,6vw,5rem);
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(3rem,6vw,5rem);
   font-weight:300;
-  letter-spacing:0.14em;
-  margin-bottom:12px;
+  letter-spacing:.14em;
 }
 
 .hero-sub{
-  font-size:1.2rem;
-  opacity:0.8;
-  margin-bottom:20px;
+  margin-top:10px;
+  opacity:.8;
 }
 
 .hero-meta{
-  font-size:0.85rem;
-  letter-spacing:0.18em;
-  opacity:0.6;
+  margin-top:20px;
+  font-size:.8rem;
+  letter-spacing:.18em;
+  opacity:.6;
   text-transform:uppercase;
 }
 
 .hero-book-cover{
-  position:relative;
   z-index:2;
 }
 
 .hero-cover{
   width:320px;
-  border-radius:10px;
+  border-radius:12px;
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.7),
-    0 0 60px rgba(255,255,255,0.05);
-  transition: transform .6s ease;
+    0 30px 80px rgba(0,0,0,.7),
+    0 0 60px rgba(255,255,255,.05);
+  transition:.6s;
 }
 
 .hero-cover:hover{
-  transform: translateY(-8px) scale(1.02);
+  transform:translateY(-8px) scale(1.02);
 }
 
+/* =====================================================
+   SECTIONS
+===================================================== */
 
-/* ============================
+section{
+  padding:5rem 0;
+  border-bottom:1px solid var(--border-soft);
+}
+
+section:last-child{
+  border:none;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  padding:3rem;
+  text-align:center;
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+/* =====================================================
    MOBILE
-============================ */
+===================================================== */
 
 @media(max-width:900px){
 
@@ -230,6 +240,11 @@ footer {
 
   .hero-cover{
     width:240px;
+  }
+
+  .hero-moon{
+    width:320px;
+    height:320px;
   }
 
 }
