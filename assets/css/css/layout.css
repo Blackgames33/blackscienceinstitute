@@ -121,7 +121,6 @@ footer {
     font-size: 0.7rem;
     padding: 9px 16px;
   }
-}
 /* ============================
    HERO MOON (DESKTOP)
 ============================ */
@@ -138,23 +137,30 @@ footer {
   height: 520px;
   border-radius: 50%;
   background: url("../images/bsi-moon.png") center/cover no-repeat;
+
+  box-shadow:
+    inset -120px -40px 180px rgba(0,0,0,0.95),
+    0 0 140px rgba(255,255,255,0.05);
+}
+
+
 /* ==========================================
    VISIONARIOS — BOOK HERO
 ========================================== */
 
 .hero-book{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:60px;
-  text-align:left;
-  overflow:hidden;
-  padding:6rem 2rem;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  text-align: left;
+  overflow: hidden;
+  padding: 6rem 2rem;
 }
 
-/* fundo espacial reutilizável */
+/* fundo espacial suave */
 .hero-book::before{
   content:"";
   position:absolute;
@@ -172,7 +178,7 @@ footer {
 }
 
 .hero-book-text h1{
-  font-size:clamp(3rem,6vw,5rem);
+  font-size: clamp(3rem,6vw,5rem);
   font-weight:300;
   letter-spacing:0.14em;
   margin-bottom:12px;
@@ -202,26 +208,28 @@ footer {
   box-shadow:
     0 30px 80px rgba(0,0,0,0.7),
     0 0 60px rgba(255,255,255,0.05);
-  transition:transform .6s ease;
+  transition: transform .6s ease;
 }
 
 .hero-cover:hover{
-  transform:translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
 }
 
-/* MOBILE */
+
+/* ============================
+   MOBILE
+============================ */
+
 @media(max-width:900px){
 
   .hero-book{
     flex-direction:column;
     text-align:center;
+    gap:40px;
   }
 
   .hero-cover{
     width:240px;
   }
-}
-  box-shadow:
-    inset -120px -40px 180px rgba(0,0,0,0.95),
-    0 0 140px rgba(255,255,255,0.05);
+
 }
