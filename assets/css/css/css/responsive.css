@@ -46,3 +46,20 @@
     padding: 3rem 0 2rem;
   }
 }
+
+/* ===== VISIONARIOS MOBILE ===== */
+
+@media(max-width:900px){
+
+  .hero-book{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:120px 6%;
+  }
+
+  .hero-cover{
+    max-width:300px;
+    margin-top:40px;
+  }
+
+}
