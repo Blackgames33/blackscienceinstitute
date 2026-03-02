@@ -53,6 +53,129 @@ p{
 .button:hover{
   background:rgba(255,255,255,0.08);
 }
+
+ /* ===== SPT HERO NAV OVERRIDE ===== */
+
+.spt-nav{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:100px;
+}
+
+.spt-nav .hero-menu{
+  display:flex;
+  gap:48px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.spt-nav .hero-menu a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+
+  padding:18px 46px;
+
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+
+  color:#fff;
+  opacity:0.85;
+  transition:all 0.4s ease;
+}
+
+.spt-nav .hero-menu a:hover{
+  background:rgba(255,255,255,0.18);
+  border-color:#fff;
+  transform:translateY(-6px);
+  opacity:1;
+}
+
+/* ===== FIX SPT HERO STRUCTURE ===== */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  width:100%;
+}
+
+.spt-nav{
+  margin-top:80px;
+}
+
+.hero-menu{
+  display:flex;
+  justify-content:center;
+  gap:48px;
+  flex-wrap:wrap;
+}
+
+.hero-menu a{
+  display:inline-block;
+  padding:18px 46px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+
+  transition:all 0.4s ease;
+}
+
+.hero-menu a:hover{
+  background:rgba(255,255,255,0.18);
+ transform:translateY(-6px);
+}    
+/* ===== SPT ORBIT MENU DESKTOP ===== */
+
+.hero-tags,
+.spt-links {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;      /* ← chave principal */
+  gap: 28px;
+
+  max-width: 700px;
+  margin: 60px auto 0;
+}
+ #backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 500;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
 </style>
 </head>
 <body>
