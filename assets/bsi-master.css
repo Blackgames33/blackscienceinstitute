@@ -1,0 +1,87 @@
+/* =====================================
+   BLACK SCIENCE MASTER OVERRIDE
+===================================== */
+
+/* RESET GLOBAL */
+html,body{
+  background:#000 !important;
+  color:#f2f2f2 !important;
+  font-family:'Roboto',sans-serif !important;
+  overflow-x:hidden;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1200px !important;
+  margin:auto !important;
+  padding:4rem 2rem !important;
+}
+
+/* HEADER */
+header{
+  background:transparent !important;
+  border-bottom:1px solid rgba(255,255,255,.08) !important;
+}
+
+.logo{
+  letter-spacing:.25em;
+}
+
+/* HERO BOOK */
+.hero-book{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:70px;
+  padding:6rem 2rem;
+  position:relative;
+}
+
+.hero-book::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 40%,rgba(255,255,255,.05),transparent 60%),
+    radial-gradient(circle at 70% 70%,rgba(255,255,255,.04),transparent 60%);
+  z-index:0;
+}
+
+.hero-book-text{
+  max-width:520px;
+  z-index:2;
+}
+
+.hero-book-text h1{
+  font-size:clamp(3rem,6vw,5rem);
+  letter-spacing:.14em;
+  font-weight:300;
+}
+
+.hero-cover{
+  width:320px;
+  border-radius:12px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.7),
+    0 0 60px rgba(255,255,255,.05);
+  transition:.6s;
+}
+
+.hero-cover:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.hero-book{
+  flex-direction:column !important;
+  text-align:center;
+}
+
+.hero-cover{
+  width:240px;
+}
+
+}
