@@ -730,162 +730,6 @@ section .hero-menu a:hover{
   opacity: 1;
   visibility: visible;
 }
-   /* LAYOUT PREDICTIONS */
-
-    .layout {
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.18), transparent 55%),
-        rgba(15,23,42,0.98);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
-      padding: 22px 22px 24px;
-    }
-
-    .header-block {
-      margin-bottom: 18px;
-    }
-
-    .kicker {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .title {
-      font-size: 23px;
-      font-weight: 650;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 52rem;
-    }
-
-    .tagline {
-      margin-top: 6px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .links-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .btn-small {
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: transparent;
-      color: var(--text-main);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-small.primary {
-      background: linear-gradient(135deg,#0ea5e9,#22c55e);
-      color: #020617;
-      border-color: rgba(15,23,42,0.9);
-      font-weight: 600;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .card {
-      border-radius: 18px;
-      padding: 14px 16px 14px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 55%),
-        rgba(3,7,18,0.98);
-      border: 1px solid rgba(15,23,42,0.95);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.75);
-      font-size: 13px;
-    }
-
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .card p { color: var(--text-main); }
-
-    .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
-      color: var(--text-soft);
-    }
-
-    .card ul li + li { margin-top: 3px; }
-
-    .section-label {
-      margin-top: 18px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .section-divider {
-      border: none;
-      border-top: 1px solid rgba(30,64,175,0.7);
-      margin: 4px 0 10px;
-    }
-
-    .image-card {
-      margin-top: 8px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      background: #020617;
-    }
-
-    .image-card img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .image-caption {
-      font-size: 11px;
-      color: var(--text-soft);
-      padding: 6px 8px 7px;
-      background: rgba(3,7,18,0.95);
-    }
-
-    footer {
-      margin-top: 22px;
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    @media (max-width: 880px) {
-      .layout { padding: 18px 14px 18px; }
-      .two-col { grid-template-columns: minmax(0,1fr); }
-    }  
 } 
     
   </style>
@@ -923,218 +767,100 @@ section .hero-menu a:hover{
 
 </div>
 
-</head>
-<body>
-  <div class="page">
-    <!-- HEADER GLOBAL -->
-    <header>
-      <div class="brand">
-        <div class="brand-logo">BSI</div>
-        <div>
-          <div class="brand-title">Black Science Institute</div>
-          <div class="brand-sub">Structural Plenitude Program</div>
-        </div>
-      </div>
+</section>
+<section>
+  <div class="shell">
+    <h2 class="section-title">From Ether to Structure</h2>
 
-      <nav>
-        <a href="index.html">Editorials</a>
-        <a href="structural-plenitude-theory.html">SPT v1.3</a>
-        <a href="3i-atlas-structural-predictions.html" class="primary">Predictions</a>
-        <a href="research.html">Research Archive</a>
-      </nav>
-    </header>
+    <div class="editorial">
 
-    <!-- BLOCO PRINCIPAL -->
-    <main class="layout">
-      <section class="header-block">
-        <div class="kicker">Observation Program</div>
-        <h1 class="title">3I/ATLAS — Jovian March 2026 Structural Predictions</h1>
-        <p class="subtitle">
-          SPT interprets 3I/ATLAS as a Ni-dominant, high-impedance interstellar body
-          traversing a viscoelastic vacuum. The March 2026 Jovian window provides
-          a natural impedance gradient to test laminar coupling (η → 1), antitail
-          persistence and non-gravitational drift without invoking classical outgassing.
-        </p>
-        <div class="tagline">
-          3I/ATLAS · Viscoelastic Substrate Interaction · Jovian Impedance Gradient
-        </div>
-        <div class="links-row">
-          <a href="index.html" class="btn-small">Back to Editorial</a>
-          <a href="research.html" class="btn-small primary">Open Research Archive</a>
-        </div>
-      </section>
+      <p>
+        Throughout the history of physics, the concept of empty space has functioned more as an operational approximation than as a physically defined entity. From classical mechanics to relativistic cosmology, the vacuum has been treated primarily as geometry, metric structure, or quantum fluctuation background.
+      </p>
 
-      <!-- BLOCOS 1: JANELA E REGIMES -->
-      <div class="section-label">Prediction Window and Coupling Regimes</div>
-      <hr class="section-divider" />
+      <p>
+        The historical ether attempted to fill this conceptual void, proposing a propagation medium for electromagnetic phenomena. It failed not because the intuition of substrate was meaningless, but because it lacked predictive structure and covariant mathematical formalism.
+      </p>
 
-      <section class="two-col">
-        <article class="card">
-          <h2>Jovian Impedance Gradient — March 2026</h2>
-          <p>
-            As 3I/ATLAS crosses the Jovian sector, SPT predicts a variation in
-            structural impedance Z<sub>H</sub> due to the combined pleromic well of
-            Jupiter and the Sun. This gradient modulates the local coupling efficiency
-            η and may trigger subtle transitions in coma morphology and brightness.
-          </p>
-          <ul>
-            <li>Baseline laminar regime at large heliocentric distance.</li>
-            <li>Enhanced drag and possible brightening near the Jovian window.</li>
-            <li>
-              Non-gravitational drift decoupled from classical mass-loss indicators.
-            </li>
-            <li>
-              Opportunity to compare antitail geometry before/after the gradient.
-            </li>
-          </ul>
-          <div class="image-card">
-            <img src="assets/img/A_scientific-style_digital_infographic_titled_\"Jov.png"
-                 alt="Jovian impedance gradient infographic" />
-            <div class="image-caption">
-              Schematic of 3I/ATLAS crossing the Jovian impedance gradient within the
-              pleromic substrate.
-            </div>
-          </div>
-        </article>
+      <blockquote style="
+        margin:70px 0;
+        padding-left:40px;
+        border-left:2px solid rgba(255,255,255,0.25);
+        font-style:italic;
+        font-family:'Montserrat',sans-serif;
+        font-size:1.2rem;
+        letter-spacing:0.05em;
+        opacity:0.85;
+      ">
+        Structural Plenitude Theory does not revive ether.
+        It reformulates vacuum as structured physical reality.
+      </blockquote>
 
-        <article class="card">
-          <h2>Coupling Efficiency η — Laminar vs. Non-Laminar</h2>
-          <p>
-            In SPT, radio silence is interpreted as a marker of efficient, laminar
-            coupling: η ≈ 1 and ℛ ≈ 0. Any emergence of structured radio emission,
-            sudden jet re-orientation or coma turbulence would signal a transition
-            to non-laminar coupling.
-          </p>
-          <ul>
-            <li>Laminar regime: smooth antitail, radio quiet, stable morphology.</li>
-            <li>
-              Non-laminar regime: localized tension release, jet asymmetry, possible
-              transient radio features.
-            </li>
-            <li>
-              March 2026 monitoring focuses on whether η remains high across the
-              Jovian sector.
-            </li>
-          </ul>
-          <div class="image-card">
-            <img src="assets/img/A_digital_infographic_titled_\"Laminar_vs_Non-Lamin.png"
-                 alt="Laminar vs non-laminar coupling infographic" />
-            <div class="image-caption">
-              Comparative regimes of laminar (η → 1) and non-laminar coupling in the
-              pleromic substrate.
-            </div>
-          </div>
-        </article>
-      </section>
+      <p>
+        In SPT, the vacuum is understood as a continuous viscoelastic substrate — the Pleroma — where structural tension gradients, impedance transitions and dissipative regimes govern physical emergence.
+      </p>
 
-      <!-- BLOCO 2: ANTITAIL / RESIDUAL -->
-      <div class="section-label">Antitail, Residual Channel ℛ and Drift</div>
-      <hr class="section-divider" />
+      <p>
+        Light propagation, gravitational interaction and cosmological redshift are interpreted as substrate responses under specific coupling conditions rather than purely geometric abstractions.
+      </p>
 
-      <section class="two-col">
-        <article class="card">
-          <h2>Antitail as Substrate Drag and Momentum Lag</h2>
-          <p>
-            The persistent antitail of 3I/ATLAS is read as a momentum-lag artifact
-            of substrate drag. The geometry of the antitail encodes how the nucleus
-            interacts with the flow of the Pleroma rather than being purely driven
-            by dust dynamics and phase angle effects.
-          </p>
-          <div class="image-card">
-            <img src="assets/img/A_scientific_infographic_in_digital_illustration_s.png"
-                 alt="Antitail structural drag visualization" />
-            <div class="image-caption">
-              Structural visualization of antitail formation as a wake in the
-              viscoelastic substrate.
-            </div>
-          </div>
-        </article>
+      <h3 style="
+        font-family:'Montserrat',sans-serif;
+        font-weight:300;
+        letter-spacing:0.15em;
+        margin:100px 0 40px;
+      ">
+        The Pleroma as Physical Continuum
+      </h3>
 
-        <article class="card">
-          <h2>Residual Radiative Channel ℛ and Non-Gravitational Drift</h2>
-          <p>
-            If part of the structural flux fails to anchor locally, SPT predicts a
-            residual channel ℛ. In interstellar objects this may appear as a small
-            but coherent drift not directly correlated with outgassing proxies.
-          </p>
-          <ul>
-            <li>
-              Track MPC residuals against classical non-gravitational models.
-            </li>
-            <li>
-              Look for phase-locked deviations near the Jovian gradient.
-            </li>
-            <li>
-              Compare orbital fits assuming η = 1 vs. η &lt; 1 + ℛ &gt; 0.
-            </li>
-          </ul>
-          <div class="image-card">
-            <img src="assets/img/A_scientific-style_infographic_titled_\"Residual_Ra.png"
-                 alt="Residual radiative channel infographic" />
-            <div class="image-caption">
-              Residual radiative channel ℛ as the non-anchored component of
-              structural flux in SPT.
-            </div>
-          </div>
-        </article>
-      </section>
+      <p>
+        The Pleroma is not a reference frame nor a classical propagation medium. It is a structural continuum whose internal tension dynamics determine how energy and matter manifest across scales.
+      </p>
 
-      <!-- BLOCO 3: PAINEL UNIFICADO -->
-      <div class="section-label">Unified Prediction Panel</div>
-      <hr class="section-divider" />
+      <p>
+        This perspective integrates dissipation, delayed response and structural drag directly into cosmological modeling without abandoning relativistic geometry.
+      </p>
 
-      <section class="two-col">
-        <article class="card">
-          <h2>Consolidated Observational Tests</h2>
-          <p>
-            The March 2026 window is treated as a compact, falsifiable test for the
-            Structural Plenitude interpretation of 3I/ATLAS:
-          </p>
-          <ul>
-            <li>
-              Does the antitail preserve its geometry as the impedance gradient
-              increases?
-            </li>
-            <li>
-              Does any radio emission appear where SPT expects turbulence?
-            </li>
-            <li>
-              Does the drift pattern match a purely gravitational + outgassing model
-              or a structural-drag model?
-            </li>
-          </ul>
-          <p style="margin-top:6px;">
-            Agreement, disagreement or partial alignment with these patterns refines
-            the allowed parameter space for η, Z<sub>H</sub> and ℛ.
-          </p>
-        </article>
-
-        <article class="card">
-          <h2>Visual Synthesis</h2>
-          <p>
-            The unified panel below condenses the five main anomalies highlighted in
-            the editorial—Ni/Fe imbalance, antitail, jet asymmetry, radio silence
-            and drift—into a single structural interpretation.
-          </p>
-          <div class="image-card">
-            <img src="assets/img/A_digital_scientific_infographic_titled_\"Unified_5.png"
-                 alt="Unified five-anomaly panel" />
-            <div class="image-caption">
-              Unified five-anomaly panel for 3I/ATLAS under SPT v1.3.
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <footer>
-        <span>© Black Science Institute · Structural Plenitude Program · 2026</span>
-        <span>
-          Contact:
-          <a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a>
-        </span>
-      </footer>
-    </main>
+    </div>
   </div>
+</section>
+<section style="border-top:1px solid rgba(255,255,255,0.08);">
+  <div class="shell">
+
+    <h2 class="section-title">Observational Motivation</h2>
+
+    <div class="editorial">
+
+      <p>
+        The motivation for SPT does not arise from a single anomaly but from accumulated observational patterns across astrophysics and plasma physics.
+      </p>
+
+      <p>
+        Interstellar objects, planetary plasma asymmetries, anomalous auroral distributions and cosmological residual tensions become candidates for structural substrate interpretation.
+      </p>
+
+      <p style="
+        margin-top:60px;
+        font-style:italic;
+        opacity:0.85;
+      ">
+        The framework remains explicitly falsifiable and observationally testable.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+  
+<section>
+  <div class="shell">
+    <div class="highlight-box">
+      <h2>SPT v1.4 — Unified Substrate Framework</h2>
+      <a href="spt-v1-4.html" class="btn-outline">Read Paper</a>
+      <a href="https://zenodo.org" target="_blank" class="btn-outline">Zenodo Record</a>
+    </div>
+  </div>
+</section>
 
  <footer id="contact" class="footer-astron">
     <div class="shell footer-grid">
