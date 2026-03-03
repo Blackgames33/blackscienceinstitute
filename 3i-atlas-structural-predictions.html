@@ -4,17 +4,40 @@
   <meta charset="UTF-8" />
   <title>3I/ATLAS — Structural Predictions · March 2026 Window</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <style>
+ <style>
     :root {
-      --bg-space: #020617;
-      --accent-blue: #38bdf8;
-      --accent-amber: #fbbf24;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --border-soft: rgba(15,23,42,0.9);
+      --bg: #000;
+      --fg: #f0f0f0;
+      --muted: #aaa;
+      --accent: #fff;
+      --accent-glow: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.08);
+      --radius: 12px;
+      --transition: 0.4s ease;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* COSMIC BACKGROUND */
+    body::before {
+      content:"";
+      position:relative;
+      inset:0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,0.04), transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03), transparent 55%);
+      pointer-events:none;
+      z-index:-2;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
