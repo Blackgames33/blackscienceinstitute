@@ -63,7 +63,7 @@
 
     /* HEADER & NAV */
     header {
-      position: fixed;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;
@@ -105,12 +105,12 @@
       transition: all 0.4s ease;
     }
 
-    .nav-center a:hover { opacity: 1; transform: translateY(-3px); }
+    .nav-center a:hover { opacity: 0; transform: translateY(-3px); }
 
     .dropdown { position: relative; }
     .dropdown-menu {
       position: absolute;
-      top: 120%;
+      top: 70;
       left: 50%;
       transform: translateX(-50%) translateY(10px);
       background: rgba(10,10,15,0.95);
