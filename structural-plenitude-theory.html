@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Structural Plenitude Theory — Black Science Institute</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Science Institute — Structural Plenitude Theory</title>
+  <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <style>
     :root {
@@ -33,7 +35,7 @@
     /* COSMIC BACKGROUND */
     body::before {
       content:"";
-      position:relative;
+      position:fixed;
       inset:0;
       background:
         radial-gradient(circle at 15% 25%, rgba(255,255,255,0.04), transparent 45%),
@@ -44,7 +46,7 @@
 
     body::after {
       content:"∇μT^{μν}=0    Δη/Δt = -Aω²    Z_H ∝ ∂P/∂ρ";
-      position:relative;
+      position:fixed;
       bottom:15%;
       left:8%;
       font-family:'Montserrat',sans-serif;
@@ -60,9 +62,7 @@
     .shell { max-width:1280px; margin:0 auto; padding:0 5%; }
 
     /* HEADER & NAV */
-    header{
-  display:none;
- {
+    header {
       position: relative;
       top: 0;
       left: 0;
@@ -71,9 +71,7 @@
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
-
-}
-
+      transition: background 0.4s;
     }
 
     nav {
@@ -111,6 +109,7 @@
 
     .dropdown { position: relative; }
     .dropdown-menu {
+
       position: absolute;
       top: 120%;
       left: 50%;
@@ -178,35 +177,22 @@
   filter: brightness(0.7) contrast(1.15) saturate(1.3);
   filter: brightness(0.75) contrast(1.1) saturate(1.2);
 
-}
-  z-index: 1;
-  will-change: transform;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 220px;
-  pointer-events: none;
-  z-index: 3;
 
- background: linear-gradient(
-  to bottom,
-  rgba(0,0,0,0) 0%,
-  rgba(0,0,0,0.15) 20%,
-  rgba(0,0,0,0.35) 45%,
-  rgba(0,0,0,0.65) 70%,
-  rgba(0,0,0,0.85) 85%,
-  #000 100%
-);
-  );
-}
 }
 
 }
 
+ .hero::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:120px;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.5)
 }
 
 
@@ -215,14 +201,15 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
- background: linear-gradient(
-  to bottom,
-  rgba(0,0,0,0.15) 0%,
-  rgba(0,0,0,0.45) 50%,
-  rgba(0,0,0,0.8) 100%
-);
+  background: rgba(0,0,0,0.2);
   z-index: 1;
 }
+
+
+  );
+}
+
+
 
 .hero-content {
   position: relative;
@@ -237,7 +224,7 @@
   letter-spacing: 0.12em;
   text-shadow:
     0 0 8px rgba(255,255,255,0.15),
-    0 0 30px rgba(0,0,0,0.6);
+
 }   
 }
 
@@ -263,6 +250,8 @@
 .text-content p {
   margin-bottom: 28px;
 }
+
+
     }
 
     .hero-content { position:relative; z-index:4; max-width:1000px; }
@@ -322,10 +311,26 @@
       .grid-2 { grid-template-columns: 1fr; }
     }
 
-
-
+    #backToTop {
+      position: fixed; bottom: 30px; right: 30px; padding: 15px; background: rgba(255,255,255,0.1);
+      border: 1px solid var(--border); color: white; border-radius: 50%; cursor: pointer;
+      opacity: 0; visibility: hidden; transition: 0.3s; z-index: 500;
+    }
+    #backToTop.show { opacity: 1; visibility: visible; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 40% 60%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.3), transparent);
+  background-repeat: repeat;
+  background-size: 800px 800px;
+  pointer-events: none;
+  z-index: -10;
 }
-
   .card-title {
   letter-spacing: 0.08em;
   font-weight: 400;
@@ -398,6 +403,7 @@
     url('./assets/images/Júpiter.png') right/cover no-repeat;
 
 
+
   opacity: 0.18;
   filter: brightness(0.78) contrast(1.08);
   box-shadow: 0 0 120px rgba(255,255,255,0.05);
@@ -456,320 +462,81 @@ background: transparent;
   .hero-content {
     transform: translateY(-03px);
   }
-}
-  .spt-pill{
-  padding:14px 34px;
-  border:1px solid rgba(255,255,255,0.35);
-  border-radius:999px;
-  font-size:0.75rem;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  opacity:0.85;
-  backdrop-filter:blur(6px);
-  transition:all 0.35s ease;
+
+/* remove faixa preta da transição da home */
+
+#spt::before{
+  display:none;
 }
 
-.spt-pill:hover{
-  background:rgba(255,255,255,0.12);
-  border-color:rgba(255,255,255,0.6);
-  transform:translateY(-4px);
-  opacity:1;
-}
-/* ===== HERO MENU STYLE (SPT) ===== */
+.formal-structure{
+  background:#000;
 
-.hero-menu{
-  margin-top:90px;
-  display:flex;
-  justify-content:center;
-  gap:28px;
-  flex-wrap:wrap;
 }
 
-.hero-menu a{
-  font-family:'Montserrat',sans-serif;
-  font-size:0.75rem;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-
-  padding:16px 38px;
-
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-
-  color:#ffffff;
-  opacity:0.85;
-
-  transition:all 0.4s ease;
-}
-
-.hero-menu a:hover{
-  background:rgba(255,255,255,0.15);
-  border-color:rgba(255,255,255,0.7);
-  transform:translateY(-6px);
-  opacity:1;
-  } 
-.hero-menu a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-} 
-  /* ===== FORCE HERO MENU STYLE ===== */
-
-.hero-menu{
-  margin-top:120px !important;
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center;
-  gap:40px !important;
-  flex-wrap:wrap;
-}
-
-.hero-menu a{
-  display:inline-flex !important;
-  align-items:center;
-  justify-content:center;
-
-  font-family:'Montserrat',sans-serif !important;
-  font-size:0.75rem !important;
-  letter-spacing:0.25em !important;
-  text-transform:uppercase !important;
-
-  padding:18px 42px !important;
-
-  border-radius:999px !important;
-  border:1px solid rgba(255,255,255,0.35) !important;
-
-  background:rgba(255,255,255,0.05) !important;
-  backdrop-filter:blur(14px) !important;
-
-  color:#ffffff !important;
-  opacity:0.85 !important;
-
-  transition:all 0.4s ease !important;
-}
-
-.hero-menu a:hover{
-  background:rgba(255,255,255,0.15) !important;
-  border-color:rgba(255,255,255,0.8) !important;
-  transform:translateY(-6px);
-  opacity:1;
-}
-  @media (max-width:768px){
-
-  .hero-menu{
-    gap:24px !important;
   }
-
-  .hero-menu a{
-    padding:16px 28px !important;
-  }
-    /* ===== DESKTOP FORCE HERO MENU ===== */
-
-section .hero-menu{
-  width:100%;
-  margin-top:120px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:48px;
-  flex-wrap:wrap;
-}
-
-section .hero-menu a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:'Montserrat',sans-serif;
-  font-size:0.75rem;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-
-  padding:20px 46px;
-
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(16px);
-
-  color:#ffffff;
-  opacity:0.85;
-
-  transition:all 0.4s ease;
-}
-
-section .hero-menu a:hover{
-  background:rgba(255,255,255,0.18);
-  border-color:rgba(255,255,255,0.85);
-  transform:translateY(-6px);
-  opacity:1;
-}
-    /* ===== SPT HERO NAV OVERRIDE ===== */
-
-.spt-nav{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top:100px;
-}
-
-.spt-nav .hero-menu{
-  display:flex;
-  gap:48px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.spt-nav .hero-menu a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:'Montserrat',sans-serif;
-  font-size:0.75rem;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-
-  padding:18px 46px;
-
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(14px);
-
-  color:#fff;
-  opacity:0.85;
-  transition:all 0.4s ease;
-}
-
-.spt-nav .hero-menu a:hover{
-  background:rgba(255,255,255,0.18);
-  border-color:#fff;
-  transform:translateY(-6px);
-  opacity:1;
-}
-
-/* ===== FIX SPT HERO STRUCTURE ===== */
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  width:100%;
-}
-
-.spt-nav{
-  margin-top:80px;
-}
-
-.hero-menu{
-  display:flex;
-  justify-content:center;
-  gap:48px;
-  flex-wrap:wrap;
-}
-
-.hero-menu a{
-  display:inline-block;
-  padding:18px 46px;
-
-  font-family:'Montserrat',sans-serif;
-  font-size:0.75rem;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(14px);
-
-  transition:all 0.4s ease;
-}
-
-.hero-menu a:hover{
-  background:rgba(255,255,255,0.18);
- transform:translateY(-6px);
-}    
-/* ===== SPT ORBIT MENU DESKTOP ===== */
-
-.hero-tags,
-.spt-links {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-wrap: wrap;      /* ← chave principal */
-  gap: 28px;
-
-  max-width: 700px;
-  margin: 60px auto 0;
-}
- #backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 15px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  z-index: 500;
-}
-
-#backToTop.show {
-  opacity: 1;
-  visibility: visible;
-}
-} 
-
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="shell">
-    <nav>
-      <
-    
-     <div class="logo">BLACK SCIENCE INSTITUTE</div>
+  <header id="mainHeader">
+    <div class="shell">
+      <nav>
+        <div class="logo">BLACK SCIENCE INSTITUTE</div>
 
-      <div class="hamburger" id="menuBtn">☰</div>
-    </nav>
-  </div>
-</header>
+
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="header-actions">
+          <div class="search-icon-trigger" id="searchTrigger">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+              <circle cx="11" cy="11" r="7"/>
+              <line x1="16.65" y1="16.65" x2="21" y2="21"/>
+            </svg>
+          </div>
+          <div class="hamburger" id="menuBtn">☰</div>
+        </div>
+      </nav>
+    </div>
+ </header>
 
 <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
+       <h1 class="hero-title">
     <div class="hero-content">
-     <h1 class="hero-title">
+
+      
+  <h1 class="hero-title">
   <span class="title-line-1">Structural</span>
     <h1 class="hero-title">
        Plenitude Theory
     </h1>
 
+  <span class="title-line-1">3i/ATLAS</span>
+    <h1 class="hero-title">Predictions </h1>
+
    </p>
    <a href="index.html" class="tag">Home</a>
-<a href="3i-atlas-structural-predictions.html" class="tag">3I/ATLAS</a>
+<a href="structural-plenitude-theory.html" class="tag">SPT</a>
 <a href="phenomena.html" class="tag">Phenomena</a>
 <a href="research.html" class="tag">Research</a>
 <a href="#contact" class="tag">Contact</a>
 
 </div>
 
-</section>
-<section>
+</div>
+</h1>
+
+      <div class="hero-">
+
+    
+    <section>
   <div class="shell">
     <h2 class="section-title">From Ether to Structure</h2>
 
@@ -863,6 +630,133 @@ section .hero-menu a:hover{
   </div>
 </section>
 
+    </div>
+  </section>
+
+  <section id="spt">
+    <div class="shell">
+      <h2 class="section-title">The Pleroma Substrate</h2>
+      <div class="grid-2">
+        <div class="visual">
+  <div class="spt-planet"></div>
+</div>
+       <div class="text-content">
+
+  <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
+    Structural Plenitude Theory describes the vacuum not as emptiness,
+    but as a continuous, viscoelastic substrate — the Pleroma —
+    whose structural tensions govern light propagation,
+    gravitational coupling and cosmological redshift.
+  </p>
+
+  <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
+    In this framework, physical phenomena are not isolated interactions,
+    but emergent responses of a dense underlying medium.
+    Objects such as 3I/ATLAS exhibit measurable structural drag,
+    asymmetric radiative signatures and impedance transitions
+    consistent with substrate interaction models.
+  </p>
+    <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
+    The upcoming passage near Jupiter provides a critical observational window.
+     Within SPT, massive bodies are not merely gravitational wells, 
+     but regions of altered substrate impedance. 
+     The Jovian interaction phase offers a natural test for structural coupling predictions.
+</p>
+  <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
+    The objective is not speculative replacement,
+    but structural reinterpretation of observational anomalies
+    within a physically continuous cosmological architecture.
+  </p>
+
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="research" style="background:#0a0a0a;">
+    <div class="shell">
+      <h2 class="section-title">Research Axes</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title">Mathematical Formalism</h3>
+          <p class="card-body">Covariant equations, relativistic viscoelasticity (Israel-Stewart), structural impedance Z_H, and coupling efficiency η.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Observational Applications</h3>
+          <p class="card-body">Predictions for 3I/ATLAS (substrate drag, Jovian impedance transition), anomalous auroras, planetary plasma tails.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cosmogenesis</h3>
+          <p class="card-body">Implications for matter formation, cosmological distribution, and emergence of complex systems from the Pleroma.</p>
+        </div>
+   <div class="card">
+  <h3 class="card-title">3I/ATLAS Analysis</h3>
+  <p class="card-body">
+    Structural drag modeling, Jovian impedance transition,
+    asymmetric radiative emission and substrate-coupling
+    interpretation beyond classical outgassing frameworks.
+    </div>
+   <a href="phenomenology.html" class="card-link">
+  <div class="card">
+    <h3 class="card-title">Phenomenology & Paradoxes</h3>
+
+    <p>
+      Reinterpretation of classical and quantum paradoxes through the framework of Structural Plenitude Theory.
+    </p>
+
+    <p style="margin-top:14px; opacity:0.75;">
+      Double-slit experiment, twin paradox, auroral asymmetries and substrate-interaction phenomena.
+    </p>
+  </div>
+</a>
+<a href="predictions.html" class="card-link">
+  <div class="card">
+    <h3 class="card-title">Experimental Predictions</h3>
+
+    <p>
+      Testable implications derived from viscoelastic vacuum modeling and impedance-transition dynamics.
+    </p>
+
+    <p style="margin-top:14px; opacity:0.75;">
+      Observational windows, substrate coupling tests and falsifiability criteria.
+    </p>
+  </div>
+</a>
+      </div>
+    </div>
+  </section>
+<section class="formal-structure">
+
+  <div class="formal-bg-equation">
+    ∇μT^{μν} = 0
+  </div>
+
+  <div class="shell formal-grid">
+
+    <div class="formal-text">
+      <h2 class="section-title">Structural Continuity Framework</h2>
+
+       <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
+        Structural Plenitude Theory proposes that vacuum dynamics
+        are governed by stress-energy continuity rather than emptiness.
+        The substrate behaves as a viscoelastic field with measurable
+        impedance gradients and coupling response.
+      </p>
+
+       <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
+        Cosmological observations traditionally attributed to
+        expansion-only metrics may reveal deeper structural
+        anisotropies consistent with continuous medium interaction.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+  
  <footer id="contact" class="footer-astron">
     <div class="shell footer-grid">
       <div class="footer-col">
@@ -905,9 +799,7 @@ section .hero-menu a:hover{
     </div>
   </div>
 
-
-
- <button id="backToTop">↑</button>
+  <button id="backToTop">↑</button>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
