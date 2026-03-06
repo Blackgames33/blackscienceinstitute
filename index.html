@@ -91,7 +91,7 @@
     }
 
     .nav-center {
-      display: flex;
+      display: relative;
       gap: 70px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
@@ -175,13 +175,6 @@
   will-change: transform;
 }
 
-}
-
-}
-
-
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -204,7 +197,7 @@
     0 0 8px rgba(255,255,255,0.15),
     0 0 30px rgba(0,0,0,0.6);
 }   
-}
+
 
 .title-line-1 {
   font-size: 0.9em;
@@ -228,7 +221,7 @@
 .text-content p {
   margin-bottom: 28px;
 }
-    }
+    
 
     .hero-content { position:relative; z-index:4; max-width:1000px; }
     .hero-title { font-family:'Montserrat',sans-serif; font-size:clamp(3rem,7vw,6rem); font-weight:300; letter-spacing:0.1em; margin-bottom:28px; }
@@ -385,7 +378,6 @@ body::before {
 }
 #spt {
   position: relative;
-}
 background: transparent;
     }   
 
@@ -436,8 +428,7 @@ background: transparent;
   @media (min-width: 900px) {
   .hero-content {
     transform: translateY(-03px);
-  }
-}
+  
   }
   </style>
 </head>
