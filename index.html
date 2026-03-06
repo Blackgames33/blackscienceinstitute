@@ -42,23 +42,6 @@
         radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03), transparent 55%);
       pointer-events:none;
       z-index:-2;
-
-}
-  body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-
-  background:
-  radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.5), transparent),
-  radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,.4), transparent),
-  radial-gradient(1.5px 1.5px at 40% 60%, rgba(255,255,255,.35), transparent),
-  radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,.45), transparent);
-
-  background-size:900px 900px;
-  pointer-events:none;
-  z-index:-10;
-}
     }
 
     body::after {
@@ -320,38 +303,6 @@
         z-index: 1000;
         border-left: 1px solid var(--border);
       }
-   @media (max-width:768px){
-
-.nav-center{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:40px;
-
-  transform:translateY(-100%);
-  transition:0.4s ease;
-}
-
-.nav-center.active{
-  transform:translateY(0);
-}
-
-.nav-center a{
-  font-size:1.3rem;
-  letter-spacing:0.15em;
-}
-
-.hamburger{
-  display:block;
-  font-size:2rem;
-  z-index:2000;
-}
-
-}
       .nav-center.active { right: 0; }
       .hero-title { font-size: 2.8rem; }
       .grid-2 { grid-template-columns: 1fr; }
@@ -408,9 +359,6 @@ body::before {
     to bottom,
     #050508 0%,
     #000 100%
-.formal-structure{
-  background:transparent;
-}
   );
   overflow: hidden;
 }
@@ -523,11 +471,6 @@ background: transparent;
 
 }
 
-#research,
-#spt,
-.formal-structure{
-  background:transparent;
-}
   }
   </style>
 </head>
@@ -538,6 +481,8 @@ background: transparent;
     <div class="shell">
       <nav>
         <div class="logo">BLACK SCIENCE INSTITUTE</div>
+
+</div>
         <div class="nav-center">
           <a href="index.html">Home</a>
           <div class="dropdown">
@@ -585,7 +530,6 @@ background: transparent;
           <a href="#3i-atlas-structural-predictions.html" class="tag">3i/ATLAS</a>
 
       </div>
-      
     </div>
   </section>
 
@@ -631,7 +575,6 @@ background: transparent;
   </section>
 
   <section id="research" style="background:#0a0a0a;">
-  <section id="research">
     <div class="shell">
       <h2 class="section-title">Research Axes</h2>
       <div class="cards-grid">
