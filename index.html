@@ -30,18 +30,8 @@
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
-    }
 
-    /* COSMIC BACKGROUND */
-    body::before {
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(circle at 15% 25%, rgba(255,255,255,0.04), transparent 45%),
-        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03), transparent 55%);
-      pointer-events:none;
-      z-index:-2;
+  
     }
 
     body::after {
@@ -91,7 +81,7 @@
     }
 
     .nav-center {
-      display: relative;
+      display: flex;
       gap: 70px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
@@ -186,16 +176,16 @@
   position: relative;
   z-index: 5;
 }
-   .hero-title {
+ 
+.hero-title {
   display: flex;
   flex-direction: column;
   line-height: 1.05;
-  text-shadow: 0 0 25px rgba(0,0,0,0.6); 
-  .hero-title {
   letter-spacing: 0.12em;
   text-shadow:
     0 0 8px rgba(255,255,255,0.15),
     0 0 30px rgba(0,0,0,0.6);
+   
 }   
 
 
@@ -388,9 +378,13 @@ background: transparent;
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.0) 0%,
-    rgba(0,0,0,0.85) 200px
-    #a0a0a 400px
-  )
+    rgba(0,0,0,0.65) 40%,
+    rgba(0,0,0,0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+  
 
     rgba(0,0,0,0.8) 0%,
     rgba(0,0,0,0.65) 50%,
@@ -414,7 +408,6 @@ background: transparent;
 @media (max-width: 900px) {
   .grid-2 {
     grid-template-columns: 1fr;
-
 }
  .visual {
   display: flex;
@@ -425,6 +418,7 @@ background: transparent;
   max-width: 500px;
   width: 100%;
 } 
+    }
   @media (min-width: 900px) {
   .hero-content {
     transform: translateY(-03px);
