@@ -63,7 +63,7 @@
 
     /* HEADER & NAV */
     header {
-      position: relative;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -109,7 +109,6 @@
 
     .dropdown { position: relative; }
     .dropdown-menu {
-
       position: absolute;
       top: 120%;
       left: 50%;
@@ -174,22 +173,10 @@
   background-position: center 40%;
   z-index: 1;
   will-change: transform;
-
 }
 
 }
 
- .hero::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:120px;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,0),
-    rgba(0,0,0,0.35)
 }
 
 
@@ -201,12 +188,6 @@
   background: rgba(0,0,0,0.5);
   z-index: 1;
 }
-
-
-  );
-}
-
-
 
 .hero-content {
   position: relative;
@@ -247,8 +228,6 @@
 .text-content p {
   margin-bottom: 28px;
 }
-
-
     }
 
     .hero-content { position:relative; z-index:4; max-width:1000px; }
@@ -400,7 +379,6 @@ body::before {
     url('./assets/images/Júpiter.png') right/cover no-repeat;
 
 
-
   opacity: 0.18;
   filter: brightness(0.78) contrast(1.08);
   box-shadow: 0 0 120px rgba(255,255,255,0.05);
@@ -459,18 +437,7 @@ background: transparent;
   .hero-content {
     transform: translateY(-03px);
   }
-
-/* remove faixa preta da transição da home */
-
-#spt::before{
-  display:none;
 }
-
-.formal-structure{
-  background:#000;
-
-}
-
   }
   </style>
 </head>
@@ -482,7 +449,6 @@ background: transparent;
       <nav>
         <div class="logo">BLACK SCIENCE INSTITUTE</div>
 
-</div>
         <div class="nav-center">
           <a href="index.html">Home</a>
           <div class="dropdown">
@@ -491,8 +457,7 @@ background: transparent;
               <a href="phenomena.html">Phenomena</a>
               <a href="research.html">Research</a>
                <a href="visionarios.html">Visionarios</a> 
-               <a href="3i-atlas-structural-predictions.html">3i/ATLAS-predictions</a> 
-
+             
             </div>
           </div>
           <a href="#contact">Contact</a>
@@ -527,8 +492,7 @@ background: transparent;
         <a href="spt-v1-4.html" class="tag">SPT v1.4</a>
           <a href="#spt" class="tag">Pleroma Substrate</a>
           <a href="#spt" class="tag">Viscoelastic Vacuum</a>
-          <a href="#3i-atlas-structural-predictions.html" class="tag">3i/ATLAS</a>
-
+          <a href="#spt" class="tag">3i/ATLAS</a>
       </div>
     </div>
   </section>
