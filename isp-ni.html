@@ -1,379 +1,342 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ISP-Ni — Interstellar Signatures & Solar Perturbations</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
-
-<style>
-
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+<title>ISP-Ni — Interstellar Signatures & Solar Perturbations</title>  
   
-.isp-b.back-nav{
-  padding:20px 0;
-  opacity:0.6;
-  font-size:0.85rem;
-}
-
-.back-nav a:hover{
-  opacity:1;
-}
-
-.back-home{
-  text-align:center;
-  margin-top:60px;
-  opacity:0.6;
-}ack-nav{
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px 6%;
-  opacity:0.6;
-  font-size:0.85rem;
-}
-
-.isp-back-home{
-  text-align:center;
-  margin-top:60px;
-  opacity:0.6;
-}
-
-.isp-back-nav a,
-.isp-back-nav a:visited,
-.isp-back-home a,
-.isp-back-home a:visited{
-  color:rgba(255,255,255,0.7);
-  text-decoration:none;
-}
-
-.isp-back-nav a:hover,
-.isp-back-home a:hover{
-  color:#ffffff;
-}
-  .back-nav{
-  max-width:1100px;
-  margin:0 auto;
-  padding:20px 6%;
-}
-:root{
-  --bg:#000;
-  --fg:#f0f0f0;
-  --muted:#aaa;
-  --border:rgba(255,255,255,0.08);
-}
-
-body{
-  margin:0;
-  background:#000;
-  color:#f0f0f0;
-  font-family:'Roboto',sans-serif;
-  line-height:1.8;
-}
-
-.shell{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 6%;
-}
-
-/* HERO */
-.hero{
-  min-height:80vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.hero h1{
-  font-family:'Montserrat',sans-serif;
-  font-size:clamp(2.5rem,5vw,4rem);
-  letter-spacing:0.18em;
-  font-weight:300;
-}
-
-.hero-sub{
-  margin-top:10px;
-  opacity:0.6;
-  letter-spacing:0.15em;
-}
-
-.hero-lead{
-  max-width:700px;
-  margin:25px auto;
-  opacity:0.75;
-}
-
-
-
-/* SECTION */
-section{
-  padding:120px 0;
-  border-top:1px solid var(--border);
-}
-
-h2{
-  font-family:'Montserrat',sans-serif;
-  letter-spacing:0.12em;
-  font-weight:300;
-  text-align:center;
-  margin-bottom:40px;
-}
-
-p{
-  max-width:760px;
-  margin:0 auto 22px;
-  opacity:0.85;
-}
-
-/* LIST */
-.list{
-  max-width:720px;
-  margin:0 auto;
-}
-
-.list li{
-  margin-bottom:14px;
-  opacity:0.85;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-  margin-top:50px;
-}
-
-.card{
-  padding:22px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:rgba(255,255,255,0.02);
-}
-
-.card h3{
-  font-size:0.95rem;
-  letter-spacing:0.12em;
-  margin-bottom:10px;
-}
-
-.card p{
-  font-size:0.9rem;
-  opacity:0.7;
-}
-
-/* PIPELINE */
-.pipeline{
-  text-align:center;
-  margin-top:40px;
-  opacity:0.7;
-  letter-spacing:0.1em;
-}
-
-/* FOOTER */
-footer{
-  padding:60px 0;
-  text-align:center;
-  font-size:0.8rem;
-  opacity:0.5;
-  border-top:1px solid var(--border);
-}
-
-  /* ===== ISP NAV FIX ===== */
-.isp-back-nav a,
-.isp-back-nav a:visited,
-.isp-back-home a,
-.isp-back-home a:visited {
-  color: rgba(255,255,255,0.7) !important;
-  text-decoration: none !important;
-}
-
-.isp-back-nav a:hover,
-.isp-back-home a:hover {
-  color: #ffffff !important;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<section class="hero">
-  <div class="back-nav">
-    <a href="research.html"> back to research</a>
-  </div>
-  <div class="shell">
-    <h1>ISP-Ni</h1>
-    <div class="hero-sub">Interstellar Signatures & Solar Perturbations</div>
-
-    <p class="hero-lead">
-      Statistical investigation of potential interstellar object signatures
-      through historical anomaly reanalysis and heliospheric data correlation.
-    </p>
-  </div>
-</section>
-
-<!-- OVERVIEW -->
-<section>
-  <div class="shell">
-
-    <h2>Overview</h2>
-
-    <p>
-      The discovery of interstellar objects such as ʻOumuamua and 2I/Borisov established that 
-      bodies originating from outside the Solar System traverse our local environment.
-    </p>
-
-    <p>
-      This shifts the problem: not only detecting new objects, but determining how many 
-      may have passed undetected.
-    </p>
-
-    <p>
-      ISP-Ni investigates historical anomalous events — signals detected but not fully explained — 
-      to evaluate whether they may be consistent with indirect signatures of interstellar object passage.
-    </p>
-
-    <p>
-      The project does not assume conclusions. It evaluates whether statistically significant 
-      correlations exist beyond random coincidence.
-    </p>
-
-  </div>
-</section>
-
-<!-- ANOMALY FRAMEWORK -->
-<section>
-  <div class="shell">
-
-    <h2>Anomaly Reassessment Framework</h2>
-
-    <p>
-      ISP-Ni systematically re-evaluates events historically classified as noise, 
-      artifacts, or unexplained anomalies.
-    </p>
-
-    <p>
-      These events are not assumed to be misinterpreted, but are analyzed under a new 
-      statistical and physical context.
-    </p>
-
-    <p>
-      Only signals exceeding statistical expectations beyond random coincidence 
-      are considered candidates for further investigation.
-    </p>
-
-  </div>
-</section>
-
-<!-- METHODOLOGY -->
-<section>
-  <div class="shell">
-
-    <h2>Methodology</h2>
-
-    <ul class="list">
-      <li>Construction of independent radioastronomical event catalog</li>
-      <li>Filtering of known solar and heliospheric phenomena</li>
-      <li>Identification of residual unexplained events</li>
-      <li>Simulation of interstellar object trajectories</li>
-      <li>Temporal coincidence analysis</li>
-      <li>Monte Carlo statistical validation</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- DATA -->
-<section>
-  <div class="shell">
-
-    <h2>Data Sources</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Wind / WAVES</h3>
-        <p>Heliospheric radio data</p>
-      </div>
-
-      <div class="card">
-        <h3>STEREO</h3>
-        <p>Multi-angle observations</p>
-      </div>
-
-      <div class="card">
-        <h3>e-Callisto</h3>
-        <p>Global radio network</p>
-      </div>
-
-      <div class="card">
-        <h3>GOES</h3>
-        <p>Solar flare filtering</p>
-      </div>
-
-      <div class="card">
-        <h3>SOHO LASCO</h3>
-        <p>CME database</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- PIPELINE -->
-<section>
-  <div class="shell">
-
-    <h2>Computational Pipeline</h2>
-
-    <div class="pipeline">
-      Raw Data → Detection → Filtering → Classification → Dataset → Statistical Analysis
-    </div>
-
-  </div>
-</section>
-
-<!-- STATUS -->
-<section>
-  <div class="shell">
-
-    <h2>Dataset Status</h2>
-
-    <p>
-      Dataset construction is in progress (2015–2025).
-      Initial detection pipeline validated with synthetic data.
-    </p>
-
-    <p>
-      Filtering and cross-correlation modules are under development.
-    </p>
-
-  </div>
-</section>
-
-<!-- COLLAB -->
-<section>
-  <div class="shell">
-
-    <h2>Collaboration</h2>
-
-    <p>
-      Researchers in radioastronomy, heliophysics, and signal processing 
-      are invited to contribute with data and analysis.
-    </p>
-<div class="back-home">
-  <a href="index.html">retorn to Home</a>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>  
   
-  </div>
-</section>
+<style>  
+:root{  
+  --bg:#000;  
+  --fg:#f0f0f0;  
+  --muted:#aaa;  
+  --border:rgba(255,255,255,0.08);  
+}  
+  
+body{  
+  margin:0;  
+  background:#000;  
+  color:#f0f0f0;  
+  font-family:'Roboto',sans-serif;  
+  line-height:1.8;  
+}  
+  
+.shell{  
+  max-width:1100px;  
+  margin:0 auto;  
+  padding:0 6%;  
+}  
+  
+/* HERO */  
+.hero{  
+  min-height:80vh;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  text-align:center;  
+}  
+  
+.hero h1{  
+  font-family:'Montserrat',sans-serif;  
+  font-size:clamp(2.5rem,5vw,4rem);  
+  letter-spacing:0.18em;  
+  font-weight:300;  
+}  
+  
+.hero-sub{  
+  margin-top:10px;  
+  opacity:0.6;  
+  letter-spacing:0.15em;  
+}  
+  
+.hero-lead{  
+  max-width:700px;  
+  margin:25px auto;  
+  opacity:0.75;  
+}  
+  
+/* SECTION */  
+section{  
+  padding:120px 0;  
+  border-top:1px solid var(--border);  
+}  
+  
+h2{  
+  font-family:'Montserrat',sans-serif;  
+  letter-spacing:0.12em;  
+  font-weight:300;  
+  text-align:center;  
+  margin-bottom:40px;  
+}  
+  
+p{  
+  max-width:760px;  
+  margin:0 auto 22px;  
+  opacity:0.85;  
+}  
+  
+/* LIST */  
+.list{  
+  max-width:720px;  
+  margin:0 auto;  
+}  
+  
+.list li{  
+  margin-bottom:14px;  
+  opacity:0.85;  
+}  
+  
+/* GRID */  
+.grid{  
+  display:grid;  
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));  
+  gap:28px;  
+  margin-top:50px;  
+}  
+  
+.card{  
+  padding:22px;  
+  border:1px solid var(--border);  
+  border-radius:10px;  
+  background:rgba(255,255,255,0.02);  
+}  
+  
+.card h3{  
+  font-size:0.95rem;  
+  letter-spacing:0.12em;  
+  margin-bottom:10px;  
+}  
+  
+.card p{  
+  font-size:0.9rem;  
+  opacity:0.7;  
+}  
+  
+/* PIPELINE */  
+.pipeline{  
+  text-align:center;  
+  margin-top:40px;  
+  opacity:0.7;  
+  letter-spacing:0.1em;  
+}  
+  
+/* FOOTER */  
+footer{  
+  padding:60px 0;  
+  text-align:center;  
+  font-size:0.8rem;  
+  opacity:0.5;  
+  border-top:1px solid var(--border);  
+}  
 
-<footer>
-Black Science Institute · 2026
-</footer>
+  /* ===== ISP NAV FIX FINAL ===== */
 
-</body>
+.isp-nav-top{
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  z-index: 1000;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.isp-nav-top a,
+.isp-nav-top a:visited{
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.isp-nav-top a:hover{
+  color: #ffffff;
+  opacity: 1;
+}
+
+  @media (max-width:768px){
+  .isp-nav-top{
+    top: 80px;
+    left: 20px;
+    font-size: 0.75rem;
+  }
+}
+</style>  
+</head>  
+  
+<body>  
+  
+<!-- HERO -->  
+<section class="hero">  
+  <div class="isp-nav-top"> <a href="research.html">← Research</a> </div>
+  <div class="shell">  
+    <h1>ISP-Ni</h1>  
+    <div class="hero-sub">Interstellar Signatures & Solar Perturbations</div>  
+  
+    <p class="hero-lead">  
+      Statistical investigation of potential interstellar object signatures  
+      through historical anomaly reanalysis and heliospheric data correlation.  
+    </p>  
+  </div>  
+</section>  
+  
+<!-- OVERVIEW -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Overview</h2>  
+  
+    <p>  
+      The discovery of interstellar objects such as ʻOumuamua and 2I/Borisov established that   
+      bodies originating from outside the Solar System traverse our local environment.  
+    </p>  
+  
+    <p>  
+      This shifts the problem: not only detecting new objects, but determining how many   
+      may have passed undetected.  
+    </p>  
+  
+    <p>  
+      ISP-Ni investigates historical anomalous events — signals detected but not fully explained —   
+      to evaluate whether they may be consistent with indirect signatures of interstellar object passage.  
+    </p>  
+  
+    <p>  
+      The project does not assume conclusions. It evaluates whether statistically significant   
+      correlations exist beyond random coincidence.  
+    </p>  
+  
+  </div>  
+</section>  
+  
+<!-- ANOMALY FRAMEWORK -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Anomaly Reassessment Framework</h2>  
+  
+    <p>  
+      ISP-Ni systematically re-evaluates events historically classified as noise,   
+      artifacts, or unexplained anomalies.  
+    </p>  
+  
+    <p>  
+      These events are not assumed to be misinterpreted, but are analyzed under a new   
+      statistical and physical context.  
+    </p>  
+  
+    <p>  
+      Only signals exceeding statistical expectations beyond random coincidence   
+      are considered candidates for further investigation.  
+    </p>  
+  
+  </div>  
+</section>  
+  
+<!-- METHODOLOGY -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Methodology</h2>  
+  
+    <ul class="list">  
+      <li>Construction of independent radioastronomical event catalog</li>  
+      <li>Filtering of known solar and heliospheric phenomena</li>  
+      <li>Identification of residual unexplained events</li>  
+      <li>Simulation of interstellar object trajectories</li>  
+      <li>Temporal coincidence analysis</li>  
+      <li>Monte Carlo statistical validation</li>  
+    </ul>  
+  
+  </div>  
+</section>  
+  
+<!-- DATA -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Data Sources</h2>  
+  
+    <div class="grid">  
+  
+      <div class="card">  
+        <h3>Wind / WAVES</h3>  
+        <p>Heliospheric radio data</p>  
+      </div>  
+  
+      <div class="card">  
+        <h3>STEREO</h3>  
+        <p>Multi-angle observations</p>  
+      </div>  
+  
+      <div class="card">  
+        <h3>e-Callisto</h3>  
+        <p>Global radio network</p>  
+      </div>  
+  
+      <div class="card">  
+        <h3>GOES</h3>  
+        <p>Solar flare filtering</p>  
+      </div>  
+  
+      <div class="card">  
+        <h3>SOHO LASCO</h3>  
+        <p>CME database</p>  
+      </div>  
+  
+    </div>  
+  
+  </div>  
+</section>  
+  
+<!-- PIPELINE -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Computational Pipeline</h2>  
+  
+    <div class="pipeline">  
+      Raw Data → Detection → Filtering → Classification → Dataset → Statistical Analysis  
+    </div>  
+  
+  </div>  
+</section>  
+  
+<!-- STATUS -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Dataset Status</h2>  
+  
+    <p>  
+      Dataset construction is in progress (2015–2025).  
+      Initial detection pipeline validated with synthetic data.  
+    </p>  
+  
+    <p>  
+      Filtering and cross-correlation modules are under development.  
+    </p>  
+  
+  </div>  
+</section>  
+  
+<!-- COLLAB -->  
+<section>  
+  <div class="shell">  
+  
+    <h2>Collaboration</h2>  
+  
+    <p>  
+      Researchers in radioastronomy, heliophysics, and signal processing   
+      are invited to contribute with data and analysis.  
+    </p>  
+  
+  </div>  
+</section>  
+  
+<footer>  
+Black Science Institute · 2026  
+</footer>  
+  
+</body>  
 </html>
+
