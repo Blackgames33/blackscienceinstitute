@@ -159,10 +159,34 @@ footer{
     left: 20px;
     font-size: 0.75rem;
   }
+#backToTop{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover{
+  background: rgba(255,255,255,0.1);
 }
 </style>  
 </head>  
-  
+  <button id="backtotop">↑</button>button>
 <body>  
   
 <!-- HERO -->  
