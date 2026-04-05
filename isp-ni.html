@@ -165,59 +165,25 @@ body::before {
   border:1px solid var(--border);
   border-radius:12px;
   background:rgba(255,255,255,0.02);
-  transition:all 0.35s ease;
-  overflow:hidden;
-}
-
-/* glow sutil interno */
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 80% 20%,
-              rgba(255,255,255,0.08),
-              transparent 60%);
-  opacity:0;
-  transition:0.4s ease;
-}
-
-/* linha superior científica (estilo lab interface) */
-.card::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:0%;
-  height:1px;
-  background:rgba(255,255,255,0.4);
-  transition:0.4s ease;
+  transition:0.35s ease;
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:rgba(255,255,255,0.25);
-  background:rgba(255,255,255,0.045);
-}
-
-.card:hover::before{
-  opacity:1;
-}
-
-.card:hover::after{
-  width:100%;
+  border-color:rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.04);
 }
 
 .card h3{
   font-size:0.9rem;
-  letter-spacing:0.14em;
+  letter-spacing:0.12em;
   margin-bottom:12px;
-  opacity:0.85;
 }
 
 .card p{
-  font-size:0.92rem;
-  opacity:0.72;
-  line-height:1.8;
+  font-size:0.9rem;
+  opacity:0.7;
+}
 }
 </style></head><body><section class="hero">
   <div class="isp-nav-top"><a href="research.html">⬅ Research</a></div>
@@ -230,37 +196,45 @@ body::before {
     </p>
   </div>
 </section><section>
+  
   <section>
   <div class="shell">
 
-    <h2>Editorial</h2>
+    <h2>Research Modules</h2>
 
-    <p>
-      The ISP-Ni program is grounded in a simple premise: not all observed signals
-      have been fully characterized.
-    </p>
+    <div class="grid">
 
-    <p>
-      Historically, numerous radioastronomical events have been classified as noise,
-      artifacts, or low-significance anomalies due to observational limitations
-      and modeling constraints at the time of detection.
-    </p>
+      <div class="card">
+        <h3>Data Acquisition</h3>
+        <p>Collection of radioastronomical datasets across multiple instruments and observatories.</p>
+      </div>
 
-    <p>
-      ISP-Ni does not seek to directly challenge these classifications — instead,
-      it re-examines such events within a refined analytical framework, combining
-      statistical validation, cross-instrument correlation, and trajectory simulation.
-    </p>
+      <div class="card">
+        <h3>Signal Filtering</h3>
+        <p>Removal of solar, heliospheric and known astrophysical sources.</p>
+      </div>
 
-    <p>
-      The objective is not to confirm a predefined hypothesis, but to evaluate whether
-      statistically meaningful structures emerge beyond stochastic expectation.
-    </p>
+      <div class="card">
+        <h3>Anomaly Detection</h3>
+        <p>Extraction of residual events not classified within existing models.</p>
+      </div>
 
-    <p>
-      Between signal and noise lies an underexplored domain.
-      ISP-Ni operates precisely within that boundary.
-    </p>
+      <div class="card">
+        <h3>Trajectory Modeling</h3>
+        <p>Monte Carlo simulation of interstellar object paths through the Solar System.</p>
+      </div>
+
+      <div class="card">
+        <h3>Correlation Analysis</h3>
+        <p>Temporal and geometric alignment between events and simulated trajectories.</p>
+      </div>
+
+      <div class="card">
+        <h3>Statistical Validation</h3>
+        <p>Significance testing using Monte Carlo and null hypothesis frameworks.</p>
+      </div>
+
+    </div>
 
   </div>
 </section>
