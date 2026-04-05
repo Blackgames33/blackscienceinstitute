@@ -184,6 +184,24 @@ footer{
 #backToTop:hover{
   background: rgba(255,255,255,0.1);
 }
+    #backToTop{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+#backToTop.show{
+  opacity: 1;
+}
 </style>  
 </head>  
   
@@ -361,6 +379,28 @@ footer{
 Black Science Institute · 2026  
 </footer>  
    <button id="backtotop">↑</button>button>
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const btn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 300){
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  btn.addEventListener("click", function(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+});
+</script>
 </body>  
 </html>
 
