@@ -13,8 +13,6 @@
 
 /* ================= BASE ================= */
 
-/* ================= BASE ================= */
-
 :root{
 --bg:#000;
 --fg:#e8e8e8;
@@ -98,14 +96,24 @@ margin-right:auto;
 
 /* ================= GRID ================= */
 
+.section{
+padding:100px 0;
+border-top:1px solid var(--border);
+}
+
+.section-title{
+text-align:center;
+font-family:Montserrat;
+letter-spacing:0.14em;
+margin-bottom:70px;
+}
+
 .grid,
 .cards-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:36px;
 }
-
-/* ================= CARD ================= */
 
 .card{
 background:rgba(255,255,255,0.03);
@@ -126,18 +134,41 @@ font-weight:300;
 margin-bottom:14px;
 }
 
-/* ================= SECTION ================= */
+/* ================= RESEARCH ================= */
 
-.section{
-padding:100px 0;
-border-top:1px solid var(--border);
+.research-title{
+font-family:'Montserrat', sans-serif;
+font-size:3rem;
+letter-spacing:0.15em;
+text-align:center;
+margin-bottom:30px;
 }
 
-.section-title{
+.research-intro{
+max-width:780px;
+margin:0 auto 80px;
 text-align:center;
-font-family:Montserrat;
-letter-spacing:0.14em;
-margin-bottom:70px;
+opacity:0.85;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+gap:35px;
+}
+
+.research-card{
+padding:30px;
+border:1px solid rgba(255,255,255,0.15);
+border-radius:16px;
+background:rgba(255,255,255,0.02);
+backdrop-filter: blur(10px);
+transition:all 0.35s ease;
+}
+
+.research-card:hover{
+transform:translateY(-6px);
+border-color:white;
 }
 
 /* ================= FOOTER ================= */
@@ -150,29 +181,27 @@ opacity:0.8;
 font-size:0.9rem;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-text-align:left;
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px){
+
+.shell{padding:0 20px;}
+
+.hero{padding:40px 0;}
+
+.hero h1{font-size:2rem;}
+
+.grid,
+.cards-grid{
+grid-template-columns:1fr;
+gap:18px;
 }
 
-.footer-col h4{
-margin-bottom:10px;
+.card{
+padding:18px;
+border-radius:8px;
 }
 
-.footer-col ul{
-list-style:none;
-}
-
-.footer-col li{
-margin-bottom:8px;
-}
-
-.footer-bottom{
-margin-top:40px;
-text-align:center;
-opacity:0.6;
 }
 
 /* ================= CINEMATIC ================= */
@@ -192,55 +221,19 @@ height:700px;
 background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);
 border-radius:50%;
 opacity:0.25;
+pointer-events:none;
 }
 
-#phenomena::before{
-content:"";
+#phenomena::after{
+content:"∇μT^{μν}=0 ηH₀/c Δν/ν ≈ (H₀/c)d Z_H Israel–Stewart";
 position:absolute;
-right:-300px;
-top:50%;
-width:800px;
-height:800px;
-background:radial-gradient(circle,rgba(255,255,255,0.06),transparent 75%);
-border-radius:50%;
-opacity:0.3;
+bottom:20%;
+left:10%;
+font-size:3rem;
+opacity:0.03;
+white-space:nowrap;
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width:768px){
-
-.shell{padding:0 20px;}
-
-.hero{
-min-height:60vh;
-padding:40px 0;
-}
-
-.hero h1{font-size:2rem;}
-
-.grid,
-.cards-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-.card{
-padding:18px;
-border-radius:8px;
-}
-
-.card p{
-font-size:0.85rem;
-line-height:1.7;
-}
-
-h2{
-font-size:1.6rem;
-letter-spacing:0.08em;
-}
-
-}
 </style>
 </head>
 
@@ -254,6 +247,7 @@ letter-spacing:0.08em;
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="structural-plenitude-theory.html">SPT</a>
+<a href="isp-ni.html">ISP-Ni</a>
 <a href="phenomena.html">Phenomena</a>
 <a href="contact.html">Contact</a>
 </div>
