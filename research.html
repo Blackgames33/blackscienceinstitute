@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,76 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
 
 <style>
-.research-title{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.15em;
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.research-intro{
-  max-width:780px;
-  margin:0 auto 80px;
-  text-align:center;
-  opacity:0.85;
-}
-
-.cards-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:36px;
-}
-
-.research-card{
-  padding:30px;
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:16px;
-  background:rgba(255,255,255,0.02);
-  backdrop-filter: blur(10px);
-  transition:all 0.35s ease;
-}
-
-.research-card:hover{
-  transform:translateY(-6px);
-  border-color:white;
-}
-
-.research-card h3{
-  margin-bottom:20px;
-  font-family:'Montserrat', sans-serif;
-  letter-spacing:0.12em;
-}
-
-.research-links{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.research-links a{
-  opacity:0.8;
-  transition:0.25s;
-}
-
-.research-links a:hover{
-  opacity:1;
-  transform:translateX(4px);
-}
-
-.research-future{
-  border-left:3px solid white;
-}
-
-.future-status{
-  margin-top:20px;
-  font-size:0.7rem;
-  letter-spacing:2px;
-  opacity:0.6;
-}
 
 /* ================= BASE ================= */
-
 :root{
 --bg:#000;
 --fg:#e8e8e8;
@@ -105,15 +36,13 @@ padding:0 24px;
 a{color:inherit;text-decoration:none;}
 
 /* ================= HEADER ================= */
-
 header{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,0.45);
-backdrop-filter:blur(10px);
-border-bottom:1px solid 
-rgba(255,255,255,0,06);
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--border);
 z-index:1000;
 }
 
@@ -126,9 +55,8 @@ height:80px;
 
 .logo{
 font-family:Montserrat;
-letter-spacing:0.18em;
-font-size:0.95rem;
-opacity:0.75; /* mais leve*/
+letter-spacing:0.2em;
+font-size:1.3rem;
 }
 
 .nav-links{
@@ -140,7 +68,6 @@ text-transform:uppercase;
 }
 
 /* ================= HERO ================= */
-
 main{padding-top:120px;}
 
 .hero{
@@ -163,8 +90,7 @@ margin-left:auto;
 margin-right:auto;
 }
 
-/* ================= GRID CARDS ================= */
-
+/* ================= GRID ================= */
 .section{
 padding:100px 0;
 border-top:1px solid var(--border);
@@ -177,7 +103,7 @@ letter-spacing:0.14em;
 margin-bottom:70px;
 }
 
-.grid{
+.grid, .cards-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:36px;
@@ -202,18 +128,47 @@ font-weight:300;
 margin-bottom:14px;
 }
 
-.tag{
-font-size:0.7rem;
-letter-spacing:2px;
-opacity:0.6;
-margin-bottom:14px;
-display:block;
+/* ================= RESEARCH ================= */
+
+.research-title{
+font-family:Montserrat;
+font-size:3rem;
+letter-spacing:0.15em;
+text-align:center;
+margin-bottom:30px;
 }
 
-.eq{
-font-family:Courier New, monospace;
-margin:18px 0;
-opacity:0.9;
+.research-intro{
+max-width:780px;
+margin:0 auto 80px;
+text-align:center;
+opacity:0.85;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+gap:35px;
+}
+
+.research-card{
+padding:30px;
+border:1px solid rgba(255,255,255,0.15);
+border-radius:16px;
+background:rgba(255,255,255,0.02);
+backdrop-filter: blur(10px);
+transition:all 0.35s ease;
+}
+
+.research-card:hover{
+transform:translateY(-6px);
+border-color:white;
+}
+
+.research-links{
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
 /* ================= FOOTER ================= */
@@ -225,167 +180,37 @@ text-align:center;
 opacity:0.8;
 font-size:0.9rem;
 }
-/* ===============================
-   CINEMATIC DEPTH SYSTEM
-   =============================== */
 
-/* PLANET BACKGROUND BASE */
-section {
-  position: relative;
-  overflow-x: hidden;
+/* ================= MOBILE ================= */
+@media (max-width: 768px){
+
+.shell{padding:0 20px;}
+
+h2{font-size:1.6rem;}
+
+.hero{min-height:60vh;padding:40px 0;}
+.hero h1{font-size:2rem;}
+
+.grid, .cards-grid{grid-template-columns:1fr;}
+
+.card{padding:18px;border-radius:8px;}
+
 }
 
-/* SECOND PLANET – RESEARCH */
-#research::before {
-  content: "";
-  position: absolute;
-  left: -250px;
-  top: 40%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0.03) 40%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  opacity: 0.25;
-  pointer-events: none;
+/* ================= CINEMATIC ================= */
+section{position:relative;overflow-x:hidden;}
+
+#research::before{
+content:"";
+position:absolute;
+left:-250px;
+top:40%;
+width:700px;
+height:700px;
+background:radial-gradient(circle,rgba(255,255,255,0.05),transparent);
+border-radius:50%;
+opacity:0.25;
 }
-
-/* THIRD PLANET – PHENOMENA */
-#phenomena::before {
-  content: "";
-  position: absolute;
-  right: -300px;
-  top: 50%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(
-    circle at 60% 40%,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.02) 45%,
-    transparent 75%
-  );
-  border-radius: 50%;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-/* EQUATION LAYER */
-#phenomena::after {
-  content: "∇μT^{μν}=0   ηH₀/c   Δν/ν ≈ (H₀/c)d   Z_H   Israel–Stewart";
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.2em;
-  opacity: 0.03;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-/* MOBILE CONTROL */
-@media (max-width: 768px) {
-
-  #research::before,
-  #phenomena::before {
-    width: 500px;
-    height: 500px;
-    opacity: 0.18;
-  }
-
-  #phenomena::after {
-    font-size: 1.8rem;
-    bottom: 10%;
-  }
-/* ============================
-   RESEARCH MOBILE FIX
-============================ */
-
-
- @media (max-width: 768px){
-
-.shell{
-padding:0 20px;
-}
-
-h2{
-font-size:1.6rem;
-letter-spacing:0.08em;
-}
-
-/* HERO */
-.hero{
-min-height:60vh;
-padding:60px 0;
-}
-
-.hero h1{
-font-size:2rem;
-}
-
-.hero p{
-font-size:0.95rem;
-}
-
-/* GRID */
-.grid,
-.cards-grid,
-.research-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-/* CARDS */
-.card,
-.research-card{
-padding:18px;
-border-radius:10px;
-}
-
-.card h3,
-.research-card h3{
-font-size:0.85rem;
-letter-spacing:0.08em;
-}
-
-.card p{
-font-size:0.85rem;
-line-height:1.7;
-}
-
-/* RESEARCH TITLE */
-.research-title{
-font-size:1.8rem;
-}
-
-.research-intro{
-font-size:0.9rem;
-}
-
-/* NAV */
-.nav-links{
-gap:18px;
-font-size:0.7rem;
-}
-
-/* PLANETS */
-#research::before,
-#phenomena::before{
-width:400px;
-height:400px;
-opacity:0.15;
-}
-
-#phenomena::after{
-font-size:1.4rem;
-bottom:10%;
-}
-}
-
 
 </style>
 </head>
@@ -396,433 +221,86 @@ bottom:10%;
 <div class="shell">
 <nav>
 <div class="logo">BLACK SCIENCE INSTITUTE</div>
-
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="structural-plenitude-theory.html">SPT</a>
 <a href="phenomena.html">Phenomena</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </nav>
 </div>
 </header>
 
 <main>
 
-<!-- ================= RESEARCH HERO ================= -->
 <section class="hero">
-  <div class="shell">
-    <h1 class="hero-title">Research Program</h1>
-    <p class="hero-subtitle">
-      The Black Science Institute research program integrates theoretical physics,
-      observational cosmology and substrate dynamics into a unified scientific
-      investigation architecture.
-    </p>
-  </div>
-</section>
-<section class="research-core">
-
 <div class="shell">
+<h1>Research Program</h1>
+<p>
+The Black Science Institute research program integrates theoretical physics,
+observational cosmology and substrate dynamics into a unified scientific architecture.
+</p>
+</div>
+</section>
 
+<section>
+<div class="shell">
 <h1 class="research-title">Research Core</h1>
-
 <p class="research-intro">
 Black Science Institute organizes its scientific activity across theoretical
-substrate physics, observational phenomenology and next-generation cosmological
-framework development. All programs converge into Structural Plenitude Theory
-as the unifying substrate model.
+substrate physics, observational phenomenology and next-generation cosmological frameworks.
 </p>
-
 </div>
 </section>
 
-
-
-<section class="research-grid-section">
-
+<section>
 <div class="shell">
-
 <div class="research-grid">
 
-<!-- SPT LIBRARY -->
 <div class="research-card">
-
 <h3>SPT Scientific Library</h3>
-
 <div class="research-links">
-
 <a href="https://zenodo.org/records/18409392" target="_blank">SPT v1.4 — Unified Framework</a>
-
-<a href="#">Mathematical Formalism</a>
-
-<a href="#">Full Scientific Archive</a>
-
 </div>
 </div>
 
-
-<!-- OBSERVATIONAL -->
 <div class="research-card">
-
 <h3>Observational Programs</h3>
-
 <div class="research-links">
-
 <a href="#">3I / Interstellar Object Program</a>
-
-<a href="#">Planetary Plasma Tail Studies</a>
-
-<a href="#">Magnetosphere Structural Coupling</a>
-
-<a href="#">Deep Space Phenomenology</a>
-
 </div>
 </div>
 
-
-<!-- BOOKS -->
 <div class="research-card">
-
 <h3>Scientific & Fictional Publications</h3>
-
 <div class="research-links">
-
-<a href="#">Visionários — Science Fiction Project</a>
-
-<a href="#">Patologia de um Regime — Geopolitical Study</a>
-
+<a href="#">Visionários</a>
 </div>
 </div>
 
-
-<!-- FUTURE THEORY -->
-<div class="research-card research-future">
-
+<div class="research-card">
 <h3>Next Generation Framework</h3>
-
-<p>
-A new propagation-level cosmological extension is currently under internal
-consolidation, introducing effective phase-drag interactions inside
-Boltzmann solvers while preserving ΛCDM background expansion.
-</p>
-
-<div class="future-status">
-INTERNAL SCIENTIFIC CONSOLIDATION — PREVIEW RELEASE EXPECTED
-</div>
-
+<p>A new cosmological extension is under consolidation.</p>
 </div>
 
 </div>
 </div>
 </section>
 
+</main>
 
-<!-- ================= RESEARCH CORE ================= -->
-<section>
-  <div class="shell">
+<footer>
+<p>© 2026 Black Science Institute · All Rights Reserved</p>
+</footer>
 
-    <h2 class="section-title">Research Core</h2>
-
-    <div class="cards-grid">
-
-      <div class="card">
-        <h3 class="card-title">Mathematical Structure</h3>
-        <p class="card-body">
-          Covariant substrate equations, viscoelastic vacuum modeling,
-          structural impedance ZH and coupling efficiency frameworks.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Field Architecture</h3>
-        <p class="card-body">
-          Multi-scale substrate field organization, tension domains,
-          propagation regimes and interaction boundaries.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Observational Programs</h3>
-        <p class="card-body">
-          Application to interstellar objects, plasma structures,
-          chromatic propagation effects and astrophysical anomaly mapping.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Cosmogenesis</h3>
-        <p class="card-body">
-          Implications for matter formation, cosmic structure emergence
-          and large scale substrate architecture evolution.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= PREPRINT & ARCHIVE ================= -->
-<section style="background:#0a0a0a;">
-  <div class="shell">
-
-    <h2 class="section-title">Preprints & Scientific Archive</h2>
-
-    <div class="cards-grid">
-
-      <a href="https://zenodo.org/records/18409392" target="_blank" class="card-link">
-        <div class="card">
-          <h3 class="card-title">SPT v1.4 — Unified Framework</h3>
-          <p class="card-body">
-            Viscoelastic substrate formalism, dissipative vacuum regimes
-            and propagation-level cosmological corrections.
-          </p>
-        </div>
-      </a>
-
-      <a href="https://zenodo.org/records/18157921" target="_blank" class="card-link">
-        <div class="card">
-          <h3 class="card-title">3I / ATLAS Analysis</h3>
-          <p class="card-body">
-            Structural drag signatures, radiative dissipation behavior
-            and substrate interaction phenomenology.
-          </p>
-        </div>
-      </a>
-
-      <a href="https://zenodo.org" target="_blank" class="card-link">
-        <div class="card">
-          <h3 class="card-title">Full Scientific Repository</h3>
-          <p class="card-body">
-            Complete archive of theoretical notes, datasets and
-            progressive framework development records.
-          </p>
-        </div>
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= PHENOMENA OBSERVATORY ================= -->
-<section>
-  <div class="shell">
-
-    <h2 class="section-title">Phenomena Observatory</h2>
-
-    <div class="editorial" style="text-align:center; margin-bottom:60px;">
-      <p>
-        The institute maintains a catalog of observational patterns and
-        anomalous phenomena across astrophysics, plasma physics and cosmology,
-        studied under unified structural interpretation frameworks.
-      </p>
-    </div>
-
-    <div class="cards-grid">
-
-      <div class="card">
-        <h3 class="card-title">Interstellar Objects</h3>
-        <p class="card-body">
-          Structural response behavior in high velocity objects crossing
-          substrate gradient regions.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Plasma Tail Structures</h3>
-        <p class="card-body">
-          Planetary and solar plasma structures as large scale substrate
-          interaction indicators.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Auroral Anomalies</h3>
-        <p class="card-body">
-          Energy injection patterns inconsistent with purely magnetospheric models.
-        </p>
-      </div>
-
-    </div> <!--
-
-  </div>
-</section>
-
-
-<!-- ================= FUTURE FRAMEWORK PREVIEW (M1 TRAILER) ================= -->
-<section style="background:#050505;">
-  <div class="shell">
-
-    <h2 class="section-title">Next Generation Framework — In Development</h2>
-
-    <div class="editorial" style="text-align:center; max-width:800px;">
-
-      <p>
-        The Structural Plenitude research program continues toward deeper
-        substrate formulations and extended cosmological interaction models.
-      </p>
-
-      <p>
-        Current development lines investigate propagation phase corrections,
-        effective cosmological coupling extensions and large scale structure
-        observational mapping compatibility.
-      </p>
-
-      <p style="opacity:0.7;">
-        A formal publication is currently in preparation.
-      </p>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= COLLABORATIONS ================= -->
-<section>
-  <div class="shell">
-
-    <h2 class="section-title">Collaborations & Scientific Exchange</h2>
-
-    <div class="cards-grid">
-
-      <div class="card">
-        <h3 class="card-title">Independent Research Integration</h3>
-        <p class="card-body">
-          Collaboration channel for independent researchers working on
-          vacuum physics, cosmology and alternative structural models.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Preprint Compatibility Review</h3>
-        <p class="card-body">
-          Conceptual compatibility analysis with substrate-based frameworks
-          and propagation-level interaction models.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title">Scientific Contact</h3>
-        <p class="card-body">
-          research@blackscienceinstitute.org
-        </p>
-      </div>
-
-    </div>
-
-
-  </section>
-
- <footer id="contact" class="footer-astron">
-    <div class="shell footer-grid">
-      <div class="footer-col">
-        <h3 class="footer-logo">BLACK SCIENCE INSTITUTE</h3>
-        <p style="opacity:0.6; font-size:0.9rem; line-height:1.7;">Independent theoretical research on Structural Plenitude Theory and viscoelastic vacuum cosmology.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="structural-plenitude-theory.html">SPT</a></li>
-          <li><a href="phenomena.html">Phenomena</a></li>
-          <li><a href="research.html">Research</a></li>
-        </ul>
-      </div>
-     <div class="footer-col">
-  <h4>Contact</h4>
-  <ul>
-    <li>São Paulo, Brazil</li>
-    <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
-    <li><a href="https://x.com/blackscienceSPT">X</a></li>
-    <li><a href="https://www.youtube.com/@BLACKSCIENCEINSTITUTE">YouTube</a></li>
-    <li><a href="https://www.researchgate.net/profile/Carlos-Azevedo-Jr">ResearchGate</a></li>
-    <li><a href="https://zenodo.org">Zenodo</a></li>
-  </ul>
-</div>
-    </div>
-    <div class="footer-bottom">© 2026 Black Science Institute · All Rights Reserved</div>
-  </footer>
-
-
-  <div id="searchModal" class="search-modal">
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search in site..." />
-    </div>
-  </div>
-
-  <button id="backToTop">↑</button>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menuBtn = document.getElementById("menuBtn");
-      const navCenter = document.querySelector(".nav-center");
-      const searchTrigger = document.getElementById("searchTrigger");
-      const searchModal = document.getElementById("searchModal");
-      const searchInput = document.getElementById("searchInput");
-      const backBtn = document.getElementById("backToTop");
-      const header = document.getElementById("mainHeader");
-const heroBg = document.querySelector(".hero-bg");
-
-window.addEventListener("scroll", function() {
-  const scrollPosition = window.scrollY;
-
-  if (heroBg) {
-    heroBg.style.transform = "translateY(" + scrollPosition * 0.25 + "px)";
-  }
+<script>
+window.addEventListener("scroll", () => {
+const moon = document.querySelector(".hero-bg");
+if(moon){
+moon.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+}
 });
+</script>
 
-      // Scroll effect for header
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
-        else header.style.background = "rgba(0,0,0,0.45)";
-
-        if (window.scrollY > 600) backBtn.classList.add("show");
-        else backBtn.classList.remove("show");
-      });
-
-      // Hamburger Toggle
-      if (menuBtn) {
-        menuBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          navCenter.classList.toggle("active");
-          menuBtn.innerText = navCenter.classList.contains("active") ? "✕" : "☰";
-        });
-      }
-
-      // Search Modal
-      if (searchTrigger) {
-        searchTrigger.addEventListener("click", () => {
-          searchModal.classList.add("active");
-          searchInput.focus();
-        });
-      }
-
-      searchModal.addEventListener("click", (e) => {
-        if (e.target === searchModal) searchModal.classList.remove("active");
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!navCenter.contains(e.target) && e.target !== menuBtn) {
-          navCenter.classList.remove("active");
-          if(menuBtn) menuBtn.innerText = "☰";
-        }
-      });
-
-      backBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      window.addEventListener("scroll", () => {
-  const moon = document.querySelector(".hero-bg");
-  let offset = window.scrollY * 0.4;
-  moon.style.transform = `translateY(${offset}px)`;
-});
-    });
-  </script>
 </body>
 </html>
