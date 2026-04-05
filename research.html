@@ -196,26 +196,37 @@ border-color:white;
 
 
 /* ================= MOBILE ================= */
-
-@media (max-width: 768px){
-
-.shell{padding:0 20px;}
-
-.hero{padding:40px 0;}
-
-.hero h1{font-size:2rem;}
-
-.grid,
-.cards-grid{
-grid-template-columns:1fr;
-gap:18px;
 }
 
-.card{
-padding:18px;
-border-radius:8px;
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+
+}
+ .visual {
+  display: flex;
+  justify-content: center;
 }
 
+.spt-planet {
+  max-width: 500px;
+  width: 100%;
+} 
+  @media (min-width: 900px) {
+  .hero-content {
+    transform: translateY(-03px);
+  }
+
+/* remove faixa preta da transição da home */
+
+#spt::before{
+  display:none;
+}
+
+.formal-structure{
+  background:#000;
+
+}
 
 /* ================= CINEMATIC ================= */
 
