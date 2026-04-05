@@ -159,30 +159,35 @@ footer{
     left: 20px;
     font-size: 0.75rem;
   }
+/* ===== BACK TO TOP ===== */
+
 #backToTop{
   position: fixed;
   bottom: 30px;
   right: 30px;
-  padding: 14px;
-  font-size: 16px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 999;
+  width: 44px;
+  height: 44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s ease;
+  z-index:9999;
 }
 
 #backToTop.show{
-  opacity: 1;
-  visibility: visible;
+  opacity:1;
+  visibility:visible;
 }
 
 #backToTop:hover{
-  background: rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.1);
 }
     #backToTop{
   position: fixed;
@@ -319,12 +324,6 @@ body::before {
   pointer-events: none;
   z-index: 1;
 }
-.spt-planet {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  position: relative;
 
   background:
        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 20%),
@@ -630,6 +629,7 @@ background: transparent;
       const searchInput = document.getElementById("searchInput");
       const backBtn = document.getElementById("backToTop");
       const header = document.getElementById("mainHeader");
+      ) || null;
 const heroBg = document.querySelector(".hero-bg");
 
 window.addEventListener("scroll", function() {
@@ -642,8 +642,10 @@ window.addEventListener("scroll", function() {
 
       // Scroll effect for header
       window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
+        if (header){
+          if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
         else header.style.background = "rgba(0,0,0,0.45)";
+        }
 
         if (window.scrollY > 600) backBtn.classList.add("show");
         else backBtn.classList.remove("show");
