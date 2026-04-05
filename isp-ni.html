@@ -159,7 +159,66 @@ body::before {
   pointer-events:none;
   z-index:-1;
 }
+.card{
+  position:relative;
+  padding:26px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,0.02);
+  transition:all 0.35s ease;
+  overflow:hidden;
+}
 
+/* glow sutil interno */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 80% 20%,
+              rgba(255,255,255,0.08),
+              transparent 60%);
+  opacity:0;
+  transition:0.4s ease;
+}
+
+/* linha superior científica (estilo lab interface) */
+.card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:1px;
+  background:rgba(255,255,255,0.4);
+  transition:0.4s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.25);
+  background:rgba(255,255,255,0.045);
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+.card:hover::after{
+  width:100%;
+}
+
+.card h3{
+  font-size:0.9rem;
+  letter-spacing:0.14em;
+  margin-bottom:12px;
+  opacity:0.85;
+}
+
+.card p{
+  font-size:0.92rem;
+  opacity:0.72;
+  line-height:1.8;
+}
 </style></head><body><section class="hero">
   <div class="isp-nav-top"><a href="research.html">⬅ Research</a></div>
   <div class="shell">
