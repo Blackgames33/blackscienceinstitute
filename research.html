@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
 <style>
 
 /* ================= BASE ================= */
+
 :root{
 --bg:#000;
 --fg:#e8e8e8;
@@ -36,6 +38,7 @@ padding:0 24px;
 a{color:inherit;text-decoration:none;}
 
 /* ================= HEADER ================= */
+
 header{
 position:fixed;
 top:0;
@@ -68,6 +71,7 @@ text-transform:uppercase;
 }
 
 /* ================= HERO ================= */
+
 main{padding-top:120px;}
 
 .hero{
@@ -91,6 +95,7 @@ margin-right:auto;
 }
 
 /* ================= GRID ================= */
+
 .section{
 padding:100px 0;
 border-top:1px solid var(--border);
@@ -103,7 +108,8 @@ letter-spacing:0.14em;
 margin-bottom:70px;
 }
 
-.grid, .cards-grid{
+.grid,
+.cards-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:36px;
@@ -131,7 +137,7 @@ margin-bottom:14px;
 /* ================= RESEARCH ================= */
 
 .research-title{
-font-family:Montserrat;
+font-family:'Montserrat', sans-serif;
 font-size:3rem;
 letter-spacing:0.15em;
 text-align:center;
@@ -165,12 +171,6 @@ transform:translateY(-6px);
 border-color:white;
 }
 
-.research-links{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
 /* ================= FOOTER ================= */
 
 footer{
@@ -182,23 +182,34 @@ font-size:0.9rem;
 }
 
 /* ================= MOBILE ================= */
+
 @media (max-width: 768px){
 
 .shell{padding:0 20px;}
 
-h2{font-size:1.6rem;}
+.hero{padding:40px 0;}
 
-.hero{min-height:60vh;padding:40px 0;}
 .hero h1{font-size:2rem;}
 
-.grid, .cards-grid{grid-template-columns:1fr;}
+.grid,
+.cards-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
 
-.card{padding:18px;border-radius:8px;}
+.card{
+padding:18px;
+border-radius:8px;
+}
 
 }
 
 /* ================= CINEMATIC ================= */
-section{position:relative;overflow-x:hidden;}
+
+section{
+position:relative;
+overflow-x:hidden;
+}
 
 #research::before{
 content:"";
@@ -207,9 +218,20 @@ left:-250px;
 top:40%;
 width:700px;
 height:700px;
-background:radial-gradient(circle,rgba(255,255,255,0.05),transparent);
+background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);
 border-radius:50%;
 opacity:0.25;
+pointer-events:none;
+}
+
+#phenomena::after{
+content:"∇μT^{μν}=0 ηH₀/c Δν/ν ≈ (H₀/c)d Z_H Israel–Stewart";
+position:absolute;
+bottom:20%;
+left:10%;
+font-size:3rem;
+opacity:0.03;
+white-space:nowrap;
 }
 
 </style>
@@ -217,16 +239,18 @@ opacity:0.25;
 
 <body>
 
-<header>
+<header id="mainHeader">
 <div class="shell">
 <nav>
 <div class="logo">BLACK SCIENCE INSTITUTE</div>
+
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="structural-plenitude-theory.html">SPT</a>
 <a href="phenomena.html">Phenomena</a>
 <a href="contact.html">Contact</a>
 </div>
+
 </nav>
 </div>
 </header>
@@ -238,7 +262,8 @@ opacity:0.25;
 <h1>Research Program</h1>
 <p>
 The Black Science Institute research program integrates theoretical physics,
-observational cosmology and substrate dynamics into a unified scientific architecture.
+observational cosmology and substrate dynamics into a unified scientific
+investigation architecture.
 </p>
 </div>
 </section>
@@ -246,21 +271,26 @@ observational cosmology and substrate dynamics into a unified scientific archite
 <section>
 <div class="shell">
 <h1 class="research-title">Research Core</h1>
+
 <p class="research-intro">
 Black Science Institute organizes its scientific activity across theoretical
-substrate physics, observational phenomenology and next-generation cosmological frameworks.
+substrate physics, observational phenomenology and next-generation cosmological
+framework development.
 </p>
 </div>
 </section>
 
 <section>
 <div class="shell">
+
 <div class="research-grid">
 
 <div class="research-card">
 <h3>SPT Scientific Library</h3>
 <div class="research-links">
 <a href="https://zenodo.org/records/18409392" target="_blank">SPT v1.4 — Unified Framework</a>
+<a href="#">Mathematical Formalism</a>
+<a href="#">Full Scientific Archive</a>
 </div>
 </div>
 
@@ -268,19 +298,25 @@ substrate physics, observational phenomenology and next-generation cosmological 
 <h3>Observational Programs</h3>
 <div class="research-links">
 <a href="#">3I / Interstellar Object Program</a>
+<a href="#">Planetary Plasma Tail Studies</a>
+<a href="#">Magnetosphere Structural Coupling</a>
+<a href="#">Deep Space Phenomenology</a>
 </div>
 </div>
 
 <div class="research-card">
 <h3>Scientific & Fictional Publications</h3>
 <div class="research-links">
-<a href="#">Visionários</a>
+<a href="#">Visionários — Science Fiction Project</a>
+<a href="#">Patologia de um Regime — Geopolitical Study</a>
 </div>
 </div>
 
 <div class="research-card">
 <h3>Next Generation Framework</h3>
-<p>A new cosmological extension is under consolidation.</p>
+<p>
+A new propagation-level cosmological extension is currently under internal consolidation.
+</p>
 </div>
 
 </div>
@@ -290,17 +326,26 @@ substrate physics, observational phenomenology and next-generation cosmological 
 </main>
 
 <footer>
-<p>© 2026 Black Science Institute · All Rights Reserved</p>
-</footer>
+<div class="shell">
 
-<script>
-window.addEventListener("scroll", () => {
-const moon = document.querySelector(".hero-bg");
-if(moon){
-moon.style.transform = `translateY(${window.scrollY * 0.4}px)`;
-}
-});
-</script>
+<h3>BLACK SCIENCE INSTITUTE</h3>
+
+<p>São Paulo, Brazil</p>
+<p>research@blackscienceinstitute.org</p>
+
+<p>
+<a href="https://x.com/blackscienceSPT">X</a> |
+<a href="https://www.youtube.com/@BLACKSCIENCEINSTITUTE">YouTube</a> |
+<a href="https://www.researchgate.net/">ResearchGate</a> |
+<a href="https://zenodo.org">Zenodo</a>
+</p>
+
+<div style="margin-top:30px;">
+© 2026 Black Science Institute · All Rights Reserved
+</div>
+
+</div>
+</footer>
 
 </body>
 </html>
