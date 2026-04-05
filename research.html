@@ -182,72 +182,36 @@ transform:translateY(-6px);
 border-color:white;
 }
 
- /* FOOTER */
-    .footer-astron { padding: 120px 0 60px; background: #050508; border-top: 1px solid var(--border); }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; margin-bottom: 60px; }
-    .footer-logo { font-family: 'Montserrat', sans-serif; letter-spacing: 0.2em; font-size: 0.9rem; margin-bottom: 20px; }
-    .footer-col h4 { font-family: 'Montserrat', sans-serif; letter-spacing: 0.15em; margin-bottom: 25px; font-weight: 400; font-size: 0.9rem; text-transform: uppercase; opacity: 0.8; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 14px; opacity: 0.7; font-size: 0.9rem; }
-    .footer-bottom { text-align: center; font-size: 0.85rem; opacity: 0.5; border-top: 1px solid var(--border); padding-top: 30px; }
+/* ================= FOOTER ================= */
 
-  
+footer{
+padding:80px 0;
+border-top:1px solid var(--border);
+text-align:center;
+opacity:0.8;
+font-size:0.9rem;
 }
-
-
-    /* MOBILE ADJUSTMENTS */
-    @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-center {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        background: rgba(5,5,5,0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        border-left: 1px solid var(--border);
-      }
-      .nav-center.active { right: 0; }
-      .hero-title { font-size: 2.8rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-    }
 
 /* ================= MOBILE ================= */
+
+@media (max-width: 768px){
+
+.shell{padding:0 20px;}
+
+.hero{padding:40px 0;}
+
+.hero h1{font-size:2rem;}
+
+.grid,
+.cards-grid{
+grid-template-columns:1fr;
+gap:18px;
 }
 
-@media (max-width: 900px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-
+.card{
+padding:18px;
+border-radius:8px;
 }
- .visual {
-  display: flex;
-  justify-content: center;
-}
-
-.spt-planet {
-  max-width: 500px;
-  width: 100%;
-} 
-  @media (min-width: 900px) {
-  .hero-content {
-    transform: translateY(-03px);
-  }
-
-/* remove faixa preta da transição da home */
-
-#spt::before{
-  display:none;
-}
-
-.formal-structure{
-  background:#000;
 
 }
 
@@ -279,33 +243,8 @@ left:10%;
 font-size:3rem;
 opacity:0.01;
 white-space:nowrap;
-
 }
 
-    /* ============================
-   TAG MENU (BOTÕES)
-============================ */
-
-.tag{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.25);
-  font-size:0.75rem;
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.85);
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(6px);
-  transition:all 0.35s ease;
-}
-
-.tag:hover{
-  transform:translateY(-3px);
-  background:rgba(255,255,255,0.08);
-  border-color:rgba(255,255,255,0.6);
-  color:#fff;
-}
 </style>
 </head>
 
@@ -375,12 +314,12 @@ framework development.
 </div>
 </div>
 
-<div class="card">
-<h3>Radio Silence Phenomena</h3>
-<p>
-Transient radio absorption windows and delayed signal re-emergence
-patterns in deep space objects.
-</p>
+<div class="research-card">
+<h3>Scientific & Fictional Publications</h3>
+<div class="research-links">
+<a href="#">Visionários — Science Fiction Project</a>
+<a href="#">Patologia de um Regime — Geopolitical Study</a>
+</div>
 </div>
 
 <div class="research-card">
@@ -396,42 +335,27 @@ A new propagation-level cosmological extension is currently under internal conso
 
 </main>
 
-<footer id="contact" class="footer-astron">
-    <div class="shell footer-grid">
-      <div class="footer-col">
-        <h3 class="footer-logo">BLACK SCIENCE INSTITUTE</h3>
-        <p style="opacity:0.6; font-size:0.9rem; line-height:1.7;">Independent theoretical research on Structural Plenitude Theory and viscoelastic vacuum cosmology.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">research</a></li>
-          <li><a href="structural-plenitude-theory.html">SPT</a></li>
-          <li><a href="phenomena.html">Phenomena</a></li>
-          <li><a href="isp-ni.html">ISP-Ni</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>São Paulo, Brazil</li>
-          <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
-          <div class="footer-social">
-            <li><a href="https://x.com/blackscienceSPT">https://x.com/blackscienceSPT</a></li>
-               <li><a href="https:///www.youtube.com/@BLACKSCIENCEINSTITUTE">https:///www.youtube.com</a></li>
-            <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
-      <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
-     </div>
+<footer>
+<div class="shell">
 
-    </div>
+<h3>BLACK SCIENCE INSTITUTE</h3>
 
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 Black Science Institute · All Rights Reserved</div>
-  </footer>
+<p>São Paulo, Brazil</p>
+<p>research@blackscienceinstitute.org</p>
 
+<p>
+<a href="https://x.com/blackscienceSPT">X</a> |
+<a href="https://www.youtube.com/@BLACKSCIENCEINSTITUTE">YouTube</a> |
+<a href="https://www.researchgate.net/">ResearchGate</a> |
+<a href="https://zenodo.org">Zenodo</a>
+</p>
+
+<div style="margin-top:30px;">
+© 2026 Black Science Institute · All Rights Reserved
+</div>
+
+</div>
+</footer>
 
 </body>
 </html>
