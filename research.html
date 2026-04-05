@@ -285,44 +285,77 @@ section {
   white-space: nowrap;
   pointer-events: none;
 }
+/* ============================
+   RESEARCH MOBILE FIX
+============================ */
 
-/* MOBILE CONTROL */
 @media (max-width: 768px) {
 
-  #research::before,
-  #phenomena::before {
-    width: 500px;
-    height: 500px;
-    opacity: 0.18;
+  /* container mais leve */
+  .shell {
+    padding: 0 20px;
   }
 
-  #phenomena::after {
-    font-size: 1.8rem;
-    bottom: 10%;
+  /* títulos menores */
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
   }
 
- /* MOBILE ADJUSTMENTS */
-    @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav-center {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        background: rgba(5,5,5,0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        border-left: 1px solid var(--border);
-      }
-      .nav-center.active { right: 0; }
-      .hero-title { font-size: 2.8rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-    }
+  /* HERO */
+  .hero {
+    min-height: 60vh;
+    padding: 40px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+  }
+
+  /* GRID PRINCIPAL */
+  .grid {
+    grid-template-columns: 1fr; /* força coluna única */
+    gap: 18px;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .card h3 {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  /* LISTAS */
+  .list {
+    padding-left: 18px;
+  }
+
+  /* NAV (voltar) */
+  .isp-nav-top {
+    top: 20px;
+    left: 20px;
+    font-size: 0.75rem;
+  }
+
+  /* RESULTS GRID (se já tiver) */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+
 </style>
 </head>
 
