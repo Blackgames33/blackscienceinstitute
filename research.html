@@ -25,10 +25,10 @@
   opacity:0.85;
 }
 
-.research-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap:35px;
+.cards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:36px;
 }
 
 .research-card{
@@ -110,9 +110,10 @@ header{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,0.75);
-backdrop-filter:blur(14px);
-border-bottom:1px solid var(--border);
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(10px);
+border-bottom:1px solid 
+rgba(255,255,255,0,06);
 z-index:1000;
 }
 
@@ -125,8 +126,9 @@ height:80px;
 
 .logo{
 font-family:Montserrat;
-letter-spacing:0.2em;
-font-size:1.3rem;
+letter-spacing:0.18em;
+font-size:0.95rem;
+opacity:0.75; /* mais leve*/
 }
 
 .nav-links{
@@ -153,7 +155,6 @@ letter-spacing:0.12em;
 font-weight:300;
 }
 
-}
 .hero p{
 margin-top:30px;
 opacity:0.85;
@@ -304,71 +305,86 @@ section {
    RESEARCH MOBILE FIX
 ============================ */
 
-@media (max-width: 768px) {
 
-  /* container mais leve */
-  .shell {
-    padding: 0 20px;
-  }
+ @media (max-width: 768px){
 
-  /* títulos menores */
-  h2 {
-    font-size: 1.6rem;
-    letter-spacing: 0.08em;
-  }
+.shell{
+padding:0 20px;
+}
 
-  /* HERO */
-  .hero {
-    min-height: 60vh;
-    padding: 40px 0;
-  }
+h2{
+font-size:1.6rem;
+letter-spacing:0.08em;
+}
 
-  .hero h1 {
-    font-size: 2rem;
-  }
+/* HERO */
+.hero{
+min-height:60vh;
+padding:60px 0;
+}
 
-  .hero-lead {
-    font-size: 0.95rem;
-  }
+.hero h1{
+font-size:2rem;
+}
 
-  /* GRID PRINCIPAL */
-  .grid {
-    grid-template-columns: 1fr; /* força coluna única */
-    gap: 18px;
-  }
+.hero p{
+font-size:0.95rem;
+}
 
-  /* CARDS */
-  .card {
-    padding: 18px;
-    border-radius: 8px;
-  }
+/* GRID */
+.grid,
+.cards-grid,
+.research-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
 
-  .card h3 {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-  }
+/* CARDS */
+.card,
+.research-card{
+padding:18px;
+border-radius:10px;
+}
 
-  .card p {
-    font-size: 0.85rem;
-    line-height: 1.7;
-  }
+.card h3,
+.research-card h3{
+font-size:0.85rem;
+letter-spacing:0.08em;
+}
 
-  /* LISTAS */
-  .list {
-    padding-left: 18px;
-  }
+.card p{
+font-size:0.85rem;
+line-height:1.7;
+}
 
-  /* NAV (voltar) */
-  .isp-nav-top {
-    top: 20px;
-    left: 20px;
-    font-size: 0.75rem;
-  }
+/* RESEARCH TITLE */
+.research-title{
+font-size:1.8rem;
+}
 
-  /* RESULTS GRID (se já tiver) */
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
+.research-intro{
+font-size:0.9rem;
+}
+
+/* NAV */
+.nav-links{
+gap:18px;
+font-size:0.7rem;
+}
+
+/* PLANETS */
+#research::before,
+#phenomena::before{
+width:400px;
+height:400px;
+opacity:0.15;
+}
+
+#phenomena::after{
+font-size:1.4rem;
+bottom:10%;
+}
+}
 
 
 </style>
@@ -631,7 +647,7 @@ INTERNAL SCIENTIFIC CONSOLIDATION — PREVIEW RELEASE EXPECTED
         </p>
       </div>
 
-
+    </div> <!--
 
   </div>
 </section>
@@ -717,22 +733,17 @@ INTERNAL SCIENTIFIC CONSOLIDATION — PREVIEW RELEASE EXPECTED
           <li><a href="research.html">Research</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>São Paulo, Brazil</li>
-          <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
-          <div class="footer-social">
-            <li><a href="https://x.com/blackscienceSPT">https://x.com/blackscienceSPT</a></li>
-               <li><a href="https:///www.youtube.com/@BLACKSCIENCEINSTITUTE">https:///www.youtube.com</a></li>
-            <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
-      <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
-     </div>
-
-    </div>
-
-        </ul>
-      </div>
+     <div class="footer-col">
+  <h4>Contact</h4>
+  <ul>
+    <li>São Paulo, Brazil</li>
+    <li><a href="mailto:research@blackscienceinstitute.org">research@blackscienceinstitute.org</a></li>
+    <li><a href="https://x.com/blackscienceSPT">X</a></li>
+    <li><a href="https://www.youtube.com/@BLACKSCIENCEINSTITUTE">YouTube</a></li>
+    <li><a href="https://www.researchgate.net/profile/Carlos-Azevedo-Jr">ResearchGate</a></li>
+    <li><a href="https://zenodo.org">Zenodo</a></li>
+  </ul>
+</div>
     </div>
     <div class="footer-bottom">© 2026 Black Science Institute · All Rights Reserved</div>
   </footer>
