@@ -36,6 +36,19 @@ padding:0 24px;
 }
 
 a{color:inherit;text-decoration:none;}
+  }
+
+    /* COSMIC BACKGROUND */
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,0.04), transparent 45%),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03), transparent 55%);
+      pointer-events:none;
+      z-index:-2;
+    }
 
 /* ================= HEADER ================= */
 
