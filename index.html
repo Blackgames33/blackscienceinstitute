@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Science Institute — Structural Plenitude Theory</title>
   <meta name="description" content="Independent research institute focused on Structural Plenitude Theory (SPT), viscoelastic Pleroma substrate, cosmology, and reinterpretation of observational data including 3I/ATLAS." />
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-
   <style>
     :root {
       --bg: #000;
@@ -20,9 +18,7 @@
       --radius: 12px;
       --transition: 0.4s ease;
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
-
     html, body {
       background: var(--bg);
       color: var(--fg);
@@ -31,7 +27,6 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
     /* COSMIC BACKGROUND */
     body::before {
       content:"";
@@ -43,7 +38,6 @@
       pointer-events:none;
       z-index:-2;
     }
-
     body::after {
       content:"∇μT^{μν}=0    Δη/Δt = -Aω²    Z_H ∝ ∂P/∂ρ";
       position:fixed;
@@ -57,10 +51,8 @@
       pointer-events:none;
       z-index:-1;
     }
-
     a { color:inherit; text-decoration:none; }
     .shell { max-width:1280px; margin:0 auto; padding:0 5%; }
-
     /* HEADER & NAV */
     header {
       position: relative;
@@ -73,7 +65,6 @@
       border-bottom: 1px solid var(--border);
       transition: background 0.4s;
     }
-
     nav {
       height: 100px;
       display: flex;
@@ -81,7 +72,6 @@
       justify-content: space-between;
       position: relative;
     }
-
     .logo {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
@@ -89,7 +79,6 @@
       opacity: 0.8;
       z-index: 1001;
     }
-
     .nav-center {
       display: flex;
       gap: 70px;
@@ -98,15 +87,12 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-
     .nav-center a {
       position: relative;
       opacity: 0.75;
       transition: all 0.4s ease;
     }
-
     .nav-center a:hover { opacity: 1; transform: translateY(-3px); }
-
     .dropdown { position: relative; }
     .dropdown-menu {
       position: absolute;
@@ -130,7 +116,6 @@
       visibility: visible;
       transform: translateX(-50%) translateY(0);
     }
-
     /* ACTIONS (Lupa e Hamburguer) */
     .header-actions {
       display: flex;
@@ -138,7 +123,6 @@
       gap: 25px;
       z-index: 1001;
     }
-
     .search-icon-trigger {
       cursor: pointer;
       opacity: 0.7;
@@ -147,14 +131,12 @@
       align-items: center;
     }
     .search-icon-trigger:hover { opacity: 1; transform: scale(1.1); }
-
     .hamburger {
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
       color: #fff;
     }
-
     /* HERO */
    .hero {
   position: relative;
@@ -173,18 +155,16 @@
   background-position: center 40%;
   z-index: 1;
   will-change: transform;
-
-
-
 }
-
+}
+}
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.5);
   z-index: 1;
 }
-
 .hero-content {
   position: relative;
   z-index: 5;
@@ -200,13 +180,11 @@
     0 0 8px rgba(255,255,255,0.15),
     0 0 30px rgba(0,0,0,0.6);
 }   
-
-
+}
 .title-line-1 {
   font-size: 0.9em;
   letter-spacing: 0.35em;
 }
-
 .title-line-2 {
   font-size: 1.1em;
   letter-spacing: 0.12em;
@@ -220,32 +198,26 @@
   color: rgba(255,255,255,0.85);
   max-width: 640px;
 }
-
 .text-content p {
   margin-bottom: 28px;
-
+}
     }
-
     .hero-content { position:relative; z-index:4; max-width:1000px; }
     .hero-title { font-family:'Montserrat',sans-serif; font-size:clamp(3rem,7vw,6rem); font-weight:300; letter-spacing:0.1em; margin-bottom:28px; }
     .hero-subtitle { font-size:clamp(1.1rem,2.8vw,1.6rem); max-width:820px; margin:0 auto 60px; opacity:0.85; }
-
     .hero-tags { display:flex; flex-wrap:wrap; gap:18px; justify-content:center; }
     .tag { padding:10px 26px; border:1px solid var(--border); border-radius:999px; font-size:0.85rem; letter-spacing:0.15em; opacity:0.8; transition:all var(--transition); }
     .tag:hover { background:var(--accent-glow); transform:translateY(-4px); }
-
     /* SECTIONS & CARDS */
     section { padding:clamp(120px,15vh,180px) 0; position:relative; }
     .section-title { font-family:'Montserrat',sans-serif; font-size:clamp(2.2rem,4vw,3.5rem); font-weight:300; letter-spacing:0.15em; text-align:center; margin-bottom:80px; }
     .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:70px; align-items:center; }
     .planet { width:100%; max-width:540px; border-radius:50%; box-shadow:0 0 120px rgba(255,255,255,0.05); }
-
     .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; margin-top:80px; }
     .card { padding:44px 34px; border:1px solid var(--border); border-radius:var(--radius); background:rgba(255,255,255,0.025); backdrop-filter:blur(8px); transition:all var(--transition); height: 100%; }
     .card:hover { transform:translateY(-12px); border-color:rgba(255,255,255,0.3); box-shadow:0 20px 40px rgba(0,0,0,0.6); }
     .card-title { font-family:'Montserrat',sans-serif; font-size:1.5rem; margin-bottom:20px; }
     .card-body { opacity:0.8; }
-
     /* FOOTER */
     .footer-astron { padding: 120px 0 60px; background: #050508; border-top: 1px solid var(--border); }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; margin-bottom: 60px; }
@@ -254,13 +226,10 @@
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 14px; opacity: 0.7; font-size: 0.9rem; }
     .footer-bottom { text-align: center; font-size: 0.85rem; opacity: 0.5; border-top: 1px solid var(--border); padding-top: 30px; }
-
     /* SEARCH MODAL */
     .search-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.4s ease; z-index: 2000; }
     .search-modal.active { opacity: 1; visibility: visible; }
     .search-box input { width: clamp(300px, 50vw, 600px); padding: 20px 30px; border-radius: 50px; border: 1px solid var(--border); font-size: 1.2rem; background: rgba(255,255,255,0.05); color: white; outline: none; text-align: center; }
-                   }
-    
     /* MOBILE ADJUSTMENTS */
     @media (max-width: 768px) {
       .hamburger { display: block; }
@@ -283,7 +252,6 @@
       .hero-title { font-size: 2.8rem; }
       .grid-2 { grid-template-columns: 1fr; }
     }
-
     #backToTop {
       position: fixed; bottom: 30px; right: 30px; padding: 15px; background: rgba(255,255,255,0.1);
       border: 1px solid var(--border); color: white; border-radius: 50%; cursor: pointer;
@@ -308,12 +276,10 @@ body::before {
   letter-spacing: 0.08em;
   font-weight: 400;
 }
-
 .card-body {
   line-height: 1.9;
   font-size: 1.02rem;
 }
-
 .card::before {
   content: "";
   position: absolute;
@@ -324,7 +290,6 @@ body::before {
   opacity: 0;
   transition: 0.4s ease;
 }
-
 .card:hover::before {
   opacity: 1;
 }
@@ -338,19 +303,16 @@ body::before {
   );
   overflow: hidden;
 }
-
 .formal-grid {
   position: relative;
   z-index: 2;
   max-width: 800px;
 }
-
 .formal-text p {
   font-size: 1.18rem;
   line-height: 1.95;
   opacity: 0.9;
 }
-
 .formal-bg-equation {
   position: absolute;
   top: 50%;
@@ -369,13 +331,10 @@ body::before {
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: relative;
-
   background:
        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 20%),
     radial-gradient(circle at 60% 70%, rgba(120,120,160,0.15), transparent 20%),
     url('./assets/images/Júpiter.png') right/cover no-repeat;
-
-
   opacity: 0.18;
   filter: brightness(0.78) contrast(1.08);
   box-shadow: 0 0 120px rgba(255,255,255,0.05);
@@ -385,7 +344,6 @@ body::before {
 }
 background: transparent;
     }   
-
 #spt::before {
   content: "";
   position: absolute;
@@ -396,7 +354,6 @@ background: transparent;
     rgba(0,0,0,0.85) 200px
     #a0a0a 400px
   )
-
     rgba(0,0,0,0.8) 0%,
     rgba(0,0,0,0.65) 50%,
     rgba(0,0,0,0.8) 100%
@@ -404,7 +361,6 @@ background: transparent;
   pointer-events: none;
   z-index: 0;
 }
-
 #spt .shell {
   position: relative;
   z-index: 2;
@@ -415,29 +371,23 @@ background: transparent;
   gap: 80px;
   align-items: center;
 }
-
 @media (max-width: 900px) {
   .grid-2 {
     grid-template-columns: 1fr;
-
 }
  .visual {
   display: flex;
   justify-content: center;
 }
-
 .spt-planet{
 width:100%;
 max-width:520px;
 aspect-ratio:1/1;
 border-radius:50%;
-
 background:
 url('./assets/images/Júpiter.png') center/cover no-repeat;
-
 opacity:0.22;
 filter:brightness(0.8) contrast(1.1);
-
 box-shadow:0 0 120px rgba(255,255,255,0.05);
 }
   @media (min-width: 900px) {
@@ -447,7 +397,6 @@ box-shadow:0 0 120px rgba(255,255,255,0.05);
     #spt{
 background:transparent;
 }
-
 #spt::before{
 content:"";
 position:absolute;
@@ -461,25 +410,19 @@ rgba(0,0,0,0.7)
 pointer-events:none;
 z-index:0;
 }
-
 #spt .shell{
 position:relative;
 z-index:2;
 }
-
- 
 }
-
+  
   </style>
 </head>
-
 <body>
-
   <header id="mainHeader">
     <div class="shell">
       <nav>
         <div class="logo">BLACK SCIENCE INSTITUTE</div>
-
         <div class="nav-center">
           <a href="index.html">Home</a>
           <div class="dropdown">
@@ -487,14 +430,14 @@ z-index:2;
             <div class="dropdown-menu">
                  <a href="research.html">Research</a>
               <a href="phenomena.html">Phenomena</a>
-           
-              
-             
+              <a href="research.html">Research</a>
+
+
+
             </div>
           </div>
           <a href="#contact">Contact</a>
         </div>
-
         <div class="header-actions">
           <div class="search-icon-trigger" id="searchTrigger">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
@@ -507,7 +450,6 @@ z-index:2;
       </nav>
     </div>
   </header>
-
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
@@ -520,7 +462,6 @@ z-index:2;
         The vacuum is not empty. It is a continuous, viscoelastic, and dense substrate — the Pleroma — where light, gravity, and matter emerge as structural tensions and dynamic responses.
       </p>
       <div class="hero-tags">
-
         <a href="spt-v1-4.html" class="tag">SPT v1.4</a>
           <a href="#spt" class="tag">Pleroma Substrate</a>
           <a href="#spt" class="tag">Viscoelastic Vacuum</a>
@@ -528,7 +469,6 @@ z-index:2;
       </div>
     </div>
   </section>
-
   <section id="spt">
     <div class="shell">
       <h2 class="section-title">The Pleroma Substrate</h2>
@@ -537,14 +477,12 @@ z-index:2;
   <div class="spt-planet"></div>
 </div>
        <div class="text-content">
-
   <p style="margin-top:22px; opacity:0.65; font-size:0.95rem;">
     Structural Plenitude Theory describes the vacuum not as emptiness,
     but as a continuous, viscoelastic substrate — the Pleroma —
     whose structural tensions govern light propagation,
     gravitational coupling and cosmological redshift.
   </p>
-
   <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
     In this framework, physical phenomena are not isolated interactions,
     but emergent responses of a dense underlying medium.
@@ -563,13 +501,10 @@ z-index:2;
     but structural reinterpretation of observational anomalies
     within a physically continuous cosmological architecture.
   </p>
-
 </div>
-
       </div>
     </div>
   </section>
-
   <section id="research" style="background:#0a0a0a;">
     <div class="shell">
       <h2 class="section-title">Research Axes</h2>
@@ -596,11 +531,9 @@ z-index:2;
    <a href="phenomenology.html" class="card-link">
   <div class="card">
     <h3 class="card-title">Phenomenology & Paradoxes</h3>
-
     <p>
       Reinterpretation of classical and quantum paradoxes through the framework of Structural Plenitude Theory.
     </p>
-
     <p style="margin-top:14px; opacity:0.75;">
       Double-slit experiment, twin paradox, auroral asymmetries and substrate-interaction phenomena.
     </p>
@@ -609,11 +542,9 @@ z-index:2;
 <a href="predictions.html" class="card-link">
   <div class="card">
     <h3 class="card-title">Experimental Predictions</h3>
-
     <p>
       Testable implications derived from viscoelastic vacuum modeling and impedance-transition dynamics.
     </p>
-
     <p style="margin-top:14px; opacity:0.75;">
       Observational windows, substrate coupling tests and falsifiability criteria.
     </p>
@@ -623,35 +554,26 @@ z-index:2;
     </div>
   </section>
 <section class="formal-structure">
-
   <div class="formal-bg-equation">
     ∇μT^{μν} = 0
   </div>
-
   <div class="shell formal-grid">
-
     <div class="formal-text">
       <h2 class="section-title">Structural Continuity Framework</h2>
-
        <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
         Structural Plenitude Theory proposes that vacuum dynamics
         are governed by stress-energy continuity rather than emptiness.
         The substrate behaves as a viscoelastic field with measurable
         impedance gradients and coupling response.
       </p>
-
        <p style="margin-top:25px; opacity:0.65; font-size:0.95rem;">
         Cosmological observations traditionally attributed to
         expansion-only metrics may reveal deeper structural
         anisotropies consistent with continuous medium interaction.
       </p>
-
     </div>
-
   </div>
-
 </section>
-
  <footer id="contact" class="footer-astron">
     <div class="shell footer-grid">
       <div class="footer-col">
@@ -678,24 +600,18 @@ z-index:2;
             <li><a href=" https://www.researchgate.net/profile/Carlos-Azevedo-Jr?ev=hdr_xprf">https://researchgate</a></li>
       <li><a href="https://zenodo.org/me/uploads?q=&f=shared_with_me%3Afalse&l=list&p=1&s=10&sort=newest">https://zenodo.org</a></li>
      </div>
-
     </div>
-
         </ul>
       </div>
     </div>
     <div class="footer-bottom">© 2026 Black Science Institute · All Rights Reserved</div>
   </footer>
-
-
   <div id="searchModal" class="search-modal">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search in site..." />
     </div>
   </div>
-
   <button id="backToTop">↑</button>
-
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const menuBtn = document.getElementById("menuBtn");
@@ -706,24 +622,19 @@ z-index:2;
       const backBtn = document.getElementById("backToTop");
       const header = document.getElementById("mainHeader");
 const heroBg = document.querySelector(".hero-bg");
-
 window.addEventListener("scroll", function() {
   const scrollPosition = window.scrollY;
-
   if (heroBg) {
     heroBg.style.transform = "translateY(" + scrollPosition * 0.25 + "px)";
   }
 });
-
       // Scroll effect for header
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) header.style.background = "rgba(0,0,0,0.9)";
         else header.style.background = "rgba(0,0,0,0.45)";
-
         if (window.scrollY > 600) backBtn.classList.add("show");
         else backBtn.classList.remove("show");
       });
-
       // Hamburger Toggle
       if (menuBtn) {
         menuBtn.addEventListener("click", (e) => {
@@ -732,7 +643,6 @@ window.addEventListener("scroll", function() {
           menuBtn.innerText = navCenter.classList.contains("active") ? "✕" : "☰";
         });
       }
-
       // Search Modal
       if (searchTrigger) {
         searchTrigger.addEventListener("click", () => {
@@ -740,11 +650,9 @@ window.addEventListener("scroll", function() {
           searchInput.focus();
         });
       }
-
       searchModal.addEventListener("click", (e) => {
         if (e.target === searchModal) searchModal.classList.remove("active");
       });
-
       // Close menu when clicking outside
       document.addEventListener("click", (e) => {
         if (!navCenter.contains(e.target) && e.target !== menuBtn) {
@@ -752,7 +660,6 @@ window.addEventListener("scroll", function() {
           if(menuBtn) menuBtn.innerText = "☰";
         }
       });
-
       backBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
@@ -765,3 +672,4 @@ window.addEventListener("scroll", function() {
   </script>
 </body>
 </html>
+Footer
